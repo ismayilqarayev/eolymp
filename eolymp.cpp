@@ -308,6 +308,56 @@ int main() {
     return 0;
 }
 
+/*
+Verilmiş mətn fraqmentində sözlərin sayını müəyyənləşdirin.
+
+Giriş verilənləri
+Yeganə sətirdə ingilis dilində simvollarının sayı 
+250
+250-ni aşmayan mətn fraqmenti verilir. Zəmanət verilir ki, mətndə tire, defis, rəqəm və ədəd yoxdur.
+
+Çıxış verilənləri
+Yeganə ədəd - fraqmentdə sözlərin sayı.
+
+Nümunə
+Giriş verilənləri #1 content_copy
+Hello world!
+Çıxış verilənləri #1 content_copy
+2
+Giriş verilənləri #2 content_copy
+Hello world! Hello,    country!
+Çıxış verilənləri #2 content_copy
+4
+*/
+
+#include <iostream>
+#include <cstring>
+
+int main() {
+    char str[250];
+    int ans = 0;
+
+    std::cin.getline(str, sizeof(str));
+
+    int length = strlen(str);
+
+    for (int i = 0; i < length; i++)
+    {
+        if (str[i] == ' ')
+        {
+            while (str[i + 1] == ' ' && i + 1 < length)
+            {
+                i++;
+            }
+            ans++;
+        }
+    }
+
+    std::cout << ans + 1 << std::endl;
+
+    return 0;
+}
+
 
 
 
