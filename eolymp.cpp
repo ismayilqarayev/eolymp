@@ -357,7 +357,65 @@ int main() {
 
     return 0;
 }
+//---------------------------------------------------------------------------
 
+/*
+
+İki mənfi olmayan n, m < 30 ədədləri verilir, n və m fərqlidirlər.
+
+Yalnız bit əməliyyatlarından istifadə etməklə 2^n + 2^m ifadənin qiymətini hesablayın.
+
+Giriş verilənləri
+İki mənfi olmayan n və m tam ədədləri verilir.
+
+Çıxış verilənləri
+2^n + 2^m ifadəsinin qiymətini çap edin.
+
+Nümunə
+Giriş verilənləri #1 content_copy
+1 2
+Çıxış verilənləri #1 content_copy
+6
+
+*/
+
+#include <iostream>
+
+using namespace std;
+
+int main() 
+{
+    long long n, m;
+    cin >> n >> m;
+
+    long long a = 1 << n;  // 2 üstü n
+    long long b = 1 << m;  // 2 üstü m
+
+    cout << a + b;
+
+    return 0;
+}
+//------------------------------------------------
+Əli
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int n;
+    int m;
+
+    cin >> n;
+    cin >> m;
+
+    int c = n << 2;
+    int d = m << 2;
+
+    int g = c + d;
+    
+    cout  << g << "\n";
+    return 0;
+}
 
 
 
