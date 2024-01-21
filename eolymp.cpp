@@ -395,28 +395,29 @@ int main()
 
     return 0;
 }
-//------------------------------------------------
-Əli
+
+//----------------------------pow ile yazilan-----------------------------//
 #include <iostream>
+#include <cmath>
+
 using namespace std;
 
-int main()
+int main() 
 {
-    int n;
-    int m;
+    long long n, m;
+    cin >> n >> m;
 
-    cin >> n;
-    cin >> m;
+    long long a = pow(2, n);  // Calculate 2^n using the pow function
+    long long b = pow(2, m);  // Calculate 2^m using the pow function
 
-    int c = n << 2;
-    int d = m << 2;
+    cout << a + b;  // Print the sum of 2^n and 2^m
 
-    int g = c + d;
-    
-    cout  << g << "\n";
     return 0;
 }
-//------------------------------------------------------
+
+
+
+//-------------------------------------------------------------//
 
 Üçrəqəmli natural ədəd verilmişdir. Onun rəqəmlərinin cəmini və hasilini hesablayın.
 
