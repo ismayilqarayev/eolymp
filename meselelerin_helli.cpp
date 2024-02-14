@@ -96,7 +96,7 @@ int main() {
 
     return 0;
 
-    int number 10;
+    
 }
 
 
