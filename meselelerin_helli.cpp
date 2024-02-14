@@ -95,6 +95,9 @@ int main() {
     cout << cem << ' ' << hasil;
 
     return 0;
+
+    int number 10;
 }
+
 
 
