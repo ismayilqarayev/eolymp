@@ -418,7 +418,7 @@ int main()
 
 
 //-------------------------------------------------------------//
-
+/*
 Üçrəqəmli natural ədəd verilmişdir. Onun rəqəmlərinin cəmini və hasilini hesablayın.
 
 Giriş verilənləri
@@ -432,7 +432,7 @@ Giriş verilənləri #1 content_copy
 234
 Çıxış verilənləri #1 content_copy
 9 24
-
+*/
 #include <iostream>
 
 using namespace std;
@@ -456,6 +456,64 @@ int main() {
     return 0;
 }
 
+//---------------------------------------------------
+/*
+uçbucağın tərəflərinin uzunluğu verilir. 
+Bu üçbucağın düzbucaqlı olub-olmadığını müəyyənləşdirməli.
+
+Giriş verilənləri
+Yeganə sətirdə 
+3
+3 natural ədəd — üçbucağın tərəflərinin uzunluğu verilir. Tərəflərin uzunluğu 
+1000
+−
+1000−i aşmır.
+
+Çıxış verilənləri
+Üçbucaq düzbucaqlıdırsa, "YES" (dırnaqsız), əks halda "NO" (dırnaqsız) verməli.
+
+Nümunə
+Giriş verilənləri #1 content_copy        Çıxış verilənləri #1 content_copy
+3 5 4                                    YES
+
+
+Giriş verilənləri #2 content_copy        Çıxış verilənləri #2 content_copy
+3 5 5                                    NO
+*/
+#include <iostream>
+#include <cmath>
+
+using std::endl;
+using std::cout;
+using std::cin;
+
+int main()
+{
+    int a, b, c;
+    cin >> a >> b >> c;
+
+    if (pow(a, 2) + pow(b, 2) == pow(c, 2))
+    {
+        cout << "YES" << endl;
+    }
+
+    else if ( pow(b, 2) + pow(c, 2) == pow(a, 2))
+    {
+        cout << "YES" << endl;
+    }
+
+    else if ( pow(a, 2) + pow(c, 2) == pow(b, 2))
+    {
+        cout << "YES" << endl;
+    }
+
+    else
+    {
+        cout << "NO" << endl;
+    }
+
+    return 0;
+}
 
 
 
