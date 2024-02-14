@@ -59,7 +59,7 @@ int main()
 
 
 //-------------------------------------------------------------//
-
+/*
 Üçrəqəmli natural ədəd verilmişdir. Onun rəqəmlərinin cəmini və hasilini hesablayın.
 
 Giriş verilənləri
@@ -73,7 +73,7 @@ Giriş verilənləri #1 content_copy
 234
 Çıxış verilənləri #1 content_copy
 9 24
-
+*/
 #include <iostream>
 
 using namespace std;
