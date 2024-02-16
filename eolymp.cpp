@@ -515,5 +515,54 @@ int main()
     return 0;
 }
 
+//---------------------------------------------------
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    
+    long long n, factorial = 1;
+    std::cin >> n;
+    for (int i = 2; i <= n; i++)
+    {
+        factorial *= i;
+    }
+
+    std::cout << factorial << std::endl;
+    return 0;
+}
+
+
+#include <iostream>
+using namespace std;
+
+class Program
+{
+public:
+    long long n{};
+    long long factorial = 1;
+
+
+    void Fun_1()
+    {
+        cin >> n;
+        for (int i = 2; i <= n; i++)
+        {
+            factorial *= i;
+        }
+        cout << factorial << endl;
+    }
+};
+
+int main()
+{
+    Program program;
+    program.Fun_1();
+}
+
+
+
 
 
