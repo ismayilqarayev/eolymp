@@ -1,6 +1,7 @@
 #include <iostream>
 
-int main() {
+int main()
+{
     // Assuming 'grade' is the variable representing the student's grade
     int grade;
 
@@ -8,60 +9,63 @@ int main() {
     std::cin >> grade;
 
     // Determine the level based on the grade
-    if (grade >= 1 && grade <= 3) {
+    if (grade >= 1 && grade <= 3)
+    {
         std::cout << "Initial\n";
     }
-    else if (grade >= 4 && grade <= 6) {
+    else if (grade >= 4 && grade <= 6)
+    {
         std::cout << "Average\n";
     }
-    else if (grade >= 7 && grade <= 9) {
+    else if (grade >= 7 && grade <= 9)
+    {
         std::cout << "Sufficient\n";
     }
-    else if (grade >= 10 && grade <= 12) {
+    else if (grade >= 10 && grade <= 12)
+    {
         std::cout << "High\n";
     }
-    else {
+    else
+    {
         std::cout << "Invalid grade\n";
     }
 
     return 0;
 }
 
-
 //////////////////////////////////////////////////////////////////////////////////
 
 #include <iostream>
-using std::cout;
 using std::cin;
+using std::cout;
 using std::endl;
 
 int main()
 {
-	int grade;
-	cin >> grade;
+    int grade;
+    cin >> grade;
 
-	if (grade >= 1 && grade <= 3)
-	{
-		cout << "Initial\n";
-	}
+    if (grade >= 1 && grade <= 3)
+    {
+        cout << "Initial\n";
+    }
 
-	else if (grade >= 4 && grade <= 6)
-	{
-		cout << "Average\n";
-	}
+    else if (grade >= 4 && grade <= 6)
+    {
+        cout << "Average\n";
+    }
 
-	else if (grade >= 7 && grade <= 9)
-	{
-		cout << "Sufficient\n";
-	}
+    else if (grade >= 7 && grade <= 9)
+    {
+        cout << "Sufficient\n";
+    }
 
-	else if (grade >= 10 && grade <= 12)
-	{
-		cout << "High\n";
-	}
-	return 0;
+    else if (grade >= 10 && grade <= 12)
+    {
+        cout << "High\n";
+    }
+    return 0;
 }
-
 
 /////////////////////////////////////////////////////////////////////////////////
 /*
@@ -80,114 +84,125 @@ using namespace std;
 
 int main()
 {
-    int num; 
+    int num;
     cin >> num;
 
-    if (num >= 100 && num <= 999) 
+    if (num >= 100 && num <= 999)
     {
-        int first = num / 100; 
-        int last = num % 10; 
+        int first = num / 100;
+        int last = num % 10;
 
-        if (first > last) 
+        if (first > last)
         {
-            cout << first << endl; 
+            cout << first << endl;
         }
 
-        else if (first < last) 
+        else if (first < last)
         {
-            cout << last << endl; 
+            cout << last << endl;
         }
 
-        else 
+        else
         {
-            cout << "The first and the last digits are equal." << endl; 
+            cout << "The first and the last digits are equal." << endl;
         }
     }
-    else 
+    else
     {
-        cout << "Invalid number." << endl; 
+        cout << "Invalid number." << endl;
     }
-    return 0; 
+    return 0;
 }
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
-Tərəflərinin uzunluğu verilmiş üçbucağın növünü müəyyənləşdirməli (bərabərtərəfli, bərabəryanlı, müxtəliftərəfli).
+Tərəflərinin uzunluğu verilmiş üçbucağın növünü müəyyənləşdirməli
+(bərabərtərəfli, bərabəryanlı, müxtəliftərəfli).
 
 Giriş verilənləri
-Tək sətirdə üçbucağın tərəflərinin uzunluğu – 3 tam ədəd verilir. Tərəflərin uzunluğu 100-dən böyük deyil.
+Tək sətirdə üçbucağın tərəflərinin uzunluğu – 3 tam ədəd verilir.
+Tərəflərin uzunluğu 100-dən böyük deyil.
 
 Çıxış verilənləri
-Tək sətirdə üçbucaq bərabərtərəflidirsə - 1, bərabəryanlıdırsa - 2, müxtəliftərəflidirsə - 3 verməli.
+Tək sətirdə üçbucaq bərabərtərəflidirsə - 1, bərabəryanlıdırsa - 2,
+ müxtəliftərəflidirsə - 3 verməli.
 
 Nümunə
 */
 
 #include <iostream>
 
-int main() {
+int main()
+{
     int a, b, c;
     std::cin >> a >> b >> c;
 
-    if (a <= 100 && b <= 100 && c <= 100) {
-        if (a == b && b == c) {
+    if (a <= 100 && b <= 100 && c <= 100)
+    {
+        if (a == b && b == c)
+        {
             std::cout << "1";
         }
-        else if (a == b && b != c) {
+        else if (a == b && b != c)
+        {
             std::cout << "2";
         }
-        else if (a == c && c != b) {
+        else if (a == c && c != b)
+        {
             std::cout << "2";
         }
-        else if (c == b && b != a) {
+        else if (c == b && b != a)
+        {
             std::cout << "2";
         }
-        else {
+        else
+        {
             std::cout << "3";
         }
     }
-    else {
+    else
+    {
         std::cout << "Input values must be less than or equal to 100";
     }
 
     return 0;
 }
 
-//menim kodum
+// menim kodum
 #include <iostream>
 using namespace std;
 
 int main()
 {
-	int a, b, c;
-	cin >> a >>  b >> c;
+    int a, b, c;
+    cin >> a >> b >> c;
 
-	if (a <= 100 && b <= 100 && c <= 100)
-	{
-		if (a == b && b == c)
-		{
-			cout << "1";
-		}
+    if (a <= 100 && b <= 100 && c <= 100)
+    {
+        if (a == b && b == c)
+        {
+            cout << "1";
+        }
 
-		else if (a == b && b != c)
-		{
-			cout << "2";
-		}
+        else if (a == b && b != c)
+        {
+            cout << "2";
+        }
 
-		else if (a == c && c != b)
-		{
-			cout << "2";
-		}
+        else if (a == c && c != b)
+        {
+            cout << "2";
+        }
 
-		else if (c == b && b != a)
-		{
-			cout << "2";
-		}
-		else
-		{
-			cout << "3";
-		}
-	}
-	return 0;
+        else if (c == b && b != a)
+        {
+            cout << "2";
+        }
+        else
+        {
+            cout << "3";
+        }
+    }
+    return 0;
 }
 //////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -204,22 +219,22 @@ using namespace std;
 
 int main()
 {
-    int num; 
+    int num;
     cin >> num;
 
-    if (num >= 100 && num <= 999) 
+    if (num >= 100 && num <= 999)
     {
-        int first = num / 100; 
-        int last = num % 10; 
+        int first = num / 100;
+        int last = num % 10;
 
-        if (first > last) 
+        if (first > last)
         {
-            cout << first << endl; 
+            cout << first << endl;
         }
 
-        else if (first < last) 
+        else if (first < last)
         {
-            cout << last << endl; 
+            cout << last << endl;
         }
     }
 }
@@ -261,23 +276,22 @@ int main()
 
 #include <iostream>
 
-using std::cout;
 using std::cin;
+using std::cout;
 using std::endl;
-
 
 int main()
 {
-	int number;
-	cin >> number;
+    int number;
+    cin >> number;
 
-	int number_1 = (number / 100);
-	int number_2 = (number % 100) / 10;
-	int number_3 = (number % 10);
+    int number_1 = (number / 100);
+    int number_2 = (number % 100) / 10;
+    int number_3 = (number % 10);
 
-	int hasil = number_1 * number_2 * number_3;
-	cout << hasil;
-	return 0;
+    int hasil = number_1 * number_2 * number_3;
+    cout << hasil;
+    return 0;
 }
 
 //-----------------------------------------------------------------------------------
@@ -285,7 +299,8 @@ int main()
 #include <iostream>
 #include <cstring>
 
-int main() {
+int main()
+{
     char str[250];
     int ans = 0;
 
@@ -294,9 +309,12 @@ int main() {
 
     int length = strlen(str);
 
-    for (int i = 0; i < length; i++) {
-        if (str[i] == ' ') {
-            while (str[i + 1] == ' ' && i + 1 < length) {
+    for (int i = 0; i < length; i++)
+    {
+        if (str[i] == ' ')
+        {
+            while (str[i + 1] == ' ' && i + 1 < length)
+            {
                 i++;
             }
             ans++;
@@ -312,7 +330,7 @@ int main() {
 Verilmiş mətn fraqmentində sözlərin sayını müəyyənləşdirin.
 
 Giriş verilənləri
-Yeganə sətirdə ingilis dilində simvollarının sayı 
+Yeganə sətirdə ingilis dilində simvollarının sayı
 250
 250-ni aşmayan mətn fraqmenti verilir. Zəmanət verilir ki, mətndə tire, defis, rəqəm və ədəd yoxdur.
 
@@ -333,7 +351,8 @@ Hello world! Hello,    country!
 #include <iostream>
 #include <cstring>
 
-int main() {
+int main()
+{
     char str[250];
     int ans = 0;
 
@@ -383,13 +402,13 @@ Giriş verilənləri #1 content_copy
 
 using namespace std;
 
-int main() 
+int main()
 {
     long long n, m;
     cin >> n >> m;
 
-    long long a = 1 << n;  // 2 üstü n
-    long long b = 1 << m;  // 2 üstü m
+    long long a = 1 << n; // 2 üstü n
+    long long b = 1 << m; // 2 üstü m
 
     cout << a + b;
 
@@ -402,69 +421,28 @@ int main()
 
 using namespace std;
 
-int main() 
+int main()
 {
     long long n, m;
     cin >> n >> m;
 
-    long long a = pow(2, n);  // Calculate 2^n using the pow function
-    long long b = pow(2, m);  // Calculate 2^m using the pow function
+    long long a = pow(2, n); // Calculate 2^n using the pow function
+    long long b = pow(2, m); // Calculate 2^m using the pow function
 
-    cout << a + b;  // Print the sum of 2^n and 2^m
+    cout << a + b; // Print the sum of 2^n and 2^m
 
     return 0;
 }
-
-
 
 //-------------------------------------------------------------//
 /*
-Üçrəqəmli natural ədəd verilmişdir. Onun rəqəmlərinin cəmini və hasilini hesablayın.
-
-Giriş verilənləri
-Yeganə üçrəqəmli natural n (100 ≤ n ≤ 999) ədədi.
-
-Çıxış verilənləri
-Tək sətirdə n ədədinin rəqəmlərinin cəmini və hasilini çap edin.
-
-Nümunə
-Giriş verilənləri #1 content_copy
-234
-Çıxış verilənləri #1 content_copy
-9 24
-*/
-#include <iostream>
-
-using namespace std;
-
-int main() {
-    // Üçrəqəmli natural ədədi qəbul et
-    int n;
-    cin >> n;
-
-    // Rəqəmlərin cəmini və hasilini hesabla
-    int a = n / 100;          // Yüzlik rəqəmi
-    int b = (n / 10) % 10;     // Onluq rəqəmi
-    int c = n % 10;            // Birlik rəqəmi
-
-    int cem = a + b + c;
-    int hasil = a * b * c;
-
-    // Nəticəni çap et
-    cout << cem << ' ' << hasil;
-
-    return 0;
-}
-
-//---------------------------------------------------
-/*
-uçbucağın tərəflərinin uzunluğu verilir. 
+uçbucağın tərəflərinin uzunluğu verilir.
 Bu üçbucağın düzbucaqlı olub-olmadığını müəyyənləşdirməli.
 
 Giriş verilənləri
-Yeganə sətirdə 
+Yeganə sətirdə
 3
-3 natural ədəd — üçbucağın tərəflərinin uzunluğu verilir. Tərəflərin uzunluğu 
+3 natural ədəd — üçbucağın tərəflərinin uzunluğu verilir. Tərəflərin uzunluğu
 1000
 −
 1000−i aşmır.
@@ -483,9 +461,9 @@ Giriş verilənləri #2 content_copy        Çıxış verilənləri #2 content_c
 #include <iostream>
 #include <cmath>
 
-using std::endl;
-using std::cout;
 using std::cin;
+using std::cout;
+using std::endl;
 
 int main()
 {
@@ -497,12 +475,12 @@ int main()
         cout << "YES" << endl;
     }
 
-    else if ( pow(b, 2) + pow(c, 2) == pow(a, 2))
+    else if (pow(b, 2) + pow(c, 2) == pow(a, 2))
     {
         cout << "YES" << endl;
     }
 
-    else if ( pow(a, 2) + pow(c, 2) == pow(b, 2))
+    else if (pow(a, 2) + pow(c, 2) == pow(b, 2))
     {
         cout << "YES" << endl;
     }
@@ -510,109 +488,6 @@ int main()
     else
     {
         cout << "NO" << endl;
-    }
-
-    return 0;
-}
-
-//---------------------------------------------------
-//faktroial meselesi
-#include <iostream>
-using namespace std;
-
-int main()
-{
-    
-    long long n, factorial = 1;
-    std::cin >> n;
-    for (int i = 2; i <= n; i++)
-    {
-        factorial *= i;
-    }
-
-    std::cout << factorial << std::endl;
-    return 0;
-}
-
-
-#include <iostream>
-using namespace std;
-
-class Program
-{
-public:
-    long long n{};
-    long long factorial = 1;
-
-
-    void Fun_1()
-    {
-        cin >> n;
-        for (int i = 2; i <= n; i++)
-        {
-            factorial *= i;
-        }
-        cout << factorial << endl;
-    }
-};
-
-int main()
-{
-    Program program;
-    program.Fun_1();
-}
-
-//==============================================================//
-
-
-
-/*
-Parçaların uzunluğu olan 
-a,b,c,d ədədləri verilmişdir. Bu parçalardan paraleloqram 
-düzəltmək mümkün olub-olmadığını müəyyənləşdirin.
-
-Giriş verilənləri
-Yeganə sətirdə aralarında boşluq işarəsi olmaqla 4
-4 ədəd a,b,c,d verilir.
-
-Çıxış verilənləri
-Çıxışa yeganə sətirdə paraleloqram düzəltmək mümkündürsə "YES",
- əks halda isə "NO" (dırnaqsız) sözü verilir.
-
-Nümunə
-Giriş verilənləri #1 content_copy
-2 4 2 4
-Çıxış verilənləri #1 content_copy
-YES
-*/
-
-#include <iostream>
-
-int main()
-{
-    // Giriş verilənlərini almaq
-    double a, b, c, d;
-    std::cin >> a >> b >> c >> d;
-
-    // Paraleloqramın düzəldilə bilinməsi üçün şərtləri yoxlamaq
-    if (a == c and b == d)
-    {
-        std::cout << "YES" << std::endl;
-    }
-
-    else if (a == b and c == d)
-    {
-        std::cout << "YES" << std::endl;
-    }
-
-    else if (a == d and b == c)
-    {
-        std::cout << "YES" << std::endl;
-    }
-
-    else
-    {
-        std::cout << "NO" << std::endl;
     }
 
     return 0;
