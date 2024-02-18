@@ -562,7 +562,58 @@ int main()
     program.Fun_1();
 }
 
+//==============================================================//
 
 
 
+/*
+Parçaların uzunluğu olan 
+a,b,c,d ədədləri verilmişdir. Bu parçalardan paraleloqram 
+düzəltmək mümkün olub-olmadığını müəyyənləşdirin.
 
+Giriş verilənləri
+Yeganə sətirdə aralarında boşluq işarəsi olmaqla 4
+4 ədəd a,b,c,d verilir.
+
+Çıxış verilənləri
+Çıxışa yeganə sətirdə paraleloqram düzəltmək mümkündürsə "YES",
+ əks halda isə "NO" (dırnaqsız) sözü verilir.
+
+Nümunə
+Giriş verilənləri #1 content_copy
+2 4 2 4
+Çıxış verilənləri #1 content_copy
+YES
+*/
+
+#include <iostream>
+
+int main()
+{
+    // Giriş verilənlərini almaq
+    double a, b, c, d;
+    std::cin >> a >> b >> c >> d;
+
+    // Paraleloqramın düzəldilə bilinməsi üçün şərtləri yoxlamaq
+    if (a == c and b == d)
+    {
+        std::cout << "YES" << std::endl;
+    }
+
+    else if (a == b and c == d)
+    {
+        std::cout << "YES" << std::endl;
+    }
+
+    else if (a == d and b == c)
+    {
+        std::cout << "YES" << std::endl;
+    }
+
+    else
+    {
+        std::cout << "NO" << std::endl;
+    }
+
+    return 0;
+}
