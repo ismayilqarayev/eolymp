@@ -516,7 +516,7 @@ int main()
 }
 
 //---------------------------------------------------
-
+//faktroial meselesi
 #include <iostream>
 using namespace std;
 
