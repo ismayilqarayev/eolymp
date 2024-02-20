@@ -816,3 +816,38 @@ int main()
 
     return 0;
 }
+
+//-------------------------------------------------------------------------
+
+/*n tam ədədini əks ardıcıllıqda yazın.
+
+Giriş verilənləri
+Tam mənfi olmayan 64 mərtəbəli ədəd.
+
+Çıxış verilənləri
+Ədədin əks ardıcıllıqda yazılışı.
+
+Nümunə
+Giriş verilənləri #1 content_copy
+1234
+Çıxış verilənləri #1 content_copy
+4321
+Giriş verilənləri #2 content_copy
+100
+Çıxış verilənləri #2 content_copy
+001*/
+
+#include <bits/stdc++.h>
+
+int main() {
+    std::string s;
+    std::cin >> s;
+
+    for (int i = 0, j = s.length() - 1; i < j; ++i, --j) {
+        std::swap(s[i], s[j]);
+    }
+
+    std::cout << s << std::endl;
+
+    return 0;
+}
