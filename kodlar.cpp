@@ -538,3 +538,14 @@ int main()
     App app{};
     App::Fun_1(app.appNumber_1());
 }
+
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    const int n = 4;
+    int numbers[n];
+}
+
