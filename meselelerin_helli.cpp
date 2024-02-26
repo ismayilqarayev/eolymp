@@ -861,3 +861,37 @@ int main()
     reverse(number.begin(), number.end());
     cout << number;
 }
+
+//---------------------------------------------------//
+/*
+Orta ədəd
+Zaman məhdudiyyəti 1 saniyə
+Yaddaşı istafadə məhdudiyyəti 128 MiB
+Üç müxtəlif 
+a,b,c ədədləri verilmişdir. Onlardan qiymətcə orta olanı tapın.
+Giriş verilənləri
+a,b,c ədədləri mütləq qiymətcə 
+1000
+1000-i aşmayan tam ədədlərdir.
+Çıxış verilənləri
+Məsələnin cavabı olan yeganə ədəd.
+Nümunə
+Giriş verilənləri #1 content_copy
+11 3 7
+Çıxış verilənləri #1 content_copy
+7
+*/
+
+#include <iostream>
+#include <algorithm>
+
+int main() {
+    int m[3];
+
+  
+    std::cin >> m[0] >> m[1] >> m[2];
+    std::sort(m, m + 3);
+    std::cout << m[1] << std::endl;
+
+    return 0;
+}
