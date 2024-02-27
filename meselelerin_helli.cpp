@@ -895,3 +895,58 @@ int main() {
 
     return 0;
 }
+
+/*Kvadrat*/
+/*Dörd natural 
+a,b,c,d ədədləri verilmişdir. Tərəflərinin uzunluğu 
+a,b,c,d olan kvadrat mövcuddursa, verilmiş ədədlərdən hər hansı birinin kvadratını, əks halda "No" çap edin.
+Giriş verilənləri
+1
+0
+9
+10 
+9
+ -u aşmayan dörd natural 
+
+a,b,c,d ədədləri.
+Çıxış verilənləri
+Kvadrat mövcuddursa, giriş verilənlərindən hər hansı birinin kvadratını çap edin. Əks halda "No" çap edin.
+Nümunə
+Giriş verilənləri #1 content_copy
+7 7 7 7
+
+Çıxış verilənləri #1 content_copy
+49
+
+Giriş verilənləri #2 content_copy
+9 6 9 6
+
+Çıxış verilənləri #2 content_copy
+No*/
+
+#include <iostream>
+
+int main() {
+    long long a, b, c, d, res;
+
+    std::cin >> a >> b >> c >> d;
+
+    res = a * a;
+
+    if (a == b && b == c && c == d && a == c && a == d && b == d)
+    {
+        std::cout << res;
+    }
+
+    else
+    {
+        std::cout << "No";
+    }
+       
+    return 0;
+}
+
+
+
+
+
