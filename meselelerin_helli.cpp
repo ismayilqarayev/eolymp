@@ -1198,3 +1198,108 @@ int main()
 
     return 0;
 }
+
+
+
+//------------------------------------------------------------------
+
+
+/*Su və buz
+
+Zaman məhdudiyyəti 1 saniyə
+
+Yaddaşı istafadə məhdudiyyəti 128 MiB
+Vedrəni su ilə doldurub küçəyə qoydular. Küçədə havanın temperaturu t dərəcədir. Əgər t müsbətdirsə - "Water", əks halda - "Ice" çap edin.
+
+Giriş verilənləri
+Yeganə t (-10^9 ≤ t ≤ -10^9) tam ədədi.
+
+Çıxış verilənləri
+Əgər t müsbətdirsə - "Water", t sıfır və ya mənfidirsə - "Ice" çap etməli.
+
+Nümunə
+Giriş verilənləri #1 content_copy
+3
+Çıxış verilənləri #1 content_copy
+Water
+Giriş verilənləri #2 content_copy
+-6
+Çıxış verilənləri #2 content_copy
+Ice*/
+
+#include<iostream>
+using namespace std;
+int main()
+{
+    int number;
+    cin >> number;
+
+    if (number > 0)
+    {
+        cout << "Water";
+    }
+
+    else
+    {
+        cout << "Ice";
+    }
+
+    return 0;
+}
+
+/*Dərs nailiyyətlərinin səviyyəsi
+
+Zaman məhdudiyyəti 1 saniyə
+
+Yaddaşı istafadə məhdudiyyəti 128 MiB
+Şagirdin dərs nailiyyətlərinin səviyyəsini 
+(ilkin, orta, kafi, yüksək) verilmiş qiymətlərə (1 1-dən 12 12-dək) 
+uyğun olaraq müəyyənləşdirin.
+
+Giriş verilənləri
+Bir ədəd — şagirdin balı.
+
+Çıxış verilənləri
+İlkin səviyyə üçün "Initial" (1 1-dən 3 3-ə qədər), 
+orta üçün "Average" (4 4-dən 6 6-ya qədər), kafi üçün "Sufficient" 
+(7 7-dən 9 9-a qədər) və yüksək səviyyə üçün "High" (10 10-dan 12 12-yə qədər) 
+sözlərini çıxışa verin.
+
+Nümunə
+Giriş verilənləri #1 content_copy
+12
+Çıxış verilənləri #1 content_copy
+High*/
+
+
+#include <iostream>
+using std::cout;
+using std::cin;
+using std::endl;
+
+int main()
+{
+	int grade;
+	cin >> grade;
+
+	if (grade >= 1 && grade <= 3)
+	{
+		cout << "Initial\n";
+	}
+
+	else if (grade >= 4 && grade <= 6)
+	{
+		cout << "Average\n";
+	}
+
+	else if (grade >= 7 && grade <= 9)
+	{
+		cout << "Sufficient\n";
+	}
+
+	else if (grade >= 10 && grade <= 12)
+	{
+		cout << "High\n";
+	}
+	return 0;
+}
