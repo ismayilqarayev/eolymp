@@ -1136,4 +1136,65 @@ int main()
 
 
 
+/*Düzbucaqlı üçbucaqdırmı?
+
+Zaman məhdudiyyəti 1 saniyə
+
+Yaddaşı istafadə məhdudiyyəti 128 MiB
+Üçbucağın tərəflərinin uzunluğu verilir. Bu üçbucağın düzbucaqlı olub-olmadığını müəyyənləşdirməli.
 
+Giriş verilənləri
+Yeganə sətirdə 
+3
+3 natural ədəd — üçbucağın tərəflərinin uzunluğu verilir. Tərəflərin uzunluğu 
+1000
+−
+1000−i aşmır.
+
+Çıxış verilənləri
+Üçbucaq düzbucaqlıdırsa, "YES" (dırnaqsız), əks halda "NO" (dırnaqsız) verməli.
+
+Nümunə
+Giriş verilənləri #1 content_copy
+3 5 4
+Çıxış verilənləri #1 content_copy
+YES
+Giriş verilənləri #2 content_copy
+3 5 5
+Çıxış verilənləri #2 content_copy
+NO*/
+
+#include <iostream>
+#include <cmath>
+
+using std::endl;
+using std::cout;
+using std::cin;
+
+int main()
+{
+    int a, b, c;
+    cin >> a >> b >> c;
+
+    if (pow(a, 2) + pow(b, 2) == pow(c, 2))
+    {
+        cout << "YES" << endl;
+    }
+
+    else if ( pow(b, 2) + pow(c, 2) == pow(a, 2))
+    {
+        cout << "YES" << endl;
+    }
+
+    else if ( pow(a, 2) + pow(c, 2) == pow(b, 2))
+    {
+        cout << "YES" << endl;
+    }
+
+    else
+    {
+        cout << "NO" << endl;
+    }
+
+    return 0;
+}
