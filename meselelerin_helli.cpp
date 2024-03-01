@@ -1025,4 +1025,115 @@ int main()
     cout<<k%n;
 }
 
+//------------------------------------------------------------------
+
+/*Almaları bölüşdürmə - 1
+
+Zaman məhdudiyyəti 1 saniyə
+
+Yaddaşı istafadə məhdudiyyəti 128 MiB
+
+�
+n məktəbli 
+�
+k almanı bərabər bölüşdürür, bölünməyən isə zənbildə qalır. Hər bir məktəbliyə neçə alma çatacaq?
+
+Giriş verilənləri
+İki tam 
+�
+n və 
+�
+k ədədləri verilir. Bütün giriş verilənləri 
+1500
+1500-ü aşmır — məktəbdə az hallarda çox şagird olur, çox alma yemək də zərərlidir...
+
+Çıxış verilənləri
+Yeganə ədədi — hər bir şagirdə çatacaq almaların sayını verin.
+
+Nümunə
+Giriş verilənləri #1 content_copy
+3
+14
+Çıxış verilənləri #1 content_copy
+4
+Giriş verilənləri #2 content_copy
+10
+100
+Çıxış verilənləri #2 content_copy
+10*/
+
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int n;
+    int k;
+    cin>>n>>k;
+    cout<<k/n;
+}
+
+//----------------------------------------------------------------
+
+
+/*12345
+
+Zaman məhdudiyyəti 1 saniyə
+
+Yaddaşı istafadə məhdudiyyəti 128 MiB
+1
+,
+2
+,
+3
+,
+4
+,
+5
+1,2,3,4,5 rəqəmlərinin hər birini yeni sətirdə verin.
+
+Giriş verilənləri
+Giriş verilənləri yoxdur.
+
+Çıxış verilənləri
+1
+,
+2
+,
+3
+,
+4
+,
+5
+1,2,3,4,5 rəqəmlərinin hər birini nümunədə verildiyi kimi yeni sətirdə verin.
+
+Nümunə
+Giriş verilənləri #1 content_copy
+Çıxış verilənləri #1 content_copy
+1
+2
+3
+4
+5
+*/
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    cout<<1<<endl;
+    cout<<2<<endl;
+    cout<<3<<endl;
+    cout<<4<<endl;
+    cout<<5<<endl;
+}
+
+//----------------------------------------------------------
+
+
+
 
