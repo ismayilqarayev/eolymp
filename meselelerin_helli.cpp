@@ -1401,3 +1401,61 @@ int main()
 
 	return 0;
 }
+
+
+//------------------------------------------------------------------
+
+/*Cüt və ya tək
+
+Zaman məhdudiyyəti 1 saniyə
+
+Yaddaşı istafadə məhdudiyyəti 128 MiB
+�
+n natural ədədi verilmişdir. Onun cüt və ya tək olmasını yoxlayın.
+
+Giriş verilənləri
+�
+ 
+(
+1
+≤
+�
+≤
+1
+0
+9
+)
+n (1≤n≤10 
+9
+ ) natural ədədi.
+
+Çıxış verilənləri
+�
+n cütdürsə "EVEN", təkdirsə "ODD" çap edin.
+
+Nümunə
+Giriş verilənləri #1 content_copy
+3
+Çıxış verilənləri #1 content_copy
+ODD
+Giriş verilənləri #2 content_copy
+100
+Çıxış verilənləri #2 content_copy
+EVEN*/
+
+#include <iostream>
+
+int main()
+{
+    int x;
+    std::cin >> x;  
+
+    x %= 2; 
+
+    if (x == 0)
+        std::cout << "EVEN";
+    else
+        std::cout << "ODD";
+
+    return 0;
+}
