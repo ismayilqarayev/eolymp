@@ -945,6 +945,8 @@ int main() {
        
     return 0;
 }
+//------------------------------------------------------------------------------
+//stepanin dostlari
 
 /*Stepan məktəblilərin beynəlxalq proqramlaşdırma olimpiadasından (IOI) qayitdı və suvenir kimi n müxtəlif rəngli daş gətirdi. Stepan xəsis oğlan deyil, buna görə də daşları dostları ilə bölüşmək qərarına gəldi. Hər bir dostuna bir ədəd daş verdi. Beləliklə, Stepanın özündə də bir ədəd daş qaldı. Onun dostlarının sayını təyin edin.
 
@@ -974,6 +976,53 @@ int main()
     cin>>n;
     cout<<n-1;
 }
+//------------------------------------------------------------------------------
 
+/*Almaları bölüşdürmə - 2
+
+Zaman məhdudiyyəti 1 saniyə
+
+Yaddaşı istafadə məhdudiyyəti 128 MiB
+
+�
+n məktəbli 
+�
+k almanı bərabər bölüşdürdülər, bölünməyən qalanlar sabətdə qalır. Səbətdə neçə alma qalacaq?
+
+Giriş verilənləri
+İki tam 
+�
+n və 
+�
+k ədədləri verilir. Bütün giriş verilənləri 
+1500
+1500-ü aşmır — məktəbdə az hallarda çox şagird olur və belə bir səbəti hardan tapmalı?
+
+Çıxış verilənləri
+Proqram yeganə ədədi — səbətdə qalan almaların sayını verməlidir.
+
+Nümunə
+Giriş verilənləri #1 content_copy
+3
+14
+Çıxış verilənləri #1 content_copy
+2
+Giriş verilənləri #2 content_copy
+10
+100
+Çıxış verilənləri #2 content_copy
+0*/
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int n;
+    int k;
+    cin>>n>>k;
+    cout<<k%n;
+}
 
 
