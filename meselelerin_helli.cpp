@@ -946,7 +946,34 @@ int main() {
     return 0;
 }
 
+/*Stepan məktəblilərin beynəlxalq proqramlaşdırma olimpiadasından (IOI) qayitdı və suvenir kimi n müxtəlif rəngli daş gətirdi. Stepan xəsis oğlan deyil, buna görə də daşları dostları ilə bölüşmək qərarına gəldi. Hər bir dostuna bir ədəd daş verdi. Beləliklə, Stepanın özündə də bir ədəd daş qaldı. Onun dostlarının sayını təyin edin.
 
+Giriş verilənləri
+Yeganə tam n (1 ≤ n ≤ 100) ədədi.
+
+Çıxış verilənləri
+Yeganə ədədi - Stepanın dostlarınn sayını verin.
+
+Nömunənin şərhi
+
+Stepan 2 daş gətirdi, biri özündə qaldı. Deməli ikinci daşı yekanə dostuna verdi.
+
+Nümunə
+Giriş verilənləri #1 content_copy
+2
+Çıxış verilənləri #1 content_copy
+1*/
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int n;
+    cin>>n;
+    cout<<n-1;
+}
 
 
 
