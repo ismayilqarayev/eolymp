@@ -1303,3 +1303,101 @@ int main()
 	}
 	return 0;
 }
+
+
+//--------------------------------------------------------------------
+
+
+/*İlin fəsilləri
+
+Zaman məhdudiyyəti 1 saniyə
+
+Yaddaşı istafadə məhdudiyyəti 128 MiB
+Mürəkkəb şərtdən istifadə edərək verilmiş ayın nömrəsinə görə ilin fəslini müəyyənləşdirin.
+
+Giriş verilənləri
+Yeganə ədəd — ayın nömrəsi.
+
+Çıxış verilənləri
+Çıxışa yaz ayları üçün "Spring", yay üçün "Summer", payız üçün "Autumn" və qış üçün "Winter" sözlərini verin.
+
+Nümunə
+Giriş verilənləri #1 content_copy
+5
+Çıxış verilənləri #1 content_copy
+Spring*/
+
+#include<iostream>
+
+int main() 
+{
+    int a;
+    std::cin >> a;
+
+    if (a == 12 || a == 1 || a == 2) 
+    {
+        std::cout << "Winter";
+    }
+
+    else if (a == 3 || a == 4 || a == 5) 
+    {
+        std::cout << "Spring";
+    }
+
+    else if (a == 6 || a == 7 || a == 8) 
+    {
+        std::cout << "Summer";
+    }
+
+    else if (a == 9 || a == 10 || a == 11) 
+    {
+        std::cout << "Autumn";
+    }
+
+    else 
+    {
+        std::cout << "Invalid month"; // Handle invalid input
+    }
+
+    return 0;
+}
+
+//--------------------------------------------------------------
+
+/*Rəqəmlərin cəmi
+
+Zaman məhdudiyyəti 1 saniyə
+
+Yaddaşı istafadə məhdudiyyəti 64 MiB
+Verilən üçrəqəmli natural ədədin rəqəmlərinin cəmini tapın.
+
+Giriş
+Üçrəqəmli natural ədəd.
+
+Çıxış
+Məsələnin cavabı.
+
+Nümunə
+Giriş verilənləri #1 content_copy
+512
+Çıxış verilənləri #1 content_copy
+8*/
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+	int n;
+	cin >> n;
+
+	int a = n / 100;
+	int b = n / 10 % 10;
+	int c = n % 10;
+
+	int k = a + b + c;
+	cout << k;
+
+	return 0;
+}
