@@ -1459,3 +1459,38 @@ int main()
 
     return 0;
 }
+
+//----------------------------------------------------------------------
+
+
+/*Kvadratların cəmi
+
+Zaman məhdudiyyəti 1 saniyə
+
+Yaddaşı istafadə məhdudiyyəti 128 MiB
+İki ədədin kvadratları cəmini hesablayın.
+
+Giriş verilənləri
+İki a və b ədədləri verilir. Ədədlər mütləq qiymətcə 10^9-u aşmır.
+
+Çıxış verilənləri
+Yeganə tam a^2 + b^2 ədədini verin.
+
+Nümunə
+Giriş verilənləri #1 content_copy
+2 3
+Çıxış verilənləri #1 content_copy
+13*/
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    long long a, b;
+    cin>>a>>b;
+    cout<<a*a+b*b;
+
+    return 0;
+}
