@@ -1576,3 +1576,44 @@ int main()
 	cout << cem << endl;
 	return 0;
 }
+
+/*Şərt operatoru - 1*/
+/*Çıxış verilənləri
+Verilmiş şərtə uyğun olaraq 
+�
+y-in qiymətini çap edin.
+
+Nümunə
+Giriş verilənləri #1 content_copy
+2
+Çıxış verilənləri #1 content_copy
+2
+Giriş verilənləri #2 content_copy
+10
+Çıxış verilənləri #2 content_copy
+17*/
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    long long x, y;
+
+    cin >> x;
+
+    if (x < 5)
+    {
+        y = (x * x) - 3 * x + 4;
+    }
+
+    else if (x >= 5)
+    {
+        y = x + 7;
+    }
+       
+    cout << y;
+
+    return 0;
+}
