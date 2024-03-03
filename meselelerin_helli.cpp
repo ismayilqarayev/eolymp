@@ -1684,3 +1684,37 @@ int main()
 
     return 0;
 }
+
+
+//---------------------------------------------------------------------------
+/*
+Bərabər bölənlər
+m natural ədədi 
+
+�
+n ədədinin o zaman bərabər böləni adlanır ki, 
+�
+n-nin 
+�
+m-ə bölünməsindən alınan tam və qalıq hissə bərabər olsun. Verilmiş 
+�
+n natural ədədinə görə onun bərabər bölənlərinin sayını tapın.*/
+
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main()
+{
+    int n,say=0;
+    cin>>n;
+    for(int i=1;i<=n;i++)
+    {
+        if((n/i)==(n%i))
+        {
+            say++;
+        }
+    }
+    cout<<say;
+
+}
