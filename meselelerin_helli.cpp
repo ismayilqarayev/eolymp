@@ -1617,3 +1617,70 @@ int main()
 
     return 0;
 }
+
+//----------------------------------------------------------------------
+
+/*Ədədə bölünmə
+
+Zaman məhdudiyyəti 1 saniyə
+
+Yaddaşı istafadə məhdudiyyəti 128 MiB
+�
+n natural ədədi verilmişdir. O həm 
+�
+a-ya, həm də 
+�
+b-yə bölünürmü?
+
+Giriş verilənləri
+1
+0
+9
+10 
+9
+ -u aşmayan 
+�
+,
+�
+,
+�
+n,a,b ədədləri.
+
+Çıxış verilənləri
+�
+n həm 
+�
+a-ya, həm də 
+�
+b-yə bölünürsə "YES", əks halda "NO" çap edin.
+
+Nümunə
+Giriş verilənləri #1 content_copy
+12 4 6
+Çıxış verilənləri #1 content_copy
+YES
+Giriş verilənləri #2 content_copy
+10 5 6
+Çıxış verilənləri #2 content_copy
+NO*/
+
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    long long n, a, b;
+
+    // Input: Read three long long integers from the user
+    cin >> n >> a >> b;
+
+    // Checking if both a and b are factors of n
+    if (n % a == 0 and n % b == 0)
+        cout << "YES";
+    else
+        cout << "NO";
+
+    return 0;
+}
