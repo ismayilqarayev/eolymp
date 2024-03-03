@@ -1540,3 +1540,39 @@ int main()
     return 0;
 }
 
+
+//------------------------------------------------------------------------
+
+/*Kənardakıların cəmi
+
+Zaman məhdudiyyəti 1 saniyə
+
+Yaddaşı istafadə məhdudiyyəti 122 MiB
+Dördrəqəmli natural ədədin kənardakı rəqəmlərinin cəmini hesablayın.
+
+Giriş verilənləri
+Bir natural dörrəqəmli ədəd.
+
+Çıxış verilənləri
+Ədədin kənardakı rəqəmlərinin cəmini çap edin.
+
+Nümunə
+Giriş verilənləri #1 content_copy
+1235
+Çıxış verilənləri #1 content_copy
+6*/
+
+#include<iostream>
+using namespace std;
+int main()
+{
+	int number;
+	cin >> number;
+
+	int number_1 = number / 1000;
+	int number_4 = number % 10;
+	int cem = number_1 + number_4;
+
+	cout << cem << endl;
+	return 0;
+}
