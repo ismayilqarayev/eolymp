@@ -1494,3 +1494,49 @@ int main()
 
     return 0;
 }
+
+//----------------------------------------------------------------------
+
+/*abc
+
+Zaman məhdudiyyəti 1 saniyə
+
+Yaddaşı istafadə məhdudiyyəti 128 MiB
+Birinci sətirdə bir dənə 
+а
+а hərfini verin. İkinci sətirdə iki dənə 
+�
+b hərflərini verin. Üçüncü sətirdə üç dənə 
+�
+c hərflərini verin.
+
+Giriş verilənləri
+Giriş verilənləri yoxdur.
+
+Çıxış verilənləri
+Nümunədə göstərildiyi kimi hərfləri 
+а
+,
+�
+а,b və 
+�
+c çap edin
+
+Nümunə
+Giriş verilənləri #1 content_copy
+Çıxış verilənləri #1 content_copy
+a
+bb
+ccc*/
+
+#include <iostream>
+using namespace std;
+int main()
+{
+    cout<<'a'<<endl;
+    cout<<'b'<<'b'<<endl;
+    cout<<'c'<<'c'<<'c'<<endl;
+
+    return 0;
+}
+
