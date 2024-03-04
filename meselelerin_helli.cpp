@@ -1718,3 +1718,79 @@ int main()
     cout<<say;
 
 }
+
+
+
+//-----------------------------------------------------------------------
+
+/*https://www.eolymp.com/az/problems/7491*/
+//Tam ədəd
+
+#include <iostream>
+
+class MyNumber {
+public:
+    virtual long getValue() = 0;
+    virtual MyInteger Add(long a) = 0;
+    virtual MyInteger Add(MyInteger a) = 0;
+    virtual MyInteger Minus(long a) = 0;
+    virtual MyInteger Minus(MyInteger a) = 0;
+    virtual MyInteger Multiply(long a) = 0;
+    virtual MyInteger Multiply(MyInteger a) = 0;
+    virtual MyInteger Divide(long a) = 0;
+    virtual MyInteger Divide(MyInteger a) = 0;
+};
+
+class MyInteger : public MyNumber {
+private:
+    long n;
+public:
+    MyInteger(long n) : n(n) {}
+
+    long getValue() override {
+        return n;
+    }
+
+    MyInteger Add(long a) override {
+        return MyInteger(n + a);
+    }
+
+    MyInteger Add(MyInteger a) override {
+        return MyInteger(n + a.getValue());
+    }
+
+    MyInteger Minus(long a) override {
+        return MyInteger(n - a);
+    }
+
+    MyInteger Minus(MyInteger a) override {
+        return MyInteger(n - a.getValue());
+    }
+
+    MyInteger Multiply(long a) override {
+        return MyInteger(n * a);
+    }
+
+    MyInteger Multiply(MyInteger a) override {
+        return MyInteger(n * a.getValue());
+    }
+
+    MyInteger Divide(long a) override {
+        return MyInteger(n / a);
+    }
+
+    MyInteger Divide(MyInteger a) override {
+        return MyInteger(n / a.getValue());
+    }
+};
+
+int main() {
+    long a, b, c;
+    std::cin >> a >> b >> c;
+
+    MyInteger result = MyInteger((a * 7 + b - 2) * (a - c + 5));
+
+    std::cout << result.getValue() << std::endl;
+
+    return 0;
+}
