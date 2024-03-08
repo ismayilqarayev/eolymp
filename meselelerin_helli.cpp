@@ -1794,3 +1794,38 @@ int main() {
 
     return 0;
 }
+
+//-----------------------------------------------------------------
+//orta  eded
+
+#include <iostream>
+
+int main() 
+{
+    // Giriş ədədlərini oxu
+    int a, b, c;
+    std::cin >> a >> b >> c;
+
+    // Qiymətcə ortasını tap
+    int ortaQiymet;
+    if ((a >= b && a <= c) || (a <= b && a >= c))
+    {
+        ortaQiymet = a;
+    } 
+
+    else if ((b >= a && b <= c) || (b <= a && b >= c)) 
+    {
+        ortaQiymet = b;
+    } 
+
+    else 
+    {
+        ortaQiymet = c;
+    }
+
+    // Nəticəni çap et
+    std::cout << ortaQiymet << std::endl;
+
+    return 0;
+}
+
