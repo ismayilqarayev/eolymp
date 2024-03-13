@@ -492,3 +492,48 @@ int main()
 
     return 0;
 }
+
+//------------------------------------------------------------------------
+
+/*Sadə funksiya
+
+Zaman məhdudiyyəti 1 saniyə
+
+Yaddaşı istafadə məhdudiyyəti 128 MiB
+
+f(x)=x+sin(x) funksiyasını reallaşdırın.
+
+Giriş verilənləri
+x həqiqi ədədi.
+
+Çıxış verilənləri
+f(x) funksiyasının qiymətini 
+4
+4 işarə dəqiqliyi ilə çap edin.
+
+Nümunə
+Giriş verilənləri #1 content_copy
+1.1234
+
+Çıxış verilənləri #1 content_copy
+2.0250
+
+Giriş verilənləri #2 content_copy
+-3.1415
+
+Çıxış verilənləri #2 content_copy
+-3.1416*/
+
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+int main(){
+    double x;
+    cin >> x;
+
+    double result = x + sin(x);
+    cout << result << endl;
+    return 0;
+}
