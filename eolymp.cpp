@@ -539,3 +539,115 @@ int main(){
 }
 
 
+//-------------------------------------------------------
+//-------------------------------------------------------
+//-------------------------------------------------------
+
+/*Müsbət ədədlərin ədədi ortası
+
+Zaman məhdudiyyəti 1 saniyə
+
+Yaddaşı istafadə məhdudiyyəti 128 MiB
+Həqiqi ədədlərdən ibarət ardıcıllıq verilmişdir. Ardıcıllıqdakı müsbət ədədlərin ədədi ortasını hesablayın.
+
+Giriş verilənləri
+Birinci sətirdə həqiqi ədədlərin n (0 < n ≤ 100) sayı verilir. Növbəti sətirdə qiyməti modulca 100-dən böyük olmayan n sayda ədəd verilir.
+
+Çıxış verilənləri
+Tək sətirdə onluq nöqtədən sonra 2 işarə dəqiqliyi ilə müsbət ədədlərin ədədi ortasını çap edin. Müsbət ədəd yoxdursa, "Not Found" çap edin.
+
+Nümunə
+Giriş verilənləri #1 content_copy
+3
+5.2 -2 4
+Çıxış verilənləri #1 content_copy
+4.60
+Giriş verilənləri #2 content_copy
+3
+-5.2 -2 -4
+Çıxış verilənləri #2 content_copy
+Not Found*/
+
+#include <iostream>
+#include <iomanip> // setprecision fonksiyonu için gerekli olan başlık
+
+int main()
+{
+    long long n;
+    double x;
+    double k = 0; // Pozitif sayıların toplam adedi
+    double s = 0; // Pozitif sayıların toplamı
+
+    // Kullanıcıdan n değerini al
+    std::cin >> n;
+
+    // n adet sayıyı oku ve pozitif olanları topla
+    for (int i = 0; i < n; i++)
+    {
+        std::cin >> x;
+
+        if (x > 0)
+        {
+            s += x; // Pozitif sayıları topla
+            k++; // Pozitif sayı adedini arttır
+        }
+    }
+
+    // Eğer en az bir pozitif sayı varsa, ortalama hesapla ve yazdır
+    if (s > 0)
+    {
+        double average = s / k; // Ortalama hesabı
+        std::cout << std::fixed << std::setprecision(2) << average << std::endl;
+    }
+
+    else
+    {
+        std::cout << "Not Found" << std::endl;
+    }
+
+    return 0;
+}
+
+
+
+#include <iostream>
+#include <iomanip> // setprecision fonksiyonu için gerekli olan başlık
+
+int main()
+{
+    int n;
+    double x;
+    double k = 0; // Pozitif sayıların toplam adedi
+    double s = 0; // Pozitif sayıların toplamı
+
+    // Kullanıcıdan n değerini al
+    std::cin >> n;
+
+    // n adet sayıyı oku ve pozitif olanları topla
+    for (int i = 0; i < n; i++)
+    {
+        std::cout << "Enter number " << i+1 << ": ";
+        std::cin >> x;
+
+        if (x > 0)
+        {
+            s += x; // Pozitif sayıları topla
+            k++; // Pozitif sayı adedini arttır
+        }
+    }
+
+    // Eğer en az bir pozitif sayı varsa, ortalama hesapla ve yazdır
+    if (s > 0)
+    {
+        double average = s / k; // Ortalama hesabı
+        std::cout << std::fixed << std::setprecision(2) << average << std::endl;
+    }
+
+    else
+    {
+        std::cout << "No positive numbers found" << std::endl;
+    }
+
+    return 0;
+}
+
