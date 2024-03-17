@@ -1,36 +1,26 @@
-#include <iostream>
+#include <bits/stdc++.h>
 
-int main() {
-    // Giriş ədədini daxil et
-    long long n;
-    std::cout << "Beşrəqəmli ədədi daxil edin: ";
-    std::cin >> n;
+int main()
+{
+   int numbers[4]{
+       1,2,3
+   };
 
-    // Giriş ədədini yeddiqatlı sayıları ilə işləmək üçün ayır
-    long long temp = n;
+   const int numbers_2[10]{
+       1,2,3,4,5,6,7,8,9,10
+   };
 
-    // Faktor, hər bir rəqəmi dəyişdirmək üçün 10-un mərtəbəsi kimi istifadə edilir
-    long long faktor = 1;
+   for (int i = 0; i < 4; ++i){
+       std::cout << numbers[i] << " ";
+   }
 
-    // Cüt rəqəmləri artırmaq üçün ədədi əldə et
-    while (temp > 0) {
-        // Hər bir rəqəmi əldə et
-        int reqem = temp % 10;
+   if (numbers[1] == 2){
+       std::cout << "sum = "<< numbers[2] + 10;
+   }
 
-        // Cüt rəqəmsə, onu artır
-        if (reqem % 2 == 0) {
-            n += faktor;
-        }
-
-        // Faktoru mərtəbəsinə sal
-        faktor *= 10;
-
-        // Sonrakı rəqəmi əldə etmək üçün ədədi 10-a böl
-        temp /= 10;
-    }
-
-    // Nəticəni çapa ver
-    std::cout << "Dəyişdirilmiş ədəd: " << n << std::endl;
+   for (int i = 0; i < 10; ++i){
+       std::cout << numbers_2[i] << " ";
+   }
 
     return 0;
 }
