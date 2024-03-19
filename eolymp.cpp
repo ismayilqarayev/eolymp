@@ -651,3 +651,49 @@ int main()
     return 0;
 }
 
+
+//-----------------------------------------------------
+
+/*Yüksək dəqiqlik
+
+Zaman məhdudiyyəti 1 saniyə
+
+Yaddaşı istafadə məhdudiyyəti 64 MiB
+m/n rasional kəsri verilmişdir. Onu vergüldən sonra k işarə dəqiqliyi ilə onluq kəsr şəklində yazın.
+
+Nümunə
+Giriş verilənləri #1 content_copy
+1 2 3
+Çıxış verilənləri #1 content_copy
+0.500*/
+
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+int main()
+{
+    int n;
+    int k;
+    double m;
+
+    cout << "m = ";
+    cin >> m;
+
+    cout << "n = ";
+    cin >> n;
+
+    cout << "k = ";
+    cin >> k;
+
+    double a = m / n;
+    cout << fixed << setprecision(k) << a << "\n";
+
+    return 0;
+}
+
+
+double a = static_cast<double>(m) / n; // verilenler tipini deyismek ucundur int = double
+
+
+
