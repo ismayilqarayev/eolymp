@@ -694,8 +694,92 @@ int main()
     return 0;
 }
 
+//--
+
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+int main() {
+    int  m, n, k;
+    cin >> m >> n >> k;
+
+    double a = static_cast<double>(m) / n;
+    cout << fixed <<  setprecision(k) << a << "\n";
+    return 0;
+}
+
+//--
+
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+int main() {
+    unsigned int a, b, k;
+    cin >> a >> b >> k;
+
+    cout << a / b << "."; // Tam kısmı yazdır
+
+    a = 10 * (a % b); // Kalanı a'ya atayarak ondalık kısmı hesapla
+
+    for (unsigned int i = 0; i < k; ++i) {
+        cout << a / b; // Yeni ondalık basamakları yazdır
+        a = 10 * (a % b); // Yeni kalanı hesapla
+    }
+
+    return 0;
+}
+//-------------------------------------------------------------------------
 
 
+/*Dördrəqəmli polindrom
+
+Zaman məhdudiyyəti 1 saniyə
+
+Yaddaşı istafadə məhdudiyyəti 128 MiB
+Dördrəqəmli natural ədəd verilmişdir. Onun palindrom olmasını təyin edin. Natural ədəd soldan sağa və sağdan sola eyni oxunarsa, palundromdur. Məsələn, 
+2332
+2332 ədədi palindromdur.
 
+Giriş verilənləri
+Dördrəqəmli natural 
+�
+n ədədi.
 
+Çıxış verilənləri
+�
+n ədədi palindromdursa "YES", əks halda "NO" çap edin.
+
+Nümunə
+Giriş verilənləri #1 content_copy
+2332
+Çıxış verilənləri #1 content_copy
+YES
+Giriş verilənləri #2 content_copy
+5446
+Çıxış verilənləri #2 content_copy
+NO*/
+
+#include <iostream>
+#include <string>
+
+using namespace std;
+int main()
+{
+    string eded;
+    cin >> eded;
+
+    for (char reqem : eded)
+    {
+        if ((reqem - '0') % 2 != 0)
+        {
+            cout << "NO" << std::endl;
+            return 0;
+        }
+    }
+
+    cout << "YES" << std::endl;
+    return 0;
+}
 
