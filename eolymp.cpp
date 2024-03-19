@@ -686,6 +686,8 @@ int main()
     cout << "k = ";
     cin >> k;
 
+    //double a = static_cast<double>(m) / n; verilenler tipini deyismek ucundur int = double
+
     double a = m / n;
     cout << fixed << setprecision(k) << a << "\n";
 
@@ -693,7 +695,7 @@ int main()
 }
 
 
-double a = static_cast<double>(m) / n; // verilenler tipini deyismek ucundur int = double
+
 
 
 
