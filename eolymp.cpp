@@ -783,3 +783,55 @@ int main()
     return 0;
 }
 
+//--------------------------------------------------------
+
+/*Dördrəqəmli polindrom
+
+Zaman məhdudiyyəti 1 saniyə
+
+Yaddaşı istafadə məhdudiyyəti 128 MiB
+Dördrəqəmli natural ədəd verilmişdir. Onun palindrom olmasını təyin edin. Natural ədəd soldan sağa və sağdan sola eyni oxunarsa, palundromdur. Məsələn, 
+2332
+2332 ədədi palindromdur.
+
+Giriş verilənləri
+Dördrəqəmli natural 
+�
+n ədədi.
+
+Çıxış verilənləri
+�
+n ədədi palindromdursa "YES", əks halda "NO" çap edin.
+
+Nümunə
+Giriş verilənləri #1 content_copy
+2332
+Çıxış verilənləri #1 content_copy
+YES
+Giriş verilənləri #2 content_copy
+5446
+Çıxış verilənləri #2 content_copy
+NO*/
+
+#include "iostream"
+#include "string"
+#include "algorithm"
+using namespace std;
+int main()
+{
+    string eded;
+    cin >> eded;
+    
+    string ters_eded = eded;
+    reverse(ters_eded.begin(), ters_eded.end());
+    
+    if (eded == ters_eded)
+    {
+        cout << "YES" << "\n";
+    }
+    
+    else
+    {
+        cout << "NO" << "\n";
+    }
+}
