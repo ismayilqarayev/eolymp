@@ -816,6 +816,7 @@ NO*/
 #include "iostream"
 #include "string"
 #include "algorithm"
+
 using namespace std;
 int main()
 {
@@ -835,3 +836,7 @@ int main()
         cout << "NO" << "\n";
     }
 }
+
+//----------------------------------------------------------------------
+
+
