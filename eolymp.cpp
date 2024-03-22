@@ -839,4 +839,51 @@ int main()
 
 //----------------------------------------------------------------------
 
+/*Равнобедренный треугольник
+
+Zaman məhdudiyyəti 1 saniyə
+
+Yaddaşı istafadə məhdudiyyəti 128 MiB
+Заданы три натуральных числа a, b и c. Определите, существует ли равнобедренный треугольник с длинами этих сторон.
 
+Giriş verilənləri
+Три натуральных числа a, b и c.
+
+Çıxış verilənləri
+Выведите сумму заданных чисел, если существует равнобедренный треугольник с длинами сторон a, b, c, и No в противном случае.
+
+Nümunə
+Giriş verilənləri #1 content_copy
+7 7 3
+Çıxış verilənləri #1 content_copy
+17
+Giriş verilənləri #2 content_copy
+4 6 9
+Çıxış verilənləri #2 content_copy
+No*/
+
+
+#include <iostream>
+
+int a, b, c;
+
+void fun_1()
+{
+    // Üçgen mümkündürse, kenar uzunluklarının toplamını yazdır, əks halda "No" yazdır
+    if ((a == b || b == c || a == c) and (a + b > c and a + c > b and b + c > a))
+    {
+        std::cout << a + b + c << std::endl;
+    }
+
+    else
+    {
+        std::cout << "No" << std::endl;
+    }
+}
+
+int main()
+{
+    // Giriş verilerini oku
+    std::cin >> a >> b >> c;
+    fun_1();
+}
