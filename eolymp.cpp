@@ -837,6 +837,53 @@ int main()
     }
 }
 
+//basa sal
+
+/*Üç nəfər arasında bölüşdürək!
+
+Zaman məhdudiyyəti 1 saniyə
+
+Yaddaşı istafadə məhdudiyyəti 128 MiB
+Vasilinin yanına onun iki dostu şad xəbərlə gəldilər: onlar lotereyada N manat udmuşdular. Belə ki, lotereya dükanda ümumi alış-veriş edilərkən verildiyi üçün, onun kimə mənsub olduğunu təyin etmək mümkün olmamışdır. Uduşu bərabər bölüşdürmək qərarına gəlindi. Vasiliy uduşu düzgün bölüşdürməyin mümkünlüyünü bilmək istərdi.
+
+Giriş verilənləri
+Yeganə sətirdə işarələrinin sayı 255-i keçməyən yekanə N natural ədədi verilir.
+
+Çıxış verilənləri
+Daxil edilmiş ədəd 3-ə tam bölünürsə "YES", əks halda "NO" verməli.
+
+Nümunə
+Giriş verilənləri #1 content_copy
+1234567890987654321
+Çıxış verilənləri #1 content_copy
+YES
+Giriş verilənləri #2 content_copy
+25
+Çıxış verilənləri #2 content_copy
+NO*/
+
+#include <iostream>
+
+int main() {
+    // Giriş veriləni oxu
+    long long N;
+    std::cin >> N;
+
+    // Əgər ədəd 3-ə tam bölünürsə, "YES", əks halda "NO" yazdır
+    if (N % 3 == 0) 
+    {
+        std::cout << "YES" << std::endl;
+    }
+ 
+    else 
+    {
+        std::cout << "NO" << std::endl;
+    }
+
+    return 0;
+}
+
+
 //----------------------------------------------------------------------
 
 /*Равнобедренный треугольник
@@ -887,3 +934,5 @@ int main()
     std::cin >> a >> b >> c;
     fun_1();
 }
+
+
