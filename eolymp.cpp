@@ -845,6 +845,23 @@ int main()
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ////////////////////////////////////////////
 //basa sal
 
@@ -881,16 +898,124 @@ int main() {
     // Əgər ədəd 3-ə tam bölünürsə, "YES", əks halda "NO" yazdır
     if (N % 3 == 0) 
     {
-        std::cout << "YES" << std::endl;
+        std::cout << "YES";
     }
  
     else 
     {
-        std::cout << "NO" << std::endl;
+        std::cout << "NO";
     }
 
     return 0;
 }
+
+
+//-----------------------------------------------------------------------
+
+
+/*Rəqəmlərə bölünmə
+
+Zaman məhdudiyyəti 1 saniyə
+
+Yaddaşı istafadə məhdudiyyəti 128 MiB
+Dördrəqəmli natural ədəd verilmişdir. Bu ədədin onun bütün rəqəmlərinə bölündüyünü təyin edin.
+
+Giriş verilənləri
+Dördrəqəmli natural ədəd.
+
+Çıxış verilənləri
+Ədəd onun bütün rəqəmlərinə bölünürsə "YES", əks halda "NO" çap edin.
+
+Nümunə
+Giriş verilənləri #1 content_copy
+2244
+Çıxış verilənləri #1 content_copy
+YES
+Giriş verilənləri #2 content_copy
+2344
+Çıxış verilənləri #2 content_copy
+NO*/
+
+#include <iostream>
+int main()
+{
+    long long x;
+    std::cin >> x;
+
+    long long a = x / 1000;
+    long long b = x / 100 % 10;
+    long long c = x / 10 % 10;
+    long long d = x % 10;
+
+    if ((a != 0 && x % a == 0) && 
+        (b != 0 && x % b == 0) && 
+        (c != 0 && x % c == 0) && 
+        (d != 0 && x % d == 0))
+    {
+        std::cout << "YES";
+    }
+
+    else
+    {
+        std::cout << "NO";
+    }
+
+    return 0;
+}
+
+
+//----------------------------------------------------------------------
+
+
+/*Четность числа
+
+Zaman məhdudiyyəti 1 saniyə
+
+Yaddaşı istafadə məhdudiyyəti 64 MiB
+Проверьте заданное целое число n на четность.
+
+Giriş verilənləri
+Одно целое число n.
+
+Çıxış verilənləri
+Выведите 1, если число n четное и 0 в противном случае.
+
+Nümunə
+Giriş verilənləri #1 content_copy
+7
+Çıxış verilənləri #1 content_copy
+0
+Giriş verilənləri #2 content_copy
+-2
+Çıxış verilənləri #2 content_copy
+1*/
+#include <iostream>
+
+int main() {
+    int n;
+    std::cin >> n;
+    if (n % 2 == 0)
+    {
+        std::cout << "1";
+    }
+
+    else
+    {
+        std::cout << "0";
+    }
+    
+    return 0;
+}
+
+
+#include <iostream>
+int main() {
+    int n;
+    std::cin >> n;
+    std::cout << (n % 2 == 0 ? 1 : 0);
+    return 0;
+}
+
 
 
 //----------------------------------------------------------------------
@@ -945,3 +1070,112 @@ int main()
 }
 
 
+//------------------------------------------------------------------------
+https://www.eolymp.com/az/submissions/submit?problem=8575
+//bankomat
+#include <iostream>
+
+int main() 
+{
+    int S;
+    std::cin >> S;
+
+    int bankomat[] = {500, 200, 100, 50, 20, 10, 5, 2, 1}; // Bankomatda olan deyerler
+    int use_bankomat = 0; // istifade olunun bankomatlar
+
+    for (int i = 0; i < 9; ++i) 
+    {
+        use_bankomat += S / bankomat[i]; // istifade olunan bankomat sayi hesapla
+        S %= bankomat[i]; // qaliqi yenile
+    }
+
+    std::cout << use_bankomat << std::endl;
+
+    return 0;
+}
+
+
+#include <iostream>
+using namespace std;
+
+int main() 
+{
+    long long n, a = 0;
+    cin >> n;
+
+    while (n != 0) 
+    {
+        if (n >= 500) 
+        {
+            n -= 500;
+        }
+        
+        else if (n >= 200) 
+        {
+            n -= 200;
+        }
+        
+        else if (n >= 100) 
+        {
+            n -= 100;
+        }
+        
+        else if (n >= 50) 
+        {
+            n -= 50;
+        }
+        
+        else if (n >= 20) 
+        {
+            n -= 20;
+        }
+        
+        else if (n >= 10) 
+        {
+            n -= 10;
+        }
+        
+        else if (n >= 5) 
+        {
+            n -= 5;
+        }
+        
+        else if (n >= 2) 
+        {
+            n -= 2;
+        } 
+        else 
+        {
+            n -= 1;
+        }
+        ++a;
+    }
+    cout << a;
+    return 0;
+}
+
+
+//--------------------------------------------------------------------------
+
+https://www.eolymp.com/az/problems/2163
+
+#include <iostream>
+
+int main() {
+    // Giriş veriləni oxu
+    long long N;
+    std::cin >> N;
+
+    // Əgər ədəd 3-ə tam bölünürsə, "YES", əks halda "NO" yazdır
+    if (N % 3 == 0) 
+    {
+        std::cout << "YES";
+    }
+ 
+    else 
+    {
+        std::cout << "NO";
+    }
+
+    return 0;
+}
