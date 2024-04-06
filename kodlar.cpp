@@ -549,3 +549,27 @@ int main()
     int numbers[n];
 }
 
+
+//------------------------------------------------------------------------------------------------
+
+
+
+#include <bits/stdc++.h>
+
+using namespace std;
+class App
+{
+public:
+    static int run([[maybe_unused]] int number_1 = {}, [[maybe_unused]] int number_2 = 2, [[maybe_unused]] int number_3 = 30, [[maybe_unused]] int number_4 = 40)
+    {
+        if (number_1 == number_2) { long long blok = number_1 + number_2; cout << blok << "\n"; }
+        while (number_4 > number_3) { long long fle = number_3 + number_4; cout << fle << "\n"; }
+    }
+};
+
+
+int main()
+{
+    App::run(0, 0, 0);
+    //App::get();
+}
