@@ -1339,3 +1339,16 @@ int main()
 
 //--------------------------------------------------------------
 
+//https://www.eolymp.com/az/problems/5314
+
+#include <iostream>
+#include <cmath>
+
+int main()
+{
+    long long a, b;
+    std::cin >> a >> b;
+    long long c = pow(2, a);
+    long long d = pow(2, b);
+    std::cout << c + d;
+}
