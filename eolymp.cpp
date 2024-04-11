@@ -1180,5 +1180,32 @@ int main() {
     return 0;
 }
 
+<<<<<<< HEAD
 //----------------------------------------------------------------
+=======
+//---------------------------------------------------
+
+//https://www.eolymp.com/az/problems/8607
+//Rəqəmlərin kvadratları cəmi
+
+#include <iostream>
+
+int main() {
+    int n;
+    std::cin >> n;
+
+    // Rəqəmlərin kvadratları cəmini hesablamaq üçün bir dövrə girək
+    int cem = 0;
+    while (n > 0) {
+        int r = n % 10; // Ədədin sonuncu rəqəmini tapırıq
+        cem += r * r;   // Sonuncu rəqəmin kvadratını cəmə əlavə edirik
+        n /= 10;        // Sonuncu rəqəmi silirik və n-i yeniləyirik
+    }
+
+    // Nəticəni çap edirik
+    std::cout << cem << std::endl;
+
+    return 0;
+}
+>>>>>>> 0f1f5c4b7dd045fee82bfe447430299f1373bb65
 
