@@ -1248,3 +1248,27 @@ int main()
 
 //----------------------------------------------------------------------
 
+//https://www.eolymp.com/az/problems/9922
+
+#include <iostream>
+using namespace std;
+
+long long a;
+string b;
+
+int main(){
+
+    cin >> a;
+    cin >> b;
+
+   for (int i = 0; i < a; i++){
+
+       if ((i+1) != a){
+           cout << b << "+";
+       }
+
+       else if ((i+1) == a){
+           cout << b;
+       }
+   }
+}
