@@ -1206,3 +1206,45 @@ int main() {
     return 0;
 }
 
+//-----------------------------------------------------------------
+
+https://www.eolymp.com/az/problems/9921
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main(){
+    string a;
+    cin >> a;
+
+    for (int i = 0; i < 4; i++){
+        cout << "-" << a << "\n";
+    }
+}
+
+
+//--------------------------------------------------------------------
+
+//https://www.eolymp.com/az/problems/9930
+
+#include <iostream>
+using namespace std;
+int main()
+{
+    long long a;
+    cin >> a;
+    
+    long long h = a % 24;
+    if (h == 0) 
+    {
+        cout << a / 24;
+    }
+    
+    else if (h != 0) 
+    {
+        cout << (a / 24) + 1;
+    }
+}
+
+//----------------------------------------------------------------------
+
