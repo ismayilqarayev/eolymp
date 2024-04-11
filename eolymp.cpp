@@ -1272,3 +1272,53 @@ int main(){
        }
    }
 }
+
+//-----------------------------------------------------------------------
+
+//https://www.eolymp.com/az/problems/957
+
+#include <iostream>
+#include "iomanip"
+#include "cmath"
+
+using namespace std;
+
+long long  n;
+long long  birinci_reqem;
+long long  ikinci_reqem;
+long long  ucuncu_reqem;
+long long  cem;
+double  kvadrat_kok;
+
+void get(){
+    cin >> n;
+    birinci_reqem = n / 100;
+    ikinci_reqem = (n / 10) % 10;
+    ucuncu_reqem = n % 10;
+}
+
+int main(){
+    get();
+    cem = birinci_reqem + ikinci_reqem + ucuncu_reqem;
+    kvadrat_kok = sqrt(cem);
+    cout << fixed << setprecision(3) << kvadrat_kok;
+}
+
+
+//---- 2 ci etab yazilma usulu
+
+#include <iostream>
+#include <cmath>
+#include <iomanip>
+using namespace std;
+int main()
+{
+	long long  a;
+	cin >> a;
+	long long b = ((a / 100) + ((a % 100) / 10) + (a % 10));
+	long double c = sqrt(b);
+	cout <<fixed<<setprecision(3)<<c;
+}
+
+//-------------------------------------------------------------
+
