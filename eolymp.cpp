@@ -1352,3 +1352,22 @@ int main()
     long long d = pow(2, b);
     std::cout << c + d;
 }
+
+//-------------------------------------------------------------
+//https://www.eolymp.com/az/problems/8604
+
+#include <iostream>
+
+using namespace std;
+int main()
+{
+    long double a, b, c, d, e;
+    cin >> a >> b >> c;
+
+    d = a + b + c;
+    e = a * b * c;
+    cout << d << " " << e;
+}
+
+//---------------------------------------------------------------
+
