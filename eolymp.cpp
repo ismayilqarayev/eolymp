@@ -1322,3 +1322,20 @@ int main()
 
 //-------------------------------------------------------------
 
+//https://www.eolymp.com/az/problems/2606
+
+#include <iostream>
+#include <cmath>
+#include <iomanip>
+
+using namespace std;
+int main()
+{
+    long long a, b;
+    cin >> a >> b;
+
+    cout << min(a, b) << " " << max(a, b);
+}
+
+//--------------------------------------------------------------
+
