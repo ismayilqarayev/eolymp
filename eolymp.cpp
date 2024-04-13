@@ -1275,7 +1275,7 @@ int main(){
 
 //-----------------------------------------------------------------------
 
-//https://www.eolymp.com/az/problems/957
+//https://www.eolymp.com/az/problems/16483739
 
 #include <iostream>
 #include "iomanip"
@@ -1371,3 +1371,31 @@ int main()
 
 //---------------------------------------------------------------
 
+
+
+#include <iostream>
+#include <cmath>
+
+int main() {
+    double a, b, c, d;
+    int x1, x2;
+    
+    std::cin >> a >> b >> c;
+    d = (b * b) - (4 * a * c);  
+    
+    if (d < 0)
+        std::cout << "No roots";
+    else {
+        x1 = (-b + std::sqrt(d)) / (2 * a);
+        x2 = (-b - std::sqrt(d)) / (2 * a);
+        
+        if (x1 < x2)
+            std::cout << "Two roots: " << x1 << " " << x2;
+        else if (x1 > x2)
+            std::cout << "Two roots: " << x2 << " " << x1;
+        else if (x1 == x2)
+            std::cout << "One root: " << x1;
+    }
+    
+    return 0;
+}
