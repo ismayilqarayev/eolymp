@@ -1376,7 +1376,8 @@ int main()
 #include <iostream>
 #include <cmath>
 
-int main() {
+int main() 
+{
     double a, b, c, d;
     int x1, x2;
     
