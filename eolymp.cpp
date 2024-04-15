@@ -1206,6 +1206,7 @@ int main() {
     return 0;
 }
 
+<<<<<<< Updated upstream
 //-----------------------------------------------------------------
 
 https://www.eolymp.com/az/problems/9921
@@ -1400,3 +1401,35 @@ int main()
     
     return 0;
 }
+=======
+#include <iostream>
+#include <cmath>
+
+int main() {
+    long long n;
+    std::cin >> n;
+
+    long long thousands = n / 1000;
+    long long hundreds = (n / 100) % 10;
+    long long tens = (n / 10) % 10;
+    long long units = n % 10;
+
+    long long result = pow(thousands, 2) + pow(hundreds, 2) + pow(tens, 2) + pow(units, 2);
+    std::cout << result;
+
+    return 0;
+}
+
+
+
+
+//-------------------------------------------------------
+
+
+
+
+
+//https://www.eolymp.com/az/problems/22
+//"Güzgü sadə" ədədləri
+
+>>>>>>> Stashed changes
