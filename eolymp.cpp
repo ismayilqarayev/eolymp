@@ -1485,6 +1485,31 @@ int main()
 
 //-------------------------------------------------------
 
+//https://www.eolymp.com/az/problems/8939
 
+#include <iostream>
 
+using namespace std;
+
+int main()
+{
+    int n;
+    cin >> n;
+
+    int k = 0;
+
+    for (int i = 1; i <= 4 * n; i++)
+    {
+        
+        cout << "#";
+        k++;
+        
+        
+        if (k == n)
+        {
+            cout << "\n";
+            k = 0;
+        }
+    }
+}
 
