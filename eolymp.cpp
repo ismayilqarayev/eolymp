@@ -1206,6 +1206,7 @@ int main() {
     return 0;
 }
 
+<<<<<<< Updated upstream
 //-----------------------------------------------------------------
 
 https://www.eolymp.com/az/problems/9921
@@ -1456,5 +1457,29 @@ int main()
     {
         cout << a_ya_yansitma[i] << " ";
     }
+}
+
+
+//----------------------------------------------------
+
+https://www.eolymp.com/az/problems/7337
+
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+int main()
+{
+    int a, b, c;
+    cin >> a >> b >> c;
+
+     // Ən böyük və ən kiçik qiymətləri tapmaq
+    int max_qiymet = max({a, b, c});
+    int min_qiymet = min({a, b, c});
+
+     // Alış qiymətini hesablamaq
+    int alis_qiymet = max_qiymet + min_qiymet;
+    cout << alis_qiymet << "\n";
     return 0;
 }
+
