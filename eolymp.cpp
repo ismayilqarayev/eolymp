@@ -1400,3 +1400,61 @@ int main()
     
     return 0;
 }
+
+//--------------------------------------------------------------
+
+//https://www.eolymp.com/az/problems/128
+
+#include <iostream>
+
+int main()
+{
+    int n, a = 0;
+    std::cin >> n;
+
+    for(int i_1 = 0; i_1 < 10; i_1++)
+    {
+        for(int i_2 = 0; i_2 < 10; i_2++)
+        {
+            for(int i_3 = 0; i_3 < 10; i_3++)
+            {
+                if (i_1 + i_2 + i_3 == n)
+                {
+                    a++;
+                }
+            }
+        }
+    }
+
+    std::cout << a * a;
+    return 0;
+}
+
+//-----------------------------------------------------------------
+
+//https://www.eolymp.com/az/problems/3935
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int n;
+    //cout << "1 reqemi daxil et";
+    cin >> n;
+
+    int a_ya_yansitma[n];
+
+    for(int i = 0; i < n; i++)
+    {
+        //cout << "2 reqemi daxil et";
+        cin >> a_ya_yansitma[i];
+    }
+
+    for(int i = n-1; i >= 0; i--)
+    {
+        cout << a_ya_yansitma[i] << " ";
+    }
+    return 0;
+}
