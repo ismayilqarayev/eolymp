@@ -1401,35 +1401,25 @@ int main()
     
     return 0;
 }
-=======
+
+//----------------------------------------------------
+
+https://www.eolymp.com/az/problems/7337
+
 #include <iostream>
-#include <cmath>
+#include <algorithm>
+using namespace std;
 
-int main() {
-    long long n;
-    std::cin >> n;
+int main(){
+    int a, b, c;
+    cin >> a >> b >> c;
 
-    long long thousands = n / 1000;
-    long long hundreds = (n / 100) % 10;
-    long long tens = (n / 10) % 10;
-    long long units = n % 10;
+     // Ən böyük və ən kiçik qiymətləri tapmaq
+    int max_qiymet = max({a, b, c});
+    int min_qiymet = min({a, b, c});
 
-    long long result = pow(thousands, 2) + pow(hundreds, 2) + pow(tens, 2) + pow(units, 2);
-    std::cout << result;
-
+     // Alış qiymətini hesablamaq
+    int alis_qiymet = max_qiymet + min_qiymet;
+    cout << alis_qiymet << "\n";
     return 0;
 }
-
-
-
-
-//-------------------------------------------------------
-
-
-
-
-
-//https://www.eolymp.com/az/problems/22
-//"Güzgü sadə" ədədləri
-
->>>>>>> Stashed changes
