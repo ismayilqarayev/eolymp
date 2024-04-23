@@ -1587,7 +1587,25 @@ int main() {
     return 0;
 }
 
+//------------------------------------------------------------------------------
 
+//https://www.eolymp.com/az/problems/943
+
+#include <iostream>
+using namespace std;
+int main()
+{
+    long a;
+    cin >> a;
+
+    //198 daxil edirsen
+    long l = (a % 1000) / 100; //1 
+    long p = (a % 100) / 10;   //9 
+    long b = a % 10;           //8
+
+    cout << b * 100 + p * 10 + l;
+    return 0;
+}
 
 
 
