@@ -1558,6 +1558,7 @@ int main(){
 
 //---------------------------------------------------------------------------
 
+//https://www.eolymp.com/az/problems/953
 #include <iostream>
 
 using namespace std;
@@ -1570,6 +1571,21 @@ int main(){
 }
 
 //-----------------------------------------------------------------------------
+
+
+//https://www.eolymp.com/az/problems/949
+#include <iostream>
+
+int main() {
+    long long a;
+    std::cin >> a;
+
+    long long birinci_reqem = (a % 1000) / 100;
+    long long ikinci_reqem = (a % 100) / 10;
+
+    std::cout << birinci_reqem * 10 + ikinci_reqem;
+    return 0;
+}
 
 
 
