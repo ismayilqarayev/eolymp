@@ -1544,6 +1544,33 @@ int main()
         }
     }
 }
+//---------------------------------------------------------------------------
+
+//https://www.eolymp.com/az/problems/8690
+
+#include <bits/stdc++.h>
+
+int main(){
+    long long a, b, c;
+    std::cin >> a >> b >> c;
+    std::cout << (a * b * c) + a + (b * b) + (c * c * c);
+}
+
+//---------------------------------------------------------------------------
+
+#include <iostream>
+
+using namespace std;
+
+int main(){
+    long long a;
+    std::cin >> a;
+    std::cout << (a % 10) % (a / 100);
+    return 0;
+}
+
+//-----------------------------------------------------------------------------
+
 
 
 
