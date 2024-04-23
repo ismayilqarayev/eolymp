@@ -1,42 +1,61 @@
+//https://www.eolymp.com/az/problems/911
 
 #include <iostream>
-class App
+#include <cmath>
+
+int main() 
 {
-public:
-    void run()
-    {
-        int number_1 = 3;
-        int number_2 = 4;
-        std::cout << "run=" << number_1;
-        std::cout << "run=" << number_2;
-    }
-
-    int get()
-    {
-        int number_8 = 8;
-        int number_9 = 9;
-        std::cout << "run=" << number_8 << std::endl;
-        std::cout << "run=" << number_9 << std::endl;
-        return number_8 + number_9;
-    }
-};
-
-int main()
-{
+    double a, b, c, d;
+    int x1, x2;
     
-    int number_3 = 5;
-    int number_4 = 6;
-    std::cout << "run" << number_3;
+    std::cin >> a >> b >> c;
+    d = (b * b) - (4 * a * c);  
     
-    std::cout << "run" << number_4;
-
-    App app;
-    app.run();
-    int result = app.get();
-    std::cout << "Result of get() = " << result << std::endl;
-
+    if (d < 0)
+        std::cout << "No roots";
+    else {
+        x1 = (-b + std::sqrt(d)) / (2 * a);
+        x2 = (-b - std::sqrt(d)) / (2 * a);
+        
+        if (x1 < x2)
+            std::cout << "Two roots: " << x1 << " " << x2;
+        else if (x1 > x2)
+            std::cout << "Two roots: " << x2 << " " << x1;
+        else if (x1 == x2)
+            std::cout << "One root: " << x1;
+    }
+    
     return 0;
 }
 
+#include <iostream>
+#include <cmath>
+using namespace std;
 
+int main() 
+{
+    int a, b, c;
+    cin >> a >> b >> c;
 
+    int d = b * b - 4 * a * c;
+
+    if (d < 0) 
+    {
+        cout << "No roots";
+    }
+
+    else if (d == 0) 
+    {
+        cout << "One root: " << -b / (2 * a);
+    }
+
+    else if (0 < d) 
+    {
+        // İki kök var
+        int root1 = (-b - sqrt(d)) / (2 * a);
+        int root2 = (-b + sqrt(d)) / (2 * a);
+        cout << "Two roots: " << min(root1, root2) << " " << max(root1, root2);
+    }
+
+    return 0;
+}
