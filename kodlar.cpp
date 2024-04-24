@@ -576,27 +576,27 @@ int main()
 
 
 //-------------------------------------
-
 #include <iostream>
 #include <vector>
+#include <algorithm>
 
 using namespace std;
-int get;
+
+long long run;
 
 void fun_1(){
     vector<int> number{1,2,3,4};
-    get = number.at(0);
-    cout << get << endl;
+    run = number.at(0);
+    cout << run << endl;
 }
+
 
 int main(){
     vector<int> number(5, 2);
-    get = number.at(1);
-    cout << get << endl;
+    run = number.at(1);
+    cout << run << endl;
 
     //funksiyanin qosulmasi
     fun_1();
 }
-
-
 
