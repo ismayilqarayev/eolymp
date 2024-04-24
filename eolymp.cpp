@@ -1544,7 +1544,68 @@ int main()
         }
     }
 }
+//---------------------------------------------------------------------------
 
+//https://www.eolymp.com/az/problems/8690
+
+#include <bits/stdc++.h>
+
+int main(){
+    long long a, b, c;
+    std::cin >> a >> b >> c;
+    std::cout << (a * b * c) + a + (b * b) + (c * c * c);
+}
+
+//---------------------------------------------------------------------------
+
+//https://www.eolymp.com/az/problems/953
+#include <iostream>
+
+using namespace std;
+
+int main(){
+    long long a;
+    std::cin >> a;
+    std::cout << (a % 10) % (a / 100);
+    return 0;
+}
+
+//-----------------------------------------------------------------------------
+
+
+//https://www.eolymp.com/az/problems/949
+#include <iostream>
+
+int main() {
+    long long a;
+    std::cin >> a;
+
+    long long birinci_reqem = (a % 1000) / 100;
+    long long ikinci_reqem = (a % 100) / 10;
+
+    std::cout << birinci_reqem * 10 + ikinci_reqem;
+    return 0;
+}
+
+//------------------------------------------------------------------------------
+
+//https://www.eolymp.com/az/problems/943
+
+#include <iostream>
+using namespace std;
+int main()
+{
+    long a;
+    cin >> a;
+
+    //198 daxil edirsen
+    long l = (a % 1000) / 100; //1 
+    long p = (a % 100) / 10;   //9 
+    long b = a % 10;           //8
+
+    cout << b * 100 + p * 10 + l;
+    return 0;
+}
 
 
 
