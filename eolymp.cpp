@@ -1607,6 +1607,52 @@ int main()
     return 0;
 }
 
+//-------------------------------------------------
+
+
+//https://disk.yandex.az/d/XtWczReXCqhkVQ riyazi hell yolu
+//https://www.eolymp.com/az/problems/13 
+#include <iostream>
+#include <math>
+#include <iomanip>
+
+int main(){
+    
+	int A, B, C;    //Otağın ölçüləri
+    int X1, Y1;     //Milcek
+    int X2, Y2, Z2; //Hörümçək
+
+	std::cin >> A >> B >> C; //Otağın ölçüləri
+    std::cin >> X1 >> Y1;    //Milcek
+    std::cin >> X2 >> Y2 >> Z2;
+
+	if (X2 == 0){
+        X2 -= Z2;
+    }
+		
+	else if (X2 == A){
+        X2 += Z2;
+    }
+		
+	else if (Y2 == 0){
+        Y2 -= Z2;
+    }
+		
+	else if (Y2 == B){
+        Y2 += Z2;
+    }
+
+	std::cout << std::fixed << std::setprecision(2) << sqrt(double(((X1 - X2) * (X1 - X2) + (Y1 - Y2) * (Y1 - Y2)))) << std::endl;
+	return 0;
+}
+
+
+
+
+
+
+
+
 
 //------------------------------------------------------------------------------
 

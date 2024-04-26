@@ -574,3 +574,29 @@ int main()
     //App::get();
 }
 
+
+//-------------------------------------
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+using namespace std;
+
+long long run;
+
+void fun_1(){
+    vector<int> number{1,2,3,4};
+    run = number.at(0);
+    cout << run << endl;
+}
+
+
+int main(){
+    vector<int> number(5, 2);
+    run = number.at(1);
+    cout << run << endl;
+
+    //funksiyanin qosulmasi
+    fun_1();
+}
+
