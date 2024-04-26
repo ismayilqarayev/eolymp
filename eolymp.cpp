@@ -1608,5 +1608,35 @@ int main()
 }
 
 
+//------------------------------------------------------------------------------
+
+
+//https://www.eolymp.com/az/problems/8991
+
+#include <iostream>
+
+using namespace std;
+
+int main(){
+
+    string setir;
+    getline(cin, setir);
+
+    //setirdeki herifleri sinvola gonder ve gonderdikden sonra -----------
+    for (char sinvol : setir ){ //                                        |
+        //                                                                |
+        // eger sinvoldaki herf bir herifdirse onu iki defe yazdor <______|
+        if (isalpha(sinvol)){
+            cout << sinvol << sinvol;
+        }
+
+        //yoxsa onu olduqu kimi saxla
+        else{
+            cout << sinvol;
+        }
+    }
+}
+
+
 
 
