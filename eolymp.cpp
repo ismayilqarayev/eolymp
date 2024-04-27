@@ -1647,11 +1647,39 @@ int main(){
 }
 
 
+#include <iostream>
+#include <iomanip>
+#include <cmath>
 
+using namespace std;
+int main(){
+    int a, b, c, X1, Y1, X2, Y2, Z2;
+    cin >> a >> b >> c >> X1 >> Y1 >> X2 >> Y2 >> Z2;
 
+    if (Z2 != 0){
 
+        if (X2 == 0){
+            X2 -= Z2;
+        }
 
+        else if (X2 == a){
+            X2 += Z2;
+        }
 
+        else if (Y2 == 0){
+            Y2 -= Z2;
+        }
+
+        else if (Y2 == b){
+            Y2 += Z2;
+        }
+    }
+
+    double distance = sqrt(pow(X1 - X2, 2) + pow(Y1 - Y2, 2));
+    cout << fixed << setprecision(2) << distance;
+
+    return 0;
+}
 
 
 //------------------------------------------------------------------------------
@@ -1686,8 +1714,22 @@ int main(){
 
 //-------------------------------------------------------------------------------
 
+https://www.eolymp.com/az/problems/1000
 
+#include <bits/stdc++.h>
+using namespace std;
+int main() 
+{
+    int a;
+    int b;
 
+    while (cin >> a >> b) 
+    {
+        cout << a + b << "\n";
+    }
+
+    return 0;
+}
 
 
 
