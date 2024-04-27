@@ -582,19 +582,19 @@ int main()
 
 using namespace std;
 
-long long run;
+long long x;
 
 void fun_1(){
     vector<int> number{1,2,3,4};
-    run = number.at(0);
-    cout << run << endl;
+    x = number.at(0);
+    cout << x << endl;
 }
 
 
 int main(){
     vector<int> number(5, 2);
-    run = number.at(1);
-    cout << run << endl;
+    x = number.at(1);
+    cout << x << endl;
 
     //funksiyanin qosulmasi
     fun_1();
