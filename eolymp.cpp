@@ -1820,6 +1820,8 @@ int main() {
 
 //-----------------------------------------------------------------------
 
+//https://www.eolymp.com/az/problems/5325
+
 #include <iostream>
 using namespace std;
 
