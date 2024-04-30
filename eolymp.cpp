@@ -1753,3 +1753,78 @@ int main(){
     }
 }
 
+//---------------------------------------------------------------------
+
+https://www.eolymp.com/az/problems/7843
+
+#include <iostream>
+
+using namespace std;
+
+int main(){
+    int n;
+    int number1;
+    int number2;
+    cin >> n >> number1;
+
+    for(int i = 0; i < n; i++){
+        cin >> number2;
+
+        if(number2 > number1) {
+            cout << number2 <<' ';
+        }
+
+        number1 = number2;
+
+    }
+    return 0;
+}
+
+
+//----------------------------------------------------------------------
+
+//https://www.eolymp.com/az/problems/8631
+
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main() {
+    long long n;
+    cin >> n; // Giriş sayısını alır
+
+    string num = to_string(n); // Sayıyı dizeye dönüştürür
+
+    char largestDigit = '0'; // En büyük rakamı saklar
+    int largestDigitCount = 0; // En büyük rakamın sayacı
+
+    // Her rakamı kontrol eder
+    for (char digit : num) {
+        
+        if (digit > largestDigit) {
+            
+            largestDigit = digit;
+            largestDigitCount = 1;
+        } 
+        
+        else if (digit == largestDigit) {
+            largestDigitCount++;
+        }
+    }
+
+    cout << largestDigitCount << endl; // En büyük rakamın tekrar sayısını yazdırır
+
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
