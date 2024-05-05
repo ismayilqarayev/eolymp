@@ -1,15 +1,20 @@
 #include <iostream>
+#include <vector>
 
 using namespace std;
 
 int main(){
-    long long a;
-    cin >> a;
-    int b[a];
+    vector <int> number;
 
-    for (int i = 0; i < a; i++){
-        cin >> b[i];
+    number.push_back(1);
+    number.push_back(2);
+    number.push_back(3);
 
-        cout << b[i] << endl;
+    for (int i = 0; i < number.size(); ++i){
+        cout << number[i];
+        return 0;
     }
 }
+
+
+

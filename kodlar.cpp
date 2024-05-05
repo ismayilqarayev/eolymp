@@ -573,9 +573,15 @@ int main()
     App::run(0, 0, 0);
     //App::get();
 }
+//------------------------------------------------------------------------
 
 
-//-------------------------------------
+
+
+
+//##########################################################################//
+//-------------------------------------vector-------------------------------//
+//##########################################################################//
 #include <iostream>
 #include <vector>
 #include <algorithm>
@@ -644,4 +650,48 @@ int main() {
 
     return 0;
 }
+
+//-----------------------------------------------
+
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+int main() {
+    vector<int> numbers[6]{
+        {1},
+        {2},
+        {3}
+    };
+
+    
+    int n = numbers[1][0] + numbers[2][0];
+    int n1 = numbers[2].at(0); 
+    cout << n;
+    return 0;
+}
+
+
+
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+int main(){
+    vector <int> number;
+
+    number.push_back(1);
+    number.push_back(2);
+    number.push_back(3);
+
+    for (int i = 0; i < number.size(); ++i){
+        cout << number[i];
+        return 0;
+    }
+}
+
+
+
 
