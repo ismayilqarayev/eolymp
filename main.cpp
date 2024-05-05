@@ -1,32 +1,15 @@
 #include <iostream>
-#include <string>
 
 using namespace std;
 
-int main() {
-    long long n;
-    cin >> n; // Giriş sayısını alır
+int main(){
+    long long a;
+    cin >> a;
+    int b[a];
 
-    string num = to_string(n); // Sayıyı dizeye dönüştürür
+    for (int i = 0; i < a; i++){
+        cin >> b[i];
 
-    char largestDigit = '0'; // En büyük rakamı saklar
-    int largestDigitCount = 0; // En büyük rakamın sayacı
-
-    // Her rakamı kontrol eder
-    for (char digit : num) {
-        
-        if (digit > largestDigit) {
-            
-            largestDigit = digit;
-            largestDigitCount = 1;
-        } 
-        
-        else if (digit == largestDigit) {
-            largestDigitCount++;
-        }
+        cout << b[i] << endl;
     }
-
-    cout << largestDigitCount << endl; // En büyük rakamın tekrar sayısını yazdırır
-
-    return 0;
 }

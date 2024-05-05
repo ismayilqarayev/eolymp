@@ -600,3 +600,48 @@ int main(){
     fun_1();
 }
 
+//-------------------------------------------------------------
+
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+int main() {
+    vector<int> numbers[6]{
+        {1},
+        {2},
+        {3}
+    };
+
+    int get = numbers[1].at(0); // Accessing the first element of numbers[1]
+    cout << get;
+
+    return 0;
+}
+
+//------------------------------------------------------
+
+
+
+#include <iostream>
+#include <vector>
+#include <string>
+
+using namespace std;
+
+int main() {
+    vector<string> textb;
+
+    string input;
+    cin >> input;
+
+    textb.push_back(input);
+
+    for (const auto texta : textb) {
+        cout << texta << endl;
+    }
+
+    return 0;
+}
+
