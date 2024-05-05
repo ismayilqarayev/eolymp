@@ -672,7 +672,7 @@ int main() {
     return 0;
 }
 
-
+//-----------------------------------------------
 
 #include <iostream>
 #include <vector>
@@ -691,6 +691,32 @@ int main(){
         return 0;
     }
 }
+
+//------------------------------------------------------------
+
+
+#include <iostream>
+#include <vector>
+#include <string>
+
+using namespace std;
+
+vector<string> texts;
+void fun_2(){
+    for(const auto& text : texts){
+        cout << text;
+    }
+}
+
+
+int main() {
+    string input_text;
+    while (cin >> input_text and input_text != "end"){
+        texts.push_back(input_text);
+    }
+    fun_2();
+}
+
 
 
 
