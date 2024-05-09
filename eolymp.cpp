@@ -1878,6 +1878,34 @@ int main()
 }
 
 
+//------------------------------------------------------------
+
+//https://groups.eolymp.com/az/problems/8937
+
+#include <iostream>
+
+using namespace std;
+
+void simvollar(int n)
+{
+    for (int i = 0; i < n; ++i)
+    {
+        cout << "#";
+    }
+}
+
+int main()
+{
+    int n;
+    cin >> n;
+    simvollar(n);
+    return 0;
+}
+
+
+
+
+
 
 
 
