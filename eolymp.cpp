@@ -1902,6 +1902,39 @@ int main()
     return 0;
 }
 
+//------------------------------------------------------------
+
+//https://groups.eolymp.com/az/problems/8938
+
+#include <iostream>
+
+void simvollar(int n)
+{
+    for (int i = 0; i < n; i++)
+    {
+        {
+            std::cout << "###" << '\n';
+        }
+    }
+}
+
+int main()
+{
+    int n;
+    std::cin >> n;
+    simvollar(n);
+    return 0;
+}
+
+//----------------------------------------------------------------
+
+
+
+
+
+
+
+
 
 
 
