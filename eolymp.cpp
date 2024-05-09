@@ -1837,10 +1837,12 @@ int main(){
 
 
 //--------------------------------------------------------------------------
-
-#include <bits/stdc++.h>
+#include <iostream>
+#include <cmath>
+#include <chrono>
 
 using namespace std;
+
 long long kub;
 long long kvadrat;
 
@@ -1852,22 +1854,26 @@ void kvadrat_ve_kublar(int a, int b)
         kvadrat = i * i;
         cout << kvadrat << " ";
     }
-
+    std::cout << std::endl;
 
     //kublar
-    for (int i = b; i >= a; --a)
+    for (int i = b; i >= a; --i)
     {
         kub = pow(i , 3);
-        cout << kub;
+        cout << kub << " ";
     }
 }
+
 
 int main()
 {
     int a, b;
     cin >> a >> b;
     kvadrat_ve_kublar(a, b);
+    return 0;
 }
+
+
 
 
 
