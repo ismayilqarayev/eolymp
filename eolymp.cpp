@@ -1837,6 +1837,10 @@ int main(){
 
 
 //--------------------------------------------------------------------------
+
+//https://groups.eolymp.com/az/problems/8532
+
+
 #include <iostream>
 #include <cmath>
 #include <chrono>
