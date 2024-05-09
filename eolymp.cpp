@@ -1836,6 +1836,40 @@ int main(){
 }
 
 
+//--------------------------------------------------------------------------
+
+#include <bits/stdc++.h>
+
+using namespace std;
+long long kub;
+long long kvadrat;
+
+void kvadrat_ve_kublar(int a, int b)
+{
+    //kvadrat
+    for (int i = a; i <=b; ++i)
+    {
+        kvadrat = i * i;
+        cout << kvadrat << " ";
+    }
+
+
+    //kublar
+    for (int i = b; i >= a; --a)
+    {
+        kub = pow(i , 3);
+        cout << kub;
+    }
+}
+
+int main()
+{
+    int a, b;
+    cin >> a >> b;
+    kvadrat_ve_kublar(a, b);
+}
+
+
 
 
 
