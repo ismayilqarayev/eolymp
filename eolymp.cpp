@@ -1836,7 +1836,7 @@ int main(){
 }
 
 
-//--------------------------------------------------------------------------
+//----------6 ci gun----------------------------------------------------------------
 
 //https://groups.eolymp.com/az/problems/8532
 
@@ -1948,6 +1948,96 @@ int main()
     }
     return 0;
 }
+
+//-------------------------------------------------------------------
+
+#include <iostream>
+#define ll long long
+
+using namespace std;
+
+int main() {
+    ll faktoriyel;
+    cin >> faktoriyel;
+
+    ll n;
+    ll sonuc = 1;
+
+    for (n = 1; sonuc < faktoriyel; n++) {
+        sonuc *= n;
+    }
+
+    cout << n - 1 << endl; // Son döngüde artırılan n değeri gereksiz bir şekilde artırıldığı için bir azaltma işlemi yapılır.
+
+    return 0;
+}
+
+
+//--------------------------------------------------
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+
+  int n;
+  int k = 0;
+
+  cin >> n;
+
+  while (n > 0)
+  {
+    //101   1
+    if(n & 1)
+    {
+        k++;
+    }
+    n = n >> 1;
+  }
+  
+  cout << k << endl;
+  return 0;
+}
+
+//----------------------------------------------------
+//https://groups.eolymp.com/az/problems/1143
+
+
+#include <iostream>
+
+int main() {
+    long a, b;
+    std::cin >> a >> b;
+
+    if (b == 0) 
+    {
+        std::cout << "ERROR";
+    }
+
+    else if (
+        a % b == 0 && 
+        a / b <= 2147483647 && 
+        a / b >= -2147483648 ) 
+    {
+        std::cout << a / b;
+    } 
+
+    else 
+    {
+        std::cout << "ERROR";
+    }
+
+    return 0;
+}
+
+
+
+
+
+
+
 
 
 
