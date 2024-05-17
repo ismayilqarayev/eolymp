@@ -2032,10 +2032,61 @@ int main() {
     return 0;
 }
 
+//-----------------------------------------------------------------------
+
+//https://groups.eolymp.com/az/problems/8900
+
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main ()
+{
+    
+    long long n;
+    cin >> n;
+    
+    while (( n+1 ) % 7 != 0)
+    {
+        n++;
+    }
+    
+    cout << n+1;
+}
+
+//------------------------------------------------------------------------
+//https://groups.eolymp.com/az/problems/8640
 
 
+#include <iostream>
 
+using namespace std;
 
+int main()
+{
+    int number_1;
+    int number_2;
+
+    cin >> number_1 >> number_2;
+
+    for (int i = number_1; i <= number_2; i++)
+    {
+        int run_1 = i / 1000;
+        int run_2 = i / 100 % 10;
+        int run_3 = i / 10 % 10;
+        int run_4 = i % 10;
+
+        if (
+                run_1 % 2 == 1 and
+                run_2 % 2 == 1 and
+                run_3 % 2 == 1 and
+                run_4 % 2 == 1)
+        {
+            cout << i << ' ';
+        }
+    }
+    return 0;
+}
 
 
 
