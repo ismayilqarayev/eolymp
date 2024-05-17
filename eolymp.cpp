@@ -2088,6 +2088,31 @@ int main()
     return 0;
 }
 
+//-----------------------------------------------------------------------
+
+//https://groups.eolymp.com/az/problems/8873
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int number_1;
+    cin >> number_1;
+
+    if (number_1 / 10 == 0)
+    {
+        cout << "Ok";
+    }
+    
+    else
+    {
+        cout << "No";
+    }
+}
+
+
 
 
 
