@@ -2193,7 +2193,40 @@ int main()
     return 0;
 }
 
+//--------------------------------------------------------------------------
 
+//https://groups.eolymp.com/az/problems/7460
+
+#include "iostream"
+
+using namespace std;
+long long int x, y, k;
+int main()
+{
+    cin >> x >> y >> k;
+
+    if (x % k == 0)
+    {
+        x /= k;
+    }
+    
+    else
+    {
+        x = x / k + 1;
+    }
+
+    if (y % k == 0)
+    {
+        y /= k;
+    }
+
+    else
+    {
+        y = y / k + 1;
+    }
+
+    cout << x + y << endl;
+}
 
 
 
