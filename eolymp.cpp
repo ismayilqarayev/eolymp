@@ -2116,6 +2116,82 @@ int main()
 
 //-----------------------------------------------------------------------
 
+//https://groups.eolymp.com/az/problems/149
+
+#include <iostream>
+#include <cmath>
+#include <cstring>
+using namespace std;
+
+// Sətirin uzunluğunu hesablayan funksiya
+int length(const char *s) 
+{
+    int ret = 0;
+    while (s[ret] != '\0') 
+    {
+        ret++;
+    }
+    return ret;
+}
+
+int main() 
+{
+    char s[5740];
+    cin >> s;
+    int pjg = length(s);
+
+    if (s[0] == '1' && pjg == 1) 
+    {
+        cout << "1" << endl;
+    }
+    
+    else if (s[0] == '2' && pjg == 1) 
+    {
+        cout << "2" << endl;
+    }
+    
+    else if (s[0] == '6' && pjg == 1) 
+    {
+        cout << "3" << endl;
+    }
+    
+    else if (pjg == 2) 
+    {
+        cout << "4" << endl;
+    }
+    
+    else if (s[0] == '1' && pjg == 3) 
+    {
+        cout << "5" << endl;
+    }
+    
+    else if (s[0] == '7' && pjg == 3) 
+    {
+        cout << "6" << endl;
+    }
+    
+    else if (pjg == 4) 
+    {
+        cout << "7" << endl;
+    }
+    
+    else 
+    {
+        double ans = 0;
+        bool flag = true;
+        for (int i = 8; i <= 2000 && flag; i++) 
+        {
+            ans = (log10(2 * M_PI * i) / 2 + i * (log10(i / M_E)));
+            ans = ceil(ans);
+            if (ans >= pjg) {
+                flag = false;
+                cout << i << endl;
+            }
+        }
+    }
+
+    return 0;
+}
 
 
 
