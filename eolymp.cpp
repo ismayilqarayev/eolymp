@@ -2193,15 +2193,18 @@ int main()
     return 0;
 }
 
-//--------------------------------------------------------------------------
 
+
+
+//--------------------------------------------------------
+
+//https://groups.eolymp.com/az/problems/7460
 #include "iostream"
 
 using namespace std;
-
+long long int x, y, k;
 int main()
 {
-    long long int x, y, k;
     cin >> x >> y >> k;
 
     if (x % k == 0)
