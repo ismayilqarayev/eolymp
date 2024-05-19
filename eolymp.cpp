@@ -2233,10 +2233,25 @@ int main()
 
 //-------------------------------------------------------------
 
+//https://groups.eolymp.com/az/problems/8615
 
+#include <iostream>
+using namespace std;
 
+int main(){
+    int a, b, x;
+    cin >> x >> a >> b;
 
+    if (x < a || x > b){
+        cout << "OUT" << endl;
+    }
 
+    else{
+        xout << "IN" << endl;
+    }
+
+    return 0;
+}
 
 
 
