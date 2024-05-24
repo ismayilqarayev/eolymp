@@ -2253,5 +2253,31 @@ int main(){
     return 0;
 }
 
+//------------------------------------------------------------
+
+//https://groups.eolymp.com/az/problems/6278
+
+#include <iostream>
+
+using namespace std;
+
+int main() 
+{
+    int n, m;
+    cin >> n >> m;
+
+    // Əgər hər iki ədədin 2-yə bölünməsindən qalan eyni olarsa, eyni tərəfdədirlər.
+    if ((n % 2) == (m % 2)) 
+    {
+        cout << 1 << endl;
+    }
+
+    else 
+    {
+        cout << 0 << endl;
+    }
+
+    return 0;
+}
 
 
