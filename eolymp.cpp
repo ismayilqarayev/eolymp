@@ -2280,4 +2280,20 @@ int main()
     return 0;
 }
 
+//----------------------------------------------------------------------
+
+
+//https://groups.eolymp.com/az/problems/2860
+#include <iostream>
+#include <cstdlib>
+
+using namespace std;
+int main()
+{
+    long long a, b;
+    cin >> a >> b;
+    long long cavab = (a + b) * (b - a + 1) / 2;
+    cout << cavab << endl;
+    return 0;
+}
 
