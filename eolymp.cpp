@@ -2327,7 +2327,26 @@ int main()
 
 //-----------------------------------------------------------
 
+//https://groups.eolymp.com/az/problems/8872
 
+#include <iostream>
+#include <algorithm> // sort funksiyası üçün
+using namespace std;
+
+int main() {
+    int a, b, c;
+    cin >> a >> b >> c;
+    int numbers[] = {a, b, c};
+
+    sort(numbers, numbers + 3); // Massivi artma ardıcıllığında çeşidləyirik
+
+    // Çeşidlənmiş massivi çap edirik
+    for (int i = 0; i < 3; ++i) {
+        cout << numbers[i] << " ";
+    }
+    
+    return 0;
+}
 
 
 
