@@ -2297,3 +2297,37 @@ int main()
     return 0;
 }
 
+//----------------------------------------------------------
+
+//https://groups.eolymp.com/az/problems/992
+#include <iostream>
+using namespace std;
+
+int main() 
+{
+    int n;
+    cin >> n; // Şəhərlərin sayını oxu
+
+    int res = 0; // Yolların sayını saxlamaq üçün dəyişən
+    for (int i = 0; i < n; ++i) 
+    {
+        for (int j = 0; j < n; ++j) 
+        {
+            int val;
+            cin >> val; // Qonşuluq matrisinin elementini oxu
+            res += val; // 1-ləri topla
+        }
+    }
+
+    // Yolların sayını ikiyə bölüb çap et
+    cout << res / 2 << endl;
+
+    return 0;
+}
+
+//-----------------------------------------------------------
+
+
+
+
+
