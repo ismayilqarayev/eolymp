@@ -2333,7 +2333,8 @@ int main()
 #include <algorithm> // sort funksiyası üçün
 using namespace std;
 
-int main() {
+int main() 
+{
     int a, b, c;
     cin >> a >> b >> c;
     int numbers[] = {a, b, c};
@@ -2341,12 +2342,48 @@ int main() {
     sort(numbers, numbers + 3); // Massivi artma ardıcıllığında çeşidləyirik
 
     // Çeşidlənmiş massivi çap edirik
-    for (int i = 0; i < 3; ++i) {
+    for (int i = 0; i < 3; ++i) 
+    {
         cout << numbers[i] << " ";
     }
     
     return 0;
 }
 
+//--------------------------------------------------------------------
 
+//https://groups.eolymp.com/az/problems/928
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+	int n;
+	cin >> n;
+
+	int x, min, max;
+	cin >> x;
+
+	min = max = x;
+	n--;
+
+	while (n--)
+	{
+		cin >> x;
+		if (x > max)
+		{
+			max = x;
+		}
+
+		if (x < min)
+		{
+			min = x;
+		}
+	}
+
+
+	cout << min + max << endl;
+}
 
