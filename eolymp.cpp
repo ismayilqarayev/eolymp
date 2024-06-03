@@ -2387,3 +2387,27 @@ int main()
 	cout << min + max << endl;
 }
 
+//-------------------------------------------------------
+
+
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+
+double kerem(double x, double y, double x1, double y1) 
+{
+    return sqrt(pow(x1 - x, 2) + pow(y1 - y, 2));
+}
+
+
+int main() 
+{
+    double a, b, a1, b1;
+    cin >> a >> b >> a1 >> b1;
+    cout << kerem(a, b, a1, b1) << endl;
+    return 0;
+}
+
+
