@@ -2389,6 +2389,7 @@ int main()
 
 //-------------------------------------------------------
 
+//https://groups.eolymp.com/az/problems/2131
 
 #include <iostream>
 #include <cmath>
@@ -2410,4 +2411,40 @@ int main()
     return 0;
 }
 
+//---------------------------------------------------------------
 
+//https://groups.eolymp.com/az/problems/913
+
+#include <iostream>
+#include <iomanip>
+
+using namespace std;
+
+
+void SumDob(double a, double b, double &cem, double &hasil)
+{
+	cem = a + b;
+	hasil = a * b;
+}
+
+
+int main()
+{
+	long long N;
+	cin >> N;
+
+	for (int i = 0; i < N; ++i)
+	{
+		double a;
+		double b;
+
+		double cem;
+		double hasil;
+
+		cin >> a >> b;
+
+		SumDob(a, b, cem, hasil);
+
+		cout << fixed << setprecision(4) << cem << " " << hasil << endl;
+	}
+}
