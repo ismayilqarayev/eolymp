@@ -2451,4 +2451,47 @@ int main()
 
 //----------------------------------------------------------------------
 
+//https://groups.eolymp.com/az/problems/2099
 
+#include <iostream>
+#include <vector>
+#include <unordered_set>
+
+using namespace std;
+
+int main() {
+    int n, m;
+
+    // Birinci massiv üçün elementlərin sayını oxuyuruq
+    cin >> n;
+    vector<int> firstArray(n);
+    for (int i = 0; i < n; ++i) {
+        cin >> firstArray[i];
+    }
+
+    // İkinci massiv üçün elementlərin sayını oxuyuruq
+    cin >> m;
+    unordered_set<int> secondSet;
+    for (int i = 0; i < m; ++i) {
+        int element;
+        cin >> element;
+        secondSet.insert(element);
+    }
+
+    // Birinci massivdə olan və ikinci massivdə olmayan elementləri tapırıq
+    vector<int> result;
+    for (int i = 0; i < n; ++i) {
+        if (secondSet.find(firstArray[i]) == secondSet.end()) {
+            result.push_back(firstArray[i]);
+        }
+    }
+
+    // Nəticə massivinin ölçüsünü və elementlərini çap edirik
+    cout << result.size() << endl;
+    for (int i = 0; i < result.size(); ++i) {
+        cout << result[i] << " ";
+    }
+    cout << endl;
+
+    return 0;
+}
