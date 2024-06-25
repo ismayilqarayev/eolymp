@@ -2581,3 +2581,43 @@ int main()
 
 	cout << sum << endl; // nəticəni onluq nöqtədən sonra bir işarə dəqiqliklə çap edirik
 }
+
+//---------------------------------------------------------------
+
+//https://groups.eolymp.com/az/problems/2607
+
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main()
+{
+	string n;
+	cin >> n;
+
+	int cem1 = 0;
+	int cem2 = 0;
+
+	// Ədədin hər bir rəqəmini yoxlayırıq
+	for (int i = 0; i < n.size(); ++i)
+	{
+		if (isdigit(n[i])) // Cari simvolun rəqəm olduğunu yoxlayırıq
+		{
+			int digit = n[i] - '0'; // Rəqəmi simvoldan tam ədədə çeviririk
+
+			if (i % 2 == 0)
+			{
+				cem1 += digit; // Tək yerdə olan rəqəmləri toplamaq
+			}
+
+			else
+			{
+				cem2 += digit; // Cüt yerdə olan rəqəmləri toplamaq
+			}
+		}
+	}
+
+	cout << cem1 * cem2;
+	return 0;
+}
