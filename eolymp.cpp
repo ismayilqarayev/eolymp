@@ -2550,3 +2550,34 @@ int main()
 
 	cout << a[0];
 }
+
+//-----------------------------------------------------------
+
+
+//https://groups.eolymp.com/az/problems/7829
+
+#include <iostream>
+#include <iomanip>
+#include <algorithm>
+#include <vector>
+#include <string>
+
+
+using namespace std;
+
+int main()
+{
+	int n; // n sayda həqiqi ədədin sayını saxlayırıq
+	cin >> n; // n dəyərini oxuyuruq
+
+	double sum = 0.0; // ədədlərin cəmini saxlamaq üçün sum dəyişəni
+
+	for (int i = 0; i < n; ++i) // n dəfə dövr edirik
+	{
+		double num; // həqiqi ədəd üçün num dəyişəni
+		cin >> num; // ədədi oxuyuruq
+		sum += num; // ədədi cəmə əlavə edirik
+	}
+
+	cout << sum << endl; // nəticəni onluq nöqtədən sonra bir işarə dəqiqliklə çap edirik
+}
