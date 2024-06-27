@@ -1,4 +1,42 @@
 #include <iostream>
+#include <string>
+#include <vector>
+
+using namespace std;
+
+void emploe()
+{
+	vector<int> num3{ 1,2,3,4 };
+
+	auto get1 = num3.begin();
+	num3.emplace(get1 + 4, 5);
+	
+	for (auto run : num3)
+	{
+		cout << run;
+	}
+}
+
+
+void insert()
+{
+	vector<int> num4{ 1,2,4,5,6,7 };
+
+}
+
+
+int main()
+{
+	vector<int> num1{ 1,2,3,4,5,6 };
+	auto get = num1.begin();
+	num1.insert(get + 2, 3);
+
+	emploe();
+}
+
+
+//-------------------------------------------------------------
+#include <iostream>
 
 int main()
 {
