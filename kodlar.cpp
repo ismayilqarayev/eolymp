@@ -4,35 +4,66 @@
 
 using namespace std;
 
-void emploe()
+void fun1()
 {
 	vector<int> num3{ 1,2,3,4 };
 
 	auto get1 = num3.begin();
 	num3.emplace(get1 + 4, 5);
 	
-	for (auto run : num3)
+	//for (auto run : num3)
+	//{
+	//	cout << run;
+	//}
+}
+
+
+void fun2()
+{
+	vector<int> num4{ 1,2,4,5,6,7 };
+	auto get2 = num4.begin();
+	num4.insert(get2 + 2, 2, 3);
+}
+
+
+void fun3()
+{
+	vector<int> num5{ 1,2,3,4,5,6,7,8,9 };
+	vector<int> num6{ 10,20,30,40,50,60,70,80,90 };
+
+	auto get3 = num5.begin();
+	num5.insert(get3 + 1, num6.begin(), num6.begin() + 3);
+
+	for (auto run4 : num5)
 	{
-		cout << run;
+		cout << run4;
 	}
 }
 
 
-void insert()
+void fun4()
 {
-	vector<int> num4{ 1,2,4,5,6,7 };
+	vector<int> num7{ 1,2,3,4,5,6,7,8 };
+	auto get4 = num7.cend();
 
+	num7.insert(get4, { 21 });
+
+	for (auto as : num7)
+	{
+		cout << as << endl;
+	}
 }
 
 
 int main()
 {
-	vector<int> num1{ 1,2,3,4,5,6 };
-	auto get = num1.begin();
-	num1.insert(get + 2, 3);
-
-	emploe();
+	fun1();
+	fun2();
+	fun3();
+	fun4();
 }
+
+
 
 
 //-------------------------------------------------------------
