@@ -1,4 +1,56 @@
 #include <iostream>
+#include <vector>
+
+using namespace std;
+
+
+struct Test
+{
+	vector<int> num1{ 1,2,3,4,5 };
+
+	Test()
+	{
+		auto run1 = num1.begin();
+		num1.insert(run1 + 1, 3);
+
+		run1 = num1.begin();
+
+		//for (auto& ss : num1)
+		//{
+		//	cout << ss << " ";
+		//}
+	}
+};
+
+
+struct Vest
+{
+	vector <int> number1{ 1,2,3,4,5 };
+	vector <int> number2{ 10,20,30,40,50 };
+
+	Vest()
+	{
+		auto run2 = number1.begin();
+		run2 = number1.begin();
+
+		number1.insert(run2 + 0, number2.begin(), number2.begin() + 3);
+
+		for (auto& getdir : number1)
+		{
+			cout << getdir;
+		}
+	}
+};
+
+
+int main()
+{
+	Vest testInstance;
+}
+
+
+//-----------------------------------------------------------
+#include <iostream>
 #include <string>
 #include <vector>
 
