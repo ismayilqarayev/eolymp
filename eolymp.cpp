@@ -2667,3 +2667,29 @@ int main()
 
     return 0;
 }
+
+
+//------------------------------------------------------
+
+https://groups.eolymp.com/az/problems/8594
+#include <iostream>
+
+long long fun2(long long a, long long b, long long x) 
+{
+    if (a % x == 0) 
+    {
+        return (b / x) - (a / x) + 1;
+    }
+    return (b / x) - (a / x);
+}
+
+int main()
+ {
+    long long a, b, x;
+    
+    std::cin >> a >> b >> x;
+    
+    std::cout << fun2(a, b, x) << std::endl;
+    
+    return 0;
+}
