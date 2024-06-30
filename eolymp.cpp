@@ -2621,3 +2621,49 @@ int main()
 	cout << cem1 * cem2;
 	return 0;
 }
+
+
+//---------------------------------------------------------
+
+
+//https://groups.eolymp.com/az/problems/920
+
+
+#include <iostream>
+#include <iomanip>
+#include <algorithm>
+
+// İki ədədin maksimumunu qaytaran funksiya
+double max_of_two(double a, double b) 
+{
+    return (a > b) ? a : b;
+}
+
+// Üç ədədin minimumunu qaytaran funksiya
+double min_of_three(double a, double b, double c) 
+{
+    return std::min({ a, b, c });
+}
+
+int main()
+{
+    double x, y, z;
+
+    // Giriş verilənlərini oxuyuruq
+    std::cin >> x >> y >> z;
+
+    // İki ədəddən maksimumları tapırıq
+    double max1 = max_of_two(x, y);
+    double max2 = max_of_two(y, z);
+
+    // Ədədlərin cəmini tapırıq
+    double sum_xyz = x + y + z;
+
+    // Minimumu tapırıq
+    double result = min_of_three(max1, max2, sum_xyz);
+
+    // Nəticəni iki onluq dəqiqliyi ilə çap edirik
+    std::cout << std::fixed << std::setprecision(2) << result << std::endl;
+
+    return 0;
+}
