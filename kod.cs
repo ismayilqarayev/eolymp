@@ -62,3 +62,56 @@ class Program
         Fun4();
     }
 }
+
+
+//---------------------------------------------------------------
+
+
+using System;
+using System.Collections.Generic;
+
+
+class Program
+{
+    static long Fun1(long x, long y)
+    {
+        List<int> num1 = new List<int> { 1, 2, 3, 4 };
+        num1.Insert(0, 1);
+        return 0;
+    }
+
+
+    static void Fun2()
+    {
+        List<int> num2 = new List<int> { 1, 2, 3, 4, 5 };
+        List<int> num3 = new List<int> { 10, 20, 30, 40, 50, 60, 70 };
+
+        num2.InsertRange(1, num3.GetRange(0, 3));
+
+        foreach (int num4 in num2)
+        {
+            Console.WriteLine(num4);
+        }
+    }
+
+
+
+    static void Fun3()
+    {
+        Console.Write("input name");
+        int number = Convert.ToInt32(Console.ReadLine());
+    }
+
+
+
+    static void Main(string[] args)
+    {
+        long x = 0;
+        long y = 0;
+
+        long z = Fun1(x, y);
+
+        Fun2();
+        Fun3();
+    }
+}
