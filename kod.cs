@@ -115,3 +115,64 @@ class Program
         Fun3();
     }
 }
+
+
+//---------------------------------------------------------
+
+
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+
+public class Program
+{
+    public static void Fun1()
+    {
+        int[,] num3 = { { 1, 2, 3, 4, }, { 5, 6, 7, 8 } };
+        int[,] num4 = { { 1, 2, 3, 4, 5, 6, 7, 8 } };
+
+      
+
+        Console.WriteLine(num3[0,2]);
+
+        int[,] num5 = new int[1, 2];
+        num5[0, 0] = 1;
+        num5[0, 1] = 2;
+        num5[0, 2] = 3;
+        num5[0, 3] = 4;
+        num5[0, 4] = 5;
+        num5[0, 5] = 6;
+        num5[0, 6] = 7;
+        num5[0, 7] = 8;
+        num5[0, 8] = 9;
+        num5[0, 9] = 10;
+        num5[0, 10] = 11;
+        num5[0, 11] = 12;
+
+
+        int[][] number =
+        {
+            new int[] { 1, 2},
+        };
+    }
+
+
+    public static void Main(string[] args)
+    {
+
+        int[] num1 = { 1, 2, 3, 4, 5 };
+
+        for (int i = 0;  i < num1.Length; i++)
+        {
+            //Console.WriteLine(i);
+        }
+
+
+        Fun1();
+        
+    }
+}
+
+
+
+
