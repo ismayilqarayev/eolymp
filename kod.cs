@@ -186,5 +186,78 @@ public class Program
 
 //---------------------------------------------------------------
 
+using System;
+using System.Collections.Generic;
+using System.Drawing;
+using System.Globalization;
+using System.Security.Cryptography.X509Certificates;
+
+
+public class Program
+{
+    public static void Main(string[] args)
+    {
+        int[][] number2 = new int[3][];
+        Fun2(number2);
+
+        int[] num1 = { 1, 2, };
+        Fun1(num1);
+
+
+        int x = 10;
+        New a = new New(x);
+    }
+
+
+    struct New
+    {
+        public New(int x)
+        {
+            Console.WriteLine(x);
+        }
+    };
+
+
+    public static void Fun2(int[][] number2)
+    {
+        number2[0] = new int[] { 1, 2 };
+        number2[1] = new int[] { 1, 2, 3 };
+        number2[2] = new int[] { 1, 2, 3, 4 };
+    }
+
+
+    public static void Fun1(int[] num1)
+    {
+        foreach(int x in num1)
+        {
+            Console.WriteLine(x);
+        }
+
+        int[,] num3 = { { 1, 2, 3, 4, }, { 5, 6, 7, 8 } };
+        int[,] num4 = { { 1, 2, 3, 4, 5, 6, 7, 8 } };
+
+        //Console.WriteLine(num3[0,2]);
+
+        int[,] num5 = new int[1, 2];
+        num5[0, 0] = 1;
+        num5[0, 1] = 2;
+       
+
+        int[][] number =
+        {
+            new int[] { 1, 2},
+        };
+    }
+}
+
+public class Program2
+{
+
+}
+
+
+
+
+
 
 
