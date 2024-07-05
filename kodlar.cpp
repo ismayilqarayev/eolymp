@@ -1,3 +1,30 @@
+
+#include <iostream>
+
+void fun1(int, int);
+void fun2(int, long);
+
+const int n1 = 3;
+const int n2 = 4;
+const int n3 = 5;
+const int n4 = 6;
+
+int main(){
+    fun1(n1, n2);
+    fun2(n3, n4);
+}
+
+void fun1(int a, int b){
+    auto result = a + b;
+    std::cout << a << " + " << b << " = " << result << std::endl;
+}
+
+void fun2(int nn3, int nn4){
+    int a = 10;
+}
+
+//----------------------------------------------------
+
 #include <iostream>
 #include <vector>
 #include <list>
