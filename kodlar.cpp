@@ -1,5 +1,55 @@
 #include <iostream>
 #include <vector>
+#include <list>
+#include <algorithm>
+
+using namespace std;
+
+void fun2(){
+    list<long long> n = {34, 45, 56, 67};
+    long long vertical = n.size();
+
+    for (long long aa : n){
+        cout << aa << " ";
+    }
+    cout << endl;
+}
+
+int main(){
+
+    vector<int> number1;
+    vector<int> number2{10, 20, 30, 40};
+
+    int size;
+    cin >> size;
+
+    for (int i = 0; i < size; ++i){
+        int element;
+        cin >> element;
+        number1.push_back(element);
+    }
+
+    auto get = number1.cbegin();
+
+    sort(number1.begin(), number1.end());
+
+    number1.insert(get + 1, number2.begin(), number2.begin() + 3);
+
+    number1.erase(number1.cbegin());
+
+    for (int run : number1){
+        cout << run;
+    }
+    cout << endl;
+
+    fun2();
+    return 0;
+}
+
+
+//----------------------------------------------------------------
+#include <iostream>
+#include <vector>
 
 using namespace std;
 
