@@ -1,6 +1,50 @@
 
 #include <iostream>
 
+using namespace std;
+
+int Fun2(int num1, int num2);
+int Fun3(int run1, int run2);
+
+auto number1 = 10;
+auto number2 = 20;
+auto number3 = 30;
+auto number4 = 40;
+
+int main()
+{
+    Fun2(number1, number2);
+    Fun3(number3, number4);
+
+    {
+        int number10{2}; // Bu blokda dəyişənlər təyin edilib, amma istifadə olunmur.
+        int number20{3};
+    }
+
+    {
+        int number10; // Bu blokda dəyişən təyin edilib, amma istifadə olunmur.
+    }
+
+    return 0;
+}
+
+int Fun2(int num1, int num2)
+{
+    int sum = num1 + num2;
+    cout << "Sum in Fun2: " << sum << endl; // Nəticəni ekrana çıxarırıq.
+    return sum;
+}
+
+int Fun3(int run1, int run2)
+{
+    int sum2 = run1 + run2;
+    cout << "Sum in Fun3: " << sum2<< endl; // Nəticəni ekrana çıxarırıq.
+    return sum2;
+}
+
+//------------------------------------------------------
+#include <iostream>
+
 void fun1(int, int);
 void fun2(int, long);
 
@@ -191,10 +235,10 @@ int main()
 	fun3();
 	fun4();
 }
-
-
-
-
+//-------------------------------------------------------------
+//-------------------------------------------------------------
+//-------------------------------------------------------------
+//-------------------------------------------------------------
 //-------------------------------------------------------------
 #include <iostream>
 
