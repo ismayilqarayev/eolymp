@@ -1,4 +1,86 @@
+#include <iostream>
+#include <vector>
 
+using namespace std;
+
+void runner1(vector<int>*vec1);
+void runner2(vector<int>*vec2);
+
+vector<int> number1{};
+vector<int> number2{};
+
+int main(){
+    runner1(&number1);
+    runner2(&number2);
+
+    cout << "number1";
+    for (int n1 : number1){
+        cout << n1 << " ";
+    }
+    cout << endl;
+
+
+    cout << "number2";
+    for (int n2 : number2){
+        cout << n2 << " ";
+    }
+    cout << endl;
+
+    return 0;
+}
+
+void runner1(vector<int>*vec1){
+    int add_vector_number = 0;
+    cin >> add_vector_number;
+
+    for (int i = 0; i < add_vector_number; i++){
+        int a;
+        cin >> a;
+        //number1.push_back(a);
+        vec1 ->push_back(a);
+    }
+}
+
+void runner2(vector<int>*vec2){
+    int add_vector_number2 = 0;
+    cin >> add_vector_number2;
+
+    for (int i = 0; i < add_vector_number2; i++){
+        int b;
+        cin >> b;
+        //number2.push_back(a);
+        vec2 ->push_back(b);
+    }
+}
+
+
+//--------------------------------------------------------------
+#include <iostream>
+
+using namespace std;
+
+void fun1(int& number);  // fun1 funksiyasının prototipi
+void fun2(int& number);  // fun2 funksiyasının prototipi
+
+int main() {
+    float value = 5.5;  // float tipli dəyişən
+    auto v = static_cast<int>(value);  // value dəyişənini int tipinə çevirir
+
+    fun1(v);  // v dəyişənini fun1 funksiyasına ötürür
+    fun2(v);  // v dəyişənini fun2 funksiyasına ötürür
+
+    return 0;
+}
+
+void fun1(int& number) {
+    cout << number << endl;  // number dəyərini çap edir
+}
+
+void fun2(int& number) {
+    cout << number << endl;  // number dəyərini çap edir
+}
+
+//-----------------------------------------------------
 #include <iostream>
 
 using namespace std;
