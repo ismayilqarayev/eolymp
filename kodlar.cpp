@@ -1,3 +1,29 @@
+#include <iostream>  // İstifadə ediləcək kitabxananı daxil edir
+
+using namespace std;
+
+int fun1(int **);  // fun1 funksiyasının protipi
+int number = 0;    // Qlobal dəyişən number
+
+int main()
+{
+    int *ptr = &number;  // number dəyişəninin ünvanını ptr pointerinə təyin edirik
+    fun1(&ptr);          // ptr-ın ünvanını fun1 funksiyasına göndəririk
+
+    // Yaddaşı azad etmək
+    delete ptr;
+
+    return 0;
+}
+
+int fun1(int **num)
+{
+    *num = new int {};  // Yeni int üçün yaddaş ayırırıq və dəyəri 0-a təyin edirik
+    cout << **num;      // **num ilə həmin ünvanın dəyərini göstəririk
+    return 0;
+}
+
+//----------------------------------------------------------------
 #include <iostream>
 #include <vector>
 
@@ -9,50 +35,54 @@ void runner2(vector<int>*vec2);
 vector<int> number1{};
 vector<int> number2{};
 
-int main(){
+int main()
+{
     runner1(&number1);
     runner2(&number2);
-
-    cout << "number1";
-    for (int n1 : number1){
-        cout << n1 << " ";
-    }
-    cout << endl;
-
-
-    cout << "number2";
-    for (int n2 : number2){
-        cout << n2 << " ";
-    }
-    cout << endl;
-
     return 0;
 }
 
-void runner1(vector<int>*vec1){
+void runner1(vector<int>*vec1)
+{
     int add_vector_number = 0;
     cin >> add_vector_number;
 
-    for (int i = 0; i < add_vector_number; i++){
+    for (int i = 0; i < add_vector_number; i++)
+    {
         int a;
         cin >> a;
         //number1.push_back(a);
         vec1 ->push_back(a);
     }
+
+    cout << "number1";
+    for (int n1 : *vec1)
+    {
+        cout << n1 << " ";
+    }
+    cout << endl;
 }
 
-void runner2(vector<int>*vec2){
+void runner2(vector<int>*vec2)
+{
     int add_vector_number2 = 0;
     cin >> add_vector_number2;
 
-    for (int i = 0; i < add_vector_number2; i++){
+    for (int i = 0; i < add_vector_number2; i++)
+    {
         int b;
         cin >> b;
         //number2.push_back(a);
         vec2 ->push_back(b);
     }
-}
 
+    cout << "number2";
+    for (int n2 : *vec2)
+    {
+        cout << n2 << " ";
+    }
+    cout << endl;
+}
 
 //--------------------------------------------------------------
 #include <iostream>
