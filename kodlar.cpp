@@ -24,6 +24,69 @@ int fun1(int **num)
 }
 
 //----------------------------------------------------------------
+
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+class Runner
+{
+private:
+    vector<int> number1{};
+    vector<int> number2{};
+
+    void runner1(vector<int>*vec1);
+    void runner2(vector<int>*vec2);
+
+
+    int main()
+    {
+        Runner get1;
+        get1.runner1(&number1);
+        get1.runner2(&number2);
+
+        runner1(&number1);
+        runner2(&number2);
+        return 0;
+    }
+
+    static void runner1(vector<int> *vec1)
+    {
+        int add_vector_number = 0;
+        cin >> add_vector_number;
+
+        for (int i = 0; i < add_vector_number; i++)
+        {
+            int a;
+            cin >> a;
+            vec1 -> push_back(a);
+        }
+    }
+
+
+    static void runner2(vector<int> *vec2)
+    {
+        int add_vector_number = 0;
+        cin >> add_vector_number;
+
+        for (int i = 0; i < add_vector_number; i++)
+        {
+            int b;
+            cin >> b;
+            vec2 ->push_back(b);
+        }
+
+        for (int n1 : *vec2)
+        {
+            cout << n1 << " ";
+        }
+        cout << endl;
+    }
+};
+
+
+
 #include <iostream>
 #include <vector>
 
