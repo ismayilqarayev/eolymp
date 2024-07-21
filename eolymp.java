@@ -1,7 +1,32 @@
 import java.util.Scanner;
 
 public class Main {
+
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int S = scanner.nextInt();
+
+        int[] bankomat = {500, 200, 100, 50, 20, 10, 5, 2, 1}; // Bankomatda olan deyerler
+        int useBankomat = 0; // istifade olunan bankomat sayi
+
+        for (int i = 0; i < bankomat.length; i++) {
+            useBankomat += S / bankomat[i]; // istifade olunan bankomat sayi hesapla
+            S %= bankomat[i]; // qaliqi yenile
+        }
+
+        System.out.println(useBankomat);
+    }
+}
+
+
+//--------------------------------------------------------------
+
+import java.util.Scanner;
+
+public class Main 
+{
+    public static void main(String[] args) 
+    {
         String n;
         Scanner scanner = new Scanner(System.in);
         n = scanner.nextLine();
@@ -9,20 +34,25 @@ public class Main {
         int cem1 = 0;
         int cem2 = 0;
 
-        for (int i = 0; i < n.length(); i++) {
-            if (Character.isDigit(n.charAt(i))){
+        for (int i = 0; i < n.length(); i++) 
+        {
+            if (Character.isDigit(n.charAt(i)))
+            {
                 int digit = n.charAt(i);
 
-                if (i % 2 == 0){
+                if (i % 2 == 0)
+                {
                     cem1 += digit;
-                }else {
+                }else 
+                {
                     cem2 += digit;
                 }
             }
         }
     }
 
-    public static void fun2(){
+    public static void fun2()
+    {
         int[] num = new int[]{1,2,3,4};
     }
 }
