@@ -1,3 +1,90 @@
+
+
+
+package blok1;
+
+import java.util.Scanner;
+import
+
+public class Main
+{
+    public static void main(String[] args)
+    {
+        Person bob = new Person("get1", 2);
+        bob.fun1();
+
+        Person tom = new Person("get2", 30);
+        tom.fun1();
+
+        Person sam = new Person("get3", 25);
+        sam.fun1();
+    }
+}
+
+
+class Person
+{
+    String name;
+    int age;
+
+    Person(String name, int age)
+    {
+        this.name = name;
+        this.age = age;
+    }
+
+    void fun1()
+    {
+        System.out.println(" Name: " + name + " Age: " + age);
+    }
+}
+//----------------------------------------------------------
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Main
+{
+    static int cem1 = 0;
+    static int cem2 = 0;
+    static int [][] runner = new int[][]{{34,54,23}, {1,2,3,4,5}};
+
+
+    public static void main(String[] args)
+    {
+        String number;
+        int get = 34;
+
+        Scanner input  = new Scanner(System.in);
+        number = input.nextLine();
+
+        for (int i = 0; i < number.length(); i++)
+        {
+            if (Character.isDigit(number.charAt(i)))
+            {
+                int digit = number.charAt(i);
+
+                if (i % 2 == 0)
+                {
+                    cem1 += digit;
+                }
+                else
+                {
+                    cem2 += digit;
+                }
+            }
+        }
+
+        fun2(get, runner);
+    }
+
+    public static void fun2(int num, int[][] run)
+    {
+        System.out.println(Arrays.toString(run[2]));
+        System.out.println(num);
+    }
+}
+
+//-------------------------------------------------------------
 import java.util.Scanner;
 
 public class Main {
