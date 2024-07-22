@@ -1,23 +1,24 @@
-
-
-
 package blok1;
 
 import java.util.Scanner;
-import
 
 public class Main
 {
+    public static int number1 = 10;
+    public static int number2 = 20;
+    public static int number3 = 30;
+
     public static void main(String[] args)
     {
-        Person bob = new Person("get1", 2);
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter name");
+        String name1 = scanner.nextLine();
+
+        System.out.println("Enter age");
+        int age1 = scanner.nextInt();
+
+        Person bob = new Person(name1, age1);
         bob.fun1();
-
-        Person tom = new Person("get2", 30);
-        tom.fun1();
-
-        Person sam = new Person("get3", 25);
-        sam.fun1();
     }
 }
 
@@ -38,6 +39,16 @@ class Person
         System.out.println(" Name: " + name + " Age: " + age);
     }
 }
+
+class Person1
+{
+    void fun3(int num1)
+    {
+        System.out.println(num1);
+    }
+}
+
+
 //----------------------------------------------------------
 import java.util.Arrays;
 import java.util.Scanner;
