@@ -1,4 +1,24 @@
 class Runner:
+    number = 10
+    message = "hello"
+
+    def __init__(self):
+        for index, c in enumerate(self.message):
+            print(f"{index}, {c}")
+
+    def fun2(self):
+        while self.number < 5:
+            print(f"number = {self.number}")
+            self.number += 1
+
+
+if __name__ == "__main__":
+    get1 = Runner()
+    get1.fun2()
+
+#-----------------------------------------------------------------
+
+class Runner:
     def __init__(self):
         self.number1 = []
         self.number2 = []
