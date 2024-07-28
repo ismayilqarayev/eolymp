@@ -1,4 +1,33 @@
 class Runner:
+    def __init__(self):
+        self.number1 = []
+        self.number = 0
+
+    def runner1(self, vec1):
+        add_number1 = int(input("reqemlerin sayini daxil et"))
+        for _ in range(add_number1):
+            a = int(input("reqemleri daxil et"))
+            vec1.append(a)
+
+    def main(self, numbers):
+        for n in numbers:
+            self.number += n
+            print(self.number)
+
+    def reset(self):
+        self.number = 0
+
+
+if __name__ == "__main__":
+    get1 = Runner()
+    get1.runner1(get1.number1)
+    get1.reset()
+    get1.main(get1.number1)
+
+
+
+#----------------------------------------------------------------
+class Runner:
     number = 10
     message = "hello"
     number1 = 30
