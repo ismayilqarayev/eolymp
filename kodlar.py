@@ -1,30 +1,37 @@
-class Runner:
+class Program:
     def __init__(self):
         self.number1 = []
-        self.number = 0
+        self.number = 10
 
-    def runner1(self, vec1):
-        add_number1 = int(input("reqemlerin sayini daxil et"))
-        for _ in range(add_number1):
-            a = int(input("reqemleri daxil et"))
-            vec1.append(a)
+    def fun1(self, vec1):
+        add_number_for_list = int(input())
+        for _ in range(add_number_for_list):
+            num = int(input())
+            vec1.append(num)
 
-    def main(self, numbers):
-        for n in numbers:
+    def fun2(self, vec2):
+        for n in vec2:
             self.number += n
             print(self.number)
 
-    def reset(self):
-        self.number = 0
+    def fun3(self, vec3):
+        for n in vec3:
+            self.number -= n
+            print(self.number)
+
+    def fun4(self, kinn):
+        return 2 * kinn
 
 
 if __name__ == "__main__":
-    get1 = Runner()
-    get1.runner1(get1.number1)
-    get1.reset()
-    get1.main(get1.number1)
+    klass = Program()
 
+    klass.fun1(klass.number1)
+    klass.fun2(klass.number1)
+    klass.fun3(klass.number1)
 
+    result1 = klass.fun4(4)
+    print(result1)
 
 #----------------------------------------------------------------
 class Runner:
