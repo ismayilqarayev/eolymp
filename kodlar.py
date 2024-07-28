@@ -1,20 +1,30 @@
 class Runner:
     number = 10
     message = "hello"
+    number1 = 30
+    number2 = 40
 
-    def __init__(self):
+    def main(self, num1, num2):
+        print(num1, num2)
         for index, c in enumerate(self.message):
             print(f"{index}, {c}")
 
-    def fun2(self):
-        while self.number < 5:
-            print(f"number = {self.number}")
-            self.number += 1
+    def fun2(self, number=None):
+        if number is None:
+            number = self.number
+
+        while number < 15:
+            print(f"number = {number}")
+            number += 1
+            if number == 11:
+                break
 
 
 if __name__ == "__main__":
     get1 = Runner()
+    get1.main(get1.number1, get1.number2)
     get1.fun2()
+
 
 #-----------------------------------------------------------------
 
