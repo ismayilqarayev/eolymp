@@ -1,34 +1,30 @@
 #include <iostream>
-#include <string>
 #include <vector>
+#include <algorithm>
+#include <string>
 
 using namespace std;
 
-void fun1()
-{
-    vector<int> num3{1,2,3,4};
-    auto get1 = num3.begin();
-    num3.emplace(get1 + 4, 5);
+void fun2(int);
 
-    for (auto run : num3)
-    {
-        cout << run << " ";
-    }
+
+int main()
+{
+    fun2();
 }
 
 void fun2()
 {
-    vector<int> num4{1,2,3,4,5,6,7};
-    auto get2 = num4.begin();
-    num4.insert(get2 + 2, 2, 3);
-}
+    vector<int> v1;
+    vector<int> v2 = {1,2,3,4,5,6,7,8,9,10};
 
-void fun3()
-{
-    vector
-}
+    int size;
+    cin >> size;
 
-int main()
-{
-
+    for (int i = 0; i < size; i++)
+    {
+        int element
+        cin >> element
+        number1.push_back(element);
+    }
 }
