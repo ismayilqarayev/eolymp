@@ -19,21 +19,37 @@ class Program:
             self.number -= n
             print(self.number)
 
-    def fun4(self, kinn):
-        return 2 * kinn
+    def fun4(self, kim):
+        return 2 * kim
+
+    def apply_function(self, func, *args):
+        return func(*args)
+
+
+class Program2:
+    def fun4(self, name, age):
+        if age > 120 or age < 1:
+            print("invalid")
+            return
+        print(name, age)
 
 
 if __name__ == "__main__":
-    klass = Program()
+    klass1 = Program()
+    klass2 = Program2()
 
-    klass.fun1(klass.number1)
-    klass.fun2(klass.number1)
-    klass.fun3(klass.number1)
+    klass1.fun1(klass1.number1)
+    klass1.fun2(klass1.number1)
+    klass1.fun3(klass1.number1)
+    klass2.fun4(" ismayil", 3)
 
-    result1 = klass.fun4(4)
-    print(result1)
+    b = klass1.apply_function(klass1.fun4, 4)
+    print(b)
+
 
 #----------------------------------------------------------------
+
+
 class Runner:
     number = 10
     message = "hello"
