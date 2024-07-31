@@ -22,21 +22,25 @@ int main()
 void fun2(vector<int>*v1, vector<int>*v2)
 {
     int add_vector_number = 0;
+    cout << "Enter the number of elements in the vector1: ";
     cin >> add_vector_number;
 
     for (int i = 0; i < add_vector_number; i++)
     {
         int a;
+        cout << "Enter the elements of the vector1: ";
         cin >> a;
         vec1.push_back(a);
     }
 
     int add_vector_number2 = 0;
+    cout << "Enter the number of elements in the vector2: ";
     cin >> add_vector_number2;
 
     for (int i = 0; i < add_vector_number2; i++)
     {
         int a;
+        cout << "Enter the elements of the vector2: ";
         cin >> a;
         vec2.push_back(a);
     }
@@ -49,7 +53,7 @@ void fun1(vector<int>*v1, vector<int>*v2)
     v1 ->insert(get1 + 1, v2->begin(), v2->end());
     for ( auto i : *v1)
     {
-        cout << i << endl;
+        cout << i;
     }
 }
 
