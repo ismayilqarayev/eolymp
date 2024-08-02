@@ -5,6 +5,53 @@
 
 using namespace std;
 
+void fun1(vector<string>*v1, vector<string>*v2);
+void fun2(vector<string>*v1, vector<string>*v2);
+
+vector<string> vec1;
+vector<string> vec2;
+
+int main()
+{
+    fun1(&vec1, &vec2);
+    fun2(&vec1, &vec2);
+    return 0;
+}
+
+void fun1(vector<string>*v1, vector<string>*v2)
+{
+    string add_text_for_v1 = " ";
+    cout << "Enter the text for vector 1: ";
+    cin >> add_text_for_v1;
+
+    for (int i = 0; i < add_text_for_v1.length(); i++)
+    {
+        string c;
+        cin >> c;
+        v1->push_back(c);
+    }
+}
+
+void fun2(vector<string>*v1, vector<string>*v2)
+{
+    auto get1 = v1->begin();
+    v1-> insert(get1 + 1, " ");
+
+    for (string ss : *v1)
+    {
+        cout << ss << " ";
+    }
+}
+
+
+//---------------------------------------------------------
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <string>
+
+using namespace std;
+
 void fun2(vector<int>*v1, vector<int>*v2);
 void fun1(vector<int>*v1, vector<int>*v2);
 

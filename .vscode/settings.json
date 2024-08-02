@@ -118,5 +118,6 @@
     "xmemory": "cpp",
     "xstring": "cpp",
     "xtr1common": "cpp"
-  }
+  },
+  "java.debug.settings.onBuildFailureProceed": true
 }
