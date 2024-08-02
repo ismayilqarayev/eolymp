@@ -9,6 +9,10 @@ public class Main {
 
             System.out.println("Enter the age of the student: ");
             int age = sc.nextInt();
+            
+            if (age<18){
+                throw new Exception("You are younger than 18 years!");
+            }
 
             System.out.println("Enter the name of the course: ");
             String course = sc.nextLine();
