@@ -3,6 +3,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "code1",
+            "request": "launch",
+            "mainClass": "java.code1",
+            "projectName": "eolymp_a69cf9b0"
+        },
+        {
+            "type": "java",
             "name": "Main",
             "request": "launch",
             "mainClass": "cpp.java.Main",
