@@ -25,6 +25,8 @@ public class code2 {
         }
     }
 
+    
+
     public static void fun2(List<String> v1, List<String> v2) {
         v1.add(1, " ");
 
