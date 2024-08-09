@@ -31,3 +31,37 @@ class Person {
         System.out.println("Age: " + age);
     }
 }
+
+
+//---------------------------------------------------------------------------
+
+import java.sql.Array;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        List<Integer> list1 = new ArrayList<>();
+        List<Integer> list2 = new ArrayList<>();
+        fun1(list1, list2);
+        fun2(list1, list2);
+    }
+
+    public static void fun1(List<Integer> list1, List<Integer> list2){
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+
+        for(int i = 0; i < n; i++){
+            list1.add(sc.nextInt());
+            list2.add(sc.nextInt());
+        }
+        System.out.println(list1);
+        System.out.println(list2);
+    }
+
+    public static void fun2(List<Integer> list1, List<Integer> list2){
+        
+    }
+}
