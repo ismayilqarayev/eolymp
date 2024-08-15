@@ -3,6 +3,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "java.Main",
+            "projectName": "eolymp_a69cf9b0"
+        },
+        {
+            "type": "java",
+            "name": "code7",
+            "request": "launch",
+            "mainClass": "java.code7",
+            "projectName": "eolymp_a69cf9b0"
+        },
+        {
+            "type": "java",
             "name": "teste",
             "request": "launch",
             "mainClass": "java.teste",
