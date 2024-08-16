@@ -17,7 +17,7 @@ class Program:
             
     def fun3(self, lst1, list2):
         cem = lst1 + list2
-        return cem
+        return cem    
         
 
 # Obyektin yaradılması
