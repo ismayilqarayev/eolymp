@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 from os import name
 
 
@@ -50,3 +51,12 @@ except ValueError as e:
     
 
         
+=======
+class Program:
+    def fun1(self):
+        print("ismayil")
+        
+if __name__ == "__main__":
+    klass1 = Program()
+    klass1.fun1()
+>>>>>>> Stashed changes
