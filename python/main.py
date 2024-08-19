@@ -1,4 +1,3 @@
-<<<<<<< Updated upstream
 from os import name
 
 
