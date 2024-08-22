@@ -1,5 +1,72 @@
 #include <iostream>
 #include <vector>
+
+using namespace std;
+
+// Funksiyaların prototipləri
+void fun1(vector<string>*v1, vector<string>*v2);
+void fun2(vector<string>*v1, vector<string>*v2);
+
+// Qlobal vektorlar
+vector<string> vec1;
+vector<string> vec2;
+
+int main()
+{
+    // fun1 funksiyasını çağırır və vec1, vec2 vektorlarını ötürür
+    fun1(&vec1, &vec2);
+
+    // fun2 funksiyasını çağırır və vec1, vec2 vektorlarını ötürür
+    fun2(&vec1, &vec2);
+}
+
+void fun1(vector<string>*v1, vector<string>*v2)
+{
+    // Vektor v1 üçün mətn daxil etmək
+    string add_text_vector = " ";
+    cout << "Enter text v1: ";
+    cin >> add_text_vector;
+
+    // Daxil edilən mətnin hər bir simvolu üçün v1 vektoruna mətn əlavə etmək
+    for (int i = 0; i < add_text_vector.length(); i++)
+    {
+        string c;
+        cout << "Enter text v1: ";
+        cin >> c;
+        v1 ->push_back(c);
+    }
+
+    // Vektor v2 üçün mətn daxil etmək
+    cout << "Enter text v2: ";
+    cin >> add_text_vector;
+
+    // Daxil edilən mətnin hər bir simvolu üçün v2 vektoruna mətn əlavə etmək
+    for (int i = 0; i < add_text_vector.length(); i++)
+    {
+        string c;
+        cout << "Enter text v2: ";
+        cin >> c;
+        v2 ->push_back(c);
+    }
+}
+
+void fun2(vector<string>*v1, vector<string>*v2)
+{
+    // Vektor v1-in başlanğıcından birinci elementin ardına boşluq əlavə etmək
+    auto get1 = v1->begin();
+    v1->insert(get1 + 1, " ");
+
+    // Vektor v1-dəki bütün elementləri ekrana yazdırmaq
+    for (string ss : *v1)
+    {
+        cout << ss << endl;
+    }
+}
+// ozum ucun yeniden yazmisam mesq ucun
+
+//----------------------------------------------------------------------
+#include <iostream>
+#include <vector>
 #include <algorithm>
 #include <string>
 
@@ -29,6 +96,17 @@ void fun1(vector<string>*v1, vector<string>*v2)
         string c;
         cin >> c;
         v1->push_back(c);
+    }
+
+    string add_text_for_v2 = " ";
+    cout << "Enter the text for vector 2: ";
+    cin >> add_text_for_v2;
+
+    for (int i = 0; i < add_text_for_v2.length(); i++)
+    {
+        string c;
+        cin >> c;
+        v2->push_back(c);
     }
 }
 
@@ -65,7 +143,6 @@ int main()
     return 0;
 }
 
-
 void fun2(vector<int>*v1, vector<int>*v2)
 {
     int add_vector_number = 0;
@@ -77,7 +154,7 @@ void fun2(vector<int>*v1, vector<int>*v2)
         int a;
         cout << "Enter the elements of the vector1: ";
         cin >> a;
-        vec1.push_back(a);
+        v1->push_back(a);  // vec1 əvəzinə v1 istifadə olunur
     }
 
     int add_vector_number2 = 0;
@@ -89,20 +166,22 @@ void fun2(vector<int>*v1, vector<int>*v2)
         int a;
         cout << "Enter the elements of the vector2: ";
         cin >> a;
-        vec2.push_back(a);
+        v2->push_back(a);  // vec2 əvəzinə v2 istifadə olunur
     }
 }
-
 
 void fun1(vector<int>*v1, vector<int>*v2)
 {
     auto get1 = v1->begin();
-    v1 ->insert(get1 + 1, v2->begin(), v2->end());
-    for ( auto i : *v1)
+    v1->insert(get1 + 1, v2->begin(), v2->end());
+    
+    for (auto i : *v1)
     {
-        cout << i;
+        cout << i << " ";  // elementləri boşluqla ayırır
     }
+    cout << endl;  // çapdan sonra sətir keçidi
 }
+
 
 //-----------------------------------------------------------
 #include <iostream>  // İstifadə ediləcək kitabxananı daxil edir
