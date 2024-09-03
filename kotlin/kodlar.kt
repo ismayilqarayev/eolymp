@@ -1,3 +1,81 @@
+fun main(){
+    val list1 = mutableListOf<String>()
+    val list2 = mutableListOf<String>()
+
+    l1MetininDaxilEdilmesi(list1, "Salam", "Dünya")
+    l2MetininDaxilEdilmesi(list2, "Kotlin", "Vararg", "Misal")
+
+    cap_etme(list1, list2)
+}
+
+fun l1MetininDaxilEdilmesi(l1: MutableList<String>, vararg sozler: String){
+    for (soz in sozler) {
+        l1.add(soz)
+    }
+}
+
+fun l2MetininDaxilEdilmesi(l2: MutableList<String>, vararg sozler: String){
+    for (soz in sozler) {
+        l2.add(soz)
+    }
+}
+
+fun cap_etme(l1: MutableList<String>, l2: MutableList<String>){
+    println("List1:")
+    for (i in l1){
+        println(i)
+    }
+
+    println("List2:")
+    for (i in l2){
+        println(i)
+    }
+}
+
+
+//----------------------------------------------------------------------------
+fun main(){
+    val list1 = mutableListOf<String>()
+    val list2 = mutableListOf<String>()
+
+    l1MetininDaxilEdilmesi(list1)
+    l2MetininDaxilEdilmesi(list2)
+
+    cap_etme( list1, list2)
+}
+
+
+fun l1MetininDaxilEdilmesi(l1: MutableList<String>){
+    print("metininizi list1 daxil edin: ")
+    val metininList1DaxilEdilmesi = readln() ?: ""
+
+    for (i in metininList1DaxilEdilmesi){
+        println("heriflerin list1 elave olunmasi: ")
+        val heriflerinList1ElaveOlunmasi = readln() ?: ""
+        l1.add(heriflerinList1ElaveOlunmasi)
+    }
+}
+
+
+fun l2MetininDaxilEdilmesi(l2: MutableList<String>){
+    println("metininizi list2 daxil edin: ")
+    val metininList2DaxilEdilmesi = readln() ?: ""
+
+    for (i in metininList2DaxilEdilmesi){
+        println("heriflerin list2 elave olunmasi: ")
+        val heriflerinList2ElaveOlunmasi = readln() ?: ""
+        l2.add(heriflerinList2ElaveOlunmasi)
+    }
+}
+
+fun cap_etme(l1: MutableList<String>, l2: MutableList<String>){
+    for (i in l1){
+        println(i)
+    }
+}
+
+
+//----------------------------------------------------------------------------------------
 fun main() {
     val vec1 = mutableListOf<String>()
     val vec2 = mutableListOf<String>()
