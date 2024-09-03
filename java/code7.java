@@ -20,6 +20,7 @@ public class Main{
         // Dəyərləri çap edirik
         System.out.println("Text1: " + program.getText1());
         System.out.println("Text2: " + program.getText2());
+
     }
 }
 
