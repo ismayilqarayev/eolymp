@@ -1,3 +1,66 @@
+
+using System;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        int number_1 = 0, number_2 = 0;
+        int number_5 = 0, number_6 = 0;
+        int result_1;
+
+        fun1(ref number_1, ref number_2);   // Get input and display
+        fun2(ref number_1, ref number_2);   // Increment and display
+        
+        MyClass myClass = new MyClass();
+        myClass.fun3(number_5, number_6, out result_1);
+        //myClass.fun4();
+
+        // Print the final modified values
+        Console.WriteLine("Final number_1: " + number_1);
+        Console.WriteLine("Final number_2: " + number_2); 
+    }
+
+    // Function to get inputs for two numbers
+    static void fun1(ref int num_1, ref int num_2)
+    {
+        Console.WriteLine("Enter number 1: ");
+        num_1 = int.Parse(Console.ReadLine());
+        Console.WriteLine("You entered: " + num_1);
+
+        Console.WriteLine("Enter number 2: ");
+        num_2 = int.Parse(Console.ReadLine());
+        Console.WriteLine("You entered: " + num_2);
+    }
+
+    // Function to increment the numbers and display the result
+    static void fun2(ref int num_1, ref int num_2)
+    {
+        num_1++;
+        num_2++;
+        Console.WriteLine("Incremented values: " + num_1 + " " + num_2);
+    }
+}
+
+class MyClass
+{
+    public void fun4(int num_5, int num_6)
+    {
+        Console.WriteLine("Enter number 3: ");
+        num_5 = int.Parse(Console.ReadLine());
+        
+        Console.WriteLine("Enter number 4: ");
+        num_6 = int.Parse(Console.ReadLine());
+        
+    }
+    public void fun3(int num_5, int num_6, out int result_1)
+    {
+        result_1 = num_5 + num_6;
+        Console.WriteLine("Result: " + result_1);
+    }
+}
+
+//-------------------------------------------------------
 using System;
 using System.Collections.Generic;
 
