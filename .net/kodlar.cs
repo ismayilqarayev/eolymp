@@ -1,6 +1,40 @@
 
 
+using System;
 
+class Program
+{
+    static void Main(string[] args)
+    {
+        int number_1 = 0;
+        int number_2 = 0;
+        int result;
+
+       
+
+        // Dəyərləri dəyişmədən ötürmək üçün `in` istifadə olunur.
+        fun1(number_1, number_2);
+        fun2(in number_1, in number_2, out result);
+    }
+
+    // Funksiya sadəcə dəyərləri oxuyur və dəyişdirmir.
+    public static void fun1(int num_1, int num_2)
+    {
+        // number_1 və number_2 dəyərlərini təyin etmək üçün Main funksiyasında oxuyuruq.
+        Console.WriteLine("Enter first number: ");
+        num_1 = int.Parse(Console.ReadLine());
+
+        Console.WriteLine("Enter second number: ");
+        num_2 = int.Parse(Console.ReadLine());
+    }
+
+    // Funksiya toplanma əməliyyatı aparır.
+    public static void fun2(in int x , in int y, out int result)
+    {
+        result = (x + y) * 2;
+        Console.WriteLine("The result is: " + result);
+    }
+}
 
 
 //--------------------------------------------------
