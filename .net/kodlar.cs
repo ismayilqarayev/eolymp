@@ -1,4 +1,9 @@
 
+
+
+
+
+//--------------------------------------------------
 using System;
 
 class Program
@@ -7,13 +12,14 @@ class Program
     {
         int number_1 = 0, number_2 = 0;
         int number_5 = 0, number_6 = 0;
-        int result_1;
+        int result_1, result_2;
+        
 
         fun1(ref number_1, ref number_2);   // Get input and display
         fun2(ref number_1, ref number_2);   // Increment and display
         
         MyClass myClass = new MyClass();
-        myClass.fun3(number_5, number_6, out result_1);
+        myClass.fun3(number_5, number_6, out result_1, out result_2);
         //myClass.fun4();
 
         // Print the final modified values
@@ -53,9 +59,10 @@ class MyClass
         num_6 = int.Parse(Console.ReadLine());
         
     }
-    public void fun3(int num_5, int num_6, out int result_1)
+    public void fun3(int num_5, int num_6, out int result_1, out int result_2)
     {
         result_1 = num_5 + num_6;
+        result_2 = num_5 - num_6;
         Console.WriteLine("Result: " + result_1);
     }
 }
