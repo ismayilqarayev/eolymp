@@ -39,7 +39,10 @@ void fun1(vector<string>*v1, vector<string>*v2)
         cout << "Enter text v1: ";
         cin >> c;
         v1 ->push_back(c);
+
     }
+
+    
 
     // Vektor v2 üçün mətn daxil etmək
     cout << "Enter text v2: ";
