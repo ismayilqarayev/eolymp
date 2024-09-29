@@ -1,4 +1,92 @@
 
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <string>
+#include <deque>
+
+using namespace std;
+
+class Program1;
+class Program2;
+
+void fun2(vector<int>*v1, vector<int>*v2);
+void fun1(vector<int>*v1, vector<int>*v2);
+void fun3(deque<int>*d1);
+
+vector<int> vec1;
+vector<int> vec2;
+deque<int> deq1;
+
+class Program1
+{
+public:
+    void fun1(vector<int>*v1, vector<int>*v2)
+    {
+        int add_vector_number = 0;
+        cout << "Enter the number of elements in the vector1: ";
+        cin >> add_vector_number;
+
+        for (int i = 0; i < add_vector_number; i++)
+        {
+            int a;
+            cout << "Enter the elements of the vector1: ";
+            cin >> a;
+            v1->push_back(a);  // vec1 əvəzinə v1 istifadə olunur
+        }
+
+        int add_vector_number2 = 0;
+        cout << "Enter the number of elements in the vector2: ";
+        cin >> add_vector_number2;
+
+        for (int i = 0; i < add_vector_number2; i++)
+        {
+            int a;
+            cout << "Enter the elements of the vector2: ";
+            cin >> a;
+            v2->push_back(a);  // vec2 əvəzinə v2 istifadə olunur
+        }
+    }
+
+    void fun2(vector<int>*v1, vector<int>*v2)
+    {
+        auto begin = v1->begin();
+        v1->insert(begin + 1, 2, 5);
+
+        for (auto i : *v1)
+        {
+            cout << i << " ";
+        }
+
+        auto begin2 = v1->begin();
+        v1->erase(begin + 1);
+    }
+};
+
+class Program2
+{
+public:
+    void fun3(deque<int>*d1)
+    {
+        int add_deque_number = 0;
+    }
+};
+
+int main()
+{
+    Program1* p1 = new Program1();
+    p1->fun1(&vec1, &vec2);
+    p1->fun2(&vec1, &vec2);
+    
+    
+    Program2* p2 = new Program2();
+    p2->fun3(&deq1);
+    
+    delete p1;
+    delete p2;
+    return 0;
+}
+
 
 
 //------------------------------------------------------------
