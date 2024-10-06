@@ -1,4 +1,63 @@
 class Program:
+    # Метод для сохранения значений
+    def fun1(self, number1, number2):
+        self.__number1 = number1
+        self.__number2 = number2
+
+    # Метод для конвертации текстовых значений в целые числа
+    def fun_yansitma(self):
+        self.__text1 = "2"
+        self.__text2 = "2"
+
+        self.num_int1 = int(self.__text1)
+        self.num_int2 = int(self.__text2)
+
+    # Метод для получения значений от пользователя
+    def fun2(self):
+        self.__number1 = int(input("Enter the first number: "))
+        self.__number2 = int(input("Enter the second number: "))
+
+    # Метод для вычисления суммы
+    def fun3(self):
+        runner = self.__number1 + self.__number2 + self.num_int1 + self.num_int2
+        print(f"Sum of the two numbers: {runner}")
+
+# Создание объекта класса
+object = Program()
+
+# Вызов методов
+object.fun2()            # Получаем числа от пользователя
+object.fun_yansitma()   # Конвертируем текстовые значения в целые
+object.fun3()           # Вычисляем и выводим сумму
+
+
+
+#------------------------------------------------------------------------
+
+def __init__(number_1):
+    def fun1(number_2):
+        return number_1 + number_2
+    return fun1
+
+def fun2():
+    number_1 = int(input("Enter a number: "))
+    number_2 = int(input("Enter another number: "))
+    
+    get1 = __init__(number_1)
+    get2 = get1(number_2)
+    
+    print(get2)
+    
+
+
+
+if __name__ == "__main__":
+    fun2()
+
+
+#---------------------------------------------------------------------------------
+
+class Program:
     def fun1(self, number1, number2):
         self.__number1 = number1
         self.__number2 = number2

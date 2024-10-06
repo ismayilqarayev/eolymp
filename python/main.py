@@ -1,43 +1,19 @@
-from os import name
+def __init__(number_1):
+    def fun1(number_2):
+        return number_1 + number_2
+    return fun1
 
-
-class Person:
-    def __init__(self, name, age):
-        self.name = name
-        self.age = age
-        
-    @property
-    def getter_name(self):
-        return self._name
+def fun2():
+    number_1 = int(input("Enter a number: "))
+    number_2 = int(input("Enter another number: "))
     
-    @name.setter
-    def setter_name(self, value):
-        if not value:
-            raise ValueError("Name cannot be empty.")
-        self._name = value
+    get1 = __init__(number_1)
+    get2 = get1(number_2)
     
-    #----------------------------------------------------------
+    print(get2)
     
-    @property
-    def getter_age(self):
-        return self._age
-    
-    @age.setter
-    def setter_age(self, value):
-        if value < 0:
-            raise valueError("Age cannot be negative.")
-        self._age = value
-        
-    def fun_print(self):
-        print(f"Hello, my name is {self.name} and I am {self.age} years old.")
 
 
 
-try:
-    person1 = Person("Tom", 30)
-    person1.fun_print()
-
-    person1.age = -5
-    
-except ValueError as e:
-    print(e)
+if __name__ == "__main__":
+    fun2()
