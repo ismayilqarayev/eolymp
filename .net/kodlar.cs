@@ -1,4 +1,99 @@
+using System;
+using System.Collections.Generic;
 
+class Program
+{
+    public static void Main(string[] args)
+    {
+        List<string> text_1 = new List<string>();
+        List<string> text_2 = new List<string>();
+
+        Melumatlarin_text_1_daxiledilmesi(ref text_1);
+        Melumatlarin_text_2_daxiledilmesi(ref text_2);
+
+        Melumatlarin_gosterilmesi(ref text_1, ref text_2);
+        
+        // Konstruktoru çağıraraq obyekt yaradırıq
+        konstruktor p = new konstruktor(text_1, text_2);
+    }
+
+    // İlk metoddakı məlumat daxil edilməsi
+    public static void Melumatlarin_text_1_daxiledilmesi(ref List<string> text_1)
+    {
+        Console.WriteLine("Text 1 üçün sözləri daxil edin: ");
+        string sozlerin_text_1_daxil_edilmesi = Console.ReadLine();
+
+        for (int i = 0; i < sozlerin_text_1_daxil_edilmesi.Length; i++)
+        {
+            Console.WriteLine("Simvolları daxil edin: ");
+            string c = Console.ReadLine();
+            text_1.Add(c);
+        }
+    }
+
+    // İkinci metoddakı məlumat daxil edilməsi
+    public static void Melumatlarin_text_2_daxiledilmesi(ref List<string> text_2)
+    {
+        Console.WriteLine("Text 2 üçün sözləri daxil edin: ");
+        string sozlerin_text_2_daxil_edilmesi = Console.ReadLine();
+
+        for (int i = 0; i < sozlerin_text_2_daxil_edilmesi.Length; i++)
+        {
+            string c = Console.ReadLine();
+            text_2.Add(c);
+        }
+    }
+
+    // Məlumatların göstərilməsi üçün metod
+    public static void Melumatlarin_gosterilmesi(ref List<string> text_1, ref List<string> text_2)
+    {
+        Console.WriteLine("Text 1:");
+        foreach (var a in text_1)
+        {
+            Console.WriteLine(a);
+        }
+
+        Console.WriteLine("Text 2:");
+        foreach (var b in text_2)
+        {
+            Console.WriteLine(b);
+        }
+    }
+}
+
+class konstruktor
+{
+    
+    public string Name;
+    public int Age;
+    
+    // Konstruktor
+    public konstruktor(string name, int age)
+    {
+        Name = name;
+        Age = age;
+        
+        
+    }
+
+    public konstruktor(List<string> text_1, List<string> text_2)
+    {
+        // Metodlar
+        if (text_1.Count == 0 || text_2.Count == 0)
+        {
+            Console.WriteLine("ERROR: Siyahılar boşdur.");
+        }
+        else
+        {
+            Console.WriteLine("Text 1 və Text 2 uğurla daxil edildi.");
+        }
+    }
+}
+
+
+
+
+//-------------------------------------------------------------
 using System;
 using System.Collections.Generic;
 
