@@ -77,7 +77,6 @@ class Program:
         else:
             print("Xəta: Rəqəm 1 və 109 arasında olmalıdır.")
 
-#---------------------------------------------------------------------------
     @property
     def number2(self):
         return self.__number2
