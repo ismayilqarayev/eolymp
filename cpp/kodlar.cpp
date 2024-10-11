@@ -1,4 +1,212 @@
 #include <iostream>
+#include <deque>
+#include <algorithm>
+
+using namespace std;
+
+int main()
+{
+    deque<int> dq;
+
+    int n;
+    cout << "Enter the number of elements: ";
+    cin >> n;
+
+    if (dq.empty())
+    {
+        dq.resize(n);
+    }
+
+    cout << "Enter " << n << " elements:" << endl;
+    for (int i = 0; i < n; i++)
+    {
+        int x;
+        cin >> x;
+        dq.push_back(x);
+    }
+
+    sort(dq.begin(), dq.end());
+
+    cout << "Sorted elements: ";
+    for (auto i : dq)
+    {
+        cout << i << " ";
+    }
+    cout << endl;
+
+    return 0;
+}
+
+
+//----------------------------------------------------
+
+#include <iostream>
+#include <deque>
+using namespace std;
+
+void fun1(deque<int> *d1);
+void fun2(deque<int> *d2);
+void fun3(deque<int> *d1, deque<int> *d2);
+
+deque<int> d1;
+deque<int> d2;
+
+void fun1(deque<int> *d1)
+{
+    cout << "Enter the number of elements in deque d1: ";
+    int number1;
+    cin >> number1;
+
+    for (int i = 0; i < number1; i++)
+    {
+        cout << "Enter element " << i + 1 << ": ";
+        int element1;
+        cin >> element1;
+        d1->push_back(element1);
+    }
+}
+
+void fun2(deque<int> *d2)
+{
+    cout << "Enter the number of elements in deque d2: ";
+    int number2;
+    cin >> number2;
+
+    for (int i = 0; i < number2; i++)
+    {
+        cout << "Enter element " << i + 1 << ": ";
+        int element2;
+        cin >> element2;
+        d2->push_back(element2);
+    }
+}
+
+void fun3(deque<int> *d1, deque<int> *d2)
+{
+    if (d1->size() > 1 && d2->size() > 1)  // Проверяем, что есть как минимум 2 элемента
+    {
+        int sum1 = (*d1)[1];  // Второй элемент из d1 (индекс 1)
+        int sum2 = (*d2)[1];  // Второй элемент из d2 (индекс 1)
+
+        cout << "Second element in d1: " << sum1 << endl;
+        cout << "Second element in d2: " << sum2 << endl;
+
+        // Альтернативный способ через .at(), который выполняет проверку границ
+        int number3 = (*d1).at(1);
+        int number4 = (*d2).at(1);
+
+        cout << "Second element using .at() in d1: " << number3 << endl;
+        cout << "Second element using .at() in d2: " << number4 << endl;
+    }
+    else
+    {
+        cout << "One or both deques have less than 2 elements." << endl;
+    }
+}
+
+int main()
+{
+    fun1(&d1);  // Вводим элементы для d1
+    fun2(&d2);  // Вводим элементы для d2
+    fun3(&d1, &d2);  // Печатаем вторые элементы из d1 и d2
+}
+
+
+
+//-------------------------------------------------------
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <string>
+#include <deque>
+
+using namespace std;
+
+class Program1;
+class Program2;
+
+void fun2(vector<int>*v1, vector<int>*v2);
+void fun1(vector<int>*v1, vector<int>*v2);
+void fun3(deque<int>*d1);
+
+vector<int> vec1;
+vector<int> vec2;
+deque<int> deq1;
+
+class Program1
+{
+public:
+    void fun1(vector<int>*v1, vector<int>*v2)
+    {
+        int add_vector_number = 0;
+        cout << "Enter the number of elements in the vector1: ";
+        cin >> add_vector_number;
+
+        for (int i = 0; i < add_vector_number; i++)
+        {
+            int a;
+            cout << "Enter the elements of the vector1: ";
+            cin >> a;
+            v1->push_back(a);  // vec1 əvəzinə v1 istifadə olunur
+        }
+
+        int add_vector_number2 = 0;
+        cout << "Enter the number of elements in the vector2: ";
+        cin >> add_vector_number2;
+
+        for (int i = 0; i < add_vector_number2; i++)
+        {
+            int a;
+            cout << "Enter the elements of the vector2: ";
+            cin >> a;
+            v2->push_back(a);  // vec2 əvəzinə v2 istifadə olunur
+        }
+    }
+
+    void fun2(vector<int>*v1, vector<int>*v2)
+    {
+        auto begin = v1->begin();
+        v1->insert(begin + 1, 2, 5);
+
+        for (auto i : *v1)
+        {
+            cout << i << " ";
+        }
+
+        auto begin2 = v1->begin();
+        v1->erase(begin + 1);
+    }
+};
+
+class Program2
+{
+public:
+    void fun3(deque<int>*d1)
+    {
+        int add_deque_number = 0;
+    }
+};
+
+int main()
+{
+    Program1* p1 = new Program1();
+    p1->fun1(&vec1, &vec2);
+    p1->fun2(&vec1, &vec2);
+    
+    
+    Program2* p2 = new Program2();
+    p2->fun3(&deq1);
+    
+    delete p1;
+    delete p2;
+    return 0;
+}
+
+
+
+//------------------------------------------------------------
+
+#include <iostream>
 #include <vector>
 
 using namespace std;
@@ -34,7 +242,10 @@ void fun1(vector<string>*v1, vector<string>*v2)
         cout << "Enter text v1: ";
         cin >> c;
         v1 ->push_back(c);
+
     }
+
+    
 
     // Vektor v2 üçün mətn daxil etmək
     cout << "Enter text v2: ";
