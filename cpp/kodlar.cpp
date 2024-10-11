@@ -1,4 +1,42 @@
 #include <iostream>
+#include <string>
+#include <vector>
+#include <algorithm>
+#include <deque>
+using namespace std;
+
+
+deque<string> melumat_bazasi_1;
+deque<string> melumat_bazasi_2;
+
+int main()
+{
+    cout << "Daxil edin: ";
+    string daxil_etme = " ";
+    cin >> daxil_etme;
+
+    for(int i = 0; i < daxil_etme.length(); i++)
+    {
+        cout << daxil_etme[i] << endl;
+        string simvol = " ";
+        cin >> simvol;
+
+        melumat_bazasi_1.push_back(simvol);
+    }
+
+
+    for (auto i : melumat_bazasi_1)
+    {
+        cout << i << endl;
+
+        string  firs = melumat_bazasi_1.front();
+        cout << firs << endl;
+    }
+}
+
+
+//------------------------------------------------------
+#include <iostream>
 #include <deque>
 #include <algorithm>
 
