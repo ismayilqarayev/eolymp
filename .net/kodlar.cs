@@ -1,3 +1,88 @@
+
+
+
+
+
+using System;
+using System.Collections.Generic;
+
+class Program
+{
+    public static void Main(string[] args)
+    {
+        List<string> text_1 = new List<string>();
+        List<string> text_2 = new List<string>();
+
+        Melumatlarin_text_1_daxiledilmesi(ref text_1);
+        Melumatlarin_text_2_daxiledilmesi(ref text_2);
+
+        //Melumatlarin_gosterilmesi(ref text_1, ref text_2);
+        
+        // Создание объекта конструктора с текстами
+        konstruktor p = new konstruktor() {text1 = text_1[0], text2 = text_2[0]}; 
+        
+        //konstruktor p = new konstruktor(text_1[0], text_2[0]);
+        p.Print();
+    }
+
+    // Метод для ввода данных для первого текста
+    public static void Melumatlarin_text_1_daxiledilmesi(ref List<string> text_1)
+    {
+        Console.WriteLine("Text 1 üçün sözləri daxil edin: ");
+        string sozlerin_text_1_daxil_edilmesi = Console.ReadLine();
+
+        string[] sozler = sozlerin_text_1_daxil_edilmesi.Split(' ');
+        foreach (var soz in sozler)
+        {
+            text_1.Add(soz);
+        }
+    }
+
+    // Метод для ввода данных для второго текста
+    public static void Melumatlarin_text_2_daxiledilmesi(ref List<string> text_2)
+    {
+        Console.WriteLine("Text 2 üçün sözləri daxil edin: ");
+        string sozlerin_text_2_daxil_edilmesi = Console.ReadLine();
+        
+        string[] sozler = sozlerin_text_2_daxil_edilmesi.Split(' ');
+        foreach (var soz in sozler)
+        {
+            text_2.Add(soz);
+        }
+    }
+}
+
+class konstruktor
+{
+    public string text1 { get; set; }
+    public string text2 { get; set; }
+
+    // Конструктор с параметрами
+    public konstruktor(string text_1, string text_2)
+    {
+        this.text1 = text_1;
+        this.text2 = text_2;
+        Console.WriteLine("Класс конструктора инициализирован с параметрами.");
+    }
+
+    // Конструктор по умолчанию
+    public konstruktor() : this("bhj", "hj") // Вызов конструктора с параметрами
+    {
+        Console.WriteLine("Класс конструктора инициализирован по умолчанию.");
+    }
+
+    // Метод для отображения текста
+    public void Print()
+    {
+        Console.WriteLine($"Text_1: {text1}");
+        Console.WriteLine($"Text_2: {text2}");
+    }
+}
+
+
+
+
+//------------------------------------------------------------
 using System;
 using System.Collections.Generic;
 
