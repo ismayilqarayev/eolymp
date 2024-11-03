@@ -1,6 +1,199 @@
 
+//konstruktor ile yazılıb
+using System;
+using System.Collections.Generic;
+
+class Program
+{
+    public static void Main(string[] args)
+    {
+        List<string> text_1 = new List<string>(); 
+        List<int> number_1 = new List<int>();
+        
+        Console.WriteLine("Neçə nəfər üçün məlumat daxil etmək istəyirsiniz?");
+        int n = int.Parse(Console.ReadLine());
+        
+        Melumatlarin_text_daxil_edilmesi(text_1, number_1, n);
+        
+        // Create an instance of the struct with the lists
+        Konstruktor konstruktor = new Konstruktor(text_1, number_1);
+        konstruktor.Print(); // Corrected method name to 'Print'
+    }
+
+    public static void Melumatlarin_text_daxil_edilmesi(List<string> text_1, List<int> number_1, int n)
+    {
+        for (int i = 0; i < n; i++)
+        {
+            Console.WriteLine("Text daxil edin:");
+            string name = Console.ReadLine();
+            text_1.Add(name);
+            
+            Console.WriteLine("Yaş daxil edin:");
+            int age = int.Parse(Console.ReadLine());
+            number_1.Add(age);
+        }
+    }
+
+    struct Konstruktor
+    {
+        private List<string> names;
+        private List<int> ages;
+
+        public Konstruktor(List<string> text_1, List<int> number_1)
+        {
+            names = text_1; // Store the list of names
+            ages = number_1; // Store the list of ages
+        }
+
+        public void Print()
+        {
+            for (int i = 0; i < names.Count; i++)
+            {
+                Console.WriteLine($"Name: {names[i]}, Age: {ages[i]}");
+            }
+        }
+    }
+}
+
+//---------------------------------------------------------------------------------
+using System;
+using System.Collections.Generic;
+
+class Program
+{
+    public static void Main(string[] args)
+    {
+        List<string> text_1 = new List<string>();
+        List<string> text_2 = new List<string>();
+
+        Melumatlarin_text_1_daxiledilmesi(ref text_1);
+        Melumatlarin_text_2_daxiledilmesi(ref text_2);
+
+        if (text_1.Count > 0 && text_2.Count > 0)
+        {
+            // Создание экземпляра структуры с текстами, используя первый элемент каждого списка
+            Konstruktor p = new Konstruktor(text_1[0], text_2[0]);
+            p.Print();
+        }
+        else
+        {
+            Console.WriteLine("Тексты не были введены корректно.");
+        }
+    }
+
+    // Метод для ввода данных для первого текста
+    public static void Melumatlarin_text_1_daxiledilmesi(ref List<string> text_1)
+    {
+        Console.WriteLine("Text 1 üçün sözləri daxil edin: ");
+        string sozlerin_text_1_daxil_edilmesi = Console.ReadLine();
+        string[] sozler = sozlerin_text_1_daxil_edilmesi.Split(' ');
+        foreach (var soz in sozler)
+        {
+            if (!string.IsNullOrWhiteSpace(soz))
+            {
+                text_1.Add(soz);
+            }
+        }
+    }
+
+    // Метод для ввода данных для второго текста
+    public static void Melumatlarin_text_2_daxiledilmesi(ref List<string> text_2)
+    {
+        Console.WriteLine("Text 2 üçün sözləri daxil edin: ");
+        string sozlerin_text_2_daxil_edilmesi = Console.ReadLine();
+        string[] sozler = sozlerin_text_2_daxil_edilmesi.Split(' ');
+        foreach (var soz in sozler)
+        {
+            if (!string.IsNullOrWhiteSpace(soz))
+            {
+                text_2.Add(soz);
+            }
+        }
+    }
+}
+
+// Определение структуры с конструктором
+struct Konstruktor
+{
+    public string text1 { get; }
+    public string text2 { get; }
+
+    // Конструктор с параметрами
+    public Konstruktor(string text_1, string text_2)
+    {
+        this.text1 = text_1;
+        this.text2 = text_2;
+        Console.WriteLine("Структура инициализирована с параметрами.");
+    }
+
+    // Метод для отображения текста
+    public void Print()
+    {
+        Console.WriteLine($"Text_1: {text1}");
+        Console.WriteLine($"Text_2: {text2}");
+    }
+}
 
 
+
+//-------------------------------------------------------------------------------
+
+using System;
+using System.Collections.Generic;
+
+class Program
+{
+    public static void Main(string[] args)
+    {
+        List<string> namelist = new List<string>();
+        List<int> agelist = new List<int>();
+        
+        // İstifadəçidən neçə şəxsin ad və yaşını daxil etmək istədiyini alırıq
+        Console.Write("Neçə nəfər üçün məlumat daxil etmək istəyirsiniz? ");
+        int personCount = int.Parse(Console.ReadLine());
+        
+        // Daxil olunan say qədər ad və yaş daxil etməsini istəyirik
+        for (int i = 0; i < personCount; i++)
+        {
+            Console.Write($"Adı daxil edin ({i + 1}): ");
+            string name = Console.ReadLine();
+            AddPerson(namelist, name);
+            
+            Console.Write($"Yaşı daxil edin ({i + 1}): ");
+            int age = int.Parse(Console.ReadLine());
+            AddPerson(agelist, age);
+        }
+
+        // Ekrana nəticələri çap edirik
+        Console.WriteLine("\nName List:");
+        foreach (var name in namelist)
+        {
+            Console.WriteLine(name);
+        }
+
+        Console.WriteLine("\nAge List:");
+        foreach (var age in agelist)
+        {
+            Console.WriteLine(age);
+        }
+    }
+
+    // Generik metodla həm string, həm də int dəyərlər əlavə edilir
+    public static void AddPerson<T>(List<T> list, T item)
+    {
+        list.Add(item);
+    }
+    
+    struct Person
+    {
+        public string Name;
+        public int Age;
+    }
+}
+
+
+
+//----------------------------------------------------------------------------------
 
 
 using System;
