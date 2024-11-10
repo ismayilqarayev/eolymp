@@ -1,4 +1,217 @@
 
+
+using System;
+using System.Collections.Generic;
+
+
+class Program
+{
+    static List<string> adlar = new List<string>();
+    static List<int> yaslar = new List<int>();
+    static List<MyStruct> myStructs = new List<MyStruct>();
+    static int say = 0;
+    
+    public static void Main(string[] args)
+    {
+        Melumatlaridaxilet1(ref adlar, ref yaslar, ref say);
+        Melumatlaridaxilet2(adlar, yaslar, say);
+        //Melumatlaricixart(adlar, yaslar, say);
+
+        for (int i = 0; i < say; i++)
+        {
+            myStructs.Add(new MyStruct(adlar[i], yaslar[i]));
+        }
+
+        foreach (var item in myStructs)
+        {
+            item.Print();
+        }
+    }
+    
+    public static void Melumatlaridaxilet1(ref List<string> adlar, ref List<int> yaslar, ref int say)
+    {
+        Console.WriteLine("Neçə nəfərin məlumatını daxil edəcəksiniz?");
+        while (!int.TryParse(Console.ReadLine(), out say) || say <= 0)
+        {
+            Console.WriteLine("Zəhmət olmasa düzgün bir ədəd daxil edin");
+        }
+    }
+    
+    public static void Melumatlaridaxilet2(List<string> adlar, List<int> yaslar, int say)
+    {
+        for (int i = 0; i < say; i++)
+        {
+            Console.WriteLine("Ad daxil edin");
+            string ad = Console.ReadLine();
+            adlar.Add(ad);
+            
+            
+            int yas;
+            Console.WriteLine("Yas daxil edin");
+            while (!int.TryParse(Console.ReadLine(), out yas) || yas <= 0)
+            {
+                Console.WriteLine("Zəhmət olmasa düzgün bir ədəd daxil edin");
+            }
+            yaslar.Add(yas);
+        }
+    }
+
+    struct MyStruct
+    {
+        public string Ad { get; }
+        public int Yas { get; }
+
+        public MyStruct(string ad, int yas)
+        {
+            this.Ad = ad;
+            this.Yas = yas;
+        }
+        
+        public void Print()
+        {
+            Console.WriteLine($"{Ad}, {Yas}");
+        }
+    }
+
+    //public static void Melumatlaricixart(List<string> adlar, List<int> yaslar, int say)
+    //{
+    //    for (int i = 0; i < adlar.Count; i++)
+    //    {
+    //        Console.WriteLine($"{adlar[i]} {yaslar[i]}");
+    //    }
+    //}
+}
+
+//-----------------------------------------------------------------------------------
+
+
+using System;
+using System.Collections.Generic;
+
+class Program
+{
+    public static void Main(string[] args)
+    {
+        List<string> adlar = new List<string>();
+        List<int> yaslar = new List<int>();
+        
+        int say = 0;
+        
+        Melumatlaridaxilet(ref adlar, ref yaslar, ref say);
+        Melumatlaridaxilet2(adlar, yaslar, say);
+    }
+
+    public static void Melumatlaridaxilet(ref List<string> adlar, ref List<int> yaslar, ref int say)
+    {
+        Console.WriteLine("Neçə nəfərin məlumatını daxil edəcəksiniz?");
+        
+        while (!int.TryParse(Console.ReadLine(), out say) || say <= 0)
+        {
+            Console.WriteLine("Zəhmət olmasa düzgün bir ədəd daxil edin: ");
+        }
+    }
+
+    public static void Melumatlaridaxilet2(List<string> adlar, List<int> yaslar, int say)
+    {
+        for (int i = 0; i < say; i++)
+        {
+            Console.WriteLine("Ad daxil edin: ");
+            string ad = Console.ReadLine();
+            adlar.Add(ad);
+            
+            Console.WriteLine("Yaş daxil edin: ");
+            int yas;
+            while (!int.TryParse(Console.ReadLine(), out yas) || yas <= 0)
+            {
+                Console.WriteLine("Zəhmət olmasa düzgün bir ədəd daxil edin: ");
+            }
+            yaslar.Add(yas);
+        }
+        
+        Console.WriteLine("\nDaxil edilən məlumatlar:");
+        for (int i = 0; i < adlar.Count; i++)
+        {
+            Console.WriteLine($"Ad: {adlar[i]}, Yaş: {yaslar[i]}");
+        }
+    }
+}
+
+
+//--------------------------------------------------------------------------------------------
+using System;
+using System.Collections.Generic;
+
+class Program
+{
+    public static void Main(string[] args)
+    {
+        List<string> adlar = new List<string>(); 
+        List<int> yaslar = new List<int>();
+        
+        Console.WriteLine("Neçə nəfər üçün məlumat daxil etmək istəyirsiniz?");
+        int say;
+
+        // İstifadəçinin düzgün ədəd daxil edib-etmədiyini yoxlayırıq
+        while (!int.TryParse(Console.ReadLine(), out say) || say <= 0)
+        {
+            Console.WriteLine("Zəhmət olmasa düzgün bir ədəd daxil edin:");
+        }
+        
+        // Hər bir şəxs üçün məlumatların daxil edilməsi
+        MelumatlariDaxilEt(adlar, yaslar, say);
+        
+        // Daxil edilmiş məlumatları göstərmək üçün strukturdan istifadə edirik
+        Konstruktor insanMəlumatları = new Konstruktor(adlar, yaslar);
+        insanMəlumatları.Cixar();
+    }
+
+    public static void MelumatlariDaxilEt(List<string> adlar, List<int> yaslar, int say)
+    {
+        for (int i = 0; i < say; i++)
+        {
+            Console.WriteLine("Ad daxil edin:");
+            string ad = Console.ReadLine();
+            adlar.Add(ad);
+            
+            Console.WriteLine("Yaş daxil edin:");
+            int yas;
+            // Yaşın düzgün daxil olunmasını yoxlayırıq
+            while (!int.TryParse(Console.ReadLine(), out yas) || yas < 0)
+            {
+                Console.WriteLine("Zəhmət olmasa düzgün bir yaş daxil edin:");
+            }
+            yaslar.Add(yas);
+        }
+    }
+
+    struct Konstruktor
+    {
+        private List<string> adlar;
+        private List<int> yaslar;
+
+        public Konstruktor(List<string> adlar, List<int> yaslar)
+        {
+            this.adlar = adlar; // Adların siyahısını saxlayır
+            this.yaslar = yaslar; // Yaşların siyahısını saxlayır
+        }
+
+        public void Cixar()
+        {
+            for (int i = 0; i < adlar.Count; i++)
+            {
+                Console.WriteLine($"Ad: {adlar[i]}, Yaş: {yaslar[i]}");
+            }
+        }
+    }
+}
+
+
+
+
+
+//------------------------------------------------------------------------------------
+//------------------------------------------------------------------------------------
+
 //konstruktor ile yazılıb
 using System;
 using System.Collections.Generic;
@@ -55,7 +268,10 @@ class Program
     }
 }
 
+
 //---------------------------------------------------------------------------------
+
+
 using System;
 using System.Collections.Generic;
 
@@ -137,6 +353,7 @@ struct Konstruktor
 
 
 //-------------------------------------------------------------------------------
+
 
 using System;
 using System.Collections.Generic;
@@ -276,6 +493,9 @@ class konstruktor
 
 
 //------------------------------------------------------------
+
+
+
 using System;
 using System.Collections.Generic;
 
