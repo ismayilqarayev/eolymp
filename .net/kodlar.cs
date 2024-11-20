@@ -1,5 +1,89 @@
 
 
+
+
+
+using System;
+using System.Collections.Generic;
+
+class Program
+{
+    static List<MyStruct> myStructs = new List<MyStruct>();
+
+    public static void Main(string[] args)
+    {
+        int say = MelumatlarinDaxilEdilmesi();
+
+        for (int i = 0; i < say; i++)
+        {
+            MyStruct person = YeniMelumatDaxilEt();
+            myStructs.Add(person);
+        }
+
+        foreach (var myStruct in myStructs)
+        {
+            myStruct.Print();
+        }
+    }
+
+    public static int MelumatlarinDaxilEdilmesi()
+    {
+        int say;
+        Console.WriteLine("Neçə nəfərin məlumatını daxil edəcəksiniz?");
+        while (!int.TryParse(Console.ReadLine(), out say) || say <= 0)
+        {
+            Console.WriteLine("Zəhmət olmasa düzgün bir ədəd daxil edin:");
+        }
+        return say;
+    }
+
+    public static MyStruct YeniMelumatDaxilEt()
+    {
+        Console.WriteLine("Adınızı daxil edin:");
+        string ad = Console.ReadLine();
+
+        Console.WriteLine("Soyadınızı daxil edin:");
+        string soyad = Console.ReadLine();
+
+        Console.WriteLine("Ata adınızı daxil edin:");
+        string ataAdi = Console.ReadLine();
+
+        Console.WriteLine("Telefon nömrənizi daxil edin:");
+        string telefon;
+        while (string.IsNullOrWhiteSpace(telefon = Console.ReadLine()))
+        {
+            Console.WriteLine("Zəhmət olmasa düzgün telefon nömrəsi daxil edin:");
+        }
+
+        return new MyStruct(ad, soyad, ataAdi, telefon);
+    }
+
+    struct MyStruct
+    {
+        public string Ad;
+        public string Soyad;
+        public string AtaAdi;
+        public string Telefon;
+
+        public MyStruct(string ad, string soyad, string ataAdi, string telefon)
+        {
+            Ad = ad;
+            Soyad = soyad;
+            AtaAdi = ataAdi;
+            Telefon = telefon;
+        }
+
+        public void Print()
+        {
+            Console.WriteLine($"Ad: {Ad}, Soyad: {Soyad}, Ata adı: {AtaAdi}, Telefon: {Telefon}");
+        }
+    }
+}
+
+
+
+
+//-------------------------------------------------------------
 using System;
 using System.Collections.Generic;
 
