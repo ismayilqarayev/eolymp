@@ -1,44 +1,56 @@
 using System;
 using System.Collections.Generic;
 
-class Program
+internal class Program
 {
-    static List<string> melumatlar_text = new List<string>();
-    static List<int> melumatlar_number = new List<int>();
+    static List<Mysctruct> mysctructs = new List<Mysctruct>();
     static int say = 0;
-    
+
     public static void Main(string[] args)
     {
-        Melumatlarindaxiledilmesi(melumatlar_text, melumatlar_number, say);
-        Melumatlarindaxiledilmesi2(melumatlar_text, melumatlar_number, say);
+        for(int i = 0; i < say; i++)
+        {
+            Mysctruct person = new Mysctruct();
+            mysctructs.Add(person);
+        }
+       
+        Neceneferindaxiledilmesi(ref say);
+  
     }
 
-    public static void Melumatlarindaxiledilmesi(List<string> melumatlar_text, List<int> melumatlar_number, int say)
+    public static void Neceneferindaxiledilmesi(ref int say)
     {
-        Console.WriteLine("Neçə nəfərin məlumatını daxil edəcəksiniz?");
-        while(!int.TryParse(Console.ReadLine(), out int say) || say < 0)
+        Console.WriteLine("Nece neferin melumatini daxil edeceksiniz: ");
+        while (!int.TryParse(Console.ReadLine(), out say) || say <= 0)
         {
-            Console.WriteLine("Yanlış daxil etdiniz. Lutfən yenidən daxil edin.");
-        }
-
-        //--------------------------------------------------------------
-
-        Console.WriteLine("Neçə nəfərin məlumatını daxil edəcəksiniz?")
-        int n = int.Parse(Console.ReadLine());
-
-        for(int i = 0; i < n; i++)
-        {
-            Console.WriteLine("Məlumatınızı daxil edin: ");
-            string melumat = Console.ReadLine();
-            melumatlar_text.Add(melumat);
+            Console.WriteLine("yeniden duzgun bir eded daxil et: ");
         }
     }
 
-    public static void Melumatlarindaxiledilmesi2(List<string> melumatlar_text, List<int> melumatlar_number, int say)
+    public static Mysctruct Melumatlarindaxiledilmesi()
     {
-        for(int )
-        {
+        
+    }
 
+    public struct MyStruct
+    {
+        public string Ad { get; }
+        public string Soyad { get; }
+        public string AtaAdi { get; }
+        public int Telefon { get; }
+
+        public MyStruct(string ad, string soyad, string ataadi, int telefon)
+        {
+            this.Ad = ad;
+            this.Soyad = soyad;
+            this.AtaAdi = ataadi;
+            this.Telefon = telefon;
         }
+
+        public static void Print()
+        {
+            Console.WriteLine($" Ad: {Ad}, Soyad: {Soyad}, Ata adi: {AtaAdi}, Telefon: {Telefon}");
+        }
+        
     }
 }
