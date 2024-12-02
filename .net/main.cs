@@ -83,3 +83,84 @@ class Pers
         }
     }
 }
+
+
+
+
+
+
+
+
+
+internal class Program
+{
+    static List<Mystruct.Struktorlar> mystructs = new List<Mystruct.Struktorlar>();
+    static int say = 0;
+
+    private static void Main(string[] args)
+    {
+        Mystruct mystruct = new Mystruct();
+        Neceneferindaxiledilmesi(ref say);
+
+        for (int i = 0; i < say; i++)
+        {
+            Mystruct.Struktorlar person = Melumatlarindaxiledilmesi();
+            mystructs.Add(person);
+        }
+
+        foreach (var item in mystructs)
+        {
+            item.Print();
+        }
+    }
+
+    public static void Neceneferindaxiledilmesi(ref int say)
+    {
+        Console.WriteLine("Nece neferin melumatini daxil edeceksiniz: ");
+        while (!int.TryParse(Console.ReadLine(), out say) || say <= 0)
+        {
+            Console.WriteLine("Yeniden duzgun bir eded daxil edin: ");
+        }
+    }
+
+    public static Mystruct.Struktorlar Melumatlarindaxiledilmesi()
+    {
+        Console.WriteLine("\nAd: ");
+        string ad = Console.ReadLine();
+
+        Console.WriteLine("Soyad: ");
+        string soyad = Console.ReadLine();
+
+        Console.WriteLine("Ata adi: ");
+        string ataadi = Console.ReadLine();
+
+        Console.WriteLine("Telefon: ");
+        string telefon = Console.ReadLine();
+
+        return new Mystruct.Struktorlar(ad, soyad, ataadi, telefon);
+    }
+}
+
+class Mystruct
+{
+    public struct Struktorlar
+    {
+        public string Ad { get; }
+        public string Soyad { get; }
+        public string AtaAdi { get; }
+        public string Telefon { get; }
+
+        public Struktorlar(string ad, string soyad, string ataadi, string telefon)
+        {
+            this.Ad = ad;
+            this.Soyad = soyad;
+            this.AtaAdi = ataadi;
+            this.Telefon = telefon;
+        }
+
+        public void Print()
+        {
+            Console.WriteLine($"Ad: {Ad}, Soyad: {Soyad}, Ata adi: {AtaAdi}, Telefon: {Telefon}");
+        }
+    }
+}
