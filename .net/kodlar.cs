@@ -1,6 +1,178 @@
 using System;
 using System.Collections.Generic;
 
+internal class Program
+{
+    static List<Pers.MyStruct> mystructs = new List<Pers.MyStruct>();
+    static int say = 0;
+
+
+    public static void Main(string[] args)
+    {
+        Pers pers = new Pers { Ad = "Nigar", Soyad = "Huseynova", AtaAdi = "Nigar", Telefon = 55555555 };
+       
+        Neceneferindaxiledilmesi(ref say); // Определяем количество людей
+
+        for (int i = 0; i < say; i++) // Вводим данные для каждого человека
+        {
+            Pers.MyStruct person = Melumatlarindaxiledilmesi();
+            mystructs.Add(person); // Добавляем введённые данные в список
+        }
+
+        Console.WriteLine("\n--- Список данных ---");
+        foreach (var item in mystructs) // Выводим список
+        {
+            item.Print();
+        }
+    }
+
+
+    public static void Neceneferindaxiledilmesi(ref int say)
+    {
+        Console.WriteLine("Neçə nəfərin məlumatını daxil edəcəksiniz?");
+        while (!int.TryParse(Console.ReadLine(), out say) || say <= 0)
+        {
+            Console.WriteLine("Yenidən düzgün bir ədəd daxil edin:");
+        }
+    }
+
+
+    public static  Pers.MyStruct Melumatlarindaxiledilmesi()
+    {
+        Console.WriteLine("\nAd:");
+        string ad = Console.ReadLine();
+
+        Console.WriteLine("Soyad:");
+        string soyad = Console.ReadLine();
+
+        Console.WriteLine("Ata adı:");
+        string ataAdi = Console.ReadLine();
+
+        Console.WriteLine("Telefon nömrəsi:");
+        int telefon;
+        while (!int.TryParse(Console.ReadLine(), out telefon) || telefon <= 0) // Исправлено условие
+        {
+            Console.WriteLine("Yenidən düzgün telefon nömrəsi daxil edin:");
+        }
+
+        return new Pers.MyStruct(ad, soyad, ataAdi, telefon); // Создаём экземпляр структуры
+    }
+}
+
+
+class Pers
+{
+    public struct MyStruct
+    {
+        public string Ad { get; }
+        public string Soyad { get; }
+        public string AtaAdi { get; }
+        public int Telefon { get; }
+
+        public MyStruct(string ad, string soyad, string ataAdi, int telefon)
+        {
+            Ad = ad;
+            Soyad = soyad;
+            AtaAdi = ataAdi;
+            Telefon = telefon;
+        }
+
+        public void Print()
+        {
+            Console.WriteLine($"Ad: {Ad}, Soyad: {Soyad}, Ata adı: {AtaAdi}, Telefon: {Telefon}");
+        }
+    }
+}
+
+
+
+
+
+//------------------------------------------------------------
+
+
+<<<<<<< Updated upstream
+=======
+
+
+using System;
+using System.Collections.Generic;
+
+class Program
+{
+    private static List<MyStruct> myStructs = new List<MyStruct>();
+    private static int say = 0;
+    
+    static void Main(string[] args)
+    {
+        Information1(ref say);
+        Information2(ref say);
+
+        for (int i = 0; i < say; i++)
+        {
+            MyStruct person = Information2(ref say);
+            myStructs.Add(person);
+        }
+
+        foreach (var myStruct in myStructs)
+        {
+            myStruct.Print();
+        }
+    }
+
+    public static void Information1(ref int say)
+    {
+        Console.WriteLine("Nece neferin melumatini daxil edeceksiniz");
+        say = Convert.ToInt32(Console.ReadLine());
+    }
+
+    public static MyStruct Information2(ref int say)
+    {
+        Console.WriteLine("Adinizi daxil edin");
+        string ad = Console.ReadLine();
+        
+        Console.WriteLine("Soyadinizi daxil edin");
+        string soyad = Console.ReadLine();
+        
+        Console.WriteLine("Ata adinizi daxil edin");
+        string ataAdi = Console.ReadLine();
+        
+        Console.WriteLine("Telefon numaranizi daxil edin");
+        int telefon = Convert.ToInt32(Console.ReadLine());
+        
+        MyStruct myStruct = new MyStruct(ad, soyad, ataAdi, telefon);
+        
+        myStructs.Add(myStruct);
+        return myStruct;
+    }
+
+    internal struct MyStruct
+    {
+        public string Ad;
+        public string Soyad;
+        public string AtaAdi;
+        public int Telefon;
+
+        public MyStruct(string ad, string soyad, string ataAdi, int telefon)
+        {
+            this.Ad = ad;
+            this.Soyad = soyad;
+            this.AtaAdi = ataAdi;
+            this.Telefon = telefon;
+        }
+
+        public void Print()
+        {
+            Console.WriteLine( Ad + " " + Soyad + " " + AtaAdi + " " + Telefon );
+        }
+    }
+}
+
+//-----------------------------------------
+>>>>>>> Stashed changes
+using System;
+using System.Collections.Generic;
+
 class Program
 {
     static List<MyStruct> myStructs = new List<MyStruct>();
