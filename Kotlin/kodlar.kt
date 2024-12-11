@@ -104,3 +104,47 @@ fun fun3(v1: MutableList<String>, v2: MutableList<String>) {
     }
 }
 
+//-------------------------------------------------------------------------
+
+
+import java.util.*
+
+fun main(){
+    val list1 = mutableListOf<Int>()
+    val list2 = mutableListOf<Int>()
+
+    //var sum1 = 0
+    //var sum2 = 0
+
+    melumatlarinlist1daxiledilmesi(list1)
+    melumatlarinlist2daxiledilmesi(list2)
+
+    println(" list 1: $list1")
+    println(" list 2: $list2")
+}
+
+fun melumatlarinlist1daxiledilmesi(list1: MutableList<Int>) {
+    println("list 1 ucun nece melumat daxil etmek isteyirsin: ")
+    val melumatlarinsayi1 = readln().toInt() ?: 0
+
+    for(i in 1..melumatlarinsayi1) {
+        print("list 1 ucun reqem daxil edin: ")
+        val melumat = readln().toInt() ?:0
+        list1.add(melumat)
+    }
+}
+
+fun melumatlarinlist2daxiledilmesi(list2: MutableList<Int>) {
+    println("list 2 ucun nece melumat daxil etmek isteyirsin: ")
+    val melumatlarinsayi2 = readln().toInt() ?: 0
+
+    for(i in 1..melumatlarinsayi2){
+        print("list 2 ucun reqem daxil edin: ")
+        val melumat = readln().toInt() ?:0
+        list2.add(melumat)
+    }
+}
+
+fun melumatlarincixarilmasi(list1: MutableList<Int>, list2: MutableList<Int>) {
+
+}
