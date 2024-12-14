@@ -56,7 +56,7 @@ fun fun3(v1: MutableList<String>, v2: MutableList<String>) {
     }
 }
 
-
+//-----------------------------------------------------------
 
 fun main() {
     val vec1 = mutableListOf<String>()
@@ -147,4 +147,71 @@ fun melumatlarinlist2daxiledilmesi(list2: MutableList<Int>) {
 
 fun melumatlarincixarilmasi(list1: MutableList<Int>, list2: MutableList<Int>) {
 
+}
+
+
+//----------------------------------------------------
+
+
+fun main(){
+    val sozler1 = mutableListOf<String>()
+    val sozler2 = mutableListOf<String>()
+
+    melumatlarinlist1daxiledilmesi(sozler1)
+    melumatlarinlist2daxiledilmesi(sozler2)
+
+    melumatlaringosterilmesi(sozler1, sozler2)
+    val k = Konstruktor(sozler1, sozler2)
+}
+
+
+fun melumatlarinlist1daxiledilmesi(sozler1: MutableList<String>) {
+    println("sozler 1 ucun melumatlari daxil edin")
+    val melumat1 = readlnOrNull() ?: ""
+
+    for (i in melumat1) {
+        println("simvollari daxil edin")
+        val simvol = readlnOrNull() ?: ""
+        sozler1.add(simvol)
+    }
+}
+
+
+fun melumatlarinlist2daxiledilmesi(list2: MutableList<String>) {
+    println("sozler 2 ucun melumatlari daxil edin")
+    val melumat2 = readlnOrNull() ?: ""
+
+    for (i in melumat2) {
+        println("simvollari daxil edin")
+        val simvol = readlnOrNull() ?: ""
+        list2.add(simvol)
+    }
+}
+
+
+fun melumatlaringosterilmesi(sozler1: MutableList<String>, sozler2: MutableList<String>) {
+    print("sozler1:")
+    sozler1.forEach(::print)
+
+    println("sozler2:")
+    sozler2.forEach(::print)
+}
+
+
+class Konstruktor{
+    private var name: String? = null
+    private var lastname: String? = null
+
+    constructor(name: String, lastname: String){
+        this.name = name
+        this.lastname = lastname
+    }
+
+    constructor(sozler1: MutableList<String>, sozler2: MutableList<String>){
+        if (sozler1.isEmpty() || sozler2.isEmpty()){
+            println("melumatlar daxil edilmeyib")
+        }else{
+            println("melumatlar daxil edildi")
+        }
+    }
 }
