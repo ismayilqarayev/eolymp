@@ -215,3 +215,75 @@ class Konstruktor{
         }
     }
 }
+
+//-----------------------------------------------------------------------
+//-----------------------------------------------------------------------
+
+fun main(){
+    val text1 = mutableListOf<String>()
+    val text2 = mutableListOf<String>()
+
+    melumatlarindaxiledilmesi1(text1)
+    melumatlarindaxiledilmesi2(text2)
+
+    val k = Konstruktor(text1.toString(), text2.toString())
+    val ex = export(text1.toString(), text2.toString())
+
+    ex.melumatlaringosterilmesi(text1, text2)
+}
+
+
+fun melumatlarindaxiledilmesi1(text1: MutableList<String>){
+    println("text1 ucun metni daxil edin")
+    val tx1 = readlnOrNull() ?: ""
+
+    for (i in tx1){
+        println("simvollari daxil edin")
+        val simvol = readlnOrNull() ?: ""
+        text1.add(simvol)
+    }
+}
+
+
+fun melumatlarindaxiledilmesi2(text2: MutableList<String>){
+    print("text2 ucun metni daxil edin")
+    val tx2 = readlnOrNull() ?: ""
+
+    for (i in tx2){
+        println("simvolu daxil edin")
+        val simvol = readlnOrNull() ?: ""
+        text2.add(simvol)
+    }
+}
+
+
+class export(toString: String, toString1: String) {
+    fun melumatlaringosterilmesi(text1: MutableList<String>, text2: MutableList<String>){
+        println("Text1: ${text1.joinToString(", ")}") // Text1 məzmunu
+        println("Text2: ${text2.joinToString(", ")}") // Text2 məzmunu
+    }
+}
+
+
+class Konstruktor{
+
+    private var name: String? = null
+    private var lastname: String? = null
+
+    constructor(name: String, lastname: String){
+        this.name = name
+        this.lastname = lastname
+    }
+
+
+    constructor(text1: MutableList<String>, text2: MutableList<String>){
+        if (text1.isEmpty() || text2.isEmpty()){
+            println("melumatlar daxil edilmeyib")
+        }else{
+            println("melumatlar daxil edildi")
+        }
+    }
+}
+
+
+
