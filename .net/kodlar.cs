@@ -433,105 +433,135 @@ class Program
     //    }
     //}
 }
-
-//-----------------------------------------------------------------------------------
-
+//----------------------------------------------------------------------
+//--// yeniden yada salma kodlari //--//2
 
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
 
 class Program
 {
+    static List<string> adlar = new List<string>();
+    static List<int> yaslar = new List<int>();
+
+    static int say = 0;
+
     public static void Main(string[] args)
     {
-        List<string> adlar = new List<string>();
-        List<int> yaslar = new List<int>();
-        
-        int say = 0;
-        
-        Melumatlaridaxilet(ref adlar, ref yaslar, ref say);
-        Melumatlaridaxilet2(adlar, yaslar, say);
+        Neceneferindaxiledilmesi(adlar, yaslar, ref say);
+        MelumatlariDaxilet(adlar, yaslar, say);
+
+        Konstruktor konstruktor = new Konstruktor(adlar, yaslar);
+        konstruktor.Print();
     }
 
-    public static void Melumatlaridaxilet(ref List<string> adlar, ref List<int> yaslar, ref int say)
+    public static void Neceneferindaxiledilmesi(List<string> adlar, List<int> yaslar, ref int say)
     {
-        Console.WriteLine("Neçə nəfərin məlumatını daxil edəcəksiniz?");
-        
+        Console.WriteLine("Neçə nəfər üçün məlumat daxil etmək istəyirsiniz?");
+
         while (!int.TryParse(Console.ReadLine(), out say) || say <= 0)
         {
-            Console.WriteLine("Zəhmət olmasa düzgün bir ədəd daxil edin: ");
+            Console.WriteLine("yeniden duzgun bir eded daxil et: ");
         }
     }
 
-    public static void Melumatlaridaxilet2(List<string> adlar, List<int> yaslar, int say)
+
+    public static void MelumatlariDaxilet(List<string> adlar, List<int> yaslar, int say)
     {
         for (int i = 0; i < say; i++)
         {
-            Console.WriteLine("Ad daxil edin: ");
-            string ad = Console.ReadLine();
+            Console.WriteLine("Ad daxil etin: ");
+            string ad;
+            while(string.IsNullOrEmpty(ad = Console.ReadLine()) || !char.IsLetter(ad[0]))
+            {
+                Console.WriteLine("yeniden duzgun bir ad daxil et: ");
+            }
             adlar.Add(ad);
-            
-            Console.WriteLine("Yaş daxil edin: ");
+
+            Console.WriteLine("Yas daxil etin: ");
             int yas;
             while (!int.TryParse(Console.ReadLine(), out yas) || yas <= 0)
             {
-                Console.WriteLine("Zəhmət olmasa düzgün bir ədəd daxil edin: ");
+                Console.WriteLine("yeniden duzgun bir eded daxil et: ");
             }
             yaslar.Add(yas);
         }
-        
-        Console.WriteLine("\nDaxil edilən məlumatlar:");
-        for (int i = 0; i < adlar.Count; i++)
+    }
+
+
+    struct Konstruktor
+    {
+        private List<string> adlar;
+        private List<int> yaslar;
+
+        public Konstruktor(List<string> adlar, List<int> yaslar)
         {
-            Console.WriteLine($"Ad: {adlar[i]}, Yaş: {yaslar[i]}");
+            this.adlar = adlar;
+            this.yaslar = yaslar;
+        }
+
+        public void Print()
+        {
+            for (int i = 0; i < adlar.Count; i++)
+            {
+                Console.WriteLine($"{adlar[i]}, Yas {yaslar[i]}");
+            }
         }
     }
 }
 
 
 //--------------------------------------------------------------------------------------------
+//--// yeniden yada salma kodlari //--//1
+
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
 
 class Program
 {
+    static List<string> adlar = new List<string>();
+    static List<int> yaslar = new List<int>();
+
+    static int say = 0;
+
     public static void Main(string[] args)
     {
-        List<string> adlar = new List<string>(); 
-        List<int> yaslar = new List<int>();
-        
-        Console.WriteLine("Neçə nəfər üçün məlumat daxil etmək istəyirsiniz?");
-        int say;
+        Neceneferindaxiledilmesi(adlar, yaslar, ref say);
+        MelumatlariDaxilet(adlar, yaslar, say);
 
-        // İstifadəçinin düzgün ədəd daxil edib-etmədiyini yoxlayırıq
-        while (!int.TryParse(Console.ReadLine(), out say) || say <= 0)
-        {
-            Console.WriteLine("Zəhmət olmasa düzgün bir ədəd daxil edin:");
-        }
-        
-        // Hər bir şəxs üçün məlumatların daxil edilməsi
-        MelumatlariDaxilEt(adlar, yaslar, say);
-        
-        // Daxil edilmiş məlumatları göstərmək üçün strukturdan istifadə edirik
-        Konstruktor insanMəlumatları = new Konstruktor(adlar, yaslar);
-        insanMəlumatları.Cixar();
+        Konstruktor konstruktor = new Konstruktor(adlar, yaslar);
+        konstruktor.Print();
     }
 
-    public static void MelumatlariDaxilEt(List<string> adlar, List<int> yaslar, int say)
+    public static void Neceneferindaxiledilmesi(List<string> adlar, List<int> yaslar, ref int say)
+    {
+        Console.WriteLine("Neçə nəfər üçün məlumat daxil etmək istəyirsiniz?");
+
+        while (!int.TryParse(Console.ReadLine(), out say) || say <= 0)
+        {
+            Console.WriteLine("yeniden duzgun bir eded daxil et: ");
+        }
+    }
+
+
+    public static void MelumatlariDaxilet(List<string> adlar, List<int> yaslar, int say)
     {
         for (int i = 0; i < say; i++)
         {
-            Console.WriteLine("Ad daxil edin:");
+            Console.WriteLine("Ad daxil etin: ");
             string ad = Console.ReadLine();
             adlar.Add(ad);
-            
-            Console.WriteLine("Yaş daxil edin:");
-            int yas;
-            // Yaşın düzgün daxil olunmasını yoxlayırıq
-            while (!int.TryParse(Console.ReadLine(), out yas) || yas < 0)
-            {
-                Console.WriteLine("Zəhmət olmasa düzgün bir yaş daxil edin:");
-            }
+
+            Console.WriteLine("Yas daxil etin: ");
+            int yas = Convert.ToInt32(Console.ReadLine());
             yaslar.Add(yas);
         }
     }
@@ -543,23 +573,19 @@ class Program
 
         public Konstruktor(List<string> adlar, List<int> yaslar)
         {
-            this.adlar = adlar; // Adların siyahısını saxlayır
-            this.yaslar = yaslar; // Yaşların siyahısını saxlayır
+            this.adlar = adlar;
+            this.yaslar = yaslar;
         }
 
-        public void Cixar()
+        public void Print()
         {
             for (int i = 0; i < adlar.Count; i++)
             {
-                Console.WriteLine($"Ad: {adlar[i]}, Yaş: {yaslar[i]}");
+                Console.WriteLine($"{adlar[i]}, Yas {yaslar[i]}");
             }
         }
     }
 }
-
-
-
-
 
 //------------------------------------------------------------------------------------
 //------------------------------------------------------------------------------------

@@ -369,4 +369,21 @@ class Konstruktor{
 
 
 
+#include <iostream>
+#include <queue>
+ 
+int main() {
+    std::queue<std::string> queue1 {std::deque<std::string>{"Alice", "Kate"}};
+ 
+    std::queue<std::string> queue2;
+    queue2.push("Tom");
+    queue2.push("Bob");
+ 
+    queue1.swap(queue2);
+    // queue1 = {"Tom", "Bob"}
+    // queue2 = {"Alice", "Kate"}
+}
+
+
+
 
