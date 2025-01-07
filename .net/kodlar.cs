@@ -189,88 +189,21 @@ class Pers
 
 
 
+
+
+
+
+
+
+
+
+
+
 //------------------------------------------------------------
-
-
-<<<<<<< Updated upstream
-=======
-
-
-using System;
-using System.Collections.Generic;
-
-class Program
-{
-    private static List<MyStruct> myStructs = new List<MyStruct>();
-    private static int say = 0;
-    
-    static void Main(string[] args)
-    {
-        Information1(ref say);
-        Information2(ref say);
-
-        for (int i = 0; i < say; i++)
-        {
-            MyStruct person = Information2(ref say);
-            myStructs.Add(person);
-        }
-
-        foreach (var myStruct in myStructs)
-        {
-            myStruct.Print();
-        }
-    }
-
-    public static void Information1(ref int say)
-    {
-        Console.WriteLine("Nece neferin melumatini daxil edeceksiniz");
-        say = Convert.ToInt32(Console.ReadLine());
-    }
-
-    public static MyStruct Information2(ref int say)
-    {
-        Console.WriteLine("Adinizi daxil edin");
-        string ad = Console.ReadLine();
-        
-        Console.WriteLine("Soyadinizi daxil edin");
-        string soyad = Console.ReadLine();
-        
-        Console.WriteLine("Ata adinizi daxil edin");
-        string ataAdi = Console.ReadLine();
-        
-        Console.WriteLine("Telefon numaranizi daxil edin");
-        int telefon = Convert.ToInt32(Console.ReadLine());
-        
-        MyStruct myStruct = new MyStruct(ad, soyad, ataAdi, telefon);
-        
-        myStructs.Add(myStruct);
-        return myStruct;
-    }
-
-    internal struct MyStruct
-    {
-        public string Ad;
-        public string Soyad;
-        public string AtaAdi;
-        public int Telefon;
-
-        public MyStruct(string ad, string soyad, string ataAdi, int telefon)
-        {
-            this.Ad = ad;
-            this.Soyad = soyad;
-            this.AtaAdi = ataAdi;
-            this.Telefon = telefon;
-        }
-
-        public void Print()
-        {
-            Console.WriteLine( Ad + " " + Soyad + " " + AtaAdi + " " + Telefon );
-        }
-    }
-}
-
 //-----------------------------------------
->>>>>>> Stashed changes
+
+
+
 using System;
 using System.Collections.Generic;
 
