@@ -1,209 +1,160 @@
 
-
-internal class Program
-{
-    static List<Mystruct.Struktorlar> mystructs = new List<Mystruct.Struktorlar>();
-    static int say = 0;
-
-    private static void Main(string[] args)
-    {
-        Mystruct mystruct = new Mystruct
-        {
-            Ad = "ismayil",
-            Soyad = "qarayev",
-            AtaAdi = "ilqar",
-            Telefon = "0555555555"
-        };
-
-        Console.WriteLine("Melumat: ");
-        mystruct.Print();
-
-
-        Neceneferindaxiledilmesi(ref say);
-
-        for (int i = 0; i < say; i++)
-        {
-            Mystruct.Struktorlar person = Melumatlarindaxiledilmesi();
-            mystructs.Add(person);
-        }
-
-        foreach (var item in mystructs)
-        {
-            item.Print();
-        }
-    }
-
-    public static void Neceneferindaxiledilmesi(ref int say)
-    {
-        Console.WriteLine("Nece neferin melumatini daxil edeceksiniz: ");
-        while (!int.TryParse(Console.ReadLine(), out say) || say <= 0)
-        {
-            Console.WriteLine("yeniden duzgun bir eded daxil et: ");
-        }
-    }
-
-    public static Mystruct.Struktorlar Melumatlarindaxiledilmesi()
-    {
-        Console.WriteLine("\nAd: ");
-        string ad = Console.ReadLine();
-
-        Console.WriteLine("Soyad: ");
-        string soyad = Console.ReadLine();
-
-        Console.WriteLine("Ata adi: ");
-        string ataadi = Console.ReadLine();
-
-        Console.WriteLine("Telefon: ");
-        string telefon = Console.ReadLine();
-
-        return new Mystruct.Struktorlar(ad, soyad, ataadi, telefon);
-    }
-}
-
-
-class Mystruct
-{
-    public string Ad { get; set; }
-    public string Soyad { get; set; }
-    public string AtaAdi { get; set; }
-    public string Telefon { get; set; }
-
-    public void Print()
-    {
-        Console.WriteLine($" Ad: {Ad}, Soyad: {Soyad}, Ata adi: {AtaAdi}, Telefon: {Telefon}");
-    }
-
-    public struct Struktorlar
-    {
-        public string Ad { get; set; }
-        public string Soyad { get; set; }
-        public string AtaAdi { get; set; }
-        public string Telefon { get; set; }
-
-        public Struktorlar(string ad, string soyad, string ataadi, string telefon)
-        {
-            Ad = ad;
-            Soyad = soyad;
-            AtaAdi = ataadi;
-            Telefon = telefon;
-        }
-
-        public void Print()
-        {
-            Console.WriteLine($" Ad: {Ad}, Soyad: {Soyad}, Ata adi: {AtaAdi}, Telefon: {Telefon}");
-        }
-    }
-}
-
-
-
-
-//-----------------------------------------------
 using System;
 using System.Collections.Generic;
 
-internal class Program
+class Program
 {
-    static List<Pers.MyStruct> mystructs = new List<Pers.MyStruct>();
-    static int say = 0;
+    static List<string> adlar = new List<string>();
+    static List<int> yaslar = new List<int>();
+    static List<int> telefon = new List<int>();
+    static List<string> email = new List<string>();
 
+    static int say = 0;
 
     public static void Main(string[] args)
     {
-        Pers pers = new Pers { Ad = "Nigar", Soyad = "Huseynova", AtaAdi = "Nigar", Telefon = 55555555 };
-       
-        Neceneferindaxiledilmesi(ref say); // Определяем количество людей
+        NeceNeferinDaxilEdilmesi(ref say);
+        MelumatlariDaxilEt(ref say);
 
-        for (int i = 0; i < say; i++) // Вводим данные для каждого человека
-        {
-            Pers.MyStruct person = Melumatlarindaxiledilmesi();
-            mystructs.Add(person); // Добавляем введённые данные в список
-        }
+        Konstruktor konstruktor = new Konstruktor();
+        konstruktor.Print();
+    }
 
-        Console.WriteLine("\n--- Список данных ---");
-        foreach (var item in mystructs) // Выводим список
+    public static void NeceNeferinDaxilEdilmesi(ref int say)
+    {
+        Console.WriteLine("Neçə nəfər üçün məlumat daxil edəcəksiniz?");
+        while (!int.TryParse(Console.ReadLine(), out say) || say <= 0)
         {
-            item.Print();
+            Console.WriteLine("Yenidən düzgün ədəd daxil edin:");
         }
     }
 
+    public static void MelumatlariDaxilEt(ref int say)
+    {
+        for (int i = 0; i < say; i++)
+        {
+            Console.WriteLine($"Ad daxil edin ({i + 1}/{say}):");
+            string ad = Console.ReadLine();
+            while (string.IsNullOrWhiteSpace(ad))
+            {
+                Console.WriteLine("Yenidən düzgün ad daxil edin:");
+                ad = Console.ReadLine();
+            }
+            adlar.Add(ad);
+
+            Console.WriteLine($"Yaşınızı daxil edin ({i + 1}/{say}):");
+            int yas;
+            while (!int.TryParse(Console.ReadLine(), out yas) || yas <= 0)
+            {
+                Console.WriteLine("Yenidən düzgün yaş daxil edin:");
+            }
+            yaslar.Add(yas);
+
+            Console.WriteLine($"Telefon nömrənizi daxil edin ({i + 1}/{say}):");
+            int tel;
+            while (!int.TryParse(Console.ReadLine(), out tel) || tel <= 0)
+            {
+                Console.WriteLine("Yenidən düzgün telefon nömrəsi daxil edin:");
+            }
+            telefon.Add(tel);
+
+            Console.WriteLine($"Email ünvanınızı daxil edin ({i + 1}/{say}):");
+            string mail = Console.ReadLine();
+            while (string.IsNullOrWhiteSpace(mail))
+            {
+                Console.WriteLine("Yenidən düzgün email daxil edin:");
+                mail = Console.ReadLine();
+            }
+            email.Add(mail);
+        }
+    }
+
+    class Konstruktor
+    {
+        public void Print()
+        {
+            for (int i = 0; i < adlar.Count; i++)
+            {
+                Console.WriteLine($"Adı: {adlar[i]}, Yaşı: {yaslar[i]}, Telefon: {telefon[i]}, Email: {email[i]}");
+            }
+        }
+    }
+}
+
+
+//---------------------------------------------------------
+using System;
+using System.Collections.Generic;
+
+class Program
+{
+    static List<string> adlar = new List<string>();
+    static List<int> yaslar = new List<int>();
+
+    static int say = 0;
+
+    public static void Main(string[] args)
+    {
+        Neceneferindaxiledilmesi(ref say);
+        MelumatlariDaxilet(say);
+
+        Konstruktor konstruktor = new Konstruktor
+        {
+            Adlar = adlar,
+            Yaslar = yaslar
+        };
+        konstruktor.Print();
+    }
 
     public static void Neceneferindaxiledilmesi(ref int say)
     {
-        Console.WriteLine("Neçə nəfərin məlumatını daxil edəcəksiniz?");
+        Console.WriteLine("Neçə nəfər üçün məlumat daxil etmək istəyirsiniz?");
+
         while (!int.TryParse(Console.ReadLine(), out say) || say <= 0)
         {
             Console.WriteLine("Yenidən düzgün bir ədəd daxil edin:");
         }
     }
 
-
-    public static  Pers.MyStruct Melumatlarindaxiledilmesi()
+    public static void MelumatlariDaxilet(int say)
     {
-        Console.WriteLine("\nAd:");
-        string ad = Console.ReadLine();
-
-        Console.WriteLine("Soyad:");
-        string soyad = Console.ReadLine();
-
-        Console.WriteLine("Ata adı:");
-        string ataAdi = Console.ReadLine();
-
-        Console.WriteLine("Telefon nömrəsi:");
-        int telefon;
-        while (!int.TryParse(Console.ReadLine(), out telefon) || telefon <= 0) // Исправлено условие
+        for (int i = 0; i < say; i++)
         {
-            Console.WriteLine("Yenidən düzgün telefon nömrəsi daxil edin:");
-        }
+            Console.WriteLine("Ad daxil edin:");
+            string ad;
+            while (string.IsNullOrEmpty(ad = Console.ReadLine()) || !char.IsLetter(ad[0]))
+            {
+                Console.WriteLine("Yenidən düzgün bir ad daxil edin:");
+            }
+            adlar.Add(ad);
 
-        return new Pers.MyStruct(ad, soyad, ataAdi, telefon); // Создаём экземпляр структуры
+            Console.WriteLine("Yaş daxil edin:");
+            int yas;
+            while (!int.TryParse(Console.ReadLine(), out yas) || yas <= 0)
+            {
+                Console.WriteLine("Yenidən düzgün bir ədəd daxil edin:");
+            }
+            yaslar.Add(yas);
+        }
     }
-}
 
-
-class Pers
-{
-    public struct MyStruct
+    class Konstruktor
     {
-        public string Ad { get; }
-        public string Soyad { get; }
-        public string AtaAdi { get; }
-        public int Telefon { get; }
-
-        public MyStruct(string ad, string soyad, string ataAdi, int telefon)
-        {
-            Ad = ad;
-            Soyad = soyad;
-            AtaAdi = ataAdi;
-            Telefon = telefon;
-        }
+        public List<string> Adlar { get; set; }
+        public List<int> Yaslar { get; set; }
 
         public void Print()
         {
-            Console.WriteLine($"Ad: {Ad}, Soyad: {Soyad}, Ata adı: {AtaAdi}, Telefon: {Telefon}");
+            for (int i = 0; i < Adlar.Count; i++)
+            {
+                Console.WriteLine($"{Adlar[i]}, Yaş {Yaslar[i]}");
+            }
         }
     }
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-//------------------------------------------------------------
-//-----------------------------------------
-
-
-
+//--------------------------------------------------
 using System;
 using System.Collections.Generic;
 
@@ -281,92 +232,8 @@ class Program
     }
 }
 
-
-
-
-//-------------------------------------------------------------
-using System;
-using System.Collections.Generic;
-
-
-class Program
-{
-    static List<string> adlar = new List<string>();
-    static List<int> yaslar = new List<int>();
-    static List<MyStruct> myStructs = new List<MyStruct>();
-    static int say = 0;
-    
-    public static void Main(string[] args)
-    {
-        Melumatlaridaxilet1(ref adlar, ref yaslar, ref say);
-        Melumatlaridaxilet2(adlar, yaslar, say);
-        //Melumatlaricixart(adlar, yaslar, say);
-
-        for (int i = 0; i < say; i++)
-        {
-            myStructs.Add(new MyStruct(adlar[i], yaslar[i]));
-        }
-
-        foreach (var item in myStructs)
-        {
-            item.Print();
-        }
-    }
-    
-    public static void Melumatlaridaxilet1(ref List<string> adlar, ref List<int> yaslar, ref int say)
-    {
-        Console.WriteLine("Neçə nəfərin məlumatını daxil edəcəksiniz?");
-        while (!int.TryParse(Console.ReadLine(), out say) || say <= 0)
-        {
-            Console.WriteLine("Zəhmət olmasa düzgün bir ədəd daxil edin");
-        }
-    }
-    
-    public static void Melumatlaridaxilet2(List<string> adlar, List<int> yaslar, int say)
-    {
-        for (int i = 0; i < say; i++)
-        {
-            Console.WriteLine("Ad daxil edin");
-            string ad = Console.ReadLine();
-            adlar.Add(ad);
-            
-            
-            int yas;
-            Console.WriteLine("Yas daxil edin");
-            while (!int.TryParse(Console.ReadLine(), out yas) || yas <= 0)
-            {
-                Console.WriteLine("Zəhmət olmasa düzgün bir ədəd daxil edin");
-            }
-            yaslar.Add(yas);
-        }
-    }
-
-    struct MyStruct
-    {
-        public string Ad { get; }
-        public int Yas { get; }
-
-        public MyStruct(string ad, int yas)
-        {
-            this.Ad = ad;
-            this.Yas = yas;
-        }
-        
-        public void Print()
-        {
-            Console.WriteLine($"{Ad}, {Yas}");
-        }
-    }
-
-    //public static void Melumatlaricixart(List<string> adlar, List<int> yaslar, int say)
-    //{
-    //    for (int i = 0; i < adlar.Count; i++)
-    //    {
-    //        Console.WriteLine($"{adlar[i]} {yaslar[i]}");
-    //    }
-    //}
-}
 //----------------------------------------------------------------------
+
 //--// yeniden yada salma kodlari //--//2
 
 using System;
