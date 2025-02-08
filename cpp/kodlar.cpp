@@ -1,4 +1,78 @@
 #include <iostream>
+#include <deque>
+using namespace std;
+
+int main()
+{
+    void fun1(deque<int>*d1);
+    void fun2(deque<int>*d2);
+    void fun3(deque<int>*d1, deque<int>*d2);
+
+    deque<int> d1;
+    deque<int> d2;
+
+    fun1(&d1);  // d1 üçün elementləri daxil edirik
+    fun2(&d2);  // d2 üçün elementləri daxil edirik
+    fun3(&d1, &d2);  // d1 və d2-nin ikinci elementlərini çap edirik
+}
+
+void fun1(deque<int>* d1)
+{
+    cout << "Deque d1 üçün elementlərin sayını daxil edin: ";
+    int number1;
+    cin >> number1;
+
+    for (int i = 0; i < number1; i++)
+    {
+        cout << "Element " << i + 1 << "-i daxil edin: ";
+        int element1;
+        cin >> element1;
+        d1->push_back(element1);
+    }
+}
+
+void fun2(deque<int>* d2)
+{
+    cout << "Deque d2 üçün elementlərin sayını daxil edin: ";
+    int number2;
+    cin >> number2;
+
+    for (int i = 0; i < number2; i++)
+    {
+        cout << "Element " << i + 1 << "-i daxil edin: ";
+        int element2;
+        cin >> element2;
+        d2->push_back(element2);
+    }
+}
+
+void fun3(deque<int>* d1, deque<int>* d2)
+{
+    if (d1->size() > 1 && d2->size() > 1)  // Ən azı 2 element olduğuna əmin oluruq
+    {
+        int sum1 = (*d1)[1];  // d1-in ikinci elementi (indeks 1)
+        int sum2 = (*d2)[1];  // d2-nin ikinci elementi (indeks 1)
+
+        cout << "d1-in ikinci elementi: " << sum1 << endl;
+        cout << "d2-nin ikinci elementi: " << sum2 << endl;
+
+        // Alternativ üsul .at() metodundan istifadə etməklə
+        int number3 = (*d1).at(1);
+        int number4 = (*d2).at(1);
+
+        cout << ".at() metodu ilə d1-in ikinci elementi: " << number3 << endl;
+        cout << ".at() metodu ilə d2-nin ikinci elementi: " << number4 << endl;
+    }
+    else
+    {
+        cout << "Bir və ya hər iki deque-də 2-dən az element var." << endl;
+    }
+}
+
+
+
+//-------------------------------------------------------------
+#include <iostream>
 #include <string>
 #include <vector>
 #include <algorithm>

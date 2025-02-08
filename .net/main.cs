@@ -156,6 +156,8 @@ class Program
 
         Konstruktor konstruktor = new Konstruktor(adlar, ataAdlari, emaillar, telefonlar, yaslar);
         konstruktor.Print();
+
+        
     }
 
     static int Neceneferindaxiledilmesi()
