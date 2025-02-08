@@ -1,3 +1,6 @@
+//----------------------------------
+//08.02.2025 10:39
+
 #include <iostream>
 #include <deque>
 using namespace std;
