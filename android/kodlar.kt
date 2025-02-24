@@ -1,3 +1,5 @@
+//--------------------------------------------------------
+//23.02.2025
 fun main() {
     val adlar = mutableListOf<String>()
     val ataAdlari = mutableListOf<String>()
