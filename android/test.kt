@@ -131,28 +131,3 @@ data class Konstruktor(
     val sinif: String,
     val email: String
 )
-
-//-----------------------------------------------------------
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
