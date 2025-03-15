@@ -8,7 +8,8 @@ fun main() {
 }
 
 fun Nece_Nefer(): Int {
-    println("Neçə nəfər üçün məlumat daxil etmək istəyirsiniz: ")
+    println("
+    ")
     while (true) {
         val input = readln().toIntOrNull()
         if (input != null && input > 0) {
