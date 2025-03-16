@@ -1,4 +1,195 @@
 
+//-----------------------------------------
+//03.16.2025
+package com.example.myapplication
+
+fun main() {
+    val say = daxilEdilenSay() // İstifadəçidən neçə nəfər üçün məlumat daxil ediləcəyini soruşuruq
+    val melumat = daxilEdilenMelumat(say) // Məlumatları daxil edirik
+
+    println("\nDaxil edilən məlumatlar:")
+    melumat.forEach { println(it) } // Daxil edilən məlumatları ekrana çap edirik
+}
+
+// Neçə nəfər üçün məlumat daxil ediləcəyini təyin edən funksiya
+fun daxilEdilenSay(): Int {
+    println("Neçə nəfər üçün məlumat daxil etmək istəyirsiniz:")
+    while (true) {
+        val umumiSay = readln().toIntOrNull() // İstifadəçinin daxil etdiyi məlumatı tam ədədə çeviririk
+        if (umumiSay != null && umumiSay > 0) {
+            return umumiSay // Düzgün dəyər daxil edilibsə, həmin dəyəri qaytarırıq
+        } else {
+            println("Məlumat yanlışdır. Yenidən daxil edin") // Xəta mesajı veririk və yenidən soruşuruq
+        }
+    }
+}
+
+// İstifadəçilərin məlumatlarını daxil edən funksiya
+fun daxilEdilenMelumat(say: Int): List<User> {
+    val data = mutableListOf<User>() // İstifadəçi obyektlərini saxlamaq üçün siyahı yaradırıq
+
+    for (i in 0 until say) {
+        val insan = User(
+            ad = adParametri(), // İstifadəçidən ad daxil etməsini istəyirik
+            soyad = soyadParametri() // İstifadəçidən soyad daxil etməsini istəyirik
+        )
+        data.add(insan) // Yaradılan istifadəçi obyektini siyahıya əlavə edirik
+    }
+    return data // Yekun siyahını qaytarırıq
+}
+
+// İstifadəçinin adını daxil etməsini istəyən funksiya
+fun adParametri(): String {
+    println("Adınızı daxil edin:")
+    return readln().takeIf { it.isNotBlank() } ?: run {
+        println("Məlumatı düzgün daxil edin!") // Boş daxil edilərsə, yenidən soruşuruq
+        adParametri()
+    }
+}
+
+// İstifadəçinin soyadını daxil etməsini istəyən funksiya
+fun soyadParametri(): String {
+    println("Soyadınızı daxil edin:")
+    return readln().takeIf { it.isNotBlank() } ?: run {
+        println("Məlumatı düzgün daxil edin!") // Boş daxil edilərsə, yenidən soruşuruq
+        soyadParametri()
+    }
+}
+
+// İstifadəçi məlumatlarını saxlayan data class
+data class User(val ad: String, val soyad: String) {
+    // Əgər istifadəçi ad və soyad daxil etməsə, "İsimsiz Soyisimsiz" kimi yaradılır
+    constructor() : this("İsimsiz", "Soyisimsiz") {
+        println("Adsız istifadəçi yaradıldı") // Konsola mesaj çıxarırıq
+    }
+
+    override fun toString(): String {
+        return "$ad $soyad" // İstifadəçi obyektini mətn formatında qaytarırıq
+    }
+}
+
+
+
+
+//-----------------------------------------------------
+fun main() {
+    val say = neceNefer()
+    val melumatlar = melumatlariDaxilEtmek(say)
+
+    println("\nDaxil edilən məlumatlar:")
+    melumatlar.forEach { println(it) }
+}
+
+fun neceNefer(): Int {
+    println("Neçə nəfər üçün məlumat daxil etmək istəyirsiniz: ")
+    while (true) {
+        val input = readln().toIntOrNull()
+        if (input != null && input > 0) {
+            return input
+        } else {
+            println("Məlumatı düzgün daxil edin!")
+        }
+    }
+}
+
+fun melumatlariDaxilEtmek(say: Int): List<Person> {
+    val melumatlar = mutableListOf<Person>()
+
+    for (i in 0 until say) {
+        val insan = Person(
+            ad = adParametri(),
+            yas = yasParametri(),
+            email = emailParametri(),
+            sifre = sifreParametri(),
+            telefon = telefonParametri(),
+            adres = adresParametri(),
+            cinsiyet = cinsiyetParametri()
+        )
+        melumatlar.add(insan)
+    }
+    return melumatlar
+}
+
+fun adParametri(): String {
+    println("Adınızı daxil edin: ")
+    return readln().takeIf { it.isNotBlank() } ?: run {
+        println("Məlumatı düzgün daxil edin!")
+        adParametri() // Yenidən soruşur
+    }
+}
+
+fun yasParametri(): Int {
+    println("Yaşınızı daxil edin: ")
+    return readln().toIntOrNull()?.takeIf { it > 0 } ?: run {
+        println("Məlumatı düzgün daxil edin!")
+        yasParametri() // Yenidən soruşur
+    }
+}
+
+fun emailParametri(): String {
+    println("Emailinizi daxil edin: ")
+    return readln().takeIf { it.contains("@") } ?: run {
+        println("Məlumatı düzgün daxil edin!")
+        emailParametri() // Yenidən soruşur
+    }
+}
+
+fun sifreParametri(): String {
+    println("Şifrənizi daxil edin: ")
+    return readln().takeIf { it.isNotBlank() } ?: run {
+        println("Məlumatı düzgün daxil edin!")
+        sifreParametri() // Yenidən soruşur
+    }
+}
+
+fun telefonParametri(): String {
+    println("Telefon nömrənizi daxil edin: ")
+    return readln().takeIf { it.length == 9 } ?: run {
+        println("Məlumatı düzgün daxil edin!")
+        telefonParametri() // Yenidən soruşur
+    }
+}
+
+fun adresParametri(): String {
+    println("Adresinizi daxil edin: ")
+    return readln().takeIf { it.isNotBlank() } ?: run {
+        println("Məlumatı düzgün daxil edin!")
+        adresParametri() // Yenidən soruşur
+    }
+}
+
+fun cinsiyetParametri(): String {
+    println("Cinsiyyətinizi daxil edin (K/Q): ")
+    return readln().uppercase().takeIf { it == "K" || it == "Q" } ?: run {
+        println("Yalnız 'K' (kişi) və ya 'Q' (qadın) daxil edin.")
+        cinsiyetParametri() // Yenidən soruşur
+    }
+}
+
+data class Person(
+    val ad: String,
+    val yas: Int,
+    val email: String,
+    val sifre: String,
+    val telefon: String,
+    val adres: String,
+    val cinsiyet: String
+) {
+    override fun toString(): String {
+        return """
+            Ad: $ad, 
+            Yaş: $yas, 
+            Email: $email, 
+            Şifrə: $sifre, 
+            Telefon: $telefon, 
+            Ünvan: $adres, 
+            Cinsiyyət: $cinsiyet
+        """.trimIndent()
+    }
+}
+
+
+//-----------------------------------------------------
 fun main() {
     val say = Nece_Nefer()
     val melumatlar = Melumatlari_Daxil_Etmek(say)
