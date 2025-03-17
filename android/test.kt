@@ -1,4 +1,10 @@
+fun main() {
+    // İstifadəçidən neçə nəfər məlumat daxil edəcəyini soruşuruq
+    val say = Nece_Nefer()
+    // Daxil edilən məlumatları alırıq
+    val melumatlar = Melumatlari_Daxil_Etmek(say)
 
+<<<<<<< Updated upstream
 //-----------------------------------------
 //03.16.2025
 package com.example.myapplication
@@ -190,6 +196,63 @@ data class Person(
 
 
 //-----------------------------------------------------
+=======
+    // Daxil edilən məlumatları ekrana çıxarırıq
+    println("\nDaxil edilən məlumatlar:")
+    melumatlar.forEach(::println)  // hər bir məlumatı çap edirik
+}
+
+// İstifadəçidən neçə nəfər üçün məlumat daxil ediləcəyini soruşuruq
+fun Nece_Nefer(): Int {
+    return readInput("Neçə nəfər üçün məlumat daxil etmək istəyirsiniz: ") {
+        it.toIntOrNull()?.takeIf { it > 0 } != null  // müsbət bir ədəd olmalıdır
+    }.toInt()  // alınan məlumatı integer tipinə çeviririk
+}
+
+// İstifadəçidən məlumatları daxil etməyi tələb edirik
+fun Melumatlari_Daxil_Etmek(say: Int): List<Konstruktor> {
+    // say qədər məlumat daxil ediləcək
+    return List(say) {
+        Konstruktor(
+            ad = readInput("Adınızı daxil edin: ") { it.isNotBlank() }, // Adın boş olmaması lazımdır
+            soyad = readInput("Soyadınızı daxil edin: ") { it.isNotBlank() }, // Soyadın boş olmaması lazımdır
+            yas = readInput("Yaşınızı daxil edin: ") { it.toIntOrNull()?.takeIf { it > 0 } != null }.toInt(), // Yaşın müsbət olması lazımdır
+            cinsiyet = readInput("Cinsiyyətinizi daxil edin (K/Q): ") { it == "K" || it == "Q" }, // Cinsiyyətin yalnız "K" və ya "Q" olmalıdır
+            tel = readInput("Telefon nömrənizi daxil edin: ") { it.matches("\\d{7,}".toRegex()) }.toInt(), // Telefon nömrəsi ən azı 7 rəqəm olmalıdır
+            sinif = readInput("Sinifinizi daxil edin: ") { it.isNotBlank() }, // Sinif boş olmamalıdır
+            email = readInput("E-mailinizi daxil edin: ") { it.matches("[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}".toRegex()) } // E-mailin düzgün formatda olması lazımdır
+        )
+    }
+}
+
+// İstifadəçidən məlumatı alırıq və doğruluğunu yoxlayırıq
+fun readInput(prompt: String, validation: (String) -> Boolean): String {
+    println(prompt)  // İstifadəçiyə sorğu veririk
+    return generateSequence { readln() }  // İstifadəçidən məlumat alırıq
+        .first { validation(it).also { if (!it) println("Düzgün məlumat daxil edin: ") } }  // Əgər məlumat düzgün deyilsə, təkrar soruşuruq
+}
+
+// Konstruktor sinfi (data class) ilə daxil edilən məlumatları saxlayırıq
+data class Konstruktor(
+    val ad: String,
+    val soyad: String,
+    val yas: Int,
+    val cinsiyet: String,
+    val tel: Int,
+    val sinif: String,
+    val email: String
+) {
+    // Yaşın böyüklüyünü yoxlamaq
+    fun isAdult(): Boolean = yas >= 18  // Əgər yaş 18-dən böyük və ya bərabərdirsə, böyüklük təsdiq edilir
+
+    // Telefon nömrəsinin düzgünlüyünü yoxlamaq
+    fun isPhoneNumberValid(): Boolean = tel.toString().matches("\\d{7,}".toRegex()) // Telefon nömrəsi ən azı 7 rəqəm olmalıdır
+}
+
+
+
+//-----------------------------------------------------------------------------
+>>>>>>> Stashed changes
 fun main() {
     val say = Nece_Nefer()
     val melumatlar = Melumatlari_Daxil_Etmek(say)
