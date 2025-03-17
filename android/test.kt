@@ -1,10 +1,3 @@
-fun main() {
-    // İstifadəçidən neçə nəfər məlumat daxil edəcəyini soruşuruq
-    val say = Nece_Nefer()
-    // Daxil edilən məlumatları alırıq
-    val melumatlar = Melumatlari_Daxil_Etmek(say)
-
-<<<<<<< Updated upstream
 //-----------------------------------------
 //03.16.2025
 package com.example.myapplication
