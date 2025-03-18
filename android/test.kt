@@ -1,3 +1,83 @@
+fun main() {
+    val say = daxiledilensay()
+    val melumat = daxiledilenmelumat(say)
+
+    for (info in melumat) {
+        println("Ad: ${info.ad}, Soyad: ${info.soyad}, Yas: ${info.yas}")
+    }
+}
+
+fun daxiledilensay(): Int {
+    println("Sayı daxil edin:")
+    while (true) {
+        val umumisay = readln().toIntOrNull()
+        if (umumisay != null && umumisay > 0) {
+            return umumisay
+        } else {
+            println("Məlumatı düzgün daxil edin")
+        }
+    }
+}
+
+fun daxiledilenmelumat(say: Int): List<Person> {
+    val data = mutableListOf<Person>()
+
+    for (i in 0..<say) {
+        val person = Person(
+            ad = adparametri(),
+            soyad = soyadparametri(),
+            yas = yasparametri()
+        )
+        data.add(person)
+    }
+    return data
+}
+
+fun adparametri(): String {
+    println("Ad daxil edin:")
+    while (true) {
+        val input = readln()
+        if (input.isNotBlank()){
+            return input
+        }
+        println("Məlumatı düzgün daxil edin")
+    }
+}
+
+fun soyadparametri(): String {
+    println("Soyad daxil edin:")
+    while (true) {
+        val input = readln()
+        if (input.isNotBlank()){
+            return input
+        }
+        println("Məlumatı düzgün daxil edin")
+    }
+}
+
+fun yasparametri(): Int {
+    println("Yaş daxil edin:")
+    while (true) {
+        val input = readln().toIntOrNull()
+        if (input != null && input > 0) {
+            return input
+        }
+        println("Məlumatı düzgün daxil edin")
+    }
+}
+
+class Person{
+    val ad: String
+    val soyad: String
+    val yas: Int
+
+    constructor(ad: String, soyad: String, yas: Int = 0){
+        this.ad = ad
+        this.soyad = soyad
+        this.yas = yas
+    }
+}
+
 //-----------------------------------------
 //03.16.2025
 package com.example.myapplication
