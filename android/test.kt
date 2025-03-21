@@ -1,3 +1,154 @@
+fun main(){
+    val say = daxiledilensay()
+    val melumat = daxiledilenmelumat(say)
+
+    for (info in melumat){
+        println("ad: ${info.ad}," +
+                " soyad: ${info.soyad}," +
+                " yas: ${info.yas}," +
+                " dogum ili: ${info.dogumIli}," +
+                " email: ${info.email}," +
+                " telefon: ${info.telefon}")
+    }
+}
+
+fun daxiledilensay(): Int{
+    println("sayi daxil edin")
+    while (true){
+        val umumisay = readln().toIntOrNull()
+        if (umumisay != null && umumisay > 0){
+            return umumisay
+        }else{
+            println("Melumati duzgun daxil edin")
+        }
+    }
+}
+
+fun daxiledilenmelumat(say: Int): List<Daxiledilenler> {
+    val data = mutableListOf<Daxiledilenler>()
+
+    for (i in 0..<say){
+        val person = Daxiledilenler(
+            ad = adParametri(),
+            soyad = soyadParametri(),
+            yas = yasParametri(),
+            //----------------------------------
+            dogumIli = dogumIliParametri(),
+            email = emailParametri(),
+            telefon = telefonParametri()
+        )
+        data.add(person)
+    }
+    return data
+}
+
+fun adParametri(): String{
+    println("ad daxil edin")
+    while (true){
+        val inputAd = readln()
+        if (inputAd.isNotBlank()){
+            return inputAd
+        }else{
+            println("Melumati duzgun daxil edin")
+        }
+    }
+}
+
+
+fun soyadParametri(): String{
+    println("soyad daxil edin")
+    while (true){
+        val inputSoyad = readln()
+        if (inputSoyad.isNotBlank()){
+            return inputSoyad
+        }else{
+            println("Melumati duzgun daxil edin")
+        }
+    }
+}
+
+
+fun yasParametri(): Int{
+    println("yas daxil edin")
+    while (true){
+        val inputYas = readln().toIntOrNull()
+        if (inputYas != null && inputYas > 0){
+            return inputYas
+        }else{
+            println("Melumati duzgun daxil edin")
+        }
+    }
+}
+
+fun dogumIliParametri(): Int {
+    println("dogum ili daxil edin")
+    while (true){
+        val inputDogumIli = readln().toIntOrNull()
+        if (inputDogumIli != null && inputDogumIli in 1900..2023){
+            return inputDogumIli
+        }else{
+            println("Melumati duzgun daxil edin")
+        }
+    }
+}
+
+
+fun emailParametri(): String{
+    println("email daxil edin")
+    val inputemail = readln()
+    while (true){
+        if(inputemail.contains("@") && inputemail.contains(".")){
+            return inputemail
+        }else{
+            println("Melumati duzgun daxil edin")
+        }
+    }
+}
+
+
+fun telefonParametri(): String{
+    println("telefon daxil edin")
+    while (true){
+        val inputTelefon = readln()
+        if(inputTelefon.matches(regex = "[0-9]+".toRegex())){
+            return inputTelefon
+        }else{
+            println("Melumati duzgun daxil edin")
+        }
+    }
+}
+
+class Daxiledilenler{
+    val ad: String
+    val soyad: String
+    val yas: Int
+    //-----------------------
+    val dogumIli: Int
+    val email: String
+    val telefon: String
+
+    constructor(
+        ad: String,
+        soyad: String,
+        yas: Int = 0,
+        dogumIli: Int,
+        email: String,
+        telefon: String
+
+    ){
+        this.ad = ad
+        this.soyad = soyad
+        this.yas = yas
+        this.dogumIli = dogumIli
+        this.email = email
+        this.telefon = telefon
+    }
+}
+
+
+
+
+//---------------------------------------------------------------
 fun main() {
     val say = daxiledilensay()
     val melumat = daxiledilenmelumat(say)
