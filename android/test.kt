@@ -32,7 +32,7 @@ fun daxiledilenmelumat(say: Int): List<Daxiledilenler> {
             ad = adParametri(),
             soyad = soyadParametri(),
             yas = yasParametri(),
-            //----------------------------------
+            //----------------------
             dogumIli = dogumIliParametri(),
             email = emailParametri(),
             telefon = telefonParametri()
@@ -122,7 +122,7 @@ class Daxiledilenler{
     val ad: String
     val soyad: String
     val yas: Int
-    //-----------------------
+    //---------------
     val dogumIli: Int
     val email: String
     val telefon: String
