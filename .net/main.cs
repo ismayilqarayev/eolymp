@@ -473,7 +473,8 @@ class User
         {
             for (int i = 0; i < adlar.Count; i++)
             {
-                Console.WriteLine(); // **Burada məlumatların çap edilməsi nəzərdə tutulub**
+                Console.WriteLine($"Ad: {adlar[i]}, Ata adı: {ataAdlari[i]}, Telefon: {telefonlar[i]}, Email: {emaillar[i]}, Yaş: {yaslar[i]}"); 
+                // **Burada məlumatların çap edilməsi nəzərdə tutulub**
             }
         }
     }
