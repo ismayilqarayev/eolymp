@@ -484,4 +484,120 @@ class User
 //---------------------------------------------------------------
 
 
+using System;
+using System.Collections.Generic;
+
+class Program
+{
+    public static void Main()
+    {
+        Console.Write("Neçə nəfər üçün məlumat daxil etmək istəyirsiniz: ");
+        int say;
+        
+        while (!int.TryParse(Console.ReadLine(), out say) || say <= 0)
+        {
+            Console.Write("Düzgün bir ədəd daxil edin: ");
+        }
+
+        List<Istifadeci> istifadeciler = new List<Istifadeci>();
+
+        for (int i = 0; i < say; i++)
+        {
+            Console.WriteLine($"\n{i + 1}-ci şəxsin məlumatlarını daxil edin:");
+
+            string ad = AdiDaxilEt("Ad daxil edin: ");
+            string email = EmailDaxilEt("E-poçt ünvanını daxil edin: ");
+            long telefon = TelefonDaxilEt("Telefon nömrəsini daxil edin: ");
+            int yas = YasiDaxilEt("Yaşı daxil edin: ");
+
+            istifadeciler.Add(new Istifadeci(ad, ataAdi, email, telefon, yas));
+        }
+
+        Console.WriteLine("\nDaxil edilmiş məlumatlar:");
+        foreach (var istifadeci in istifadeciler)
+        {
+            istifadeci.CapiGoster();
+        }
+    }
+
+    private static string AdiDaxilEt(string mesaj)
+    {
+        string daxilEdilen;
+        while (true)
+        {
+            Console.Write(mesaj);
+            daxilEdilen = Console.ReadLine();
+            if (!string.IsNullOrWhiteSpace(daxilEdilen) && char.IsLetter(daxilEdilen[0]))
+            {
+                return daxilEdilen;
+            }
+            Console.WriteLine("Düzgün məlumat daxil edin!");
+        }
+    }
+
+    private static string EmailDaxilEt(string mesaj)
+    {
+        string email;
+        while (true)
+        {
+            Console.Write(mesaj);
+            email = Console.ReadLine();
+            if (email.Contains("@") && email.Contains("."))
+            {
+                return email;
+            }
+            Console.WriteLine("Düzgün e-poçt ünvanı daxil edin!");
+        }
+    }
+
+    private static long TelefonDaxilEt(string mesaj)
+    {
+        string daxilEdilen;
+        while (true)
+        {
+            Console.Write(mesaj);
+            daxilEdilen = Console.ReadLine();
+            if (long.TryParse(daxilEdilen, out long telefon) && daxilEdilen.Length == 10)
+            {
+                return telefon;
+            }
+            Console.WriteLine("Düzgün telefon nömrəsi daxil edin! (10 rəqəm)");
+        }
+    }
+
+    private static int YasiDaxilEt(string mesaj)
+    {
+        int yas;
+        while (true)
+        {
+            Console.Write(mesaj);
+            if (int.TryParse(Console.ReadLine(), out yas) && yas > 0)
+            {
+                return yas;
+            }
+            Console.WriteLine("Düzgün yaş daxil edin!");
+        }
+    }
+}
+
+class Istifadeci
+{
+    public string Ad { get; }
+    public string Email { get; }
+    public long Telefon { get; }
+    public int Yas { get; }
+
+    public Istifadeci(string ad, string email, long telefon, int yas)
+    {
+        Ad = ad;
+        Email = email;
+        Telefon = telefon;
+        Yas = yas;
+    }
+
+    public void CapiGoster()
+    {
+        Console.WriteLine($"Ad: {Ad}, Telefon: {Telefon}, Email: {Email}, Yaş: {Yas}");
+    }
+}
 
