@@ -16,11 +16,18 @@ int main() {
     cin >> a >> b;
 
     // Şərtləri yoxlayaq
-    if (a > b) {
+    if (a > b) 
+    {
         cout << "a böyükdür" << endl;
-    } else if (b > a) {
+    }
+     
+    else if (b > a) 
+    {
         cout << "b böyükdür" << endl;
-    } else {
+    }
+
+    else 
+    {
         cout << "Hər ikisi bərabərdir" << endl;
     }
 
