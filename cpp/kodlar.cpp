@@ -1,3 +1,85 @@
+#include <iostream>
+#include <deque>
+using namespace std;
+
+// Funksiya prototipləri
+void d1ElementDaxilEt(deque<int>* d1);
+void d2ElementDaxilEt(deque<int>* d2);
+void ikinciElementleriCapEt(deque<int>* d1, deque<int>* d2);
+
+int main()
+{
+    deque<int> d1;
+    deque<int> d2;
+
+    // d1 üçün elementləri daxil edirik
+    d1ElementDaxilEt(&d1);  
+    // d2 üçün elementləri daxil edirik
+    d2ElementDaxilEt(&d2);  
+    // d1 və d2-nin ikinci elementlərini çap edirik
+    ikinciElementleriCapEt(&d1, &d2);  
+
+    return 0;
+}
+
+// d1 deque-ni dolduran funksiya
+void d1ElementDaxilEt(deque<int>* d1)
+{
+    cout << "Deque d1 üçün elementlərin sayını daxil edin: ";
+    int say1;
+    cin >> say1;
+
+    for (int i = 0; i < say1; i++)
+    {
+        cout << "Element " << i + 1 << "-i daxil edin: ";
+        int element1;
+        cin >> element1;
+        d1->push_back(element1);  // Elementi deque-ə əlavə edirik
+    }
+}
+
+// d2 deque-ni dolduran funksiya
+void d2ElementDaxilEt(deque<int>* d2)
+{
+    cout << "Deque d2 üçün elementlərin sayını daxil edin: ";
+    int say2;
+    cin >> say2;
+
+    for (int i = 0; i < say2; i++)
+    {
+        cout << "Element " << i + 1 << "-i daxil edin: ";
+        int element2;
+        cin >> element2;
+        d2->push_back(element2);  // Elementi deque-ə əlavə edirik
+    }
+}
+
+// d1 və d2 deque-lərinin ikinci elementlərini çap edən funksiya
+void ikinciElementleriCapEt(deque<int>* d1, deque<int>* d2)
+{
+    if (d1->size() > 1 && d2->size() > 1)  // Ən azı 2 element olduğuna əmin oluruq
+    {
+        int ikinci1 = (*d1)[1];  // d1-in ikinci elementi (indeks 1)
+        int ikinci2 = (*d2)[1];  // d2-nin ikinci elementi (indeks 1)
+
+        cout << "d1-in ikinci elementi: " << ikinci1 << endl;
+        cout << "d2-nin ikinci elementi: " << ikinci2 << endl;
+
+        // Alternativ üsul: .at() metodundan istifadə
+        int ikinci1_alt = d1->at(1);
+        int ikinci2_alt = d2->at(1);
+
+        cout << ".at() metodu ilə d1-in ikinci elementi: " << ikinci1_alt << endl;
+        cout << ".at() metodu ilə d2-nin ikinci elementi: " << ikinci2_alt << endl;
+    }
+    else
+    {
+        cout << "Bir və ya hər iki deque-də 2-dən az element var." << endl;
+    }
+}
+
+
+
 //----------------------------------
 //08.02.2025 10:39
 
