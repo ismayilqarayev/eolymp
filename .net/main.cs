@@ -280,7 +280,7 @@ class Program
     static List<int> yaslar = new List<int>();
     static List<MyStruct> myStructs = new List<MyStruct>();
     static int say = 0;
-    
+
     public static void Main(string[] args)
     {
         Melumatlaridaxilet1(ref adlar, ref yaslar, ref say);
@@ -297,7 +297,7 @@ class Program
             item.Print();
         }
     }
-    
+
     public static void Melumatlaridaxilet1(ref List<string> adlar, ref List<int> yaslar, ref int say)
     {
         Console.WriteLine("Neçə nəfərin məlumatını daxil edəcəksiniz?");
@@ -306,7 +306,7 @@ class Program
             Console.WriteLine("Zəhmət olmasa düzgün bir ədəd daxil edin");
         }
     }
-    
+
     public static void Melumatlaridaxilet2(List<string> adlar, List<int> yaslar, int say)
     {
         for (int i = 0; i < say; i++)
@@ -314,8 +314,8 @@ class Program
             Console.WriteLine("Ad daxil edin");
             string ad = Console.ReadLine();
             adlar.Add(ad);
-            
-            
+
+
             int yas;
             Console.WriteLine("Yas daxil edin");
             while (!int.TryParse(Console.ReadLine(), out yas) || yas <= 0)
@@ -336,7 +336,7 @@ class Program
             this.Ad = ad;
             this.Yas = yas;
         }
-        
+
         public void Print()
         {
             Console.WriteLine($"{Ad}, {Yas}");
@@ -351,8 +351,9 @@ class Program
     //    }
     //}
 }
+
 //----------------------------------------------------------------------
-//--// yeniden yada salma kodlari //--//2
+//--// yeniden yada salma kodlari //--//2  2025 burdan başla--------------------------------------------------------------------------------------------------
 
 using System;
 using System.Collections.Generic;
