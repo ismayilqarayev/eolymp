@@ -590,8 +590,8 @@ void fun1(vector<int>*v1, vector<int>*v2)
     cout << endl;  // çapdan sonra sətir keçidi
 }
 
-
-//-----------------------------------------------------------
+//-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #include <iostream>  // İstifadə ediləcək kitabxananı daxil edir
 
 using namespace std;
@@ -621,64 +621,65 @@ int fun1(int **num)
 
 #include <iostream>
 #include <vector>
-
 using namespace std;
 
-class Runner
-{
+class Runner {
 private:
-    vector<int> number1{};
-    vector<int> number2{};
+    vector<int> number1;   // Birinci ədədləri saxlayan vektor
+    vector<int> number2;   // İkinci ədədləri saxlayan vektor
 
-    void runner1(vector<int>*vec1);
-    void runner2(vector<int>*vec2);
-
-
-    int main()
-    {
-        Runner get1;
-        get1.runner1(&number1);
-        get1.runner2(&number2);
-
-        runner1(&number1);
-        runner2(&number2);
-        return 0;
-    }
-
-    static void runner1(vector<int> *vec1)
+public:
+    // Birinci vektora ədədlər əlavə edən funksiya
+    void runner1()
     {
         int add_vector_number = 0;
+        cout << "Neçə ədəd daxil edəcəksiniz (1-ci vektor üçün): ";
         cin >> add_vector_number;
 
         for (int i = 0; i < add_vector_number; i++)
         {
             int a;
+            cout << i + 1 << "-ci ədədi daxil edin: ";
             cin >> a;
-            vec1 -> push_back(a);
+            number1.push_back(a);
         }
     }
 
-
-    static void runner2(vector<int> *vec2)
+    // İkinci vektora ədədlər əlavə edib ekrana çap edən funksiya
+    void runner2()
     {
         int add_vector_number = 0;
+        cout << "Neçə ədəd daxil edəcəksiniz (2-ci vektor üçün): ";
         cin >> add_vector_number;
 
         for (int i = 0; i < add_vector_number; i++)
         {
             int b;
+            cout << i + 1 << "-ci ədədi daxil edin: ";
             cin >> b;
-            vec2 ->push_back(b);
+            number2.push_back(b);
         }
 
-        for (int n1 : *vec2)
+        cout << "\n2-ci vektordakı ədədlər: ";
+        for (int n : number2)
         {
-            cout << n1 << " ";
+            cout << n << " ";
         }
         cout << endl;
     }
 };
 
+int main()
+{
+    Runner get1;
+
+    get1.runner1(); // Birinci vektor üçün məlumat daxil edilir
+    get1.runner2(); // İkinci vektor üçün məlumat daxil edilir və ekrana yazılır
+
+    return 0;
+}
+
+//--------------------------------------------------------------------------------------------
 
 
 #include <iostream>
@@ -1702,33 +1703,6 @@ int main(){
         return 0;
     }
 }
-
-//------------------------------------------------------------
-
-
-#include <iostream>
-#include <vector>
-#include <string>
-
-using namespace std;
-
-vector<string> texts;
-void fun_2(){
-    for(const auto& text : texts){
-        cout << text;
-    }
-}
-
-
-int main() {
-    string input_text;
-    while (cin >> input_text and input_text != "end"){
-        texts.push_back(input_text);
-    }
-    fun_2();
-}
-
-
 
 
 
