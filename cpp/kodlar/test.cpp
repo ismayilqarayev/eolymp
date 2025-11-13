@@ -1,5 +1,63 @@
 #include <iostream>
 #include <vector>
+
+using namespace std;
+
+class Runner
+{
+
+private:
+	vector<int> number1;
+	vector<int> number2;
+	int* add_vec_num;
+	
+
+public:
+	Runner()
+	{
+		add_vec_num = new int(0);
+		cout << "Runner initialized." << endl;
+	}
+
+	~Runner()
+	{
+		delete add_vec_num;
+		cout << "Runner destroyed." << endl;
+	}
+
+	void inputVector(vector<int> *vec)
+	{
+		cout << "Enter number of elements for vector 1: ";
+		cin >> *add_vec_num;
+
+		vec->resize(*add_vec_num);
+	}
+
+	void inputVector2()
+	{
+		cout << "Enter number of elements for vector 2: ";
+		cin >> *add_vec_num;
+	}
+
+	void display()
+	{
+
+	}
+};
+
+int main()
+{
+	Runner run;
+
+	run.inputVector();
+	return 0;
+}
+
+//---------------------------------------------------------------
+
+
+#include <iostream>
+#include <vector>
 #include <algorithm>
 #include <string>
 
@@ -137,3 +195,5 @@ int main()
 
     return 0;
 }
+
+
