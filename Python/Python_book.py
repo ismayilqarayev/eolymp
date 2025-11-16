@@ -15,9 +15,12 @@ print("Hello")
 print(2+3)
    print("Hello")
 
-#  Ona görə də yeni təlimatları sətrin əvvəlində yerləşdirmək lazımdır.
-#  Bu, Python-un C# və ya Java kimi digər proqramlaşdırma 
-#  dillərindən əsas fərqlərindən biridir.
+# Ona görə də yeni təlimatları sətrin əvvəlində yerləşdirmək lazımdır.
+# Bu, Python-un C# və ya Java kimi digər proqramlaşdırma 
+# dillərindən əsas fərqlərindən biridir.
+
+# Lakin nəzərə almaq lazımdır ki, dilin bəzi konstruksiyaları bir neçə sətrdən ibarət ola bilər.
+# Məsələn, if şərt konstruksiyası:
 
 if 1 < 2:
     print("Hello")
