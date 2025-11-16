@@ -24,3 +24,23 @@ print(2+3)
 
 if 1 < 2:
     print("Hello")
+
+#----------------------------------------------------------------------------------------------
+# 2 ci
+# Bu nümunədə əgər 1, 2-dən kiçikdirsə, proqram ekrana “Hello” yazır.
+# Burada mütləq boşluq (indent) qoymaq lazımdır, çünki print("Hello") artıq tək 
+# başına işlənmir — o, if şərtinin içindədir.
+
+# Kod yazarkən adətən boşluqlar 4 simvol olur (4, 8, 12 və s.). 
+# Bu, sadəcə qaydadır və kodu səliqəli göstərir.Amma əgər sən 4 yox,
+# məsələn 5 boşluq qoysan, yenə də işləyəcək — əsas odur ki, 
+# həmin blokdakı bütün sətirlər eyni səviyyədə olsun.
+
+# Belə vəziyyətlər çox azdır, ona görə də Python-da boşluqları harada qoymaq
+# lazım olduğunu qarışdırmaq çətin deyil.
+
+# Python registrə həssas (böyük-kiçik hərfə həssas) dildir, ona görə də print, 
+# Print və ya PRINT fərqli ifadələr sayılır.
+
+# Və əgər konsola məlumat çıxarmaq üçün print metodu əvəzinə Print istifadə 
+# etməyə çalışsaq, Python bunu tanımayacaq və xəta verəcək.*Registrə həssaslıq (böyük-kiçik hərf fərqi)
