@@ -1,3 +1,5 @@
+#---------------------------------------------------------------------------------------
+# 1 ci 
 # Python dilində yazılmış proqram təlimatlar (instruksiyalar) 
 # toplusundan ibarətdir.
 # Hər bir təlimat yeni sətrdə yerləşdirilir.
