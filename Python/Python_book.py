@@ -29,20 +29,25 @@ if 1 < 2:
 
 #----------------------------------------------------------------------------------------------
 # 2 ci
-# Bu nümunədə əgər 1, 2-dən kiçikdirsə, proqram ekrana “Hello” yazır.
-# Burada mütləq boşluq (indent) qoymaq lazımdır, çünki print("Hello") artıq tək 
-# başına işlənmir — o, if şərtinin içindədir.
+# Bu nümunədə əgər 1, 2-dən kiçik olarsa, proqram ekrana "Hello" sözünü çıxarır.
+# Burada diqqət yetirməli məqam ondan ibarətdir ki, print("Hello") artıq tək bir əmri ifadə etmir — o, 
+# if şərtinin içində işlədilir. Buna görə də həmin sətrin əvvəlində mütləq boşluq (indent) olmalıdır.
 
-# Kod yazarkən adətən boşluqlar 4 simvol olur (4, 8, 12 və s.). 
-# Bu, sadəcə qaydadır və kodu səliqəli göstərir.Amma əgər sən 4 yox,
-# məsələn 5 boşluq qoysan, yenə də işləyəcək — əsas odur ki, 
-# həmin blokdakı bütün sətirlər eyni səviyyədə olsun.
+# Adətən proqramçılar boşluğu 4 boşluq ilə edirlər. 4, 8, 12 kimi 4-ün qatları kodu daha səliqəli göstərir.
+# Amma əgər təsadüfən 5 boşluq qoysan da, proqram işləməyinə davam edəcək — Python buna görə xəta vermir.
 
-# Belə vəziyyətlər çox azdır, ona görə də Python-da boşluqları harada qoymaq
-# lazım olduğunu qarışdırmaq çətin deyil.
+# Belə şərt blokları çox olmadığı üçün, harada boşluq qoymaq lazım olduğunu qarışdırmaq da çətin deyil. 
+# Bir qayda var: blok içində yazılan hər əmrin əvvəlində boşluq olmalıdır.
 
-# Python registrə həssas (böyük-kiçik hərfə həssas) dildir, ona görə də print, 
-# Print və ya PRINT fərqli ifadələr sayılır.
+#Python-da registrə həssaslıq
 
-# Və əgər konsola məlumat çıxarmaq üçün print metodu əvəzinə Print istifadə 
-# etməyə çalışsaq, Python bunu tanımayacaq və xəta verəcək.*Registrə həssaslıq (böyük-kiçik hərf fərqi)
+# Python-da böyük və kiçik hərflər çox önəmlidir. Yəni print, Print və ya PRINT — bunların hamısı Python üçün fərqli sözlərdir.
+# Ona görə də əgər ekrana nəsə çıxarmaq üçün səhvən print əvəzinə Print yazsan, proqram bunu tanımayacaq və xəta verəcək.
+
+Print("Hello World")
+
+
+
+
+
+
