@@ -1,25 +1,16 @@
 Riyaziyyat 
-8 – ci sinif	
-9 – cu sinif	
-10 – cu sinif 	https://forms.office.com/r/KApPTACeg8
-11 – ci sinif	https://forms.office.com/r/bwfrEUmXCP
+8 – ci sinif	https://forms.microsoft.com/r/RddS65K3Pf
+9 – cu sinif	https://forms.microsoft.com/r/4pbR8KZg1J
+10 – cu sinif 	https://forms.office.com/r/KApPTACeg8 
+
+11 – ci sinif	https://forms.office.com/r/bwfrEUmXCP 
+
 
 Fizika 
-8 – ci sinif	
-9 – cu sinif	
-10 – cu sinif 	https://forms.office.com/r/B4Ec38q5CW
-11 – ci sinif	https://forms.office.com/r/ybcbUBVwQS
+8 – ci sinif	https://forms.microsoft.com/r/RT7G7QMULU
+9 – cu sinif	https://forms.microsoft.com/r/pinsTaw7X6
+10 – cu sinif 	https://forms.office.com/r/B4Ec38q5CW 
 
-Kimya
-8 – ci sinif	
-9 – cu sinif	
-10 – cu sinif 	https://forms.office.com/r/EQUD083aCN
-11 – ci sinif	https://forms.office.com/r/ezgcAjtep2
+11 – ci sinif	https://forms.office.com/r/ybcbUBVwQS 
 
-
-BİOLOGİYA
-8 – ci sinif	
-9 – cu sinif	
-10 – cu sinif 	
-11 – ci sinif	
 
