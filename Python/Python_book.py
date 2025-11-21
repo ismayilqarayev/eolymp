@@ -46,8 +46,3 @@ if 1 < 2:
 
 Print("Hello World")
 
-
-
-
-
-
