@@ -63,3 +63,9 @@ print("Hello World")
 #  Yəni yuxarıdakı nümunədə kodun ilk iki sətri şərh kimi qəbul edilir.
 
 # Şərhlər həmçinin icra olunan əmrdən sonra, həmin sətirin sonunda da yerləşə bilər.
+
+print("Hello World")  # Konsola mesajın çıxarılması
+
+# Blok şərhlərində şərh mətninin əvvəlində və sonunda üç tək dırnaq işarəsi qoyulur: ''' şərh mətni '''.
+# Məsələn:
+
