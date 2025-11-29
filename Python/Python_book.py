@@ -57,3 +57,9 @@ Print("Hello World")
 
 # Konsola "Hello World" mesajının çıxarılması
 print("Hello World")
+
+
+# # işarəsindən sonra gələn istənilən simvollar şərh hesab olunur. 
+# Yəni yuxarıdakı nümunədə ilk iki sətir şərh kimi qəbul edilir.
+
+# Şərhlər həmçinin kod sətirinin sonunda, icra olunan əmrdən sonra da yazıla bilər
