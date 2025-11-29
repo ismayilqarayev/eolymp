@@ -20,7 +20,8 @@ Düzbucaqlının perimetri çap edilməlidir.
 #include <iostream>
 using namespace std;
 
-int main() {
+int main() 
+{
     int a, b;
 
     // Düzbucaqlının tərəflərini oxuyuruq
