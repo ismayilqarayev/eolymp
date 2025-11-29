@@ -69,3 +69,8 @@ print("Hello World")  # Konsola mesajın çıxarılması
 # Blok şərhlərində şərh mətninin əvvəlində və sonunda üç tək dırnaq işarəsi qoyulur: ''' şərh mətni '''.
 # Məsələn:
 
+'''
+Bu bir blok şərhidir.
+Bir neçə sətri əhatə edə bilər.
+'''
+
