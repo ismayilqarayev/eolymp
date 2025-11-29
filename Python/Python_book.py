@@ -54,3 +54,6 @@ Print("Hello World")
 #Python dilində şərhlər blok şəklində və sətir şəklində olur.
 
 # Sətir şəklində olan şərhlər # işarəsi ilə başlayır. Onlar ayrıca bir sətirdə yerləşə bilər:
+
+# Konsola "Hello World" mesajının çıxarılması
+print("Hello World")
