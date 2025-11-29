@@ -59,7 +59,7 @@ Print("Hello World")
 print("Hello World")
 
 
-# # işarəsindən sonra gələn istənilən simvollar şərh hesab olunur. 
-# Yəni yuxarıdakı nümunədə ilk iki sətir şərh kimi qəbul edilir.
+# '#' işarəsindən sonra gələn istənilən simvollar şərh hesab olunur.
+#  Yəni yuxarıdakı nümunədə kodun ilk iki sətri şərh kimi qəbul edilir.
 
-# Şərhlər həmçinin kod sətirinin sonunda, icra olunan əmrdən sonra da yazıla bilər
+# Şərhlər həmçinin icra olunan əmrdən sonra, həmin sətirin sonunda da yerləşə bilər.
