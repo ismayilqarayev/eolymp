@@ -46,3 +46,11 @@ if 1 < 2:
 
 Print("Hello World")
 
+# Şərhlər(Komentlər)
+# Hər hansı bir kod hissəsinin nə etdiyini göstərmək üçün şərhlər tətbiq olunur. 
+# Proqramın tərcüməsi və icrası zamanı interpretator şərhləri nəzərə almır, 
+# buna görə də onların proqramın işləməsinə heç bir təsiri yoxdur.
+
+#Python dilində şərhlər blok şəklində və sətir şəklində olur.
+
+# Sətir şəklində olan şərhlər # işarəsi ilə başlayır. Onlar ayrıca bir sətirdə yerləşə bilər:
