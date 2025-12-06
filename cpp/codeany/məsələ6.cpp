@@ -25,3 +25,18 @@ Giriş verilənləri nümünəsi #1
 1
 */
 
+#include <iostream>
+using namespace std;
+
+int main() 
+{
+    int n;          // Stepanın gətirdiyi daşların sayı
+    cin >> n;       // İstifadəçidən giriş oxunur
+
+    int dostlar = n - 1;  // Bir daş özündə qalır, qalan dostlara gedir
+
+    cout << dostlar;      // Dostların sayını çap edirik
+    return 0;
+}
+
+
