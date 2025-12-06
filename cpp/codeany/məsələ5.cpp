@@ -16,3 +16,22 @@ Giriş verilənləri
 Bir sətirdə professorun aldığı mavi, qırmızı və sarı topların sayını çap edin.
 */
 
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n, a, b;
+    cin >> n >> a >> b;
+
+    // M = a + b - n  (mavi şarlar)
+    int M = a + b - n;
+
+    // S = n - b  (sarı şarlar)
+    int S = n - b;
+
+    // Q = n - a  (qırmızı şarlar)
+    int Q = n - a;
+
+    cout << M << " " << Q << " " << S;
+    return 0;
+}
