@@ -1,3 +1,20 @@
+/*
+Almaları bölüşdürmə – 2
+
+Zaman limiti: 1.0 saniyə
+Yaddaş limiti: 128 MiB
+
+n məktəbli k almanı bərabər bölüşdürür. Bölüşdürülməyən almalar isə səbətdə qalır. Səbətdə neçə alma qalacağını tapın.
+
+Giriş verilənləri
+
+İki tam ədəd — n və k verilir. Giriş verilənlərinin hər biri 1500-ü aşmır (məktəbdə nadir hallarda çox şagird olur və belə böyük səbəti tapmaq çətindir).
+
+Çıxış verilənləri
+
+Proqram yeganə ədədi — səbətdə qalan almaların sayını ekrana çıxarmalıdır.
+*/
+
 #include <iostream>
 using namespace std;
 
