@@ -1,30 +1,23 @@
 /*
 Məktəb konserti
-
 Zaman limiti: 1.0 saniyə
 Yaddaş limiti: 128 MiB
-
 Məktəb konsertində a sayda şagird oxudu, b sayda şagird rəqs etdi, c sayda isə həm oxudu, həm də rəqs etdi. Konsertdə ümumilikdə neçə şagirdin iştirak etdiyini tapmaq tələb olunur.
 
 Giriş verilənləri
-
 Bir sətirdə boşluqla ayrılmış üç natural ədəd verilir: a, b və c
 (a, b, c ≤ ...).
 
 Çıxış verilənləri
-
 Yeganə ədəd – məsələnin cavabı.
 
 Nümunə
-
 Giriş:
-
 13 9 5
 
-
 Çıxış:
-
 17
+
 */
 
 /*
@@ -58,16 +51,12 @@ int main()
 Nümunə
 
 Giriş:
-
 13 9 5
 
-
 Hesab:
-
 total = 13 + 9 - 5 = 17
 
-
 Çıxış:
-
 17
+
 */
