@@ -50,3 +50,20 @@ Belə yaradılmış obyektin dəyəri isə əvvəlcədən müəyyən deyil (unde
 Həmçinin obyektin yaradılması zamanı onu ilk dəyər
 ilə də təhlükəsiz şəkildə inicializasiya etmək mümkündür.
 */
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    // Dinamik yaddaşda int obyekt yaradılır və 0 ilə inicializasiya olunur
+    int *ptr{new int()};    // dəyər defolt olaraq 0 olur
+    // Alternativ yazılış:
+    // int *ptr = new int();
+
+    cout << *ptr << endl;   // ekrana 0 çıxacaq
+
+    delete ptr;  // yaddaşı azad edirik
+    ptr = nullptr;
+
+    return 0;
+}
