@@ -30,23 +30,16 @@ Beləliklə, dinamik yaddaşın ayrılması və azad edilməsi new və delete op
 #include <iostream>
 using namespace std;
 
-// Funksiya dinamik obyekt yaradır və dəyər qaytarır
-void funksiya() {
-    // Dinamik yaddaşda int obyekt yaradılır
-    int* ptr = new int;  
-    *ptr = 42;  // obyektə dəyər verilir
-
-    cout << "Dinamik obyektin dəyəri: " << *ptr << endl;
-
-    // İş bitdikdə yaddaş azad edilir
-    delete ptr;
-    ptr = nullptr; // göstərici təhlükəsiz vəziyyətə gətirilir
-}
-
 int main() {
-    funksiya(); // funksiyanı çağırırıq
+    int *ptr{new int};
+    int *ptr2 = new int;
+
+    delete ptr;
+    delete ptr2;
+
     return 0;
 }
+
 /*
 İzah:
 new int ilə dinamik yaddaşda int obyekt yaradılır.
