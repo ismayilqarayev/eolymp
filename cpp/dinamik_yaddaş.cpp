@@ -41,9 +41,12 @@ int main() {
 }
 
 /*
-İzah:
-new int ilə dinamik yaddaşda int obyekt yaradılır.
-*ptr = 42; ilə obyektə dəyər verilir.
-cout ilə dəyəri ekrana çıxarılır.
-delete ptr; ilə yaddaş azad edilir, ptr = nullptr; ilə göstərici təhlükəsiz hala gətirilir.
+new operatoru dinamik yaddaşda int tipi üçün yeni obyekt yaradır və ona göstərici (pointer) qaytarır.
+Beləliklə, ptr göstəricisi ayrılmış yaddaşın ünvanını saxlayır.
+Belə yaradılmış obyektin dəyəri isə əvvəlcədən müəyyən deyil (undefined).
+*/
+
+/*
+Həmçinin obyektin yaradılması zamanı onu ilk dəyər
+ilə də təhlükəsiz şəkildə inicializasiya etmək mümkündür.
 */
