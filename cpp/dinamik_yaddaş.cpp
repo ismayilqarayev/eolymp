@@ -30,7 +30,8 @@ Beləliklə, dinamik yaddaşın ayrılması və azad edilməsi new və delete op
 #include <iostream>
 using namespace std;
 
-int main() {
+int main() 
+{
     int *ptr{new int};
     int *ptr2 = new int;
 
@@ -54,7 +55,8 @@ ilə də təhlükəsiz şəkildə inicializasiya etmək mümkündür.
 #include <iostream>
 using namespace std;
 
-int main() {
+int main() 
+{
     // Dinamik yaddaşda int obyekt yaradılır və 0 ilə inicializasiya olunur
     int *ptr{new int()};    // dəyər defolt olaraq 0 olur
     // Alternativ yazılış:
@@ -79,8 +81,11 @@ Burada ptr göstəricisinin işarə etdiyi yaddaşdakı obyekt susmaya görə d�
 #include <iostream>
 using namespace std;
 
-int main() {
+int main() 
+{
     int *ptr{new int{}};    // susmaya görə dəyər — 0
     // int *ptr = new int{}; // yaxud bu cür də yazmaq olar
     cout << *ptr << endl;   // 0
 }
+
+
