@@ -88,4 +88,22 @@ int main()
     cout << *ptr << endl;   // 0
 }
 
+/*
+Həmçinin obyekti müəyyən konkret bir dəyər ilə də inicializasiya etmək olar, məsələn:
+*/
 
+#include <iostream>
+
+int main()
+{
+    int *ptr{new int{5}};
+    // alternativ variantlar
+    // int *ptr = new int{5};
+    // int *ptr{new int(5)};
+    // int *ptr = new int(5);
+
+    std::cout << *ptr << std::endl;     // 5
+
+    delete ptr;
+    return 0;
+}
