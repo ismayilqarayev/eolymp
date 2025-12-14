@@ -67,3 +67,20 @@ int main() {
 
     return 0;
 }
+
+
+/////--- 4 cü səyifə ---////
+
+/*
+Burada ptr göstəricisinin işarə etdiyi yaddaşdakı obyekt susmaya görə dəyər alır, yəni 0 olur.
+İlkin dəyər vermək (inicializasiya etmək) üçün fiqurlu mötərizələrdən də istifadə etmək olar.
+*/
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int *ptr{new int{}};    // susmaya görə dəyər — 0
+    // int *ptr = new int{}; // yaxud bu cür də yazmaq olar
+    cout << *ptr << endl;   // 0
+}
