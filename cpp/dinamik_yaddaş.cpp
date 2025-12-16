@@ -112,3 +112,17 @@ int main()
 
 //Daha sonra göstəricidən (pointerdən) istifadə edərək dinamik obyektə başqa bir dəyər mənimsətmək olar.
 
+#include <iostream>
+
+int main()
+{
+    int *ptr{new int{5}};
+    std::cout << "*ptr = " << *ptr << std::endl;  // *ptr = 5
+
+    *ptr = 22;
+    std::cout << "*ptr = " << *ptr << std::endl;  // *ptr = 22
+
+    delete ptr;
+    return 0;
+}
+
