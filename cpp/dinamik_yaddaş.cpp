@@ -107,3 +107,8 @@ int main()
     delete ptr;
     return 0;
 }
+
+//Burada dinamik yaddaşda yaradılan obyektin dəyəri 5-ə bərabərdir.
+
+//Daha sonra göstəricidən (pointerdən) istifadə edərək dinamik obyektə başqa bir dəyər mənimsətmək olar.
+
