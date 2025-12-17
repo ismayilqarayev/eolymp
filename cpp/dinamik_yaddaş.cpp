@@ -70,7 +70,7 @@ int main()
     return 0;
 }
 
-
+//-------------------------------------------------------------------------------------------------------
 /////--- 4 cü səyifə ---////
 
 /*
@@ -125,7 +125,7 @@ int main()
     delete ptr;
     return 0;
 }
-
+//-----------------------------------------------------------------------------------------------------------
 //-- 5 ci səyifə --//
 
 //Yaddaşın azad edilməsi
@@ -190,6 +190,7 @@ int main()
     usePtr();
 }
 
+//-------------------------------------------------------------------------------------------------------------
 // -- 6 cı seyife -- // 
 
 /*
@@ -198,4 +199,8 @@ Lakin usePtr funksiyasının icrası başa çatdıqdan sonra bu obyekt avtomatik
 Buna görə də həmin obyekt üçün ayrılmış yaddaşı delete operatorundan istifadə edərək açıq şəkildə azad etmək lazımdır.
 */
 
+/*
+Açıq şəkildə `delete` operatoru çağırılmazsa, 
+ayrılmış dinamik yaddaş yalnız proqramın icrası başa çatdıqdan sonra azad ediləcək.
+*/
 
