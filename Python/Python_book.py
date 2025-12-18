@@ -47,6 +47,7 @@ if 1 < 2:
 Print("Hello World")
 
 # Şərhlər(Komentlər)
+
 # Hər hansı bir kod hissəsinin nə etdiyini göstərmək üçün şərhlər tətbiq olunur. 
 # Proqramın tərcüməsi və icrası zamanı interpretator şərhləri nəzərə almır, 
 # buna görə də onların proqramın işləməsinə heç bir təsiri yoxdur.
@@ -66,11 +67,25 @@ print("Hello World")
 
 print("Hello World")  # Konsola mesajın çıxarılması
 
-# Blok şərhlərində şərh mətninin əvvəlində və sonunda üç tək dırnaq işarəsi qoyulur: ''' şərh mətni '''.
+# Blok şərhlərində şərh mətninin əvvəlində və sonunda üç 
+# tək dırnaq işarəsi qoyulur: ''' şərh mətni '''.
 # Məsələn:
 
+''' 
+    Konsola
+    Hello World
+    mesajının çıxarılması
 '''
-Bu bir blok şərhidir.
-Bir neçə sətri əhatə edə bilər.
-'''
+print("Hello World")
+
+"""
+Əsas funksiyalar
+
+Python bir sıra daxili funksiyalar təqdim edir. 
+Onlardan bəziləri xüsusilə proqramlaşdırma dilini öyrənməyin ilkin mərhələlərində çox tez-tez istifadə olunur. 
+Buna görə də bu funksiyalara nəzər salaq.
+
+Konsola məlumat çıxarmaq üçün əsas funksiya print() funksiyasıdır. 
+Bu funksiyaya arqument kimi ekranda göstərmək istədiyimiz sətir (mətn) ötürülür.
+"""
 
