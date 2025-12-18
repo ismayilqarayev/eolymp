@@ -79,7 +79,7 @@ print("Hello World")  # Konsola mesajın çıxarılması
 print("Hello World")
 
 """
-Əsas funksiyalar
+Funksiyalar
 
 Python bir sıra daxili funksiyalar təqdim edir. 
 Onlardan bəziləri xüsusilə proqramlaşdırma dilini öyrənməyin ilkin mərhələlərində çox tez-tez istifadə olunur. 
@@ -89,3 +89,11 @@ Konsola məlumat çıxarmaq üçün əsas funksiya print() funksiyasıdır.
 Bu funksiyaya arqument kimi ekranda göstərmək istədiyimiz sətir (mətn) ötürülür.
 """
 
+print("Hello Python")
+
+# seyife 4 ---------------------------------------------
+
+"""
+Əgər konsola bir neçə dəyər çıxarmaq lazımdırsa, 
+onları vergül vasitəsilə print funksiyasına ötürə bilərik.
+"""
