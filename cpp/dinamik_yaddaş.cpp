@@ -70,7 +70,7 @@ int main()
     return 0;
 }
 
-
+//-------------------------------------------------------------------------------------------------------
 /////--- 4 cü səyifə ---////
 
 /*
@@ -125,4 +125,82 @@ int main()
     delete ptr;
     return 0;
 }
+//-----------------------------------------------------------------------------------------------------------
+//-- 5 ci səyifə --//
+
+//Yaddaşın azad edilməsi
+
+/*
+Dinamik obyektlər yalnız açıq şəkildə silinənə qədər mövcud olurlar.
+Dinamik obyektlərdən istifadə başa çatdıqdan sonra onların tutduğu
+yaddaş delete operatoru vasitəsilə azad edilməlidir.
+*/
+
+#include <iostream>
+
+int main()
+{
+    int *ptr{new int{5}};   // yaddaş ayırırıq
+    std::cout << "*ptr = " << *ptr << std::endl;  // *ptr = 5
+    delete ptr;             // yaddaşı azad edirik
+}
+
+/*
+Xüsusilə nəzərə almaq lazımdır ki, 
+dinamik obyekt kodun bir hissəsində yaradılıb, 
+digər hissəsində istifadə oluna bilər. Məsələn:
+*/
+
+#include <iostream>
+
+// Bu funksiya dinamik yaddaşda int tipli obyekt yaradır
+// və onun ünvanını (göstəricini) geri qaytarır
+int* createPtr(int value)
+{
+    // new operatoru ilə dinamik yaddaş ayrılır
+    // value dəyişəni ilə obyekt ilkin qiymətləndirilir
+    int *ptr {new int{value}};
+    
+    // Ayrılmış yaddaşın ünvanı qaytarılır
+    return ptr;
+}
+
+// Bu funksiya createPtr funksiyasından qaytarılan
+// dinamik obyektdən istifadə edir
+void usePtr()
+{
+    // createPtr funksiyası çağırılır
+    // və qaytarılan ünvan obj göstəricisinə mənimsədilir
+    int *obj = createPtr(10);
+
+    // Göstəricinin işarə etdiyi obyektin dəyəri ekrana çıxarılır
+    std::cout << *obj << std::endl;  // 10
+
+    // Dinamik obyektlə iş bitdikdən sonra
+    // mütləq delete operatoru ilə yaddaş azad edilməlidir
+    // Əks halda yaddaş sızması (memory leak) yaranar
+    delete obj;
+}
+
+int main()
+{
+    // usePtr funksiyası çağırılır
+    // burada dinamik yaddaş yaradılır, istifadə olunur
+    // və sonda düzgün şəkildə azad edilir
+    usePtr();
+}
+
+//-------------------------------------------------------------------------------------------------------------
+// -- 6 cı seyife -- // 
+
+/*
+usePtr funksiyasında createPtr funksiyasından dinamik obyektə işarə edən göstəricini alırıq. 
+Lakin usePtr funksiyasının icrası başa çatdıqdan sonra bu obyekt avtomatik olaraq yaddaşdan silinmir (lokal avtomatik obyektlərdə olduğu kimi). 
+Buna görə də həmin obyekt üçün ayrılmış yaddaşı delete operatorundan istifadə edərək açıq şəkildə azad etmək lazımdır.
+*/
+
+/*
+Açıq şəkildə `delete` operatoru çağırılmazsa, 
+ayrılmış dinamik yaddaş yalnız proqramın icrası başa çatdıqdan sonra azad ediləcək.
+*/
 

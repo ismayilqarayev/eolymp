@@ -4,7 +4,9 @@ Zaman limiti: 1,0 saniyə
 
 Yaddaş limiti: 64 MiB
 
-Natural dördrəqəmli ədəd verilmişdir. Onun palindrom olub-olmadığını müəyyənləşdirin. Qeyd edək ki, natural ədəd soldan sağa və sağdan sola eyni oxuyursa, palindromdur. Məsələn, 2332 rəqəmi palindromdur.
+Natural dördrəqəmli ədəd verilmişdir. Onun palindrom olub-olmadığını müəyyənləşdirin. 
+Qeyd edək ki, natural ədəd soldan sağa və sağdan sola eyni oxuyursa, palindromdur. 
+Məsələn, 2332 rəqəmi palindromdur.
 
 Giriş verilənləri
 Birinci sətirdə natural dördrəqəmli ədəd n var.
