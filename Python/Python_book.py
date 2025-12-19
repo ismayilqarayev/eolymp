@@ -97,3 +97,29 @@ print("Hello Python")
 Əgər konsola bir neçə dəyər çıxarmaq lazımdırsa, 
 onları vergül vasitəsilə print funksiyasına ötürə bilərik.
 """
+
+print("Full name:", "Tom", "Smith")
+
+"""
+Nəticədə bütün ötürülən dəyərlər 
+boşluq vasitəsilə birləşərək vahid sətirə çevriləcək.
+"""
+
+#Full name: Tom Smith
+
+"""
+Əgər print funksiyası çıxış üçün cavabdehdirsə, 
+onda input funksiyası məlumatın daxil edilməsi üçün istifadə olunur. 
+Bu funksiya istəyə bağlı olaraq istifadəçiyə göstərilən dəvət (sual) 
+mətnini qəbul edə bilər və istifadəçi tərəfindən daxil edilən məlumatı 
+sətir (string) şəklində geri qaytarır. 
+Qaytarılan bu dəyəri isə biz dəyişəndə saxlaya bilərik.
+"""
+def proqram():
+    ad = input("Adınızı daxil edin: ")
+    print("Salam " + ad)
+
+if __name__ == "__main__":
+    proqram()
+
+#“Konsol çıxışı
