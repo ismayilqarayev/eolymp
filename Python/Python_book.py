@@ -131,3 +131,36 @@ Salam İsmayıl
 """
 
 ##----------/ seyife 4 /----------------##
+
+#Dəyişənlər və verilənlər tipləri
+#Dəyişənlər
+
+"""
+Dəyişənlər məlumatı saxlamaq üçün nəzərdə tutulub. 
+Python dilində dəyişənin adı əlifba hərfi və ya alt xətt (_) işarəsi ilə başlamalıdır. 
+Adın içində əlifba-rəqəm simvolları və alt xətt ola bilər. 
+Bundan əlavə, dəyişənin adı Python-un açar sözləri ilə eyni olmamalıdır.
+"""
+
+"""
+Məntiqi dəyərlər: True, False, None
+
+Şərt və dövr operatorları: if, elif, else, for, while, break, continue
+
+Funksiya və siniflər: def, class, return, lambda
+
+İdarəetmə və istisnalar: try, except, finally, raise, assert
+
+Modullar və kontekst: import, from, as, with
+
+Digər açar sözlər: global, nonlocal, del, not, and, or, is, in, yield, async, await
+"""
+
+#Məsələn, dəyişən yaradaq:
+name = """Tom"""
+#Burada name adlı dəyişən müəyyən olunub və o «Tom» sətrini saxlayır.
+
+"""
+Python-da dəyişənlərin adlandırılmasında iki əsas üsuldan 
+istifadə olunur: camelCase və underscore (snake_case) notasiya.
+"""
