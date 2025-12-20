@@ -1,5 +1,6 @@
-#---------------------------------------------------------------------------------------
-# 1 ci 
+##----------/ seyife 1 /----------------##
+
+
 # Python dilində yazılmış proqram təlimatlar (instruksiyalar) 
 # toplusundan ibarətdir.
 # Hər bir təlimat yeni sətrdə yerləşdirilir.
@@ -26,9 +27,6 @@ print(2+3)
 
 if 1 < 2:
     print("Hello")
-
-#----------------------------------------------------------------------------------------------
-# 2 ci
 # Bu nümunədə əgər 1, 2-dən kiçik olarsa, proqram ekrana "Hello" sözünü çıxarır.
 # Burada diqqət yetirməli məqam ondan ibarətdir ki, print("Hello") artıq tək bir əmri ifadə etmir — o, 
 # if şərtinin içində işlədilir. Buna görə də həmin sətrin əvvəlində mütləq boşluq (indent) olmalıdır.
@@ -38,6 +36,9 @@ if 1 < 2:
 
 # Belə şərt blokları çox olmadığı üçün, harada boşluq qoymaq lazım olduğunu qarışdırmaq da çətin deyil. 
 # Bir qayda var: blok içində yazılan hər əmrin əvvəlində boşluq olmalıdır.
+
+
+##----------/ seyife 2 /----------------##
 
 #Python-da registrə həssaslıq
 
@@ -78,6 +79,9 @@ print("Hello World")  # Konsola mesajın çıxarılması
 '''
 print("Hello World")
 
+
+
+##----------/ seyife 3 /----------------##
 """
 Funksiyalar
 
@@ -90,8 +94,6 @@ Bu funksiyaya arqument kimi ekranda göstərmək istədiyimiz sətir (mətn) öt
 """
 
 print("Hello Python")
-
-# seyife 4 ---------------------------------------------
 
 """
 Əgər konsola bir neçə dəyər çıxarmaq lazımdırsa, 
@@ -123,3 +125,9 @@ if __name__ == "__main__":
     proqram()
 
 #“Konsol çıxışı
+"""
+Adınızı daxil edin: İsmayıl
+Salam İsmayıl
+"""
+
+##----------/ seyife 4 /----------------##
