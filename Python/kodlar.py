@@ -1,65 +1,151 @@
-# fun1 funksiyasının Python versiyası
-def fun1():
-    num3 = [1, 2, 3, 4]
-    # C++: emplace(get1 + 4, 5)
-    num3.insert(4, 5)
-    # çap istəsək:
-    # print(num3)
+# ============================================================
+# Mystruct və Struktorlar siniflərinin Python versiyası
+# ============================================================
+
+from dataclasses import dataclass
+
+@dataclass
+class Struktorlar:
+    ad: str
+    soyad: str
+    ataadi: str
+    telefon: str
+
+    def print_info(self):
+        print(f" Ad: {self.ad}, Soyad: {self.soyad}, Ata adi: {self.ataadi}, Telefon: {self.telefon}")
 
 
-# fun2 funksiyasının Python versiyası
-def fun2():
-    num4 = [1, 2, 4, 5, 6, 7]
-    # C++: insert(get2 + 2, 2, 3)
-    # yəni index 2-yə iki dəfə 3 əlavə et
-    num4[2:2] = [3, 3]
-    # print(num4)
+class Mystruct:
+    def __init__(self, ad: str, soyad: str, ataadi: str, telefon: str):
+        self.ad = ad
+        self.soyad = soyad
+        self.ataadi = ataadi
+        self.telefon = telefon
+
+    def print_info(self):
+        print(f" Ad: {self.ad}, Soyad: {self.soyad}, Ata adi: {self.ataadi}, Telefon: {self.telefon}")
 
 
-# fun3 funksiyasının Python versiyası
-def fun3():
-    num5 = [1, 2, 3, 4, 5, 6, 7, 8, 9]
-    num6 = [10, 20, 30, 40, 50, 60, 70, 80, 90]
+# ============================================================
+# Əsas proqram
+# ============================================================
 
-    # C++: insert(get3 + 1, num6.begin(), num6.begin() + 3)
-    num5[1:1] = num6[:3]
+def neceneferindaxiledilmesi() -> int:
+    while True:
+        try:
+            say = int(input("Nece neferin melumatini daxil edeceksiniz: "))
+            if say > 0:
+                return say
+            else:
+                print("yeniden duzgun bir eded daxil et: ")
+        except ValueError:
+            print("yeniden duzgun bir eded daxil et: ")
 
-    for run4 in num5:
-        print(run4, end="")
-    print()
 
-
-# fun4 funksiyasının Python versiyası
-def fun4():
-    num7 = [1, 2, 3, 4, 5, 6, 7, 8]
-    # C++: insert(cend(), {21})
-    num7.append(21)
-
-    for a in num7:
-        print(a)
+def melumatlarindaxiledilmesi() -> Struktorlar:
+    ad = input("\nAd: ")
+    soyad = input("Soyad: ")
+    ataadi = input("Ata adi: ")
+    telefon = input("Telefon: ")
+    return Struktorlar(ad, soyad, ataadi, telefon)
 
 
 def main():
-    fun1()
-    fun2()
-    fun3()
-    fun4()
+    # İlk obyekt
+    mystruct = Mystruct("ismayil", "qarayev", "ilqar", "0555555555")
+    print("Melumat: ")
+    mystruct.print_info()
+
+    # Neçə nəfər daxil ediləcək
+    say = neceneferindaxiledilmesi()
+
+    # Siyahıya əlavə
+    mystructs = []
+    for _ in range(say):
+        person = melumatlarindaxiledilmesi()
+        mystructs.append(person)
+
+    # Çap
+    for item in mystructs:
+        item.print_info()
 
 
 if __name__ == "__main__":
     main()
 
 
+####################################################################
+
+# ============================================================
+# Pers və MyStruct siniflərinin Python versiyası
+# ============================================================
+
+class Pers:
+    def __init__(self, ad: str, soyad: str, ataadi: str, telefon: int):
+        self.ad = ad
+        self.soyad = soyad
+        self.ataadi = ataadi
+        self.telefon = telefon
+
+    def print_info(self):
+        print(f"Ad: {self.ad}, Soyad: {self.soyad}, Ata adı: {self.ataadi}, Telefon: {self.telefon}")
 
 
+# ============================================================
+# Əsas funksiyalar
+# ============================================================
 
-#############################################################
+def neceneferin_daxil_edilmesi() -> int:
+    while True:
+        try:
+            say = int(input("Neçə nəfərin məlumatını daxil edəcəksiniz? "))
+            if say > 0:
+                return say
+            else:
+                print("Yenidən düzgün bir ədəd daxil edin:")
+        except ValueError:
+            print("Yenidən düzgün bir ədəd daxil edin:")
 
-def program():
-    name = input("Enter your name: ")
-    print("Hello " + name)
+
+def melumatlarin_daxil_edilmesi() -> MyStruct:
+    ad = input("\nAd: ")
+    soyad = input("Soyad: ")
+    ataadi = input("Ata adı: ")
+
+    while True:
+        try:
+            telefon = int(input("Telefon nömrəsi: "))
+            if telefon > 0:
+                break
+            else:
+                print("Yenidən düzgün telefon nömrəsi daxil edin:")
+        except ValueError:
+            print("Yenidən düzgün telefon nömrəsi daxil edin:")
+
+    return MyStruct(ad, soyad, ataadi, telefon)
+
+
+def main():
+    # İlk obyekt
+    pers = Pers("Nigar", "Huseynova", "Nigar", 55555555)
+    print("İlk məlumat:")
+    pers.print_info()
+
+    # Neçə nəfər daxil ediləcək
+    say = neceneferin_daxil_edilmesi()
+
+    # Siyahıya əlavə
+    mystructs = []
+    for _ in range(say):
+        person = melumatlarin_daxil_edilmesi()
+        mystructs.append(person)
+
+    # Çap
+    print("\n--- Siyahı ---")
+    for item in mystructs:
+        item.print_info()
+
 
 if __name__ == "__main__":
-    program()
-
+    main()
 
