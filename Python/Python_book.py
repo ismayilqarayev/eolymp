@@ -165,7 +165,5 @@ Python-da dəyişənlərin adlandırılmasında iki əsas üsuldan
 istifadə olunur: camelCase və underscore (snake_case) notasiya.
 """
 
-# iki fərqli dəyişən
-name = "Tom"
-Name = "Tom"
+
 
