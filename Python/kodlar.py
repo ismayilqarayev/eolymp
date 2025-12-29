@@ -1,3 +1,4 @@
+# User sinfi – istifadəçi məlumatlarını saxlamaq üçün
 class User:
     def __init__(self, ad, ata_adi, email, telefon, yas):
         self.ad = ad
@@ -6,33 +7,31 @@ class User:
         self.telefon = telefon
         self.yas = yas
 
+    # Məlumatları ekrana çap edən metod
     def print_info(self):
-        print(f"Ad: {self.ad}, Ata adı: {self.ata_adi}, Telefon: {self.telefon}, Email: {self.email}, Yaş: {self.yas}")
+        print(
+            f"Ad: {self.ad}, Ata adı: {self.ata_adi}, "
+            f"Telefon: {self.telefon}, Email: {self.email}, Yaş: {self.yas}"
+        )
 
 
-def neceneferindaxiledilmesi():
+users = []
+say = 0
+
+
+def neceneferin_daxil_edilmesi():
+    global say
     while True:
         try:
             say = int(input("Neçə nəfər üçün məlumat daxil etmək istəyirsiniz: "))
             if say > 0:
-                return say
-            else:
-                print("Müsbət ədəd daxil edin.")
+                break
         except ValueError:
-            print("Düzgün ədəd daxil edin.")
+            pass
+        print("Yenidən düzgün bir ədəd daxil edin.")
 
 
-def daxil_et(mesaj, yoxlama):
-    while True:
-        daxil_edilen = input(f"{mesaj} daxil edin: ")
-        if yoxlama(daxil_edilen):
-            return daxil_edilen
-        else:
-            print("Daxil etdiyiniz məlumat düzgün deyil. Yenidən cəhd edin.")
-
-
-def melumatlarindaxiledilmesi(say):
-    users = []
+def melumatlarin_daxil_edilmesi():
     for _ in range(say):
         ad = daxil_et("Ad", lambda x: x.isalpha())
         ata_adi = daxil_et("Ata adı", lambda x: x.isalpha())
@@ -41,12 +40,18 @@ def melumatlarindaxiledilmesi(say):
         yas = int(daxil_et("Yaş", lambda x: x.isdigit() and int(x) > 0))
 
         users.append(User(ad, ata_adi, email, telefon, yas))
-    return users
+
+
+def daxil_et(mesaj, yoxlama):
+    while True:
+        daxil_edilen = input(f"{mesaj} daxil edin: ")
+        if yoxlama(daxil_edilen):
+            return daxil_edilen
 
 
 def main():
-    say = neceneferindaxiledilmesi()
-    users = melumatlarindaxiledilmesi(say)
+    neceneferin_daxil_edilmesi()
+    melumatlarin_daxil_edilmesi()
 
     print("\nDaxil edilən istifadəçilər:")
     for user in users:
