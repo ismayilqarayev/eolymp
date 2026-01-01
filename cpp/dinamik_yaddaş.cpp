@@ -214,3 +214,23 @@ Lakin göstərici vasitəsilə obyektə baxmaq və ya həmin göstəriciyə
 yenidən delete operatorunu tətbiq etmək proqrama təxmin edilə bilməyən nəticələr verə bilər.
 */
 
+
+#include <iostream>
+using namespace std;
+
+void pointerExample()
+{
+    int *ptr {new int{12}};
+    std::cout << *ptr << std::endl;  // 12
+    delete ptr;
+    
+    // səhv ssenarilər
+    std::cout << *ptr << std::endl;  // ptr göstəricisinin işarə etdiyi obyekt artıq silinib!
+    delete ptr; // ptr göstəricisinin işarə etdiyi obyekt artıq silinib!
+}
+
+int main()
+{
+    pointerExample();
+}
+
