@@ -204,3 +204,13 @@ Açıq şəkildə `delete` operatoru çağırılmazsa,
 ayrılmış dinamik yaddaş yalnız proqramın icrası başa çatdıqdan sonra azad ediləcək.
 */
 
+/*
+Amma qeyd etmək lazımdır ki, yaddaş azad edildikdən sonra belə, 
+göstərici hələ də əvvəlki ünvanı saxlayır. 
+Lakin həmin yaddaş şərti olaraq azad edilib və gələcək dinamik obyektlər 
+üçün istifadəyə hazırdır. Belə göstəriciyə «dalğalanan göstərici» (dangling pointer) 
+deyilir. Biz hətta bu göstərici vasitəsilə yaddaşa müraciət etməyə cəhd edə bilərik. 
+Lakin göstərici vasitəsilə obyektə baxmaq və ya həmin göstəriciyə 
+yenidən delete operatorunu tətbiq etmək proqrama təxmin edilə bilməyən nəticələr verə bilər.
+*/
+
