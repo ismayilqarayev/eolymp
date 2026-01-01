@@ -234,3 +234,24 @@ int main()
     pointerExample();
 }
 
+/*
+Belə boşda qalan göstəricilər problem yaratmasın deyə, 
+yaddaş silindikdən sonra həmin göstəricini boş (NULL) etmək məsləhətdir.
+*/
+
+#include <iostream>
+
+void example()
+{
+    int* ptr = new int{12};          // yaddaşda yer ayırırıq
+    std::cout << *ptr << std::endl;  // 12-ni ekrana çıxarırıq
+
+    delete ptr;                      // yaddaşı azad edirik
+    ptr = nullptr;                  // göstəricini sıfırlayırıq
+}
+
+int main()
+{
+    example();
+    return 0;
+}
