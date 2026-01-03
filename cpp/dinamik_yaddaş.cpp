@@ -255,3 +255,61 @@ int main()
     example();
     return 0;
 }
+
+/*
+Əgər null (boş) göstərici ilə obyektə müraciət etsək, 
+proqram xəta verib dayanır. Amma delete operatorunu null göstəriciyə yazsaq, heç nə baş vermir.
+
+Bəzən eyni obyektə iki və ya daha çox göstərici işarə edir. 
+Əgər bu göstəricilərdən biri ilə delete etsək, obyekt yaddaşdan silinir. 
+Bundan sonra digər göstərici ilə həmin obyekti istifadə etmək olmaz. 
+Əgər yenə delete yazsaq, bu artıq yaddaş xətasına səbəb ola bilər.
+
+delete istifadə edildikdən sonra göstərici boş və ya yararsız olur. 
+Amma bu o demək deyil ki, onu birdəfəlik atırıq. Göstəriciyə başqa obyektin ünvanını versək, 
+onu yenidən rahat istifadə edə bilərik.
+*/
+
+#include <iostream>
+ 
+int main()
+{
+    int *p1 {new int{12}};  
+    // p1 dinamik yaddaşda yaradılmış 12 qiymətli dəyişəni göstərir
+
+    int *p2 {p1};   
+    // p2 də p1 kimi eyni obyektə işarə edir (hər ikisi eyni ünvanı saxlayır)
+     
+    std::cout << *p1 << std::endl;  
+    // p1 vasitəsilə obyektin qiyməti çap olunur → 12
+
+    std::cout << *p2 << std::endl;  
+    // p2 də eyni obyektə baxdığı üçün → 12 çap olunur
+
+    delete p1;      
+    // obyektin tutduğu dinamik yaddaş azad edilir
+    // bu andan etibarən həm p1, həm də p2 etibarsız ünvan saxlayır
+
+    p1 = nullptr;  
+    // p1 boş göstəriciyə çevrilir (təhlükəsizlik üçün)
+
+    p2 = nullptr;  
+    // p2 də boş göstəriciyə çevrilir
+
+    p1 = new int{11};   
+    // p1 üçün yeni dinamik obyekt yaradılır və ona işarə edir
+
+    std::cout << *p1 << std::endl;  
+    // yeni obyektin qiyməti çap olunur → 11
+
+    delete p1;  
+    // ayrılmış yaddaş yenidən azad edilir
+}
+
+/*
+Burada p1 göstəricisinin işarə etdiyi obyekt silindikdən sonra, 
+bu göstəriciyə dinamik yaddaşda yaradılmış başqa bir obyektin ünvanı verilir. 
+Buna görə də p1 göstəricisindən yenidən istifadə etmək mümkündür.
+
+Amma p2 göstəricisində saxlanılan ünvan əvvəlki obyektə aid olduğu üçün artıq etibarsızdır və ondan istifadə etmək olmaz.
+*/
