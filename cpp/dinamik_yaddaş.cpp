@@ -313,3 +313,61 @@ Buna görə də p1 göstəricisindən yenidən istifadə etmək mümkündür.
 
 Amma p2 göstəricisində saxlanılan ünvan əvvəlki obyektə aid olduğu üçün artıq etibarsızdır və ondan istifadə etmək olmaz.
 */
+
+//------------------C++-da dinamik massivlər-------------------//
+/*
+C++ dilində ayrıca dinamik obyektlərdən başqa dinamik massivlərdən də istifadə etmək mümkündür.
+Dinamik massiv üçün yaddaş ayrılması üçün new operatoru 
+istifadə olunur və onun ardınca kvadrat mötərizədə 
+massivin neçə obyekt saxlayacağı göstərilir.
+*/
+
+int *numbers {new int[4]}; // 4 ədəd elementdən ibarət dinamik massiv
+// və ya belə də yaza bilərik
+// int *numbers = new int[4];
+
+#include <iostream>
+using namespace std;
+
+// Funksiya dinamik massiv yaradır və onun ünvanını qaytarır
+int* createArray(int n)
+{
+    int* arr = new int[n]; // n elementlik dinamik massiv
+
+    for(int i = 0; i < n; i++)
+    {
+        cout << "arr[" << i << "] = ";
+        cin >> arr[i]; // massivi istifadəçi daxil etsin
+    }
+
+    return arr;
+}
+
+int main()
+{
+    int n;
+    cout << "Massivin ölçüsünü daxil edin: ";
+    cin >> n;
+
+    // Dinamik massiv yaradılır
+    int* myArray = createArray(n);
+
+    // Massivi çap etmək
+    cout << "Massivin elementləri: ";
+    for(int i = 0; i < n; i++)
+    {
+        cout << myArray[i] << " ";
+    }
+    cout << endl;
+
+    // Yaddaşı boşaltmaq
+    delete[] myArray;
+
+    return 0;
+}
+
+/*
+Bu halda new operatoru yaradılan massivdəki birinci elementə işarə edən int tipli göstərici qaytarır.
+Bu nümunədə 4 elementlik int tipli massiv müəyyən edilir, amma hər birinin dəyəri təyin olunmamışdır.
+Lakin biz massivi dəyərlərlə də ilkinləşdirə bilərik.
+*/
