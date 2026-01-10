@@ -371,3 +371,89 @@ Bu halda new operatoru yaradılan massivdəki birinci elementə işarə edən in
 Bu nümunədə 4 elementlik int tipli massiv müəyyən edilir, amma hər birinin dəyəri təyin olunmamışdır.
 Lakin biz massivi dəyərlərlə də ilkinləşdirə bilərik.
 */
+
+int *numbers1 {new int[4]{}};                   // massiv ədədlərdən ibarətdir: 0, 0, 0, 0
+int *numbers2 {new int[4]{ 1, 2, 3, 4 }};  // massiv ədədlərdən ibarətdir: 1, 2, 3, 4
+int *numbers3 {new int[4]{ 1, 2 }};          // massiv ədədlərdən ibarətdir: 1, 2, 0, 0
+
+// oxşar massiv təyinatları
+// int *numbers1 = new int[4]{};                 // massiv ədədlərdən ibarətdir: 0, 0, 0, 0
+// int *numbers1 = new int[4]();                 // massiv ədədlərdən ibarətdir: 0, 0, 0, 0
+// int *numbers2 = new int[4]{ 1, 2, 3, 4 }; // massiv ədədlərdən ibarətdir: 1, 2, 3, 4
+// int *numbers3 = new int[4]{ 1, 2 };         // massiv ədədlərdən ibarətdir: 1, 2, 0, 0
+
+/*
+Massivi konkret dəyərlərlə ilkinləşdirərkən nəzərə almaq lazımdır ki, 
+əgər mötərizədəki dəyərlərin sayı massivin ölçüsündən çox olarsa, 
+new operatoru uğursuz olacaq və massivi yaratmaq mümkün olmayacaq.
+Əksinə, əgər verilən dəyərlərin sayı massivin ölçüsündən azdırsa, 
+dəyərləri göstərilməyən elementlər default dəyərlə (məsələn, int üçün 0) ilkinləşdiriləcək.
+Qeyd etmək lazımdır ki, C++20 standartına əlavə edilmiş imkan sayəsində massivin ölçüsünü 
+göstərməyə ehtiyac qalmır. Yəni C++20 istifadə olunursa, massiv ölçüsünü yazmadan da yarada bilərik.
+*/
+
+int *numbers {new int[]{ 1, 2, 3, 4 }}; // massiv ədədlərdən ibarətdir: 1, 2, 3, 4
+
+/*
+Dinamik massiv yaradıldıqdan sonra biz onu alınan göstərici vasitəsilə istifadə edə, 
+elementlərini oxuya və dəyişdirə bilərik.
+*/
+
+int *numbers {new int[4]{ 1, 2, 3, 4 }}; 
+
+// elementləri massiv sintaksisi ilə əldə etmək
+std::cout << numbers[0] << std::endl;       // 1
+std::cout << numbers[1] << std::endl;       // 2
+
+// elementləri göstəricini dereferensasiya edərək əldə etmək
+std::cout << *numbers << std::endl;         // 1
+std::cout << *(numbers+1) << std::endl;     // 2
+
+/*
+Dinamik massivə elementlərə daxil olmaq üçün həm massiv sintaksisini (numbers[0]), 
+həm də göstəricini dereferensasiya etmə əməliyyatını (*numbers) istifadə etmək olar.
+Beləliklə, bu massivi dövr etmək üçün müxtəlif üsullardan istifadə etmək mümkündür.
+*/
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    unsigned n{ 5 };  // massivin ölçüsü
+    int* p{ new int[n] { 1, 2, 3, 4, 5 } }; 
+    // Dinamik massiv yaradılır və dəyərlərlə ilkinləşdirilir
+    // p göstəricisi massivin ilk elementinə işarə edir
+
+    // 1. İndekslərdən istifadə edərək massivi çap etmək
+    for (unsigned i{}; i < n; i++)
+    {
+        cout << p[i] << "\t"; 
+        // p[i] = *(p + i)
+        // burada i elementin indeksi, p isə massivə işarə edən göstəricidir
+    }
+    cout << endl;
+
+    // 2. Göstəriciyə ünvan əlavə etməklə massivi çap etmək
+    for (unsigned i{}; i < n; i++)
+    {
+        cout << *(p + i) << "\t"; 
+        // p + i → massivin i-ci elementinin ünvanı
+        // *(p + i) → həmin elementin dəyəri
+    }
+    cout << endl;
+
+    // 3. Köməkçi göstərici vasitəsilə massivi gəzmək
+    for (int* q{ p }; q != p + n; q++)
+    {
+        cout << *q << "\t"; 
+        // q göstəricisi massivin elementlərini bir-bir göstərir
+        // *q → cari elementin dəyəri
+        // q++ → növbəti elementə keçir
+    }
+    cout << endl;
+
+    delete[] p; // yaddaşı boşaldırıq, massivi silirik
+
+    return 0;
+}
