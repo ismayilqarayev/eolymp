@@ -467,8 +467,48 @@ Dinamik massivi silmək və onun tutduğu yaddaşı azad etmək üçün isə
 delete operatorunun xüsusi forması tətbiq olunur.
 */
 
+/*
+delete [] dinamik_massivə_göstərici;
+Məsələn:
+*/
 
+#include <iostream>
 
+int main()
+{
+    unsigned n{ 5 };  // massiv ölçüsü
+    int* p{ new int[n]{ 1, 2, 3, 4, 5 } }; // dinamik massiv üçün yaddaş ayrılır
+
+    // indekslərdən istifadə edirik
+    for (unsigned i{}; i < n; i++)
+    {
+        std::cout << p[i] << "\t";
+    }
+    std::cout << std::endl;
+
+    delete[] p; // ayrılmış yaddaş azad edilir
+}
+
+/*
+Yaddaş azad edildikdən sonra göstəricinin köhnə ünvanı 
+saxlamaması üçün onu da sıfırlamaq (null etmək) tövsiyə olunur:
+*/
+
+delete[] p;
+p = nullptr;    // göstəricini sıfırlayırıq
+
+//------------------------Çoxölçülü massivlər-------------------//
+
+/*
+Biz həmçinin çoxölçülü dinamik massivlər də yarada bilərik. 
+İkiölçülü massivləri nümunə kimi nəzərdən keçirək.
+Bəs ikiölçülü massiv əslində nədir? Bu, 
+massivlərdən ibarət bir toplusudur (yəni massivlərin massivi).
+
+Müvafiq olaraq, dinamik ikiölçülü massiv yaratmaq üçün əvvəlcə göstəricilərdən ibarət ümumi dinamik massiv yaradırıq, daha sonra isə onun hər bir elementi üçün daxili (iç-içə) dinamik massivlər yaradırıq.
+
+Ümumi halda bu proses aşağıdakı kimi görünür:
+*/
 
 
 
