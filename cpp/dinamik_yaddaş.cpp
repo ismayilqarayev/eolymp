@@ -497,6 +497,7 @@ saxlamaması üçün onu da sıfırlamaq (null etmək) tövsiyə olunur:
 delete[] p;
 p = nullptr;    // göstəricini sıfırlayırıq
 
+
 //------------------------Çoxölçülü massivlər-------------------//
 
 /*
@@ -510,8 +511,92 @@ Müvafiq olaraq, dinamik ikiölçülü massiv yaratmaq üçün əvvəlcə göst�
 Ümumi halda bu proses aşağıdakı kimi görünür:
 */
 
+#include <iostream>
 
+int main()
+{
+    unsigned rows = 3;       // sətirlərin sayı
+    unsigned columns = 2;    // sütunların sayı
+    int** numbers{ new int*[rows]{} };  // ikiölçülü massiv üçün yaddaş ayrılır
 
+    // daxili (iç-içə) massivlər üçün yaddaş ayrılır
+    for (unsigned i{}; i < rows; i++)
+    {
+        numbers[i] = new int[columns]{};
+    }
+
+    // massivlərin silinməsi
+    for (unsigned i{}; i < rows; i++)
+    {
+        delete[] numbers[i];
+    }
+    delete[] numbers;
+}
+
+/*
+Əvvəlcə göstəricilər massivinin (şərti olaraq cədvəlin) 
+yaradılması üçün yaddaş ayrılır:
+*/
+int** numbers{new int*[rows]{}};
+
+/*
+Daha sonra dövr vasitəsilə hər bir ayrıca massiv 
+(şərti olaraq cədvəlin sətirləri) üçün yaddaş ayrılır:
+*/
+
+numbers[i] = new int[columns]{};
+
+/*
+Yaddaşın azad edilməsi əks ardıcıllıqla aparılır — 
+əvvəlcə hər bir ayrıca daxili massiv üçün ayrılmış yaddaş azad edilir, 
+daha sonra isə göstəricilər massivinin ümumi yaddaşı azad olunur.
+İkiölçülü dinamik massiv üçün məlumatların daxil edilməsi və 
+ekrana çıxarılması nümunəsi:
+*/
+
+#include <iostream>
+
+int main()
+{
+    unsigned rows = 3;       // sətirlərin sayı
+    unsigned columns = 2;    // sütunların sayı
+    int** numbers{ new int*[rows]{} };  // ikiölçülü massiv üçün yaddaş ayrılır
+
+    for (unsigned i{}; i < rows; i++)
+    {
+        numbers[i] = new int[columns]{};
+    }
+
+    // rows x columns ölçülü cədvəl üçün məlumatların daxil edilməsi
+    for (unsigned i{}; i < rows; i++)
+    {
+        std::cout << (i + 1) << "-ci sətir üçün məlumat daxil edin" << std::endl;
+        // i-ci sətirin sütunları üçün məlumatların daxil edilməsi
+        for (unsigned j{}; j < columns; j++)
+        {
+            std::cout << (j + 1) << "-ci sütun: ";
+            std::cin >> numbers[i][j];
+        }
+    }
+
+    // məlumatların ekrana çıxarılması
+    for (unsigned i{}; i < rows; i++)
+    {
+        // i-ci sətirin sütunlarının məlumatlarının çıxarılması
+        for (unsigned j{}; j < columns; j++)
+        {
+            std::cout << numbers[i][j] << "\t";
+        }
+        std::cout << std::endl;
+    }
+
+    // yaddaşın azad edilməsi
+    for (unsigned i{}; i < rows; i++)
+    {
+        delete[] numbers[i];
+    }
+    delete[] numbers;
+}
 
 
 
