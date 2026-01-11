@@ -457,3 +457,28 @@ int main()
 
     return 0;
 }
+
+/*
+Diqqət yetirin ki, dinamik massiv üçün ölçünü təyin edərkən 
+standart massivlərdə olduğu kimi mütləq konstantdan istifadə etməyə 
+ehtiyac yoxdur — adi dəyişəndən də istifadə etmək olar.
+
+Dinamik massivi silmək və onun tutduğu yaddaşı azad etmək üçün isə 
+delete operatorunun xüsusi forması tətbiq olunur.
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
