@@ -1,8 +1,8 @@
-10. Verilən ədədin bölənlərini tapmaq
-Verilən n ədədinin bütün bölənlərini tapın.
+//10. Verilən ədədin bölənlərini tapmaq
+//Verilən n ədədinin bütün bölənlərini tapın.
 
-Giriş: n = 12
-Çıxış: 1
+//Giriş: n = 12
+//Çıxış: 1
 
 #include <iostream>
 #include <cmath>  // sqrt() funksiyası üçün daxil edilir. Bu funksiyadan √n tapmaq üçün istifadə edəcəyik.
