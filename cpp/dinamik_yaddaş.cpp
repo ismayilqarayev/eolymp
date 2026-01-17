@@ -598,7 +598,96 @@ int main()
     delete[] numbers;
 }
 
+//--seyide_13----Smart-göstəricilər (Smart pointers) std::unique_ptr<T>----//
 
+/*
+Smart pointerlər və ya “intellektual göstəricilər” — adi göstəriciləri 
+(pointerləri) təqlid edən obyektlərdir. Onlar da adi pointerlər kimi ünvan 
+saxlayır (adətən dinamik olaraq ayrılmış yaddaşın ünvanını) və həmin 
+ünvandakı obyektlərə müraciət etmək üçün istifadə oluna bilər.
+
+Lakin smart pointerlərin adi pointerlərdən əsas fərqi ondadır ki, yaddaşın 
+azad olunması ilə bağlı narahat olmağa ehtiyac yoxdur. Yəni delete və ya 
+delete[ ] operatorlarını əl ilə çağırmaq tələb olunmur.
+
+Smart pointerlər tərəfindən istifadə olunan bütün ayrılmış yaddaş avtomatik 
+olaraq azad edilir, artıq ehtiyac qalmadıqda. Bu isə o deməkdir ki:
+
+yaddaş sızmaları (memory leak) baş vermir,
+
+yaddaşın ayrılması və azad edilməsi arasında uyğunsuzluq yaranmır,
+
+“asılı qalmış göstəricilər” (dangling pointers) problemi olmur.
+
+Beləliklə, smart pointerlər yaddaşın idarə olunmasını həm sadələşdirir, həm 
+də daha təhlükəsiz edir.
+
+Smart pointerlərin növləri C++ standart kitabxanasının memory modulunda 
+müəyyən edilib və std ad məkanında (namespace) yerləşir.
+*/
+
+
+/*
+unique_ptr<T> göstəricisi T tipli obyektə işarə edən smart-göstəricidir və 
+“unikal” adlanır, çünki eyni yaddaş ünvanını saxlayan yalnız bir unique_ptr 
+obyekti mövcud ola bilər.
+
+Yəni eyni anda iki və ya daha çox unique_ptr<T> obyekti eyni yaddaş 
+ünvanına işarə edə bilməz.
+
+Əgər eyni yaddaş ünvanına işarə edən iki unique_ptr obyekti yaratmağa 
+cəhd etsək, kompilyator bu kodu kopyalamağa icazə verməyəcək və xəta 
+baş verəcək.
+*/
+
+/*
+unique_ptr obyektinin ömrü bitdikdə (yəni məhv edildikdə), onun işarə etdiyi 
+obyekt də avtomatik olaraq məhv edilir.
+
+Buna görə də bu tip göstərici yalnız bir göstəricinin sahib olacağı, başqa 
+heç bir göstəricinin istifadə etməyəcəyi və göstərici silindikdən sonra 
+avtomatik silinməsi lazım olan obyektlər üçün çox faydalıdır.
+
+Standart olaraq unique_ptr<T> nullptr dəyəri ilə başlanğıc halına gətirilir.
+*/
+
+std::unique_ptr<int> ptr;        // ptr = nullptr
+// eyni mənanı verir
+std::unique_ptr<int> ptr{};
+std::unique_ptr<int> ptr{nullptr};
+
+/*
+Yaddaş ayırmaq və həmin yaddaşda göstəricinin işarə edəcəyi obyekti 
+yaratmaq üçün std::make_unique<T> funksiyasından istifadə olunur.
+
+Bu funksiyaya parametr kimi göstəricinin işarə edəcəyi obyekt (və ya onun 
+konstruktor arqumentləri) ötürülür.
+*/
+
+std::unique_ptr<int> ptr { std::make_unique<int>(125) };
+
+/*
+Bu halda dinamik yaddaş ayrılır və 125 ədədi həmin yaddaşda saxlanılır, ptr 
+isə bu yaddaşa işarə edir.
+
+Qeyd etmək lazımdır ki, C++14 standartına qədər göstərici yaratmaq üçün 
+başqa üsul istifadə olunurdu.
+*/
+
+std::unique_ptr<int> ptr { new int(125) };
+
+/*
+std::unique_ptr-dən adi (raw) göstərici əldə etmək üçün get() 
+funksiyasından istifadə olunur.
+*/
+
+std::unique_ptr<int> ptr { std::make_unique<int>(125) };
+int* pointer = ptr.get();
+
+/*
+İntellektual göstərici (unique_ptr) təyin edildikdən sonra, onun işarə etdiyi 
+dəyəri adi göstərici kimi əldə etmək və dəyişdirmək olar.
+*/
 
 
 
