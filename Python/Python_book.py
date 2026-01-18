@@ -165,5 +165,78 @@ Python-da dəyişənlərin adlandırılmasında iki əsas üsuldan
 istifadə olunur: camelCase və underscore (snake_case) notasiya.
 """
 
+"""
+CamelCase üsulunda dəyişən adında hər yeni söz böyük hərflə başlayır.
+Məsələn:
+"""
+userName = "Tom"
 
+"""
+Underscore (snake_case) notasiya dəyişənin adında olan alt sözlərin alt xətt (_) işarəsi ilə ayrılmasını nəzərdə tutur.
+Məsələn:
+"""
+user_name = "Tom"
 
+"""
+Həmçinin registr həssaslığı nəzərə alınmalıdır, yəni name və Name 
+dəyişənləri fərqli obyektləri ifadə edəcək.
+"""
+# iki fərqli dəyişən
+name = "İsmayıl"
+Name = "İsmayıl"
+
+"""
+Dəyişəni müəyyən etdikdən sonra onu proqramda istifadə edə bilərik.
+Məsələn, daxili print funksiyasının köməyi ilə onun məzmununu konsola çıxarmaq olar:
+"""
+name = "Tom"  # name dəyişəninin təyin edilməsi
+print(name)   # name dəyişəninin dəyərinin konsola çıxarılması
+
+#Məsələn, PyCharm mühitində dəyişənin təyin edilməsi və tətbiqi belədir:
+
+"""
+Dəyişənin fərqləndirici xüsusiyyəti ondan ibarətdir ki, proqramın icrası 
+zamanı onun dəyərini dəyişmək mümkündür.
+"""
+name = "Tom"   # name dəyişəni "Tom" dəyərinə malikdir
+print(name)    # ekrana çıxarır: Tom
+
+name = "Bob"   # dəyər "Bob" olaraq dəyişdirilir
+print(name)    # ekrana çıxarır: Bob
+
+#Verilənlər tipi
+
+"""
+Dəyişən verilənlər tiplərindən birinə aid olan məlumatı saxlayır. Python 
+dilində çoxlu sayda müxtəlif verilənlər tipləri mövcuddur. Bu halda isə 
+yalnız ən əsas tipləri nəzərdən keçirək: bool, int, float, complex və str.
+"""
+
+#Məntiqi dəyərlər
+
+"""
+bool tipi iki məntiqi dəyəri ifadə edir: True (doğru, həqiqət) və False (yanlış, yalan).
+True dəyəri nəyinsə doğru olduğunu göstərmək üçün istifadə olunur.
+False dəyəri isə əksinə, nəyinsə yanlış olduğunu göstərir.
+"""
+
+def check_status():
+    isMarried = False
+    print(isMarried)   # False
+
+    isAlive = True
+    print(isAlive)     # True
+
+check_status()
+
+#Tam ədədlər
+#int tipi tam ədədi ifadə edir, məsələn: 1, 4, 8, 50.
+
+def show_numbers():
+    age = 21
+    print("Yaş:", age)       # Yaş: 21
+
+    count = 15
+    print("Miqdar:", count)  # Miqdar: 15
+
+show_numbers()
