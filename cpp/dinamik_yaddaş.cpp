@@ -688,11 +688,39 @@ int* pointer = ptr.get();
 İntellektual göstərici (unique_ptr) təyin edildikdən sonra, onun işarə etdiyi 
 dəyəri adi göstərici kimi əldə etmək və dəyişdirmək olar.
 */
+//---------------------------------
+#include <iostream>
+#include <memory>
 
+int main()
+{
+    // ptr göstəricisi dinamik yaddaşda yaradılmış 125 dəyərinə malik obyektə işarə edir
+    std::unique_ptr<int> ptr { std::make_unique<int>(125) };
 
+    // Obyektin yaddaş ünvanını ekrana çıxarırıq
+    std::cout << "Unvan: " << ptr.get() << std::endl;
 
+    // Obyektin ilkin dəyərini ekrana çıxarırıq
+    std::cout << "Ilkin deyer: " << *ptr << std::endl;
 
+    // Obyektin dəyərini dəyişirik
+    *ptr = 254;
 
+    // Yeni dəyəri ekrana çıxarırıq
+    std::cout << "Yeni deyer: " << *ptr << std::endl;
+}
 
+//konsol çıxışı
+/*
+Address: 0x2775dfa8030
+Initial value: 125
+New value: 254
+
+*/
+
+/*
+Qeyd etmək lazımdır ki, **C++20 standartından etibarən** smart-göstəricidən obyektin **yaddaş ünvanını `get()` 
+funksiyasından istifadə etmədən birbaşa** əldə etmək mümkündür.
+*/
 
 
