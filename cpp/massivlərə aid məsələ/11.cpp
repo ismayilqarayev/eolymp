@@ -1,7 +1,6 @@
-/*
 Massivi ekrana çap et
 https://eolymp.com/az/problems/8953
-*/
+
 
 
 #include <iostream> // input-output əməliyyatları üçün
