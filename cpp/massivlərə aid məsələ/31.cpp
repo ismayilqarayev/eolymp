@@ -1,2 +1,2 @@
-Massivi sola sürüşdür
-https://eolymp.com/az/problems/4154
+Massivi fırlat
+https://eolymp.com/az/problems/5102

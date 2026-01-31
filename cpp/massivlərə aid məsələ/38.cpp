@@ -1,2 +1,2 @@
-Massivin aralığı
-https://eolymp.com/az/problems/6200
+Unikal elementlərin sayı
+https://eolymp.com/az/problems/6215

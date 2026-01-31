@@ -1,2 +1,2 @@
-Massivi bərpa et
-https://eolymp.com/az/problems/8970
+Massivin cəmi
+https://eolymp.com/az/problems/8763

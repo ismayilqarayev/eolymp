@@ -1,2 +1,2 @@
-Bubble sort
-https://eolymp.com/az/problems/6301
+Kiçikdən böyüyə say
+https://eolymp.com/az/problems/6311

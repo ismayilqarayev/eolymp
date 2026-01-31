@@ -1,2 +1,2 @@
-Massivi çap et 2
-https://eolymp.com/az/problems/8954
+Ən böyük element
+https://eolymp.com/az/problems/7830

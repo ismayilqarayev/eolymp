@@ -1,2 +1,2 @@
-Ən kiçik elementin mövqeyi
-https://eolymp.com/az/problems/7851
+Elementlərin tezliyi
+https://eolymp.com/az/problems/6210

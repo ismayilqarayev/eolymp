@@ -1,2 +1,2 @@
-Massivin ortalaması
-https://eolymp.com/az/problems/11013
+Cüt elementləri say
+https://eolymp.com/az/problems/6171

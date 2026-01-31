@@ -1,2 +1,2 @@
-Cütləri qabağa at
-https://eolymp.com/az/problems/6370
+Pəncərə cəmi (sliding window)
+https://eolymp.com/az/problems/6400

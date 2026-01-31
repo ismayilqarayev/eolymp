@@ -1,2 +1,3 @@
-Unikal elementlərin sayı
-https://eolymp.com/az/problems/6215
+
+Azalan massiv
+https://eolymp.com/az/problems/6221

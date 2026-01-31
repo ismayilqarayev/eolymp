@@ -1,2 +1,2 @@
-Ən kiçik element
-https://eolymp.com/az/problems/7831
+Müsbət elementləri say
+https://eolymp.com/az/problems/6170

@@ -1,2 +1,2 @@
-Cüt elementlərin cəmi
-https://eolymp.com/az/problems/8764
+Ən böyük elementin mövqeyi
+https://eolymp.com/az/problems/7850

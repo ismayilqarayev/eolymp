@@ -1,2 +1,2 @@
-Elementlərin tezliyi
-https://eolymp.com/az/problems/6210
+Artan massiv
+https://eolymp.com/az/problems/6220

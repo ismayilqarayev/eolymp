@@ -1,3 +1,2 @@
-
-Massivi sağa sürüşdür
-https://eolymp.com/az/problems/4153
+Dublikatları sil
+https://eolymp.com/az/problems/11260

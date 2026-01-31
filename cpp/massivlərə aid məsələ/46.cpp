@@ -1,2 +1,2 @@
-Mənfini dəyiş
-https://eolymp.com/az/problems/6250
+Bubble sort
+https://eolymp.com/az/problems/6301

@@ -1,2 +1,2 @@
-Ən böyük element
-https://eolymp.com/az/problems/7830
+Massivin ortalaması
+https://eolymp.com/az/problems/11013

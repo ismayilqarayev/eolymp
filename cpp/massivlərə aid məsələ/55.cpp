@@ -1,2 +1,2 @@
-Bərabəri say
-https://eolymp.com/az/problems/6340
+Sıfırları sona at
+https://eolymp.com/az/problems/6360

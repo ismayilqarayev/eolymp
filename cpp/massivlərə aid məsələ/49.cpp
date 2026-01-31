@@ -1,2 +1,2 @@
-Böyükdən kiçiyə say
-https://eolymp.com/az/problems/6310
+Cütlərin cəmi
+https://eolymp.com/az/problems/6320

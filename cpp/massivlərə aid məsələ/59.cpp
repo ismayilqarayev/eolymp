@@ -1,2 +1,2 @@
-Təkləri qabağa at
-https://eolymp.com/az/problems/6380
+Massiv statistikası
+https://eolymp.com/az/problems/6410

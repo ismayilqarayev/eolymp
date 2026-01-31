@@ -1,2 +1,2 @@
-Tək elementlərin cəmi
-https://eolymp.com/az/problems/8765
+Ən kiçik elementin mövqeyi
+https://eolymp.com/az/problems/7851

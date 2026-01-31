@@ -1,2 +1,2 @@
-Artan massiv
-https://eolymp.com/az/problems/6220
+Müsbət alt‑massiv
+https://eolymp.com/az/problems/6230

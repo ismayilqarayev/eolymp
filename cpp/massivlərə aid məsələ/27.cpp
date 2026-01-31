@@ -1,2 +1,2 @@
-Cüt elementləri say
-https://eolymp.com/az/problems/6171
+Massivi tərsinə çevir
+https://eolymp.com/az/problems/4152

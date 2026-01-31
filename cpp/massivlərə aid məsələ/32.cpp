@@ -1,2 +1,2 @@
-Dublikatları sil
-https://eolymp.com/az/problems/11260
+Cüt elementlərin cəmi
+https://eolymp.com/az/problems/8764

@@ -1,2 +1,2 @@
-Mənfi alt‑massiv
-https://eolymp.com/az/problems/6231
+Mənfini dəyiş
+https://eolymp.com/az/problems/6250

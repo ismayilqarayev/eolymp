@@ -1,2 +1,2 @@
-Yaxın elementi tap
-https://eolymp.com/az/problems/6330
+Hər yeri dəyiş
+https://eolymp.com/az/problems/6350

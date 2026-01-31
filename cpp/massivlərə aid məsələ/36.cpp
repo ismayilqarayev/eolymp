@@ -1,2 +1,2 @@
-Ən böyük elementin mövqeyi
-https://eolymp.com/az/problems/7850
+Massivin aralığı
+https://eolymp.com/az/problems/6200

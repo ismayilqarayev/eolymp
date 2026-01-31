@@ -1,2 +1,2 @@
-Massivin cəmi
-https://eolymp.com/az/problems/8763
+Ən kiçik element
+https://eolymp.com/az/problems/7831

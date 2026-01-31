@@ -1,2 +1,2 @@
-Sıfırları sona at
-https://eolymp.com/az/problems/6360
+Təkləri qabağa at
+https://eolymp.com/az/problems/6380

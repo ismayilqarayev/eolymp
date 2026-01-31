@@ -1,2 +1,2 @@
-Hər yeri dəyiş
-https://eolymp.com/az/problems/6350
+Cütləri qabağa at
+https://eolymp.com/az/problems/6370

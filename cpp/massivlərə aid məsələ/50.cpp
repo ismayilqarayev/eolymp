@@ -1,2 +1,2 @@
-Kiçikdən böyüyə say
-https://eolymp.com/az/problems/6311
+Ən böyük cüt
+https://eolymp.com/az/problems/6321
