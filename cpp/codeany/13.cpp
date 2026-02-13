@@ -4,7 +4,9 @@ Müsbət, mənfi və sıfır
 Zaman limiti: 1,0 saniyə
 Yaddaş limiti: 128 MiB
 
-Tam ədəd n verilmişdir. Onun müsbət, mənfi və ya 0-a bərabər olub-olmadığını müəyyənləşdirin.
+Tam ədəd n verilmişdir. Onun müsbət, 
+mənfi və ya 0-a bərabər olub-olmadığını 
+müəyyənləşdirin.
 
 Giriş verilənləri
 

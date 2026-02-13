@@ -4,7 +4,8 @@ Rəqəmlərə bölünmək
 Zaman limiti: 1,0 saniyə
 Yaddaş limiti: 64 MiB
 
-Dördrəqəmli natural ədəd verilmişdir. Bu ədədin bütün rəqəmlərinə bölünüb-bölünmədiyini müəyyənləşdirin.
+Dördrəqəmli natural ədəd verilmişdir. Bu ədədin bütün rəqəmlərinə 
+bölünüb-bölünmədiyini müəyyənləşdirin.
 
 Əgər ədəd hər bir rəqəminə bölünürsə, YES çap edin.
 Əks halda, NO çap edin.

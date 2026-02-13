@@ -4,7 +4,8 @@ Su və buz
 Zaman limiti: 1,0 saniyə
 Yaddaş limiti: 128 MiB
 
-Vedrə su ilə doldurulub küçəyə qoyulub. Küçədə havanın temperaturu t dərəcədir.
+Vedrə su ilə doldurulub küçəyə qoyulub. 
+Küçədə havanın temperaturu t dərəcədir.
 
 Əgər t müsbətdirsə, su maye olaraq qalacaq → "Water"
 

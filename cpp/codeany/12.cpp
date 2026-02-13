@@ -4,7 +4,9 @@ Dəyərləri dəyişmək
 Zaman limiti: 1,0 saniyə
 Yaddaş limiti: 64 MiB
 
-İki tam ədəd a və b verilmişdir. Onların dəyərlərini dəyişdirmək və yeni dəyərləri ekranda göstərmək lazımdır.
+İki tam ədəd a və b verilmişdir. 
+Onların dəyərlərini dəyişdirmək və yeni dəyərləri 
+ekranda göstərmək lazımdır.
 
 Giriş verilənləri
 
