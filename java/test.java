@@ -1,9 +1,10 @@
+package java;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class Kodlar {
+public class test {
 
     // **Məlumatların saxlanması üçün listlər**
     static List<String> adlar = new ArrayList<>();
