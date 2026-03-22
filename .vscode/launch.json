@@ -3,5 +3,27 @@
     // Наведите указатель мыши, чтобы просмотреть описания существующих атрибутов.
     // Для получения дополнительной информации посетите: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
-    "configurations": []
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "com.example.Main",
+            "projectName": "demo"
+        },
+        {
+            "type": "java",
+            "name": "data",
+            "request": "launch",
+            "mainClass": "java.data",
+            "projectName": "eolymp_222ac17e"
+        },
+        {
+            "type": "java",
+            "name": "test",
+            "request": "launch",
+            "mainClass": "java.test",
+            "projectName": "eolymp_222ac17e"
+        }
+    ]
 }
