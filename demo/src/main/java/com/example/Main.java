@@ -4,27 +4,33 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+class Student {
+    private String ad;
 
-class Student{
-    String name;
-    int age;
+    public Student(String ad) {
+        this.ad = ad;
+    }
 
-    Student(String name, int age){
-        this.name = name;
-        this.age = age;
+    public String getAd(){
+        return ad;
+    }
+
+    public void setAd(String ad){
+        this.ad = ad;
     }
 }
 
-
-public class Main{
-
-    public static void printStudent(Student s){
-        System.out.print(s.name);
-        System.out.println(s.age);
+public class Main {
+    static void adDeyis(Student s, String yeniAd){
+        s.setAd(yeniAd);
     }
 
-    public static void main(String[] args){
-        Student st = new Student("ismayil", 12);
-        printStudent(st);
+    public static void main(String[] args) {
+        Student s1 = new Student("Ismayil");
+
+        System.out.println("Deyishmeden evvel: " + s1.getAd());
+
+        adDeyis(s1, "Eli");
+        System.out.println("Deyishmeden sonra: " + s1.getAd());
     }
 }
