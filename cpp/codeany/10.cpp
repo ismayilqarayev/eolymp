@@ -45,4 +45,23 @@ NO
 */
 
 
+#include <iostream>
+using namespace std;
 
+int main() {
+    int n;
+    cin >> n;
+
+    int a = n / 100;        // yüzlüklər
+    int b = (n / 10) % 10;  // onluqlar
+    int c = n % 10;         // təkliklər
+
+    int sum = a*a*a + b*b*b + c*c*c;
+
+    if(sum == n)
+        cout << "YES";
+    else
+        cout << "NO";
+
+    return 0;
+}

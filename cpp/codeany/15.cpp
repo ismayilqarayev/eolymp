@@ -43,3 +43,21 @@ Giriş:
 
 0
 */
+
+#include <iostream>
+using namespace std;
+
+int main() {
+
+    int n, m;
+    cin >> n >> m;
+
+    if((n > 0 && m > 0) || (n < 0 && m < 0)){
+        cout << 1;
+    }
+    else{
+        cout << 0;
+    }
+
+    return 0;
+}

@@ -41,3 +41,32 @@ Giriş:
 
 NO
 */
+
+#include <iostream>
+using namespace std;
+
+int main() {
+
+    int n;
+    cin >> n;
+
+    int a = n / 1000;          // minlik
+    int b = (n / 100) % 10;    // yüzlük
+    int c = (n / 10) % 10;     // onluq
+    int d = n % 10;            // təklik
+
+    if(a != 0 && b != 0 && c != 0 && d != 0 &&
+       n % a == 0 &&
+       n % b == 0 &&
+       n % c == 0 &&
+       n % d == 0)
+    {
+        cout << "YES";
+    }
+    else
+    {
+        cout << "NO";
+    }
+
+    return 0;
+}
