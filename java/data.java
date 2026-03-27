@@ -314,6 +314,7 @@ public class Main {
 
 
 class Student {
+
     private String name;
 
     public Student(String name){
@@ -335,26 +336,24 @@ class Student {
 }
 
 public class Main {
-    public static void rename(Student student, String newName){
-        student.setName(newName);
+    public static void rename(Student student, String newname){
+        student.setName(newname);
     }
 
     public static void main(String[] args){
         Scanner scanner = new Scanner(System.in);
+        
+        System.out.print("Enter the name of the student: ");
+        String StudentName = scanner.nextLine();
 
-        System.out.print("Tələbənin adını daxil edin: ");
-        String name = scanner.nextLine();
+        Student student = new Student(StudentName);
+        System.out.println("Current name: " + student);
 
-        Student student = new Student(name);
-        System.out.println("İlk ad: " + student);
-
-        System.out.print("Yeni adı daxil edin: ");
+        System.out.print("Enter the new name of the student: ");
         String newName = scanner.nextLine();
 
         rename(student, newName);
-        System.out.println("Yeni ad: " + student);
-
-        scanner.close();
+        System.out.println("New name: " + student);
     }
 }
 
