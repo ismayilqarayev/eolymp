@@ -687,7 +687,7 @@ public class Main {
 
         student.showInfo();
 
-        //System.out.println();
+        System.out.println();
 
         System.out.print("Enter PhD student name: ");
         String phdName = scanner.nextLine();
