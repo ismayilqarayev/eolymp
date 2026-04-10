@@ -716,70 +716,103 @@ public class Main {
 // yeni daha spesifik məlumat əlavə edir (tədqiqat mövzusu)
 // yeni versiya yazdım daha aydın olsun deyə
 
+package com.example;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+// Abstrakt sinif (Abstraction)
+// Bu sinif birbaşa obyekt yaratmaq üçün deyil, digər siniflər üçün baza rolunu oynayır
 abstract class Student{
+
+    // Encapsulation (Inkapsulyasiya)
+    // name dəyişəni private-dir, yəni yalnız bu sinif daxilində istifadə oluna bilər
     private String name;
 
-        public Student(String name){
-            this.name = name;
-        }
+    // Konstruktor
+    public Student(String name){
+        this.name = name;
+    }
 
-        public String getName(){
-            return name;
-        }
+    // Getter metodu - name dəyişənini oxumaq üçün
+    public String getName(){
+        return name;
+    }
 
-        public void setName(String name){
-            this.name = name;
-        }
+    // Setter metodu - name dəyişənini dəyişmək üçün
+    public void setName(String name){
+        this.name = name;
+    }
 
+    // Abstrakt metod
+    // Bu metodun implementasiyası alt siniflərdə yazılmalıdır
     public abstract void showInfo();
 }
 
+// Inheritance (İrsiyyət)
+// GradueateStudent sinifi Student sinifindən miras alır
 class GradueateStudent extends Student{
+
+    // Bu sinifə məxsus dəyişən
     private String University;
 
     public GradueateStudent(String name, String University){
-        super(name);
+        super(name); // Student konstruktorunu çağırır
         this.University = University;
     }
 
+    // Abstrakt metodun implementasiyası
     @Override
     public void showInfo(){
+        // name dəyişəninə birbaşa yox, getter vasitəsilə müraciət olunur
         System.out.println("Name: " + getName());
         System.out.println("University: " + University);
     }
 }
 
+// Inheritance (İrsiyyət)
+// PhDStudent sinifi GradueateStudent sinifindən miras alır
 class PhDStudent extends GradueateStudent{
+
+    // Bu sinifə məxsus dəyişən
     private String researchTopic;
+
     public PhDStudent(String name, String University, String researchTopic){
-        super(name, University);
+        super(name, University); // Parent konstruktoru çağırılır
         this.researchTopic = researchTopic;
     }
 
+    // Method overriding (Polymorphism)
     @Override
     public void showInfo(){
-        super.showInfo();
+        super.showInfo(); // Parent metodunu çağırır
         System.out.println("Research Topic: " + researchTopic);
     }
 }
 
 public class Main {
     public static void main(String[] args) {
+
+        // Scanner istifadəçi daxil etməsi üçün
         Scanner scanner = new Scanner(System.in);
 
+        // Graduate student məlumatlarının daxil edilməsi
         System.out.print("Enter the name of the graduate student: ");
         String GSName = scanner.nextLine();
 
         System.out.print("Enter the university of the graduate student: ");
         String GSUniversity = scanner.nextLine();
 
+        // Polymorphism
+        // Student tipli referensiya GradueateStudent obyektinə işarə edir
         Student GS = new GradueateStudent(GSName, GSUniversity);
-        GS.showInfo();
 
+        // showInfo metodunun çağırılması
+        GS.showInfo();
+        //////////////////////////////////////////////////////////////////
+
+        // PhD student məlumatlarının daxil edilməsi
         System.out.print("Enter the name of the PhD student: ");
         String PhDName = scanner.nextLine();
 
@@ -789,9 +822,13 @@ public class Main {
         System.out.print("Enter the research topic of the PhD student: ");
         String PhDResearchTopic = scanner.nextLine();
 
+        // Polymorphism
         Student PhD = new PhDStudent(PhDName, PhDUniversity, PhDResearchTopic);
+
+        // Metod çağırışı
         PhD.showInfo();
 
+        // Scanner bağlanır
         scanner.close();
     }
 }
