@@ -1,60 +1,57 @@
 package com.example;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
-abstract class Student {
-
+abstract class Student{
     private String name;
 
-    public Student(String name) {
+    public Student(String name){
         this.name = name;
     }
 
-    public String getName() {
+    public String getName(){
         return name;
     }
 
-    public void setName(String name) {
+    public void setName(String name){
         this.name = name;
     }
 
     public abstract void showInfo();
 }
 
-class GradueStudent extends Student {
+class GratuateStudent extends Student{
     private String University;
 
-    public GradueStudent(String name, String University) {
+    public GratuateStudent(String name, String University){
         super(name);
         this.University = University;
     }
 
     @Override
-    public void showInfo() {
+    public void showInfo(){
         System.out.println("Graduate Student Name: " + getName());
         System.out.println("University: " + University);
     }
 }
 
-class PhDStudent extends GradueStudent {
+class PhDStudent extends GratuateStudent{
     private String researchTopic;
 
-    public PhDStudent(String name, String University, String researchTopic) {
+    public PhDStudent(String name, String University, String researchString ){
         super(name, University);
-        this.researchTopic = researchTopic;
+        this.researchTopic = researchString;
     }
 
     @Override
-    public void showInfo() {
+    public void showInfo(){
         super.showInfo();
         System.out.println("Research Topic: " + researchTopic);
     }
 }
 
-public class Main {
-    public static void main(String[] args) {
+public class Main{
+    public static void main(String[] args){
         Scanner scanner = new Scanner(System.in);
 
         System.out.print("Enter the name of the graduate student: ");
@@ -63,11 +60,11 @@ public class Main {
         System.out.print("Enter the university of the graduate student: ");
         String GSUniversity = scanner.nextLine();
 
-        Student GS = new GradueStudent(GSName, GSUniversity);
+        Student GS = new GratuateStudent(GSName, GSUniversity);
+
         GS.showInfo();
 
-        // ----------------------------------------------
-
+        // PhD student
         System.out.print("Enter the name of the PhD student: ");
         String PhDName = scanner.nextLine();
 
@@ -78,6 +75,7 @@ public class Main {
         String PhDResearchTopic = scanner.nextLine();
 
         Student PhD = new PhDStudent(PhDName, PhDUniversity, PhDResearchTopic);
+        
         PhD.showInfo();
 
         scanner.close();
