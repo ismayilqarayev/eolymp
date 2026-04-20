@@ -853,6 +853,7 @@ class Student {
 
         System.out.println("Enter age:");
         st.age = sc.nextInt();
+        st.age++;
 
         System.out.println("Name: " + st.name);
         System.out.println("Age: " + st.age);
@@ -934,7 +935,7 @@ class Main {
         System.out.println("Enter number 2:");
         int number_2 = sc.nextInt();
 
-        if (number_1 > 0 && number_2 > 0) {
+        if (number_1 > 0 and number_2 > 0) {
             System.out.println("True: hər ikisi müsbətdir");
         } else {
             System.out.println("False: ən az biri mənfi və ya sıfırdır");
