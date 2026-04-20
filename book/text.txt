@@ -1,0 +1,77 @@
+**B2.1.1 Dəyişənlər**
+
+Alqoritmi koda çevirmək məlumatları saxlamaq və dəyişmək üçün dəyişənlərdən, təlimatları təkrarlamaq üçün dövrlərdən və tapşırığı yerinə yetirmək üçün hansı yolun seçiləcəyini müəyyən etmək üçün seçim strukturlarından istifadə etməyi tələb edir. Proqram hazırlayarkən başa düşülməsi vacib olan əsas anlayışlar bunlardır:
+
+* məlumatların saxlanması: dəyişənlər və sabitlərdən istifadə
+* operatorlar: məlumatları dəyişmək və müqayisə etmək üçün istifadə olunur (riyazi və məntiqi operatorlar)
+* seçim / şaxələnmə strukturları: qərar operatorlarını qurmaq üçün istifadə olunur
+* iterasiya: kod bloklarını təkrarlamaq üçün dövrlər (sayğaca əsaslanan və şərtə əsaslanan dövrlər)
+
+**Məlumatların saxlanması — dəyişənlərin istifadəsi**
+
+Təsəvvür edin ki, satış nümayəndəsi sabit əsas maaş alır və bu maaşa aylıq satış nəticələrinə bağlı bonus əlavə olunur. Bu bonus hər ay dəyişir; buna görə də zamanla dəyişən kimi xarakterizə olunur. Riyaziyyat və Kompüter Elmlərində “dəyişən” termini belə dinamik dəyərləri ifadə etmək üçün istifadə olunur.
+
+Dəyişənin identifikatoru (adı) və cari dəyəri olur. Hər dəyişən eyni anda yalnız bir dəyər saxlaya bilər. İstifadə olunmazdan əvvəl dəyişən elan edilməli və ilkinləşdirilməlidir.
+
+Dəyişənin deklarasiyası onun məlumat tipinin müəyyən edilməsini ifadə edir,
+ilkinləşdirmə isə ona başlanğıc dəyərinin verilməsini bildirir.
+
+//---------------------------------------------
+
+**Data tipləri**
+
+Data tipi dəyişənin hansı növ dəyəri saxlayacağını və həmin dəyər üzərində hansı əməliyyatların icazəli olduğunu göstərir.
+
+Məsələn, dəyişən tam ədəd saxlayacaq, yoxsa onluq ədəd? Mətn olacaq, yoxsa true/false (doğru/yanlış) dəyəri? Yoxsa tək bir simvol?
+
+Hər proqramlaşdırma dilində dəyişənlərin elan edilməsinin öz qaydası var.
+
+**String (Sətir)**
+
+String simvolların, rəqəmlərin və ya işarələrin ardıcıllığını (yəni mətn) saxlamaq üçün istifadə olunur.
+
+Java dilində mətn iki dırnaq işarəsi `" "` arasında yazılır, Python dilində isə həm tək dırnaq `' '`, həm də iki dırnaq `" "` istifadə oluna bilər.
+
+
+Terminal (console) formatında belə yaza bilərsən:
+
+```
+==================== STRING ====================
+
+Java:
+String password = "Bob123";
+
+Python:
+password = "Bob123"
+
+
+İzah:
+password dəyişəninə "Bob123" dəyəri verilir.
+
+
+==================== INTEGER ====================
+
+Java:
+int age = 54;
+
+Python:
+age = 54
+
+
+İzah:
+int (Integer) tam ədədləri saxlayır (müsbət və ya mənfi).
+
+
+==================== DECIMAL ====================
+
+Java:
+double salary = 5998.96;
+
+Python:
+elevation = -3.1
+
+
+İzah:
+double və float onluq ədədləri saxlamaq üçün istifadə olunur.
+double daha dəqiq (higher precision) hesab olunur.
+```

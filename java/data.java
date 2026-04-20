@@ -832,3 +832,114 @@ public class Main {
         scanner.close();
     }
 }
+
+//IBprogramming dili Java'da OOP (Object-Oriented Programming) 
+
+package com.example;
+
+import java.util.Scanner;
+
+class Student {
+    public String name;
+    public int age;
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+        Student st = new Student();
+
+        System.out.println("Enter name:");
+        st.name = sc.nextLine();
+
+        System.out.println("Enter age:");
+        st.age = sc.nextInt();
+
+        System.out.println("Name: " + st.name);
+        System.out.println("Age: " + st.age);
+
+        sc.close();
+    }
+}
+
+//--------------------------------------
+
+package com.example;
+
+import java.util.Scanner;
+
+class Main {
+    boolean number_1 = 
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter number 1:");
+        int number_1 = sc.nextInt();
+
+        System.out.println("Enter number 2:");
+        int number_2 = sc.nextInt();
+
+        boolean result = number_1 > number_2;
+
+        if (result) {
+            System.out.println("Number 1 is bigger");
+        } else {
+            System.out.println("Number 2 is bigger or equal");
+        }
+
+        sc.close();
+    }
+}
+
+//--------------------------------------
+
+package com.example;
+
+import java.util.Scanner;
+
+class Main {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter number 1:");
+        int number_1 = sc.nextInt();
+
+        System.out.println("Enter number 2:");
+        int number_2 = sc.nextInt();
+
+        boolean result = (number_1 > 0) && (number_2 > 0);
+
+        System.out.println("Result (true/false): " + result);
+
+        sc.close();
+    }
+}
+
+
+//------------------------------
+
+package com.example;
+
+import java.util.Scanner;
+
+class Main {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter number 1:");
+        int number_1 = sc.nextInt();
+
+        System.out.println("Enter number 2:");
+        int number_2 = sc.nextInt();
+
+        if (number_1 > 0 && number_2 > 0) {
+            System.out.println("True: hər ikisi müsbətdir");
+        } else {
+            System.out.println("False: ən az biri mənfi və ya sıfırdır");
+        }
+
+        sc.close();
+    }
+}
