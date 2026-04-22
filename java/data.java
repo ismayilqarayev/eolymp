@@ -144,6 +144,12 @@ public class DequeFunctions {
         sc.close();
     }
 }
+//burda bitir!
+
+
+
+
+
 
 
 /////////////////////////////////////
