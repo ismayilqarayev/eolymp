@@ -832,9 +832,10 @@ public class Main {
         scanner.close();
     }
 }
-
-//IBprogramming dili Java'da OOP (Object-Oriented Programming) 
-
+/////////////////////////////////////////////////////////////////
+//IBprogramming dili Java'da OOP (Object-Oriented Programming) //
+/////////////////////////////////////////////////////////////////
+//B2.1.1 Variables //  Data types and user input
 package com.example;
 
 import java.util.Scanner;
@@ -863,7 +864,7 @@ class Student {
 }
 
 //--------------------------------------
-
+//Boolean-------------------------------------------------
 package com.example;
 
 import java.util.Scanner;
@@ -926,21 +927,92 @@ import java.util.Scanner;
 
 class Main {
     public static void main(String[] args) {
+        int number_1;
+        int number_2;
 
         Scanner sc = new Scanner(System.in);
 
+        System.out.println("Enter number 1:");
+        number_1 = sc.nextInt();
+
+        System.out.println("Enter number 2:");
+        number_2 = sc.nextInt();
+
+        if (number_1 > 0 && number_2 > 0) {
+            System.out.println("True: both numbers are positive");
+        } else {
+            System.out.println("False: at least one number is negative or zero");
+        }
+
+        sc.close();
+    }
+}
+
+// Assignments --------------------------------------
+
+public class SwapExample {
+    public static void main(String[] args) {
+        int a = 5;
+        int b = 7;
+
+        System.out.println("Əvvəl: a = " + a + ", b = " + b);
+
+        // Müvəqqəti dəyişənlə dəyişmə
+        int temp = a;
+        a = b;
+        b = temp;
+
+        System.out.println("Sonra: a = " + a + ", b = " + b);
+    }
+}
+
+package com.example;
+
+import java.util.Scanner;
+
+class Main {
+    public static void main(String[] args) {
+       int number_1 = 5;
+       int number_2 = 7;
+
+       System.out.println("Əvvəl: a = " + number_1 + ", b = " + number_2);
+
+       int temp = number_1;
+       number_1 = number_2;
+       number_2 = temp;
+    }
+}
+
+package com.example;
+
+import java.util.Scanner;
+
+class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        // İstifadəçidən ədədləri daxil etməsini istəyirik
         System.out.println("Enter number 1:");
         int number_1 = sc.nextInt();
 
         System.out.println("Enter number 2:");
         int number_2 = sc.nextInt();
 
-        if (number_1 > 0 and number_2 > 0) {
-            System.out.println("True: hər ikisi müsbətdir");
-        } else {
-            System.out.println("False: ən az biri mənfi və ya sıfırdır");
-        }
+        System.out.println("Əvvəl: a = " + number_1 + ", b = " + number_2);
+
+        // Dəyərləri dəyişmək (swap)
+        int temp = number_1;
+        number_1 = number_2;
+        number_2 = temp;
+
+        // İnkremet əməliyyatı (hər birini 1 vahid artırırıq)
+        number_1++;
+        number_2++;
+
+        System.out.println("Sonra (swap + increment): a = " + number_1 + ", b = " + number_2);
 
         sc.close();
     }
 }
+
+

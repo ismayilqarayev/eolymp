@@ -75,3 +75,72 @@ elevation = -3.1
 double və float onluq ədədləri saxlamaq üçün istifadə olunur.
 double daha dəqiq (higher precision) hesab olunur.
 ```
+// ------------------------------------------------------
+Tapşırıqlar  
+Tapşırıq dəyişənə dəyər vermək deməkdir; bu əməliyyat adətən bərabərlik işarəsi (=) ilə aparılır. Bərabərlik işarəsinin sağ tərəfindəki dəyər sol tərəfdəki dəyişənə mənimsədilir; bunu heç vaxt əksinə etmək olmaz.  
+
+```
+count = 1
+```
+
+Bu ifadə `count` dəyişəninə 1 dəyərini mənimsədir. Başqa sözlə, `count` indi 1-dir.  
+Çox vaxt belə ifadələr görəcəksiniz:  
+
+```
+count = count + 1
+```
+
+Bu o deməkdir ki, `count` dəyişəni bir vahid artırılır. Dəyişəni bir vahid artırmaq xüsusi haldır və bunu qısaca belə də yazmaq olar:  
+
+```
+count++
+```
+
+Əgər `++` bir vahid artırmaq deməkdirsə, bir vahid azaltmaq belə yazılır:  
+
+```
+count--
+```
+
+və ya  
+
+```
+count = count - 1
+```
+
+Başqa bir nümunə: dəyişəni bir vahiddən başqa bir dəyər qədər azaltmaq.  
+
+```
+price = 5000
+price = price - 100
+```
+
+Burada `price` dəyişəni əvvəlki qiymətdən 100 aşağı olur. Yəni əvvəl 5000 idi, ikinci sətirdən sonra 4900 olur. Yeni dəyər mənimsədildikdə əvvəlki dəyər tamamilə itir, çünki dəyişən eyni yaddaş sahəsini tutur.  
+
+Məsələn, maraqlı sual: iki dəyişənin məzmununu necə dəyişmək olar?  
+Tutaq ki, `a = 5`, `b = 7`. İstəyirik ki, nəticədə `a = 7`, `b = 5` olsun.  
+
+Bir cəhd belə ola bilər:  
+
+```
+a = 5
+b = 7
+a = b
+b = a
+```
+
+Amma bu halda hər iki dəyişən eyni dəyəri saxlayır; yəni ikisi də 7 olur. Çünki üçüncü sətirdə `a` 7 olur, dördüncü sətirdə isə `b = a` yazıldığından `b` də 7 olur.  
+
+👉 Düzgün həll üçün müvəqqəti dəyişən (`temp`) istifadə etmək lazımdır:  
+
+```
+a = 5
+b = 7
+temp = a
+a = b
+b = temp
+```
+
+Beləliklə, nəticədə `a = 7`, `b = 5` olur.  
+
+İstəyirsinizmi ki, mən sizə bu dəyişmə əməliyyatının başqa üsullarını da (məsələn, müvəqqəti dəyişən olmadan, riyazi əməliyyatlarla) göstərim?
