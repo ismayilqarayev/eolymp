@@ -1,3 +1,153 @@
+//c++ converted to java
+import java.util.Deque;
+import java.util.LinkedList;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Deque<Integer> d1 = new LinkedList<>();
+        Deque<Integer> d2 = new LinkedList<>();
+        Scanner sc = new Scanner(System.in);
+
+        // d1 üçün elementləri daxil edirik
+        System.out.print("Deque d1 üçün elementlərin sayını daxil edin: ");
+        int say1 = sc.nextInt();
+        for (int i = 0; i < say1; i++) {
+            System.out.print("Element " + (i + 1) + "-i daxil edin: ");
+            d1.add(sc.nextInt());
+        }
+
+        // d2 üçün elementləri daxil edirik
+        System.out.print("Deque d2 üçün elementlərin sayını daxil edin: ");
+        int say2 = sc.nextInt();
+        for (int i = 0; i < say2; i++) {
+            System.out.print("Element " + (i + 1) + "-i daxil edin: ");
+            d2.add(sc.nextInt());
+        }
+
+        // İkinci elementləri çap edirik
+        if (d1.size() > 1 && d2.size() > 1) {
+            System.out.println("d1-in ikinci elementi: " + ((LinkedList<Integer>) d1).get(1));
+            System.out.println("d2-nin ikinci elementi: " + ((LinkedList<Integer>) d2).get(1));
+        } else {
+            System.out.println("Bir və ya hər iki deque-də 2-dən az element var.");
+        }
+
+        sc.close();
+    }
+}
+//------------------------------
+
+import java.util.Deque;
+import java.util.LinkedList;
+import java.util.Scanner;
+
+public class MelumatBazasi {
+    public static void main(String[] args) {
+        Deque<String> melumat_bazasi_1 = new LinkedList<>();
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Daxil edin: ");
+        String daxil_etme = sc.nextLine();
+
+        for (int i = 0; i < daxil_etme.length(); i++) {
+            char simvol = daxil_etme.charAt(i);
+            melumat_bazasi_1.add(String.valueOf(simvol));
+        }
+
+        for (String i : melumat_bazasi_1) {
+            System.out.println(i);
+        }
+
+        if (!melumat_bazasi_1.isEmpty()) {
+            String first = melumat_bazasi_1.peekFirst();
+            System.out.println("Birinci element: " + first);
+        }
+
+        sc.close();
+    }
+}
+//------------------------------
+
+import java.util.Deque;
+import java.util.LinkedList;
+import java.util.Collections;
+import java.util.Scanner;
+
+public class SortDeque {
+    public static void main(String[] args) {
+        Deque<Integer> dq = new LinkedList<>();
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter the number of elements: ");
+        int n = sc.nextInt();
+
+        System.out.println("Enter " + n + " elements:");
+        for (int i = 0; i < n; i++) {
+            dq.add(sc.nextInt());
+        }
+
+        // LinkedList istifadə etdiyimiz üçün Collections.sort işləyir
+        LinkedList<Integer> list = new LinkedList<>(dq);
+        Collections.sort(list);
+
+        System.out.println("Sorted elements: " + list);
+
+        sc.close();
+    }
+}
+
+//------------------------------
+
+import java.util.Deque;
+import java.util.LinkedList;
+import java.util.Scanner;
+
+public class DequeFunctions {
+    static Scanner sc = new Scanner(System.in);
+
+    public static void fun1(Deque<Integer> d1) {
+        System.out.print("Enter the number of elements in deque d1: ");
+        int number1 = sc.nextInt();
+        for (int i = 0; i < number1; i++) {
+            System.out.print("Enter element " + (i + 1) + ": ");
+            d1.add(sc.nextInt());
+        }
+    }
+
+    public static void fun2(Deque<Integer> d2) {
+        System.out.print("Enter the number of elements in deque d2: ");
+        int number2 = sc.nextInt();
+        for (int i = 0; i < number2; i++) {
+            System.out.print("Enter element " + (i + 1) + ": ");
+            d2.add(sc.nextInt());
+        }
+    }
+
+    public static void fun3(Deque<Integer> d1, Deque<Integer> d2) {
+        if (d1.size() > 1 && d2.size() > 1) {
+            System.out.println("Second element in d1: " + ((LinkedList<Integer>) d1).get(1));
+            System.out.println("Second element in d2: " + ((LinkedList<Integer>) d2).get(1));
+        } else {
+            System.out.println("One or both deques have less than 2 elements.");
+        }
+    }
+
+    public static void main(String[] args) {
+        Deque<Integer> d1 = new LinkedList<>();
+        Deque<Integer> d2 = new LinkedList<>();
+
+        fun1(d1);
+        fun2(d2);
+        fun3(d1, d2);
+
+        sc.close();
+    }
+}
+
+
+/////////////////////////////////////
+/////////////////////////////////////
 package java;
 
 import java.util.ArrayList;
