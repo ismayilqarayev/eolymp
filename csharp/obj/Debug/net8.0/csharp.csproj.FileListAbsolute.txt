@@ -1,0 +1,15 @@
+/home/isi/Documents/GitHub/eolymp/csharp/bin/Debug/net8.0/csharp
+/home/isi/Documents/GitHub/eolymp/csharp/bin/Debug/net8.0/csharp.deps.json
+/home/isi/Documents/GitHub/eolymp/csharp/bin/Debug/net8.0/csharp.runtimeconfig.json
+/home/isi/Documents/GitHub/eolymp/csharp/bin/Debug/net8.0/csharp.dll
+/home/isi/Documents/GitHub/eolymp/csharp/bin/Debug/net8.0/csharp.pdb
+/home/isi/Documents/GitHub/eolymp/csharp/obj/Debug/net8.0/csharp.GeneratedMSBuildEditorConfig.editorconfig
+/home/isi/Documents/GitHub/eolymp/csharp/obj/Debug/net8.0/csharp.AssemblyInfoInputs.cache
+/home/isi/Documents/GitHub/eolymp/csharp/obj/Debug/net8.0/csharp.AssemblyInfo.cs
+/home/isi/Documents/GitHub/eolymp/csharp/obj/Debug/net8.0/csharp.csproj.CoreCompileInputs.cache
+/home/isi/Documents/GitHub/eolymp/csharp/obj/Debug/net8.0/csharp.sourcelink.json
+/home/isi/Documents/GitHub/eolymp/csharp/obj/Debug/net8.0/csharp.dll
+/home/isi/Documents/GitHub/eolymp/csharp/obj/Debug/net8.0/refint/csharp.dll
+/home/isi/Documents/GitHub/eolymp/csharp/obj/Debug/net8.0/csharp.pdb
+/home/isi/Documents/GitHub/eolymp/csharp/obj/Debug/net8.0/csharp.genruntimeconfig.cache
+/home/isi/Documents/GitHub/eolymp/csharp/obj/Debug/net8.0/ref/csharp.dll
