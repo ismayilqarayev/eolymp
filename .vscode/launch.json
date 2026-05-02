@@ -6,6 +6,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "TestApp",
+            "request": "launch",
+            "mainClass": "StudentManagementSystem/Java_OOP_GUI_v2.TestApp",
+            "projectName": "eolymp_cd8d654a"
+        },
+        {
+            "type": "java",
+            "name": "TestApp",
+            "request": "launch",
+            "mainClass": "StudentManagementSystem/Java_OOP_GUI.TestApp",
+            "projectName": "eolymp_cd8d654a"
+        },
+        {
+            "type": "java",
+            "name": "StudentManagementGUI",
+            "request": "launch",
+            "mainClass": "StudentManagementSystem/Java_OOP_GUI.StudentManagementGUI",
+            "projectName": "eolymp_cd8d654a"
+        },
+        {
+            "type": "java",
             "name": "Student",
             "request": "launch",
             "mainClass": "com.example.Student",
