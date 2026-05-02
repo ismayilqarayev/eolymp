@@ -38,14 +38,23 @@ class Program
         for (int i = 0; i < say; i++)
         {
             Console.WriteLine("Ad daxil etin: ");
-            string ad = Console.ReadLine();
+            string ad;
+            while(string.IsNullOrEmpty(ad = Console.ReadLine()) || !char.IsLetter(ad[0]))
+            {
+                Console.WriteLine("yeniden duzgun bir ad daxil et: ");
+            }
             adlar.Add(ad);
 
             Console.WriteLine("Yas daxil etin: ");
-            int yas = Convert.ToInt32(Console.ReadLine());
+            int yas;
+            while (!int.TryParse(Console.ReadLine(), out yas) || yas <= 0)
+            {
+                Console.WriteLine("yeniden duzgun bir eded daxil et: ");
+            }
             yaslar.Add(yas);
         }
     }
+
 
     struct Konstruktor
     {

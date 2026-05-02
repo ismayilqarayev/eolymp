@@ -1,0 +1,31 @@
+<Window x:Class="MyWpfApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MyWpfApp"
+        mc:Ignorable="d"
+        Title="MyWpfApp" Height="500" Width="600">
+    <Grid Background="#F5F5F5">
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,0">
+            <TextBlock Text="Salam, WPF Dünyası!" 
+                       FontSize="32" 
+                       FontWeight="Bold"
+                       Foreground="#333333"
+                       TextAlignment="Center"
+                       Margin="0,0,0,10"/>
+            <TextBlock Text="Bu sizin yeni WPF uygulamanızdır"
+                       FontSize="16"
+                       Foreground="#666666"
+                       TextAlignment="Center"/>
+            <Button Content="Klik et" 
+                    Padding="30,15" 
+                    FontSize="16"
+                    Background="#007ACC"
+                    Foreground="White"
+                    Click="Button_Click"
+                    HorizontalAlignment="Center"
+                    Cursor="Hand"/>
+        </StackPanel>
+    </Grid>
+</Window>
