@@ -1,25 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "/home/isi/Documents/GitHub/eolymp/csharp/csharp.csproj": {}
+    "C:\\Users\\user\\Documents\\GitHub\\eolymp\\csharp\\csharp.csproj": {}
   },
   "projects": {
-    "/home/isi/Documents/GitHub/eolymp/csharp/csharp.csproj": {
+    "C:\\Users\\user\\Documents\\GitHub\\eolymp\\csharp\\csharp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/isi/Documents/GitHub/eolymp/csharp/csharp.csproj",
+        "projectUniqueName": "C:\\Users\\user\\Documents\\GitHub\\eolymp\\csharp\\csharp.csproj",
         "projectName": "csharp",
-        "projectPath": "/home/isi/Documents/GitHub/eolymp/csharp/csharp.csproj",
-        "packagesPath": "/home/isi/.nuget/packages/",
-        "outputPath": "/home/isi/Documents/GitHub/eolymp/csharp/obj/",
+        "projectPath": "C:\\Users\\user\\Documents\\GitHub\\eolymp\\csharp\\csharp.csproj",
+        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\user\\Documents\\GitHub\\eolymp\\csharp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/isi/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -37,7 +39,8 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        }
+        },
+        "SdkAnalysisLevel": "10.0.100"
       },
       "frameworks": {
         "net8.0": {
@@ -53,12 +56,30 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[8.0.24, 8.0.24]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[8.0.24, 8.0.24]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[8.0.24, 8.0.24]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[8.0.24, 8.0.24]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.420/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.103/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
