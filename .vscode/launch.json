@@ -6,6 +6,7 @@
     "configurations": [
         {
             "type": "java",
+<<<<<<< HEAD
             "name": "Test",
             "request": "launch",
             "mainClass": "Test",
@@ -31,6 +32,26 @@
             "request": "launch",
             "mainClass": "com.example.ApiServer",
             "projectName": "demo"
+=======
+            "name": "TestApp",
+            "request": "launch",
+            "mainClass": "StudentManagementSystem/Java_OOP_GUI_v2.TestApp",
+            "projectName": "eolymp_cd8d654a"
+        },
+        {
+            "type": "java",
+            "name": "TestApp",
+            "request": "launch",
+            "mainClass": "StudentManagementSystem/Java_OOP_GUI.TestApp",
+            "projectName": "eolymp_cd8d654a"
+        },
+        {
+            "type": "java",
+            "name": "StudentManagementGUI",
+            "request": "launch",
+            "mainClass": "StudentManagementSystem/Java_OOP_GUI.StudentManagementGUI",
+            "projectName": "eolymp_cd8d654a"
+>>>>>>> 9d926f3542b314e5d978f32c20441b20d3fc7c3f
         },
         {
             "type": "java",
