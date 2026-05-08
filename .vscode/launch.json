@@ -6,6 +6,34 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Test",
+            "request": "launch",
+            "mainClass": "Test",
+            "projectName": "demo"
+        },
+        {
+            "type": "java",
+            "name": "StudentGuiApp",
+            "request": "launch",
+            "mainClass": "com.example.StudentGuiApp",
+            "projectName": "demo"
+        },
+        {
+            "type": "java",
+            "name": "StudentGuiApp",
+            "request": "launch",
+            "mainClass": "StudentGuiApp",
+            "projectName": ""
+        },
+        {
+            "type": "java",
+            "name": "ApiServer",
+            "request": "launch",
+            "mainClass": "com.example.ApiServer",
+            "projectName": "demo"
+        },
+        {
+            "type": "java",
             "name": "Student",
             "request": "launch",
             "mainClass": "com.example.Student",

@@ -1,6 +1,4 @@
-language = "russian"
-if language == "english":
-    print("Salam")
-else:
-    print("Salam")
-print("Son")
+class Student:
+    def __init__(self, ad):
+        self.__ad = ad
+

@@ -1,156 +1,3 @@
-//c++ converted to java
-import java.util.Deque;
-import java.util.LinkedList;
-import java.util.Scanner;
-
-public class Main {
-    public static void main(String[] args) {
-        Deque<Integer> d1 = new LinkedList<>();
-        Deque<Integer> d2 = new LinkedList<>();
-        Scanner sc = new Scanner(System.in);
-
-        // d1 üçün elementləri daxil edirik
-        System.out.print("Deque d1 üçün elementlərin sayını daxil edin: ");
-        int say1 = sc.nextInt();
-        for (int i = 0; i < say1; i++) {
-            System.out.print("Element " + (i + 1) + "-i daxil edin: ");
-            d1.add(sc.nextInt());
-        }
-
-        // d2 üçün elementləri daxil edirik
-        System.out.print("Deque d2 üçün elementlərin sayını daxil edin: ");
-        int say2 = sc.nextInt();
-        for (int i = 0; i < say2; i++) {
-            System.out.print("Element " + (i + 1) + "-i daxil edin: ");
-            d2.add(sc.nextInt());
-        }
-
-        // İkinci elementləri çap edirik
-        if (d1.size() > 1 && d2.size() > 1) {
-            System.out.println("d1-in ikinci elementi: " + ((LinkedList<Integer>) d1).get(1));
-            System.out.println("d2-nin ikinci elementi: " + ((LinkedList<Integer>) d2).get(1));
-        } else {
-            System.out.println("Bir və ya hər iki deque-də 2-dən az element var.");
-        }
-
-        sc.close();
-    }
-}
-//------------------------------
-
-import java.util.Deque;
-import java.util.LinkedList;
-import java.util.Scanner;
-
-public class MelumatBazasi {
-    public static void main(String[] args) {
-        Deque<String> melumat_bazasi_1 = new LinkedList<>();
-        Scanner sc = new Scanner(System.in);
-
-        System.out.print("Daxil edin: ");
-        String daxil_etme = sc.nextLine();
-
-        for (int i = 0; i < daxil_etme.length(); i++) {
-            char simvol = daxil_etme.charAt(i);
-            melumat_bazasi_1.add(String.valueOf(simvol));
-        }
-
-        for (String i : melumat_bazasi_1) {
-            System.out.println(i);
-        }
-
-        if (!melumat_bazasi_1.isEmpty()) {
-            String first = melumat_bazasi_1.peekFirst();
-            System.out.println("Birinci element: " + first);
-        }
-
-        sc.close();
-    }
-}
-//------------------------------
-
-import java.util.Deque;
-import java.util.LinkedList;
-import java.util.Collections;
-import java.util.Scanner;
-
-public class SortDeque {
-    public static void main(String[] args) {
-        Deque<Integer> dq = new LinkedList<>();
-        Scanner sc = new Scanner(System.in);
-
-        System.out.print("Enter the number of elements: ");
-        int n = sc.nextInt();
-
-        System.out.println("Enter " + n + " elements:");
-        for (int i = 0; i < n; i++) {
-            dq.add(sc.nextInt());
-        }
-
-        // LinkedList istifadə etdiyimiz üçün Collections.sort işləyir
-        LinkedList<Integer> list = new LinkedList<>(dq);
-        Collections.sort(list);
-
-        System.out.println("Sorted elements: " + list);
-
-        sc.close();
-    }
-}
-
-//------------------------------
-
-import java.util.Deque;
-import java.util.LinkedList;
-import java.util.Scanner;
-
-public class DequeFunctions {
-    static Scanner sc = new Scanner(System.in);
-
-    public static void fun1(Deque<Integer> d1) {
-        System.out.print("Enter the number of elements in deque d1: ");
-        int number1 = sc.nextInt();
-        for (int i = 0; i < number1; i++) {
-            System.out.print("Enter element " + (i + 1) + ": ");
-            d1.add(sc.nextInt());
-        }
-    }
-
-    public static void fun2(Deque<Integer> d2) {
-        System.out.print("Enter the number of elements in deque d2: ");
-        int number2 = sc.nextInt();
-        for (int i = 0; i < number2; i++) {
-            System.out.print("Enter element " + (i + 1) + ": ");
-            d2.add(sc.nextInt());
-        }
-    }
-
-    public static void fun3(Deque<Integer> d1, Deque<Integer> d2) {
-        if (d1.size() > 1 && d2.size() > 1) {
-            System.out.println("Second element in d1: " + ((LinkedList<Integer>) d1).get(1));
-            System.out.println("Second element in d2: " + ((LinkedList<Integer>) d2).get(1));
-        } else {
-            System.out.println("One or both deques have less than 2 elements.");
-        }
-    }
-
-    public static void main(String[] args) {
-        Deque<Integer> d1 = new LinkedList<>();
-        Deque<Integer> d2 = new LinkedList<>();
-
-        fun1(d1);
-        fun2(d2);
-        fun3(d1, d2);
-
-        sc.close();
-    }
-}
-//burda bitir!
-
-
-
-
-
-
 
 /////////////////////////////////////
 /////////////////////////////////////
@@ -987,287 +834,416 @@ public class Main {
 }
 
 
+//-------------------------------------------------------------------------------------------
 
-/////////////////////////////////////////////////////////////////
-//IBprogramming dili Java'da OOP (Object-Oriented Programming) //
-/////////////////////////////////////////////////////////////////
-//B2.1.1 Variables //  Data types and user input
+//Abstract class Student
+
 package com.example;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
-class Student {
-    public String name;
-    public int age;
+// ══════════════════════════════════════════════
+//  ABSTRAKT BAZ SİNİF — Şəxs
+// ══════════════════════════════════════════════
+abstract class Sexs {
+    private String ad;
+    private String soyad;
+    private int yas;
 
-    public static void main(String[] args) {
+    public Sexs(String ad, String soyad, int yas) {
+        this.ad = ad;
+        this.soyad = soyad;
+        this.yas = yas;
+    }
 
-        Scanner sc = new Scanner(System.in);
-        Student st = new Student();
+    public String getAd() { return ad; }
+    public String getSoyad() { return soyad; }
+    public int getYas() { return yas; }
 
-        System.out.println("Enter name:");
-        st.name = sc.nextLine();
+    public abstract void melumatlariGoster();
+}
 
-        System.out.println("Enter age:");
-        st.age = sc.nextInt();
-        st.age++;
+// ══════════════════════════════════════════════
+//  KURS SİNİFİ
+// ══════════════════════════════════════════════
+class Kurs {
+    private String kursAdi;
+    private int kreditSaati;
+    private String muellim;
 
-        System.out.println("Name: " + st.name);
-        System.out.println("Age: " + st.age);
+    public Kurs(String kursAdi, int kreditSaati, String muellim) {
+        this.kursAdi = kursAdi;
+        this.kreditSaati = kreditSaati;
+        this.muellim = muellim;
+    }
 
-        sc.close();
+    public String getKursAdi() { return kursAdi; }
+    public int getKreditSaati() { return kreditSaati; }
+    public String getMuellim() { return muellim; }
+
+    public void kursInfosu() {
+        System.out.println("  Kurs     : " + kursAdi);
+        System.out.println("  Kredit   : " + kreditSaati);
+        System.out.println("  Müəllim  : " + muellim);
     }
 }
 
-//------------------------------
-//double and float
+// ══════════════════════════════════════════════
+//  İMTAHAN SİNİFİ
+// ══════════════════════════════════════════════
+class Imtahan {
+    private String fenn;
+    private double bal;
+    private String tarix;
 
-package com.example;
+    public Imtahan(String fenn, double bal, String tarix) {
+        this.fenn = fenn;
+        this.bal = bal;
+        this.tarix = tarix;
+    }
 
-import java.util.Scanner;
+    public double getBal() { return bal; }
 
-class Product {
-    public String name;
-    public double price;
-
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        Product pr = new Product();
-
-        // Məhsulun adını daxil edirik
-        System.out.println("Enter product name:");
-        pr.name = sc.nextLine();
-
-        // Məhsulun qiymətini daxil edirik (double tipində)
-        System.out.println("Enter product price:");
-        pr.price = sc.nextDouble();
-
-        // Endirim faizini daxil edirik
-        System.out.println("Enter discount percentage:");
-        double discount = sc.nextDouble();
-
-        // Endirimdən sonrakı qiyməti hesablayırıq
-        double finalPrice = pr.price - (pr.price * discount / 100);
-
-        // Nəticəni çap edirik
-        System.out.println("Product: " + pr.name);
-        System.out.println("Original Price: " + pr.price);
-        System.out.println("Discount: " + discount + "%");
-        System.out.println("Final Price: " + finalPrice);
-
-        sc.close();
+    public void imtahanInfosu() {
+        System.out.println("  Fənn   : " + fenn);
+        System.out.println("  Bal    : " + bal);
+        System.out.println("  Tarix  : " + tarix);
     }
 }
 
+// ══════════════════════════════════════════════
+//  DİPLOM SİNİFİ
+// ══════════════════════════════════════════════
+class Diplom {
+    private String ixtisas;
+    private String tarix;
+    private double ortalama;
 
-package com.example;
+    public Diplom(String ixtisas, String tarix, double ortalama) {
+        this.ixtisas = ixtisas;
+        this.tarix = tarix;
+        this.ortalama = ortalama;
+    }
 
-import java.util.Scanner;
-
-class Mehsul {
-    public String ad;
-    public double qiymet;
-
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        Mehsul mehsul = new Mehsul();
-
-        // Məhsulun adını daxil edirik
-        System.out.println("Məhsulun adını daxil edin:");
-        mehsul.ad = sc.nextLine();
-
-        // Məhsulun qiymətini daxil edirik (double tipində)
-        System.out.println("Məhsulun qiymətini daxil edin:");
-        mehsul.qiymet = sc.nextDouble();
-
-        // Endirim faizini daxil edirik
-        System.out.println("Endirim faizini daxil edin:");
-        double endirimFaizi = sc.nextDouble();
-
-        // Endirimdən sonrakı qiyməti hesablayırıq
-        double sonQiymet = mehsul.qiymet - (mehsul.qiymet * endirimFaizi / 100);
-
-        // Nəticəni çap edirik
-        System.out.println("Məhsul: " + mehsul.ad);
-        System.out.println("Əsas Qiymət: " + mehsul.qiymet);
-        System.out.println("Endirim: " + endirimFaizi + "%");
-        System.out.println("Son Qiymət: " + sonQiymet);
-
-        sc.close();
+    public void diplomInfosu() {
+        System.out.println("  İxtisas  : " + ixtisas);
+        System.out.println("  Tarix    : " + tarix);
+        System.out.println("  Ortalama : " + ortalama);
     }
 }
 
+// ══════════════════════════════════════════════
+//  TƏLƏBƏ — Şəxs-dən miras alır
+// ══════════════════════════════════════════════
+class Telebe extends Sexs {
+    private String fakulte;
+    private int kurs;
+    private List<Imtahan> imtahanlar;
+    private List<Kurs> kursList;
 
-//--------------------------------------
-//Boolean-------------------------------------------------
-package com.example;
+    public Telebe(String ad, String soyad, int yas,
+                  String fakulte, int kurs) {
+        super(ad, soyad, yas);
+        this.fakulte = fakulte;
+        this.kurs = kurs;
+        this.imtahanlar = new ArrayList<>();
+        this.kursList = new ArrayList<>();
+    }
 
-import java.util.Scanner;
+    public void imtahanElave(Imtahan imtahan) {
+        imtahanlar.add(imtahan);
+    }
 
-class Main {
-    boolean number_1 = 
-    public static void main(String[] args) {
+    public void kursElave(Kurs k) {
+        kursList.add(k);
+    }
 
-        Scanner sc = new Scanner(System.in);
+    public double ortalamaHesabla() {
+        if (imtahanlar.isEmpty()) return 0;
+        double cem = 0;
+        for (Imtahan i : imtahanlar) cem += i.getBal();
+        return cem / imtahanlar.size();
+    }
 
-        System.out.println("Enter number 1:");
-        int number_1 = sc.nextInt();
+    public String getFakulte() { return fakulte; }
+    public int getKurs() { return kurs; }
 
-        System.out.println("Enter number 2:");
-        int number_2 = sc.nextInt();
+    @Override
+    public void melumatlariGoster() {
+        System.out.println("Ad / Soyad : " + getAd() + " " + getSoyad());
+        System.out.println("Yaş        : " + getYas());
+        System.out.println("Fakültə    : " + fakulte);
+        System.out.println("Kurs       : " + kurs);
+        System.out.println("Ortalama   : " + ortalamaHesabla());
 
-        boolean result = number_1 > number_2;
-
-        if (result) {
-            System.out.println("Number 1 is bigger");
-        } else {
-            System.out.println("Number 2 is bigger or equal");
+        if (!kursList.isEmpty()) {
+            System.out.println("--- Kurslar ---");
+            for (Kurs k : kursList) k.kursInfosu();
         }
 
-        sc.close();
-    }
-}
-
-//--------------------------------------
-
-package com.example;
-
-import java.util.Scanner;
-
-class Main {
-    public static void main(String[] args) {
-
-        Scanner sc = new Scanner(System.in);
-
-        System.out.println("Enter number 1:");
-        int number_1 = sc.nextInt();
-
-        System.out.println("Enter number 2:");
-        int number_2 = sc.nextInt();
-
-        boolean result = (number_1 > 0) && (number_2 > 0);
-
-        System.out.println("Result (true/false): " + result);
-
-        sc.close();
-    }
-}
-
-
-//------------------------------
-
-package com.example;
-
-import java.util.Scanner;
-
-class Main {
-    public static void main(String[] args) {
-        int number_1;
-        int number_2;
-
-        Scanner sc = new Scanner(System.in);
-
-        System.out.println("Enter number 1:");
-        number_1 = sc.nextInt();
-
-        System.out.println("Enter number 2:");
-        number_2 = sc.nextInt();
-
-        if (number_1 > 0 && number_2 > 0) {
-            System.out.println("True: both numbers are positive");
-        } else {
-            System.out.println("False: at least one number is negative or zero");
+        if (!imtahanlar.isEmpty()) {
+            System.out.println("--- İmtahanlar ---");
+            for (Imtahan i : imtahanlar) i.imtahanInfosu();
         }
-
-        sc.close();
     }
 }
 
-// Assignments --------------------------------------
+// ══════════════════════════════════════════════
+//  MAGİSTR — Tələbə-dən miras alır
+// ══════════════════════════════════════════════
+class Magistr extends Telebe {
+    private String teqiqatMovzusu;
+    private String elmiRehber;
 
-public class SwapExample {
+    public Magistr(String ad, String soyad, int yas,
+                   String fakulte, int kurs,
+                   String teqiqatMovzusu, String elmiRehber) {
+        super(ad, soyad, yas, fakulte, kurs);
+        this.teqiqatMovzusu = teqiqatMovzusu;
+        this.elmiRehber = elmiRehber;
+    }
+
+    @Override
+    public void melumatlariGoster() {
+        super.melumatlariGoster();
+        System.out.println("Tədqiqat   : " + teqiqatMovzusu);
+        System.out.println("Elmi rəhbər: " + elmiRehber);
+    }
+}
+
+// ══════════════════════════════════════════════
+//  DOKTORANT — Magistr-dən miras alır
+// ══════════════════════════════════════════════
+class Doktorant extends Magistr {
+    private String dissertasiyaMovzusu;
+    private int neşrSayi;
+    private Diplom diplom;
+
+    public Doktorant(String ad, String soyad, int yas,
+                     String fakulte, int kurs,
+                     String teqiqatMovzusu, String elmiRehber,
+                     String dissertasiyaMovzusu, int neşrSayi) {
+        super(ad, soyad, yas, fakulte, kurs, teqiqatMovzusu, elmiRehber);
+        this.dissertasiyaMovzusu = dissertasiyaMovzusu;
+        this.neşrSayi = neşrSayi;
+    }
+
+    public void diplomTəyin(Diplom diplom) {
+        this.diplom = diplom;
+    }
+
+    @Override
+    public void melumatlariGoster() {
+        super.melumatlariGoster();
+        System.out.println("Dissertasiya: " + dissertasiyaMovzusu);
+        System.out.println("Nəşr sayı   : " + neşrSayi);
+        if (diplom != null) {
+            System.out.println("--- Diplom ---");
+            diplom.diplomInfosu();
+        }
+    }
+}
+
+// ══════════════════════════════════════════════
+//  MÜƏLLİM — Şəxs-dən miras alır
+// ══════════════════════════════════════════════
+class Muellim extends Sexs {
+    private String fakulte;
+    private String fenn;
+    private int tedrisTecurbesi;
+
+    public Muellim(String ad, String soyad, int yas,
+                   String fakulte, String fenn, int tedrisTecurbesi) {
+        super(ad, soyad, yas);
+        this.fakulte = fakulte;
+        this.fenn = fenn;
+        this.tedrisTecurbesi = tedrisTecurbesi;
+    }
+
+    public String getFakulte() { return fakulte; }
+    public String getFenn() { return fenn; }
+
+    @Override
+    public void melumatlariGoster() {
+        System.out.println("Ad / Soyad   : " + getAd() + " " + getSoyad());
+        System.out.println("Yaş          : " + getYas());
+        System.out.println("Fakültə      : " + fakulte);
+        System.out.println("Fənn         : " + fenn);
+        System.out.println("Təcrübə (il) : " + tedrisTecurbesi);
+    }
+}
+
+// ══════════════════════════════════════════════
+//  PROFESSOR — Müəllim-dən miras alır
+// ══════════════════════════════════════════════
+class Professor extends Muellim {
+    private String elmiDerece;
+    private int neşrSayi;
+
+    public Professor(String ad, String soyad, int yas,
+                     String fakulte, String fenn, int tedrisTecurbesi,
+                     String elmiDerece, int neşrSayi) {
+        super(ad, soyad, yas, fakulte, fenn, tedrisTecurbesi);
+        this.elmiDerece = elmiDerece;
+        this.neşrSayi = neşrSayi;
+    }
+
+    @Override
+    public void melumatlariGoster() {
+        super.melumatlariGoster();
+        System.out.println("Elmi dərəcə  : " + elmiDerece);
+        System.out.println("Nəşr sayı    : " + neşrSayi);
+    }
+}
+
+// ══════════════════════════════════════════════
+//  REKTOR — Professor-dan miras alır
+// ══════════════════════════════════════════════
+class Rektor extends Professor {
+    private String universitet;
+    private int idareetmeTecurbesi;
+
+    public Rektor(String ad, String soyad, int yas,
+                  String fakulte, String fenn, int tedrisTecurbesi,
+                  String elmiDerece, int neşrSayi,
+                  String universitet, int idareetmeTecurbesi) {
+        super(ad, soyad, yas, fakulte, fenn, tedrisTecurbesi,
+              elmiDerece, neşrSayi);
+        this.universitet = universitet;
+        this.idareetmeTecurbesi = idareetmeTecurbesi;
+    }
+
+    @Override
+    public void melumatlariGoster() {
+        super.melumatlariGoster();
+        System.out.println("Universitet      : " + universitet);
+        System.out.println("İdarəetmə (il)   : " + idareetmeTecurbesi);
+    }
+}
+
+// ══════════════════════════════════════════════
+//  MAIN
+// ══════════════════════════════════════════════
+public class Main {
     public static void main(String[] args) {
-        int a = 5;
-        int b = 7;
 
-        System.out.println("Əvvəl: a = " + a + ", b = " + b);
+        try (Scanner scanner = new Scanner(System.in)) {
 
-        // Müvəqqəti dəyişənlə dəyişmə
-        int temp = a;
-        a = b;
-        b = temp;
+            // ── TƏLƏBƏ ──────────────────────────────────────────
+            System.out.println("\n========== TƏLƏBƏ ==========");
+            System.out.print("Ad: ");           String tAd = scanner.nextLine();
+            System.out.print("Soyad: ");        String tSoyad = scanner.nextLine();
+            System.out.print("Yaş: ");          int tYas = Integer.parseInt(scanner.nextLine());
+            System.out.print("Fakültə: ");      String tFakulte = scanner.nextLine();
+            System.out.print("Kurs (1-4): ");   int tKurs = Integer.parseInt(scanner.nextLine());
 
-        System.out.println("Sonra: a = " + a + ", b = " + b);
+            Telebe telebe = new Telebe(tAd, tSoyad, tYas, tFakulte, tKurs);
+
+            System.out.print("Kurs adı: ");     String kAd = scanner.nextLine();
+            System.out.print("Kredit saatı: "); int kKredit = Integer.parseInt(scanner.nextLine());
+            System.out.print("Müəllim: ");      String kMuellim = scanner.nextLine();
+            telebe.kursElave(new Kurs(kAd, kKredit, kMuellim));
+
+            System.out.print("İmtahan fənni: "); String iFenn = scanner.nextLine();
+            System.out.print("Bal: ");           double iBal = Double.parseDouble(scanner.nextLine());
+            System.out.print("Tarix: ");         String iTarix = scanner.nextLine();
+            telebe.imtahanElave(new Imtahan(iFenn, iBal, iTarix));
+
+            System.out.println("\n--- Tələbə məlumatları ---");
+            telebe.melumatlariGoster();
+
+            // ── MAGİSTR ─────────────────────────────────────────
+            System.out.println("\n========== MAGİSTR ==========");
+            System.out.print("Ad: ");              String mAd = scanner.nextLine();
+            System.out.print("Soyad: ");           String mSoyad = scanner.nextLine();
+            System.out.print("Yaş: ");             int mYas = Integer.parseInt(scanner.nextLine());
+            System.out.print("Fakültə: ");         String mFakulte = scanner.nextLine();
+            System.out.print("Kurs: ");            int mKurs = Integer.parseInt(scanner.nextLine());
+            System.out.print("Tədqiqat mövzusu: ");String mMovzu = scanner.nextLine();
+            System.out.print("Elmi rəhbər: ");     String mRehber = scanner.nextLine();
+
+            Magistr magistr = new Magistr(mAd, mSoyad, mYas,
+                    mFakulte, mKurs, mMovzu, mRehber);
+
+            System.out.println("\n--- Magistr məlumatları ---");
+            magistr.melumatlariGoster();
+
+            // ── DOKTORANT ────────────────────────────────────────
+            System.out.println("\n========== DOKTORANT ==========");
+            System.out.print("Ad: ");               String dAd = scanner.nextLine();
+            System.out.print("Soyad: ");            String dSoyad = scanner.nextLine();
+            System.out.print("Yaş: ");              int dYas = Integer.parseInt(scanner.nextLine());
+            System.out.print("Fakültə: ");          String dFakulte = scanner.nextLine();
+            System.out.print("Kurs: ");             int dKurs = Integer.parseInt(scanner.nextLine());
+            System.out.print("Tədqiqat mövzusu: "); String dMovzu = scanner.nextLine();
+            System.out.print("Elmi rəhbər: ");      String dRehber = scanner.nextLine();
+            System.out.print("Dissertasiya: ");     String dDiss = scanner.nextLine();
+            System.out.print("Nəşr sayı: ");        int dNesr = Integer.parseInt(scanner.nextLine());
+
+            Doktorant doktorant = new Doktorant(dAd, dSoyad, dYas,
+                    dFakulte, dKurs, dMovzu, dRehber, dDiss, dNesr);
+
+            System.out.print("Diplom ixtisası: ");  String dipIxt = scanner.nextLine();
+            System.out.print("Diplom tarixi: ");    String dipTarix = scanner.nextLine();
+            System.out.print("Diplom ortalama: ");  double dipOrt = Double.parseDouble(scanner.nextLine());
+            doktorant.diplomTəyin(new Diplom(dipIxt, dipTarix, dipOrt));
+
+            System.out.println("\n--- Doktorant məlumatları ---");
+            doktorant.melumatlariGoster();
+
+            // ── MÜƏLLİM ─────────────────────────────────────────
+            System.out.println("\n========== MÜƏLLİM ==========");
+            System.out.print("Ad: ");           String muAd = scanner.nextLine();
+            System.out.print("Soyad: ");        String muSoyad = scanner.nextLine();
+            System.out.print("Yaş: ");          int muYas = Integer.parseInt(scanner.nextLine());
+            System.out.print("Fakültə: ");      String muFakulte = scanner.nextLine();
+            System.out.print("Fənn: ");         String muFenn = scanner.nextLine();
+            System.out.print("Təcrübə (il): "); int muTec = Integer.parseInt(scanner.nextLine());
+
+            Muellim muellim = new Muellim(muAd, muSoyad, muYas,
+                    muFakulte, muFenn, muTec);
+
+            System.out.println("\n--- Müəllim məlumatları ---");
+            muellim.melumatlariGoster();
+
+            // ── PROFESSOR ────────────────────────────────────────
+            System.out.println("\n========== PROFESSOR ==========");
+            System.out.print("Ad: ");           String prAd = scanner.nextLine();
+            System.out.print("Soyad: ");        String prSoyad = scanner.nextLine();
+            System.out.print("Yaş: ");          int prYas = Integer.parseInt(scanner.nextLine());
+            System.out.print("Fakültə: ");      String prFakulte = scanner.nextLine();
+            System.out.print("Fənn: ");         String prFenn = scanner.nextLine();
+            System.out.print("Təcrübə (il): "); int prTec = Integer.parseInt(scanner.nextLine());
+            System.out.print("Elmi dərəcə: ");  String prDerece = scanner.nextLine();
+            System.out.print("Nəşr sayı: ");    int prNesr = Integer.parseInt(scanner.nextLine());
+
+            Professor professor = new Professor(prAd, prSoyad, prYas,
+                    prFakulte, prFenn, prTec, prDerece, prNesr);
+
+            System.out.println("\n--- Professor məlumatları ---");
+            professor.melumatlariGoster();
+
+            // ── REKTOR ───────────────────────────────────────────
+            System.out.println("\n========== REKTOR ==========");
+            System.out.print("Ad: ");               String rAd = scanner.nextLine();
+            System.out.print("Soyad: ");            String rSoyad = scanner.nextLine();
+            System.out.print("Yaş: ");              int rYas = Integer.parseInt(scanner.nextLine());
+            System.out.print("Fakültə: ");          String rFakulte = scanner.nextLine();
+            System.out.print("Fənn: ");             String rFenn = scanner.nextLine();
+            System.out.print("Təcrübə (il): ");     int rTec = Integer.parseInt(scanner.nextLine());
+            System.out.print("Elmi dərəcə: ");      String rDerece = scanner.nextLine();
+            System.out.print("Nəşr sayı: ");        int rNesr = Integer.parseInt(scanner.nextLine());
+            System.out.print("Universitet: ");      String rUniver = scanner.nextLine();
+            System.out.print("İdarəetmə (il): ");   int rIdaree = Integer.parseInt(scanner.nextLine());
+
+            Rektor rektor = new Rektor(rAd, rSoyad, rYas,
+                    rFakulte, rFenn, rTec, rDerece, rNesr, rUniver, rIdaree);
+
+            System.out.println("\n--- Rektor məlumatları ---");
+            rektor.melumatlariGoster();
+        }
     }
 }
-
-package com.example;
-
-import java.util.Scanner;
-
-class Main {
-    public static void main(String[] args) {
-       int number_1 = 5;
-       int number_2 = 7;
-
-       System.out.println("Əvvəl: a = " + number_1 + ", b = " + number_2);
-
-       int temp = number_1;
-       number_1 = number_2;
-       number_2 = temp;
-    }
-}
-
-package com.example;
-
-import java.util.Scanner;
-
-class Main {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-
-        // İstifadəçidən ədədləri daxil etməsini istəyirik
-        System.out.println("Enter number 1:");
-        int number_1 = sc.nextInt();
-
-        System.out.println("Enter number 2:");
-        int number_2 = sc.nextInt();
-
-        System.out.println("Əvvəl: a = " + number_1 + ", b = " + number_2);
-
-        // Dəyərləri dəyişmək (swap)
-        int temp = number_1;
-        number_1 = number_2;
-        number_2 = temp;
-
-        // İnkremet əməliyyatı (hər birini 1 vahid artırırıq)
-        number_1++;
-        number_2++;
-
-        System.out.println("Sonra (swap + increment): a = " + number_1 + ", b = " + number_2);
-
-        sc.close();
-    }
-}
-
-
-// Düzgün olmayan swap nümunəsi
-package com.example;
-
-import java.util.Scanner;
-
-class Main {
-    public static void main(String[] args) {
-       int number_1 = 5;
-       int number_2 = 7;
-
-       System.out.println("Əvvəl: a = " + number_1 + ", b = " + number_2);
-
-    
-       number_1 = number_2;
-       number_2 = number_1;
-       System.out.println("Sonra: a = " + number_1 + ", b = " + number_2);
-    }
-}
-
 
