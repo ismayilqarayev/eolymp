@@ -483,7 +483,7 @@ public class Main {
 }
 
 //------------------------------
-
+// Base class  
 class Student {
 
     private String name;
@@ -550,7 +550,10 @@ public class Main {
     }
 }
 
-//Abtract class Student //
+//Abtract class Student 
+// Abstrakt sinif - birbaşa obyekt yaradıla bilməz,
+//  yalnız miras almaq üçün istifadə olunur
+
 
 abstract class Student {
 
@@ -738,10 +741,14 @@ abstract class Student {
     }
 
     // Getter — name dəyərini oxumaq üçün
-    public String getName() { return name; }
+    public String getName() { 
+        return name; 
+    }
 
     // Setter — name dəyərini dəyişmək üçün
-    public void setName(String name) { this.name = name; }
+    public void setName(String name) {
+         this.name = name;
+        }
 
     // Abstrakt metod — hər alt sinif öz implementasiyasını yazmalıdır
     public abstract void showInfo();
