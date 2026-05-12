@@ -1,6 +1,9 @@
 package com.example;
 
 import javax.swing.*;
+
+import Student;
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;

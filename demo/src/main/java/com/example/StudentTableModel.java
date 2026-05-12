@@ -1,6 +1,9 @@
 package com.example;
 
 import javax.swing.table.AbstractTableModel;
+
+import Student;
+
 import java.util.ArrayList;
 import java.util.List;
 
