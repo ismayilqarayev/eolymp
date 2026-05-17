@@ -5,8 +5,6 @@ import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
 
-import Student;
-
 public class StudentManager {
     private final List<Student> students = new CopyOnWriteArrayList<>();
     private final AtomicInteger nextId = new AtomicInteger(1);
