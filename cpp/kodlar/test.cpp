@@ -1,18 +1,15 @@
 #include <iostream>
+#include <vector>
 
 using namespace std;
 
 class Student
 {
-
-private:
-    string name;
-
-public:
-    Student():name(name)
-    {
-        
-    }
+	private:
+	string name;
+	
+	public:
+	
 };
 
 int main()

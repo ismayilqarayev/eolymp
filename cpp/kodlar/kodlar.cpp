@@ -1,4 +1,218 @@
 #include <iostream>
+#include <string>
+
+using namespace std;
+
+// ================= ABSTRACT CLASS =================
+// Student abstrakt sinifidir.
+// Bu sinifden birbasa obyekt yaratmaq olmaz.
+// Diger sinifler ucun baza rolunu oynayir.
+class Student
+{
+private:
+
+    // ================= ENCAPSULATION =================
+    // name private oldugu ucun birbasa elcatan deyil.
+    // Yalniz getter ve setter vasitəsilə istifade olunur.
+    string name;
+
+public:
+
+    // ================= CONSTRUCTOR =================
+    // Obyekt yaradilan zaman name deyerini menimsedir.
+    Student(string name)
+    {
+        this->name = name;
+    }
+
+    // ================= GETTER =================
+    // name deyerini qaytarir.
+    string getName()
+    {
+        return name;
+    }
+
+    // ================= SETTER =================
+    // name deyerini deyismeye imkan verir.
+    void setName(string name)
+    {
+        this->name = name;
+    }
+
+    // ================= PURE VIRTUAL FUNCTION =================
+    // Bu metod abstrakt metoddur.
+    // Her child class bu metodu override etmelidir.
+    virtual void showInfo() = 0;
+
+    // ================= VIRTUAL DESTRUCTOR =================
+    // Dynamic memory istifadəsində düzgün silinme ucundur.
+    virtual ~Student()
+    {
+    }
+};
+
+// ================= INHERITANCE =================
+// GraduateStudent sinifi Student sinifinden miras alir.
+class GraduateStudent : public Student
+{
+private:
+
+    // GraduateStudent sinifine aid deyisen
+    string university;
+
+public:
+
+    // ================= CONSTRUCTOR =================
+    // name parent class-a gonderilir.
+    // university ise bu sinifde saxlanilir.
+    GraduateStudent(string name, string university)
+        : Student(name)
+    {
+        this->university = university;
+    }
+
+    // ================= POLYMORPHISM =================
+    // Student sinifindeki abstrakt metod burada implement olunur.
+    void showInfo()
+    {
+        cout << "Name: "
+             << getName()
+             << endl;
+
+        cout << "University: "
+             << university
+             << endl;
+    }
+};
+
+// ================= MULTILEVEL INHERITANCE =================
+// PhDStudent sinifi GraduateStudent sinifinden miras alir.
+// Zencir:
+// Student -> GraduateStudent -> PhDStudent
+class PhDStudent : public GraduateStudent
+{
+private:
+
+    // PhDStudent sinifine aid deyisen
+    string researchTopic;
+
+public:
+
+    // ================= CONSTRUCTOR =================
+    // name ve university parent class-a gonderilir.
+    // researchTopic ise bu sinifde saxlanilir.
+    PhDStudent(
+        string name,
+        string university,
+        string researchTopic
+    )
+        : GraduateStudent(name, university)
+    {
+        this->researchTopic = researchTopic;
+    }
+
+    // ================= METHOD OVERRIDING =================
+    // Parent class-daki showInfo() yeniden yazilir.
+    void showInfo()
+    {
+        // Parent class metodunu cagirir.
+        GraduateStudent::showInfo();
+
+        // Elave melumat cixis olunur.
+        cout << "Research Topic: "
+             << researchTopic
+             << endl;
+    }
+};
+
+int main()
+{
+    // ================= GRADUATE STUDENT =================
+
+    // Graduate student melumatlari ucun deyisenler
+    string graduateName;
+    string graduateUniversity;
+
+    // Istifadeciden ad daxil edilir
+    cout << "Enter graduate student name: ";
+    getline(cin, graduateName);
+
+    // Istifadeciden universitet daxil edilir
+    cout << "Enter graduate student university: ";
+    getline(cin, graduateUniversity);
+
+    // ================= POLYMORPHISM =================
+    // Student tipli pointer GraduateStudent obyektine isare edir.
+    Student* graduateStudent =
+        new GraduateStudent(
+            graduateName,
+            graduateUniversity
+        );
+
+    cout << endl;
+
+    cout << "Graduate Student Information"
+         << endl;
+
+    // Runtime zamani uygun metod cagrilir.
+    graduateStudent->showInfo();
+
+    cout << endl;
+
+    // ================= PHD STUDENT =================
+
+    // PhD student melumatlari ucun deyisenler
+    string phdName;
+    string phdUniversity;
+    string phdResearchTopic;
+
+    // Istifadeciden ad daxil edilir
+    cout << "Enter PhD student name: ";
+    getline(cin, phdName);
+
+    // Istifadeciden universitet daxil edilir
+    cout << "Enter PhD student university: ";
+    getline(cin, phdUniversity);
+
+    // Istifadeciden tedqiqat movzusu daxil edilir
+    cout << "Enter PhD student research topic: ";
+    getline(cin, phdResearchTopic);
+
+    // ================= POLYMORPHISM =================
+    // Student tipli pointer PhDStudent obyektine isare edir.
+    Student* phdStudent =
+        new PhDStudent(
+            phdName,
+            phdUniversity,
+            phdResearchTopic
+        );
+
+    cout << endl;
+
+    cout << "PhD Student Information"
+         << endl;
+
+    // Override olunan metod cagrilir.
+    phdStudent->showInfo();
+
+    // ================= MEMORY CLEANUP =================
+    // Dynamic olaraq ayrilan yaddas temizlenir.
+    delete graduateStudent;
+    delete phdStudent;
+
+    return 0;
+}
+
+
+
+/////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////
+
+
+// Kodlar.cpp : Bu fayl "main" funksiyasını ehtiva edir. Proqramın başlanğıc nöqtəsi burada başlayır və bitir.
+#include <iostream>
 #include <deque>
 using namespace std;
 
@@ -310,7 +524,10 @@ int main()
 
 
 
-//-------------------------------------------------------
+//-----------------------------------------------------------------------------------------------------
+//вектор vektor
+//08.02.2025 10:39
+
 #include <iostream>
 #include <vector>
 #include <algorithm>
