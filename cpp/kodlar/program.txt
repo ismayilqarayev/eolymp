@@ -1,0 +1,69 @@
+Yarışma üçün C++ öyrənmə yolu — sıfırdan:
+
+## Mərhələ 1 — Əsaslar (3-4 həftə)
+```cpp
+// Bunları əzbərlə:
+cin / cout
+if / else / switch
+for / while / do-while
+array, string
+function yazma
+```
+**Məşq:** Codeforces — A məsələləri həll et
+
+---
+
+## Mərhələ 2 — STL (ən vacib hissə, 4 həftə)
+Yarışmada OOP işlətməzsən — **STL işlədirsən:**
+```cpp
+vector<int> v;
+sort(v.begin(), v.end());
+
+map<string, int> m;
+set<int> s;
+queue<int> q;
+stack<int> st;
+priority_queue<int> pq;
+```
+**Bunlar olmadan yarışmada heç nə həll etmək olmaz.**
+
+---
+
+## Mərhələ 3 — Alqoritmlər (2-3 ay)
+```
+Binary Search
+BFS / DFS
+Greedy
+Basic DP
+```
+
+---
+
+## Öyrənmə Qaydası
+
+| Həftə | Mövzu | Hədəf |
+|---|---|---|
+| 1-2 | Sintaksis, şərt, dövr | 20 A məsələ |
+| 3-4 | Funksiya, array, string | 20 A məsələ |
+| 5-8 | STL tam | 30 B məsələ |
+| 9-16 | Alqoritmlər | Div.3 yarışma |
+
+---
+
+## Resurslar
+
+**Öyrənmək üçün:**
+- [cp-algorithms.com](https://cp-algorithms.com) — Azərbaycanlılar çox istifadə edir
+- [learncpp.com](https://learncpp.com) — sintaksis üçün ən yaxşı sayt
+
+**Məşq üçün:**
+- [codeforces.com](https://codeforces.com) — hər gün 2-3 məsələ həll et
+
+---
+
+## Vacib Qeyd
+
+> Yarışma üçün OOP **lazım deyil.**
+> Sənin yazdığın kod güzəldir — amma yarışmada `vector`, `map`, `sort` bilmək daha çox bal gətirir.
+
+Hansı mövzudan başlamaq istəyirsən — izah edim?

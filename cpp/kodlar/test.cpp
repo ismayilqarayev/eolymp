@@ -9,7 +9,10 @@ class Student
 	string name;
 	
 	public:
-	
+	Student(string name)
+	{
+		this->name = name;
+	}
 };
 
 int main()
