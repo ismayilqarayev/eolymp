@@ -1,31 +1,31 @@
-class Student:
-    def __init__(self, ad, soyad):
-        self.__ad = ad
-        self.__soyad = soyad
+"""
+GitHub repo-sundakı bir qovluğun içindəki bütün faylların
+birbaşa (blob) linklərini çıxarır.
 
-    def get_ad(self):
-        return self.__ad
-    
-    def set_ad(self, ad):
-        self.__ad = ad
+İSTİFADƏ:
+  1) `pip install requests` (əgər yoxdursa)
+  2) Aşağıdakı REPO, BRANCH, FOLDER dəyərlərini öz repona uyğun dəyiş
+  3) Faylı işə sal: python list_github_links.py
+"""
 
-    def get_soyad(self):
-        return self.__soyad
-    
-    def set_soyad(self, soyad):
-        self.__soyad = soyad
+import requests
+from urllib.parse import quote
 
-class Main:
+REPO = "ismayilqarayev/eolymp"
+BRANCH = "main"
+FOLDER = "Python/azercell_cup_problems/Arifmetik Əməliyyatlar"
 
-    def ad_deyis(self, s, yeni_ad):
-        s.set_ad(yeni_ad)
+url = f"https://api.github.com/repos/{REPO}/contents/{quote(FOLDER)}?ref={BRANCH}"
 
-    def main(self):
-        Student1 = Student("Ravan", "Ismayilov")
-        print("Əvvəl:", Student1.get_ad(), Student1.get_soyad())
+response = requests.get(url)
+response.raise_for_status()
+items = response.json()
 
-        
+# Fayl adına görə sırala (problem_01, problem_02, ...)
+items.sort(key=lambda x: x["name"])
 
+print(f"'{FOLDER}' qovluğunda {len(items)} fayl tapıldı:\n")
 
-
-    
+for item in items:
+    if item["type"] == "file":
+        print(f"{item['name']}: {item['html_url']}")
