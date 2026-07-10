@@ -13,7 +13,7 @@ from urllib.parse import quote
 
 REPO = "ismayilqarayev/eolymp"
 BRANCH = "main"
-FOLDER = "Python/azercell_cup_problems/Arifmetik Əməliyyatlar"
+FOLDER = "Python/azercell_cup_problems/Müqayisə əməliyyatları"
 
 url = f"https://api.github.com/repos/{REPO}/contents/{quote(FOLDER)}?ref={BRANCH}"
 
