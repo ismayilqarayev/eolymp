@@ -1,6 +1,7 @@
 // C++ STL nümunəsi — vector, insert, erase, sort, deque
 #include <iostream>
 #include <vector>
+// #include <algorithm> // sort üçün
 
 using namespace std;
 
