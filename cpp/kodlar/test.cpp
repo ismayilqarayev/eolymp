@@ -2,23 +2,17 @@
 
 using namespace std;
 
-int main()
+class Telebe
 {
-	
-    string ad, soyad;
-    int yas;
+    private:
+        string ad;
+        string soyad;
+        string telefon;
+        string email;
 
-    cout << "ad daxil et: ";
-    cin >> ad;
-
-    cout << "soyad daxil et: ";
-    cin >> soyad;
-
-    cout << "yas daxil et: ";
-    cin >> yas;
-
-    cout << "\nAd: " << ad << "\nSoyad: " << soyad << "\nYas: " << yas << endl;
-
-    return 0;
+    public:
+        Telebe()
+        {
+            
+        }
 }
-
